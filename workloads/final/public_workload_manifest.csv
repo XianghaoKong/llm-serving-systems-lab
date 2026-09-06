@@ -1,0 +1,1001 @@
+request_id,workload_category,source,source_id,source_license,prompt_hash,question_hash,input_tokens,max_new_tokens,has_document_context
+req_0001,short_interactive,lmsys_chatbot_arena_conversations,73af8c2763234c60a3bb7a029b55c292,CC-BY-4.0 (user prompts),fb619a630c8fde6581f2,,33,256,False
+req_0002,short_interactive,lmsys_chatbot_arena_conversations,b39985bc504e41d3a8b3a6771ca61a34,CC-BY-4.0 (user prompts),099efd9a8610296acf61,,33,256,False
+req_0003,short_interactive,lmsys_chatbot_arena_conversations,83183f2a9a294a8eaa753dce78acb274,CC-BY-4.0 (user prompts),9b06f718f0d54df7ef39,,33,256,False
+req_0004,short_interactive,lmsys_chatbot_arena_conversations,365e416e80dd45d89e50b417389d3303,CC-BY-4.0 (user prompts),517e11bae7820fcd892c,,33,256,False
+req_0005,short_interactive,lmsys_chatbot_arena_conversations,f032214df5d242ce8d178f6f49a30811,CC-BY-4.0 (user prompts),e2a1c47ccadb4cf84338,,33,256,False
+req_0006,short_interactive,lmsys_chatbot_arena_conversations,3ea2ab0e8af446268fc44f4152c4c3b7,CC-BY-4.0 (user prompts),1155cb06316e28897a8c,,34,256,False
+req_0007,short_interactive,lmsys_chatbot_arena_conversations,f1a0cedda8de4164953bd28367d3e70a,CC-BY-4.0 (user prompts),bf684e69588da163d79b,,34,256,False
+req_0008,short_interactive,lmsys_chatbot_arena_conversations,2f01bce427bb4855b19827395f555aff,CC-BY-4.0 (user prompts),183033424e77650f96ab,,34,256,False
+req_0009,short_interactive,lmsys_chatbot_arena_conversations,7d77f954efb64e9288e290ae3f113720,CC-BY-4.0 (user prompts),aaa64011f5bd2171e445,,34,256,False
+req_0010,short_interactive,lmsys_chatbot_arena_conversations,482c48d602704ecba706287177adc75b,CC-BY-4.0 (user prompts),666350748b3437d28776,,34,256,False
+req_0011,short_interactive,lmsys_chatbot_arena_conversations,5ee55b0044204ed2a096f6c822416659,CC-BY-4.0 (user prompts),ca9f48268cc9d3fc356b,,34,256,False
+req_0012,short_interactive,lmsys_chatbot_arena_conversations,b47943e3c3af4823bf58c45617eb9528,CC-BY-4.0 (user prompts),923259b2f228db566123,,34,256,False
+req_0013,short_interactive,lmsys_chatbot_arena_conversations,5625c8cde6bd4b1b8667773ff997a1f3,CC-BY-4.0 (user prompts),1f6341519be5e94c8cd0,,34,256,False
+req_0014,short_interactive,lmsys_chatbot_arena_conversations,5d012d4fba084501ae5871d19a63715b,CC-BY-4.0 (user prompts),c3282f04079e5d48f147,,34,256,False
+req_0015,short_interactive,lmsys_chatbot_arena_conversations,147d2ad3fca341b6aaeb9ea85649da3a,CC-BY-4.0 (user prompts),ed84c0c884e71828603d,,34,256,False
+req_0016,short_interactive,lmsys_chatbot_arena_conversations,76771d0b0a49480ea17f16c46d193cc0,CC-BY-4.0 (user prompts),0519f5fe7714c441b432,,35,256,False
+req_0017,short_interactive,lmsys_chatbot_arena_conversations,8b1fa822ad944d758a3a49da47a8ada4,CC-BY-4.0 (user prompts),6a3cf25ec308a4ab9a5d,,35,256,False
+req_0018,short_interactive,lmsys_chatbot_arena_conversations,077bf20287f6478f8a594794df480e78,CC-BY-4.0 (user prompts),ef475e36f53f34eaf1b6,,35,256,False
+req_0019,short_interactive,lmsys_chatbot_arena_conversations,f56347c9b36e4d328c38ed47e3d01047,CC-BY-4.0 (user prompts),2a0326220100a4f0b3ab,,35,256,False
+req_0020,short_interactive,lmsys_chatbot_arena_conversations,77fafcb7213c4a1d9af26bcde394f0a7,CC-BY-4.0 (user prompts),0d694394642319ca5411,,35,256,False
+req_0021,short_interactive,lmsys_chatbot_arena_conversations,f977136fc6314336a005890c9a08861a,CC-BY-4.0 (user prompts),866e87ab3b93dc5ffde5,,35,256,False
+req_0022,short_interactive,lmsys_chatbot_arena_conversations,85727bdd8d9f423596c8076e43afc6e9,CC-BY-4.0 (user prompts),1c49c033782540030de0,,35,256,False
+req_0023,short_interactive,lmsys_chatbot_arena_conversations,e1f47dbc4f1144ecbb53fee94ad458ae,CC-BY-4.0 (user prompts),91961cf28355f20012af,,35,256,False
+req_0024,short_interactive,lmsys_chatbot_arena_conversations,53d8d9ccfcae42f1a163caee5138a0b6,CC-BY-4.0 (user prompts),443516b2027ef52dcabb,,35,256,False
+req_0025,short_interactive,lmsys_chatbot_arena_conversations,13c4360e25fd41efa93dd231562b5234,CC-BY-4.0 (user prompts),9df77b5c470ae19238c4,,35,256,False
+req_0026,short_interactive,lmsys_chatbot_arena_conversations,515ddee2b982436883d277ee88641227,CC-BY-4.0 (user prompts),22082ad87f137492fc08,,35,256,False
+req_0027,short_interactive,lmsys_chatbot_arena_conversations,5622d1c2a5454807ac347d2abbc92de5,CC-BY-4.0 (user prompts),b7f201386e1a327dae6d,,35,256,False
+req_0028,short_interactive,lmsys_chatbot_arena_conversations,c871820a73ac498cb69511af7ec9dc30,CC-BY-4.0 (user prompts),d615fc8840a75cd92ccc,,35,256,False
+req_0029,short_interactive,lmsys_chatbot_arena_conversations,dcf14fd59926454fada2dc05cc2f2cd0,CC-BY-4.0 (user prompts),f71bfd0a4137b683ce03,,35,256,False
+req_0030,short_interactive,lmsys_chatbot_arena_conversations,9553eed0eec74dcea47e2f9a2c05b280,CC-BY-4.0 (user prompts),c2f632ee8b926338498b,,35,256,False
+req_0031,short_interactive,lmsys_chatbot_arena_conversations,82923a17aa1e41c5b5e791da34a9febd,CC-BY-4.0 (user prompts),31d1876888c836c10914,,35,256,False
+req_0032,short_interactive,lmsys_chatbot_arena_conversations,432ed31aa52a47eaacb69815aaf2b622,CC-BY-4.0 (user prompts),d1d7c2b9f59dd000151e,,35,256,False
+req_0033,short_interactive,lmsys_chatbot_arena_conversations,bb0e03ea430f456f9475af6fb2a089a9,CC-BY-4.0 (user prompts),8b3d986cc2652556053d,,36,256,False
+req_0034,short_interactive,lmsys_chatbot_arena_conversations,747ab2bcef9c445ebe18e2cf27f29c8b,CC-BY-4.0 (user prompts),6ca4e8eb834d52f89b3b,,36,256,False
+req_0035,short_interactive,lmsys_chatbot_arena_conversations,a0826bd6da5846909b6e300f0b55c75c,CC-BY-4.0 (user prompts),231da57aadbe4d5b1dba,,36,256,False
+req_0036,short_interactive,lmsys_chatbot_arena_conversations,ad930e3a1f02430792697345951f7c13,CC-BY-4.0 (user prompts),4d92939adb1d148dbee8,,36,256,False
+req_0037,short_interactive,lmsys_chatbot_arena_conversations,52c83b17d9734d6bb8b0c1939dedcff7,CC-BY-4.0 (user prompts),ab1016b3566425cf19a8,,36,256,False
+req_0038,short_interactive,lmsys_chatbot_arena_conversations,216428e8c1f448669b3743a16d1c1573,CC-BY-4.0 (user prompts),e61f57af6b3948ba529b,,36,256,False
+req_0039,short_interactive,lmsys_chatbot_arena_conversations,fabaefca92e342b497fd64955850f757,CC-BY-4.0 (user prompts),c82cd165ac22e6465442,,36,256,False
+req_0040,short_interactive,lmsys_chatbot_arena_conversations,5fe3d26811af43af99ffc1739de7ad33,CC-BY-4.0 (user prompts),234dc18e6a52ff6ce865,,36,256,False
+req_0041,short_interactive,lmsys_chatbot_arena_conversations,74721603a226487aa7833423dbedb8c5,CC-BY-4.0 (user prompts),5b85661b0ae18f0a0daf,,36,256,False
+req_0042,short_interactive,lmsys_chatbot_arena_conversations,3aa1c335bc634f5f82cb343e6f3a207a,CC-BY-4.0 (user prompts),679795139f5c9c6bf714,,36,256,False
+req_0043,short_interactive,lmsys_chatbot_arena_conversations,2506f8ae00494b68adbd32b890807ffc,CC-BY-4.0 (user prompts),3b15597f98ed8644e47e,,36,256,False
+req_0044,short_interactive,lmsys_chatbot_arena_conversations,7b778ec8a7904c6a9e971ba10a703139,CC-BY-4.0 (user prompts),58ac57d8e8d028aba430,,36,256,False
+req_0045,short_interactive,lmsys_chatbot_arena_conversations,e289be6a5309476587e5b7aa3b55693f,CC-BY-4.0 (user prompts),7222a0f7b94c02bf2654,,36,256,False
+req_0046,short_interactive,lmsys_chatbot_arena_conversations,48c81a7127c24829b9a6d750dd6efbcf,CC-BY-4.0 (user prompts),e12e49135ce1f90c41b8,,36,256,False
+req_0047,short_interactive,lmsys_chatbot_arena_conversations,4a23e1c8580e45f8adb91683ece3783d,CC-BY-4.0 (user prompts),f2e4f2749e90be11f8a6,,36,256,False
+req_0048,short_interactive,lmsys_chatbot_arena_conversations,14ff657a29ab4ab5bdcd676bdc3cc287,CC-BY-4.0 (user prompts),9eaf1317fa08fda96de5,,36,256,False
+req_0049,short_interactive,lmsys_chatbot_arena_conversations,35e296de127f4d4a8d08728c122c86ce,CC-BY-4.0 (user prompts),f2aeec499ad977330b09,,36,256,False
+req_0050,short_interactive,lmsys_chatbot_arena_conversations,3acc4e132f1d44f389bd399c9bbf34ef,CC-BY-4.0 (user prompts),c7eded152f4ce3390b2c,,36,256,False
+req_0051,short_interactive,lmsys_chatbot_arena_conversations,318727f9cf1a4788bebd731085a73ab5,CC-BY-4.0 (user prompts),9fb81d395ac718b7ced1,,36,256,False
+req_0052,short_interactive,lmsys_chatbot_arena_conversations,a0f975d7825a42b0bc349fdf587fe542,CC-BY-4.0 (user prompts),2b3f7c46c11ccccf57b8,,36,256,False
+req_0053,short_interactive,lmsys_chatbot_arena_conversations,314877ba71404cbb9ed410d8b555430f,CC-BY-4.0 (user prompts),7b44642150d8f5994c20,,36,256,False
+req_0054,short_interactive,lmsys_chatbot_arena_conversations,ea299dc5f48a4a2f893008a85cbddb03,CC-BY-4.0 (user prompts),7bdaf4f5eb4e160263d3,,37,256,False
+req_0055,short_interactive,lmsys_chatbot_arena_conversations,be5f41bf8fc348abbc1a2388be5b999a,CC-BY-4.0 (user prompts),872cf98960ec02a20262,,37,256,False
+req_0056,short_interactive,lmsys_chatbot_arena_conversations,dd2a1dc4835847a1b05c5078bb107927,CC-BY-4.0 (user prompts),d1a098ac7829ff4934ea,,37,256,False
+req_0057,short_interactive,lmsys_chatbot_arena_conversations,1c48b332f0e2414d8182cbf564ca199a,CC-BY-4.0 (user prompts),0c66537c467bc7cc20ee,,37,256,False
+req_0058,short_interactive,lmsys_chatbot_arena_conversations,bacf3c1ef25b4a8da5a2b6d4f09181bc,CC-BY-4.0 (user prompts),111c10184496e6d277aa,,37,256,False
+req_0059,short_interactive,lmsys_chatbot_arena_conversations,a78e715b837c4ac2a01ca6ac9625a903,CC-BY-4.0 (user prompts),1c3d6c81987eb7c1ba0e,,37,256,False
+req_0060,short_interactive,lmsys_chatbot_arena_conversations,7bde9807a46b4d8f86a29508cfc5978e,CC-BY-4.0 (user prompts),16236515cb35a7cccf06,,37,256,False
+req_0061,short_interactive,lmsys_chatbot_arena_conversations,586377b1c327434e8b05f40207d6c690,CC-BY-4.0 (user prompts),e8e04ca93c78a79a2b6b,,37,256,False
+req_0062,short_interactive,lmsys_chatbot_arena_conversations,bc5bc0b1816c41aca751f1bc5ecf5cd9,CC-BY-4.0 (user prompts),e0babadaea54fb43e81f,,37,256,False
+req_0063,short_interactive,lmsys_chatbot_arena_conversations,e82749bae61f474fa9168eda1cdce285,CC-BY-4.0 (user prompts),980bb521e2cd231882fa,,37,256,False
+req_0064,short_interactive,lmsys_chatbot_arena_conversations,ad7b512782154cf1972f1388a1b552fd,CC-BY-4.0 (user prompts),b2287dcaae0d5a560d1a,,37,256,False
+req_0065,short_interactive,lmsys_chatbot_arena_conversations,adeee3b003ec46b799b988320800e468,CC-BY-4.0 (user prompts),c010ccb1a28ae126f08a,,37,256,False
+req_0066,short_interactive,lmsys_chatbot_arena_conversations,328d3ab8dc03436684da4cb5de6e22c2,CC-BY-4.0 (user prompts),86dc6c549df09207325d,,37,256,False
+req_0067,short_interactive,lmsys_chatbot_arena_conversations,527dacfbbbdf4f18a504a5bd8f5625a4,CC-BY-4.0 (user prompts),c6bdc5737a1ed357b2e8,,37,256,False
+req_0068,short_interactive,lmsys_chatbot_arena_conversations,fcc7a39bb6184f0992343b136dcdec5d,CC-BY-4.0 (user prompts),2ec2ec98abbfd6423a4d,,37,256,False
+req_0069,short_interactive,lmsys_chatbot_arena_conversations,c023bb0197c74dc48e1aef695609994e,CC-BY-4.0 (user prompts),a565b435db3299de3620,,37,256,False
+req_0070,short_interactive,lmsys_chatbot_arena_conversations,aec4c5bb2c0a4cc68be2a1a93a710ec8,CC-BY-4.0 (user prompts),b2c1957fe841f97a372f,,37,256,False
+req_0071,short_interactive,lmsys_chatbot_arena_conversations,938cb6f99b0a4c05893c9316dd565db0,CC-BY-4.0 (user prompts),519f8d66f5d60e1fb1e6,,37,256,False
+req_0072,short_interactive,lmsys_chatbot_arena_conversations,89972b3ab2124bbb9ac636a76fa95cd2,CC-BY-4.0 (user prompts),14414fd453bc3f9547d9,,37,256,False
+req_0073,short_interactive,lmsys_chatbot_arena_conversations,2302d8b11d9e4285a102f02d1c6cc01d,CC-BY-4.0 (user prompts),1bf3ed525a567e49d60f,,37,256,False
+req_0074,short_interactive,lmsys_chatbot_arena_conversations,625671c99d6d4cf3984165ca9b11c410,CC-BY-4.0 (user prompts),0d885d0e8f8d050e22e3,,37,256,False
+req_0075,short_interactive,lmsys_chatbot_arena_conversations,b6e0369b3f974d38b7beb8a4dd0492d7,CC-BY-4.0 (user prompts),2e4b50c5f39e9d81fbbf,,37,256,False
+req_0076,short_interactive,lmsys_chatbot_arena_conversations,9378dbc7109a46b09cb4773880c4be4a,CC-BY-4.0 (user prompts),c93305ea6d677e08a9b6,,37,256,False
+req_0077,short_interactive,lmsys_chatbot_arena_conversations,08f43445a3cd46db9321759d1a920864,CC-BY-4.0 (user prompts),f014d3f7394d28c7d981,,37,256,False
+req_0078,short_interactive,lmsys_chatbot_arena_conversations,4a4fc1587d97451480c598ed8eade828,CC-BY-4.0 (user prompts),9cd3754affef40c14325,,37,256,False
+req_0079,short_interactive,lmsys_chatbot_arena_conversations,baa30249b70b491b9828a6c62eb410e7,CC-BY-4.0 (user prompts),53595f9064351e8e8864,,37,256,False
+req_0080,short_interactive,lmsys_chatbot_arena_conversations,bf5ecdbc56aa42c6a62cea16a2267609,CC-BY-4.0 (user prompts),c95971f5ce2f64b1280d,,37,256,False
+req_0081,short_interactive,lmsys_chatbot_arena_conversations,df41a0e5bc6c4c50a3a2c04f9c8c75ec,CC-BY-4.0 (user prompts),2301b227cdefb99a0290,,37,256,False
+req_0082,short_interactive,lmsys_chatbot_arena_conversations,22902a2141ba483fb8925ae727f21a6c,CC-BY-4.0 (user prompts),0be65900cc191aaae82b,,38,256,False
+req_0083,short_interactive,lmsys_chatbot_arena_conversations,b9e59bcbdd3942dcaa553416da044696,CC-BY-4.0 (user prompts),7783f8448803fb0c8ca1,,38,256,False
+req_0084,short_interactive,lmsys_chatbot_arena_conversations,ef0baccaec1440c686903f5298f74b0e,CC-BY-4.0 (user prompts),4532a867dc733571f714,,38,256,False
+req_0085,short_interactive,lmsys_chatbot_arena_conversations,c8ff2022edb34d1aa3e3d6285a690df7,CC-BY-4.0 (user prompts),4f780a6b7edffb282896,,38,256,False
+req_0086,short_interactive,lmsys_chatbot_arena_conversations,cf13ce6d49594c608da5f07fe8c2dd31,CC-BY-4.0 (user prompts),1dcd5d55dcb54446a62d,,38,256,False
+req_0087,short_interactive,lmsys_chatbot_arena_conversations,179d0779f20f438ba93ab324515648da,CC-BY-4.0 (user prompts),5a010e3a199121b18de6,,38,256,False
+req_0088,short_interactive,lmsys_chatbot_arena_conversations,9c48211fb66b435484fd13e135a75cac,CC-BY-4.0 (user prompts),2d2633bbab637ca0fe06,,38,256,False
+req_0089,short_interactive,lmsys_chatbot_arena_conversations,90af72025b2943babcd1e5d1815cf16c,CC-BY-4.0 (user prompts),5511068a3227ca506e82,,38,256,False
+req_0090,short_interactive,lmsys_chatbot_arena_conversations,ffd692835fbb4e6baf2d24aebdac8080,CC-BY-4.0 (user prompts),43784d3e5ee530572ba4,,38,256,False
+req_0091,short_interactive,lmsys_chatbot_arena_conversations,30a9b92831fe4185bc75f8b1ed965823,CC-BY-4.0 (user prompts),06d2df96a434ee0fcc4d,,38,256,False
+req_0092,short_interactive,lmsys_chatbot_arena_conversations,e53522aeb0954d3cb829ec50d1a1de74,CC-BY-4.0 (user prompts),f6346600b30435463c67,,38,256,False
+req_0093,short_interactive,lmsys_chatbot_arena_conversations,fd641d1e44d94276b182e94d7d498c87,CC-BY-4.0 (user prompts),ebe5e31ef6cd8ff02b6f,,38,256,False
+req_0094,short_interactive,lmsys_chatbot_arena_conversations,f244161f6ea64debb1c32771df32d67c,CC-BY-4.0 (user prompts),ea6c62a819542aa40ec2,,38,256,False
+req_0095,short_interactive,lmsys_chatbot_arena_conversations,b50a8f5724b74c6592afa9a4d6059c71,CC-BY-4.0 (user prompts),088c40f593606be6fbeb,,38,256,False
+req_0096,short_interactive,lmsys_chatbot_arena_conversations,a998f37eb9ff47fda805e00492658644,CC-BY-4.0 (user prompts),048b43dfcd85ef5ac2d1,,38,256,False
+req_0097,short_interactive,lmsys_chatbot_arena_conversations,9b1f543a53804a6a9f6e367d5fd7db3b,CC-BY-4.0 (user prompts),7cc8ac54ec42af8f2881,,38,256,False
+req_0098,short_interactive,lmsys_chatbot_arena_conversations,d473f31c523145a695b67d8cfd768427,CC-BY-4.0 (user prompts),74376d39928321cb0de6,,38,256,False
+req_0099,short_interactive,lmsys_chatbot_arena_conversations,84eaa6ad1fe6444393de586ddf1509b4,CC-BY-4.0 (user prompts),f0ba7829e6b9bf128bf7,,38,256,False
+req_0100,short_interactive,lmsys_chatbot_arena_conversations,ae25ded6795c431d96a7c3606fc2327d,CC-BY-4.0 (user prompts),9b4669feb05866372d18,,39,256,False
+req_0101,short_interactive,lmsys_chatbot_arena_conversations,4b84aba0d3b648ffbdacd9144544a1f5,CC-BY-4.0 (user prompts),9593ed1f5c41f1bd5771,,39,256,False
+req_0102,short_interactive,lmsys_chatbot_arena_conversations,8777c4945d85469d96cd26fc2ea6f64a,CC-BY-4.0 (user prompts),b5c07fa4fd709a07ec44,,39,256,False
+req_0103,short_interactive,lmsys_chatbot_arena_conversations,81ded89212f142bc80d35fd23ec9f3a6,CC-BY-4.0 (user prompts),59151d85030a8f0ac59e,,39,256,False
+req_0104,short_interactive,lmsys_chatbot_arena_conversations,33e12da50c684cbdb579667cf01952bd,CC-BY-4.0 (user prompts),5d8e0797a5768269da84,,39,256,False
+req_0105,short_interactive,lmsys_chatbot_arena_conversations,30ee691dace142cdb5ce8154de53f1d0,CC-BY-4.0 (user prompts),0c7aaaad5cb71e4a40e0,,39,256,False
+req_0106,short_interactive,lmsys_chatbot_arena_conversations,15ee9c6202a944eab6671bafd713fe63,CC-BY-4.0 (user prompts),427b7e4bb441022ecd90,,39,256,False
+req_0107,short_interactive,lmsys_chatbot_arena_conversations,0fca79ca136746a69ab3c97fd040d34d,CC-BY-4.0 (user prompts),34285fedd2e54302d417,,39,256,False
+req_0108,short_interactive,lmsys_chatbot_arena_conversations,d7f1973ca6f846b488add417c3940dea,CC-BY-4.0 (user prompts),f1dd2f4ab32d78968a23,,39,256,False
+req_0109,short_interactive,lmsys_chatbot_arena_conversations,f2eed5708a614e038e50b4c0b265f9d2,CC-BY-4.0 (user prompts),4b83e52b93b83b81c792,,39,256,False
+req_0110,short_interactive,lmsys_chatbot_arena_conversations,f83770f13294476996f25b8008b90ecf,CC-BY-4.0 (user prompts),ab4290522b7a979adae3,,39,256,False
+req_0111,short_interactive,lmsys_chatbot_arena_conversations,47979611e4074dd79581fa3d3dfa91b6,CC-BY-4.0 (user prompts),b413fbbed76832b7a014,,39,256,False
+req_0112,short_interactive,lmsys_chatbot_arena_conversations,fbe840717f914b6c851be9b8180ba05e,CC-BY-4.0 (user prompts),0c6c085ba6a840bbee64,,39,256,False
+req_0113,short_interactive,lmsys_chatbot_arena_conversations,0a33709ae54e42d8a1a439068d9dac1d,CC-BY-4.0 (user prompts),6f3d69358f2d3054debd,,39,256,False
+req_0114,short_interactive,lmsys_chatbot_arena_conversations,9ac33d0578154550b39a5c1b3a07454b,CC-BY-4.0 (user prompts),4342e07d11d5d0606259,,39,256,False
+req_0115,short_interactive,lmsys_chatbot_arena_conversations,75c8920115174bff8cc4d19a0ba4d032,CC-BY-4.0 (user prompts),e5993a5237384de08e7d,,39,256,False
+req_0116,short_interactive,lmsys_chatbot_arena_conversations,e21e264f1e1743439df53591651eb279,CC-BY-4.0 (user prompts),990bd1f63cbf822a81f2,,39,256,False
+req_0117,short_interactive,lmsys_chatbot_arena_conversations,8f0d1a83631f46c3a03219a6db4f0015,CC-BY-4.0 (user prompts),552e3bc4249c63ebc1c1,,39,256,False
+req_0118,short_interactive,lmsys_chatbot_arena_conversations,e033cb1ba9474589b46c1375292d9a5b,CC-BY-4.0 (user prompts),ae919b532bc426fb57b8,,40,256,False
+req_0119,short_interactive,lmsys_chatbot_arena_conversations,637d91347db54c7e8c3767d87dd7edde,CC-BY-4.0 (user prompts),2f05fbea816a04fb5690,,40,256,False
+req_0120,short_interactive,lmsys_chatbot_arena_conversations,a4eb5a50b4ea4c468b6cb22912ec5a40,CC-BY-4.0 (user prompts),ef3f8bc4890f545b78a4,,40,256,False
+req_0121,short_interactive,lmsys_chatbot_arena_conversations,f477a2c3dd3b42d8b1a94407d4e65814,CC-BY-4.0 (user prompts),339e57ec31bb9e35ebc0,,40,256,False
+req_0122,short_interactive,lmsys_chatbot_arena_conversations,ac54fa370b7f4aa5b40dc96dccc77922,CC-BY-4.0 (user prompts),998289f984d9c815e3c5,,40,256,False
+req_0123,short_interactive,lmsys_chatbot_arena_conversations,1d4ffe95fe384fba812e358bfaae8b96,CC-BY-4.0 (user prompts),149128c41959671c2e9d,,40,256,False
+req_0124,short_interactive,lmsys_chatbot_arena_conversations,5b318b5b440f4d4daedbc4263f1df8c5,CC-BY-4.0 (user prompts),3e5bb9d6b44b29682fa9,,40,256,False
+req_0125,short_interactive,lmsys_chatbot_arena_conversations,9c1d2f93da324000b905fbefbe02011a,CC-BY-4.0 (user prompts),e0de8bb8be62b1c6ac52,,40,256,False
+req_0126,short_interactive,lmsys_chatbot_arena_conversations,dcacee2c349545eab234d3cbd3f4f389,CC-BY-4.0 (user prompts),db4447285f0643b8c499,,40,256,False
+req_0127,short_interactive,lmsys_chatbot_arena_conversations,a380fd64ebf44a49a9b81e733a905dc1,CC-BY-4.0 (user prompts),528d37307e3c8fa5d886,,40,256,False
+req_0128,short_interactive,lmsys_chatbot_arena_conversations,b0432b57c2294f3296e89526b739b0e5,CC-BY-4.0 (user prompts),af4ecd5a141ae72b97d2,,40,256,False
+req_0129,short_interactive,lmsys_chatbot_arena_conversations,0720ee08979240259e37b98a12d3b86e,CC-BY-4.0 (user prompts),11897c314fcfad6ac870,,40,256,False
+req_0130,short_interactive,lmsys_chatbot_arena_conversations,82ce5531e8e54bce9abf8b14ea1cf307,CC-BY-4.0 (user prompts),8842ae6e1eb1771dde85,,40,256,False
+req_0131,short_interactive,lmsys_chatbot_arena_conversations,ab64c85262394cfd91968deaf88a8978,CC-BY-4.0 (user prompts),bcbf77d15595ab065bec,,41,256,False
+req_0132,short_interactive,lmsys_chatbot_arena_conversations,811afad4c35a4c1683e2aba6f1fcb427,CC-BY-4.0 (user prompts),079959650762fdc8a93b,,41,256,False
+req_0133,short_interactive,lmsys_chatbot_arena_conversations,57d5537ac8714e7196124f06c729954e,CC-BY-4.0 (user prompts),953b53224b3c729d3716,,41,256,False
+req_0134,short_interactive,lmsys_chatbot_arena_conversations,709c75f98ef044babcb57fbf227aa7e8,CC-BY-4.0 (user prompts),b2b24f4bc1e2a272f050,,41,256,False
+req_0135,short_interactive,lmsys_chatbot_arena_conversations,37b7b565f7554b7fad43e1ad9f2f2fc2,CC-BY-4.0 (user prompts),33fcc1dd2440ec6e0027,,41,256,False
+req_0136,short_interactive,lmsys_chatbot_arena_conversations,a9500255bd0b4d4cbf483bea5f89d580,CC-BY-4.0 (user prompts),9c4c0f7e456b5df71d9d,,41,256,False
+req_0137,short_interactive,lmsys_chatbot_arena_conversations,24a6360e1d3a47b4b5a89e908c102f0b,CC-BY-4.0 (user prompts),62588c0b6bd50fd87b0f,,41,256,False
+req_0138,short_interactive,lmsys_chatbot_arena_conversations,431653a6acaf4ed3b550ea3ee7cd4772,CC-BY-4.0 (user prompts),509aeba3e4e7db12f9e1,,41,256,False
+req_0139,short_interactive,lmsys_chatbot_arena_conversations,faa8f32913b447dcb6ad1383f51b4c29,CC-BY-4.0 (user prompts),6ce3409c09a7ee683a45,,41,256,False
+req_0140,short_interactive,lmsys_chatbot_arena_conversations,13b5a147f83942aca7f1b8ae75b70086,CC-BY-4.0 (user prompts),944bb71ab8d726334bbb,,41,256,False
+req_0141,short_interactive,lmsys_chatbot_arena_conversations,6985d4c2d5bd49948aa18a796a68892e,CC-BY-4.0 (user prompts),4c6f207d9634d7198992,,41,256,False
+req_0142,short_interactive,lmsys_chatbot_arena_conversations,eb150be09c7e4e8a9470dc9741df6fa1,CC-BY-4.0 (user prompts),043e191063b95b9d6cf0,,41,256,False
+req_0143,short_interactive,lmsys_chatbot_arena_conversations,8bb696cd65c1474b891b7b4580095587,CC-BY-4.0 (user prompts),ddf8ba3fd0ccae2eb6a0,,41,256,False
+req_0144,short_interactive,lmsys_chatbot_arena_conversations,a1bf9d73f8b34a5aa023804477f8b695,CC-BY-4.0 (user prompts),92314128c419e2c5e560,,42,256,False
+req_0145,short_interactive,lmsys_chatbot_arena_conversations,aa379448b4dc4d5b94e80150a44be50c,CC-BY-4.0 (user prompts),57eab554415d5e3c5d26,,42,256,False
+req_0146,short_interactive,lmsys_chatbot_arena_conversations,0fa8706f327b44e1b7b79bcbc1206f47,CC-BY-4.0 (user prompts),bec2bf5bb481957a459e,,42,256,False
+req_0147,short_interactive,lmsys_chatbot_arena_conversations,85d87d795b1b496bbba61cb3eec0e4b9,CC-BY-4.0 (user prompts),106ed1515c048be2749e,,42,256,False
+req_0148,short_interactive,lmsys_chatbot_arena_conversations,ad9017c1ade643888d09d6c9441215c0,CC-BY-4.0 (user prompts),3d0728a2633305073da0,,42,256,False
+req_0149,short_interactive,lmsys_chatbot_arena_conversations,57e9c1a706b04ebda6680f9d489c0b87,CC-BY-4.0 (user prompts),12099708641df4c8500f,,42,256,False
+req_0150,short_interactive,lmsys_chatbot_arena_conversations,b200ef7b5d644bd5ba5313eaa73ec32c,CC-BY-4.0 (user prompts),274595049b5b00b1768a,,42,256,False
+req_0151,short_interactive,lmsys_chatbot_arena_conversations,7632e6e219ba480d8162819d9b309538,CC-BY-4.0 (user prompts),40c65c6e899a59d85735,,42,256,False
+req_0152,short_interactive,lmsys_chatbot_arena_conversations,eed93970c9e14eb183d3fcc35e7f36a1,CC-BY-4.0 (user prompts),6f03f050a033234f8242,,42,256,False
+req_0153,short_interactive,lmsys_chatbot_arena_conversations,9055e55969214303a3eb60742c7584cb,CC-BY-4.0 (user prompts),1508ee2237f43cd468a6,,42,256,False
+req_0154,short_interactive,lmsys_chatbot_arena_conversations,9a441383ef5342bc910176821d6b6dc4,CC-BY-4.0 (user prompts),7fa089bc30bc92dcc27a,,42,256,False
+req_0155,short_interactive,lmsys_chatbot_arena_conversations,6322c019e21e437987e32cf53e101f73,CC-BY-4.0 (user prompts),693f51f0175b909414ee,,42,256,False
+req_0156,short_interactive,lmsys_chatbot_arena_conversations,27b49dd1e35046468d3b48544d436e28,CC-BY-4.0 (user prompts),ac6c380abc6a2c9df2e9,,42,256,False
+req_0157,short_interactive,lmsys_chatbot_arena_conversations,363c72b44f8d4bf08cb9c517b3b1a2af,CC-BY-4.0 (user prompts),72fef997b1cd518ac909,,42,256,False
+req_0158,short_interactive,lmsys_chatbot_arena_conversations,ad1b6a10f7e545d4ba264bbca5b5f82a,CC-BY-4.0 (user prompts),f88c02dd71a5a52fd317,,42,256,False
+req_0159,short_interactive,lmsys_chatbot_arena_conversations,270d56ad8eb5479b8586f5b22bb3d7db,CC-BY-4.0 (user prompts),3c09846dcbe59367a068,,42,256,False
+req_0160,short_interactive,lmsys_chatbot_arena_conversations,0e062b9b89084185a730fdc97cdaedf4,CC-BY-4.0 (user prompts),750bd8081d4e1ac0c478,,42,256,False
+req_0161,short_interactive,lmsys_chatbot_arena_conversations,4a0f186fc9a745ca8a4742c8f3a88435,CC-BY-4.0 (user prompts),0093cece999d3b221bdd,,43,256,False
+req_0162,short_interactive,lmsys_chatbot_arena_conversations,b5122a2dd99e4bdab5bd2430ae65f210,CC-BY-4.0 (user prompts),c76db9c0fe2045067433,,43,256,False
+req_0163,short_interactive,lmsys_chatbot_arena_conversations,a2c2cf1d56274e209b58694fd0bba77d,CC-BY-4.0 (user prompts),75923ef972ceb425a6ec,,43,256,False
+req_0164,short_interactive,lmsys_chatbot_arena_conversations,aaa910d4335545258559c1393bcf2129,CC-BY-4.0 (user prompts),0e107ae99ac77e9ea345,,43,256,False
+req_0165,short_interactive,lmsys_chatbot_arena_conversations,c74f78e6f78c41dbb55bb96c4625871e,CC-BY-4.0 (user prompts),a129c4bd62709d32c344,,43,256,False
+req_0166,short_interactive,lmsys_chatbot_arena_conversations,dde6f92a17234469b788ced9dfdf62f4,CC-BY-4.0 (user prompts),4b734c64402d514d7e20,,43,256,False
+req_0167,short_interactive,lmsys_chatbot_arena_conversations,e03dc6b7f92e463c983eba317866cac9,CC-BY-4.0 (user prompts),adb745821f523c279166,,43,256,False
+req_0168,short_interactive,lmsys_chatbot_arena_conversations,560d2340f91647f3b97d5f41fd15e191,CC-BY-4.0 (user prompts),c8f941ab58aa91ff67ee,,43,256,False
+req_0169,short_interactive,lmsys_chatbot_arena_conversations,b832052b35344092b3699e2bb1bf493f,CC-BY-4.0 (user prompts),9ceafa1b76072c7a943a,,43,256,False
+req_0170,short_interactive,lmsys_chatbot_arena_conversations,90c5cb56379042248cecfbdf802853b0,CC-BY-4.0 (user prompts),0286596f1c5a0c972513,,43,256,False
+req_0171,short_interactive,lmsys_chatbot_arena_conversations,bea6ddeb4c06420a9e64ae1648ad4ebd,CC-BY-4.0 (user prompts),a26c7802988f451afa94,,43,256,False
+req_0172,short_interactive,lmsys_chatbot_arena_conversations,c867c08b44e44d84b32653a95545a1f3,CC-BY-4.0 (user prompts),e152e41c2ce005ed58a8,,43,256,False
+req_0173,short_interactive,lmsys_chatbot_arena_conversations,781e30e826ec46ffa2058003795fa860,CC-BY-4.0 (user prompts),84f7a1863664f3a48816,,44,256,False
+req_0174,short_interactive,lmsys_chatbot_arena_conversations,d79f55c172e54e948f13875161b6b29d,CC-BY-4.0 (user prompts),0a6a5b149575571e40e8,,44,256,False
+req_0175,short_interactive,lmsys_chatbot_arena_conversations,1e4517737e354e959a5b9436e5810725,CC-BY-4.0 (user prompts),885b8c2a43058f85fcbd,,44,256,False
+req_0176,short_interactive,lmsys_chatbot_arena_conversations,0f70597adc514aeaad078dd7bf7ecce5,CC-BY-4.0 (user prompts),5a2661a08d6524abc181,,44,256,False
+req_0177,short_interactive,lmsys_chatbot_arena_conversations,934bac5b593949e2aed879943933dc88,CC-BY-4.0 (user prompts),f5dcccf943dc37540270,,44,256,False
+req_0178,short_interactive,lmsys_chatbot_arena_conversations,630dc1ec7e6f48a88f20dea5db3ecfd3,CC-BY-4.0 (user prompts),9e10fa7feee31fb407dc,,44,256,False
+req_0179,short_interactive,lmsys_chatbot_arena_conversations,46961898977044fd9d0de59c35ce9ee2,CC-BY-4.0 (user prompts),6a4a61710e31b3c032d0,,44,256,False
+req_0180,short_interactive,lmsys_chatbot_arena_conversations,28327b6d96ba43faac67ccc36f82bd0c,CC-BY-4.0 (user prompts),246910905a31154d13e2,,44,256,False
+req_0181,short_interactive,lmsys_chatbot_arena_conversations,43bbcb31c1f24eaa859b214c64d33a12,CC-BY-4.0 (user prompts),58684cd6173ec58ce9a4,,44,256,False
+req_0182,short_interactive,lmsys_chatbot_arena_conversations,a3d54de1bd8d4ea99aeb7988aca3c64a,CC-BY-4.0 (user prompts),cae13229d3c59deb8be2,,45,256,False
+req_0183,short_interactive,lmsys_chatbot_arena_conversations,b15ad60083a7442993eef93e4d8b26a9,CC-BY-4.0 (user prompts),9910171bcc955c23617e,,45,256,False
+req_0184,short_interactive,lmsys_chatbot_arena_conversations,27f2db600b2740508328a7c1592564b2,CC-BY-4.0 (user prompts),1982e99440033ce24379,,45,256,False
+req_0185,short_interactive,lmsys_chatbot_arena_conversations,78d60f4c35fe418882fb61f87e1f2132,CC-BY-4.0 (user prompts),04646c6506494b0d9b14,,45,256,False
+req_0186,short_interactive,lmsys_chatbot_arena_conversations,a7acf5e6f7e241aaa8c8787c5a30be0a,CC-BY-4.0 (user prompts),3d9638c77c2156b5a3a8,,45,256,False
+req_0187,short_interactive,lmsys_chatbot_arena_conversations,008d3b6434ac44bc8d36be93f4ad841f,CC-BY-4.0 (user prompts),71a670d115ae6a8bf3bf,,45,256,False
+req_0188,short_interactive,lmsys_chatbot_arena_conversations,485d653aebe347bd90ce2b1c49ef6143,CC-BY-4.0 (user prompts),caf6ebf953ba3178eb63,,45,256,False
+req_0189,short_interactive,lmsys_chatbot_arena_conversations,b0178ef36e374c03b381c5cfb3e12f97,CC-BY-4.0 (user prompts),00aa4ba3dffea0bb54c8,,45,256,False
+req_0190,short_interactive,lmsys_chatbot_arena_conversations,0cf0dc610f1e477cad751d364bf97443,CC-BY-4.0 (user prompts),7b4c4cbfabd0552e7abe,,45,256,False
+req_0191,short_interactive,lmsys_chatbot_arena_conversations,20e230bf115940ba9184493ced13ddb6,CC-BY-4.0 (user prompts),f466484721537626ae01,,45,256,False
+req_0192,short_interactive,lmsys_chatbot_arena_conversations,1080b662dd394601ae0306d0fcdffdc9,CC-BY-4.0 (user prompts),0c497a3534ce753e4662,,45,256,False
+req_0193,short_interactive,lmsys_chatbot_arena_conversations,72420668ee2c4c8ebeac1efdeb999d96,CC-BY-4.0 (user prompts),5eb52c9a87f55c1ea852,,46,256,False
+req_0194,short_interactive,lmsys_chatbot_arena_conversations,ee90cb3f7d6943c5a5da12d6c818af9a,CC-BY-4.0 (user prompts),cc0696af0aa3bcbe7cea,,46,256,False
+req_0195,short_interactive,lmsys_chatbot_arena_conversations,0ca8cf37044e47d88da94ed769890173,CC-BY-4.0 (user prompts),4d621a99553825298bf4,,46,256,False
+req_0196,short_interactive,lmsys_chatbot_arena_conversations,68b53301aaba44bcb6be80ef35d9843d,CC-BY-4.0 (user prompts),1a8d4f409f22b9d14520,,46,256,False
+req_0197,short_interactive,lmsys_chatbot_arena_conversations,a0e2fd090782490592cfb763d09b3dbf,CC-BY-4.0 (user prompts),e23ce3012ef86471929a,,46,256,False
+req_0198,short_interactive,lmsys_chatbot_arena_conversations,e85125c42866476e9cca0f657921c5b4,CC-BY-4.0 (user prompts),09d9772a06adbab1d8a8,,46,256,False
+req_0199,short_interactive,lmsys_chatbot_arena_conversations,20b2f7e7b42443d1b38331d566f5be48,CC-BY-4.0 (user prompts),0fc6ae8ade5a4c706ef7,,47,256,False
+req_0200,short_interactive,lmsys_chatbot_arena_conversations,611ae17c676c43eabd8c8cccb6732a4d,CC-BY-4.0 (user prompts),258758c738fd54edc5dc,,47,256,False
+req_0201,short_interactive,lmsys_chatbot_arena_conversations,e71495ee39cf4973b9970060c9f70204,CC-BY-4.0 (user prompts),0f62110a2cad0eeeae59,,47,256,False
+req_0202,short_interactive,lmsys_chatbot_arena_conversations,53e9f6e29da34850a0724b71b0d3338f,CC-BY-4.0 (user prompts),50e28aea217e2c514d85,,47,256,False
+req_0203,short_interactive,lmsys_chatbot_arena_conversations,76f1c548dfd74553bdff95af5d397e51,CC-BY-4.0 (user prompts),b9af352fab12abe055be,,47,256,False
+req_0204,short_interactive,lmsys_chatbot_arena_conversations,fbfc9a49b7474ad99393a7e90ee51a9d,CC-BY-4.0 (user prompts),9df91cbfd07579f70fed,,47,256,False
+req_0205,short_interactive,lmsys_chatbot_arena_conversations,d65b4ee665884964a2c99fd611108f8f,CC-BY-4.0 (user prompts),46c2be25dcb63c24821e,,48,256,False
+req_0206,short_interactive,lmsys_chatbot_arena_conversations,d3e53b297c344529b8a9eac8440dd95d,CC-BY-4.0 (user prompts),dccf941a54388349cd85,,48,256,False
+req_0207,short_interactive,lmsys_chatbot_arena_conversations,1447c3719204491cbf6c2319ba2d97c9,CC-BY-4.0 (user prompts),9ea7425294c22b4e87c1,,48,256,False
+req_0208,short_interactive,lmsys_chatbot_arena_conversations,825a9a616a4845bfb9d79bc53a299fa3,CC-BY-4.0 (user prompts),8dd44e5abccbfd79511d,,48,256,False
+req_0209,short_interactive,lmsys_chatbot_arena_conversations,c6a0db7eab85467fa535034ccf6ba65a,CC-BY-4.0 (user prompts),ce5475b3409af4886777,,48,256,False
+req_0210,short_interactive,lmsys_chatbot_arena_conversations,f2fa7ade7e49433fa679ba343339a563,CC-BY-4.0 (user prompts),49663b7bb732b7e6b22b,,48,256,False
+req_0211,short_interactive,lmsys_chatbot_arena_conversations,f1f77e89a82a49788ae680a202472cba,CC-BY-4.0 (user prompts),a2e4d7ae98670097b266,,48,256,False
+req_0212,short_interactive,lmsys_chatbot_arena_conversations,c503504bf06c4e6aba3e9465fa841dfc,CC-BY-4.0 (user prompts),164622165ef62af05886,,48,256,False
+req_0213,short_interactive,lmsys_chatbot_arena_conversations,5392d798391a41a1a09b0b78321f78a6,CC-BY-4.0 (user prompts),b9e9eec63362ea545d4d,,49,256,False
+req_0214,short_interactive,lmsys_chatbot_arena_conversations,967f3693026848909d37d571806d258a,CC-BY-4.0 (user prompts),51c670c940c4d9b5f21f,,49,256,False
+req_0215,short_interactive,lmsys_chatbot_arena_conversations,7ec7f4c6b4864508a84aa7c5761e7566,CC-BY-4.0 (user prompts),4636a3d3497e9e23df67,,49,256,False
+req_0216,short_interactive,lmsys_chatbot_arena_conversations,70e8424eeb92469090531711d269929a,CC-BY-4.0 (user prompts),1c7e10806bddd5d64f02,,49,256,False
+req_0217,short_interactive,lmsys_chatbot_arena_conversations,5ff231677bfd414190bb9e5ca1eadccc,CC-BY-4.0 (user prompts),57bd22d945e293c349c3,,49,256,False
+req_0218,short_interactive,lmsys_chatbot_arena_conversations,b0558c0f63c44f6e985e51e3f1d3a917,CC-BY-4.0 (user prompts),05c2f80273258c5af799,,50,256,False
+req_0219,short_interactive,lmsys_chatbot_arena_conversations,4a7f77b1dcd84eefbdb1c7a4c552e537,CC-BY-4.0 (user prompts),c4cd45e37221ead7902c,,50,256,False
+req_0220,short_interactive,lmsys_chatbot_arena_conversations,90049660b6dc499d8c892683192ea17b,CC-BY-4.0 (user prompts),aef2a337e17c8edbbf12,,50,256,False
+req_0221,short_interactive,lmsys_chatbot_arena_conversations,d676304d419d4bd1b298079cf9fa2cac,CC-BY-4.0 (user prompts),028a8f842340558c2087,,50,256,False
+req_0222,short_interactive,lmsys_chatbot_arena_conversations,d2f1da2e805a46c99aee9d7205c9dfec,CC-BY-4.0 (user prompts),c516feb1db8e8d5af21b,,51,256,False
+req_0223,short_interactive,lmsys_chatbot_arena_conversations,128a3804b8494d8d8fb045f96566b6a1,CC-BY-4.0 (user prompts),ef76e6df5fef6f06f851,,51,256,False
+req_0224,short_interactive,lmsys_chatbot_arena_conversations,4e5725f928f5435bbc04a84237303fa3,CC-BY-4.0 (user prompts),37b36b9646a4b9a0496d,,51,256,False
+req_0225,short_interactive,lmsys_chatbot_arena_conversations,17fd3a97adf44c5687d56dc91528ea21,CC-BY-4.0 (user prompts),0830008cd5d0827dbe21,,51,256,False
+req_0226,short_interactive,lmsys_chatbot_arena_conversations,fa260d94f39a4c90bc3bf7df0985bb80,CC-BY-4.0 (user prompts),0198d4f8ac4ec471fc0a,,51,256,False
+req_0227,short_interactive,lmsys_chatbot_arena_conversations,ab95d7879a5d4915b5caa7814a6da3f5,CC-BY-4.0 (user prompts),9fd49399ded561875857,,51,256,False
+req_0228,short_interactive,lmsys_chatbot_arena_conversations,eb7a376970584eeeb42e4780863527d8,CC-BY-4.0 (user prompts),74d8bb33fe89eba0e92d,,52,256,False
+req_0229,short_interactive,lmsys_chatbot_arena_conversations,baea164784ff438dbcc100546a41f13b,CC-BY-4.0 (user prompts),696d7c6837534a34b08c,,52,256,False
+req_0230,short_interactive,lmsys_chatbot_arena_conversations,205e0672721645e3ab7e1d2582d1bee0,CC-BY-4.0 (user prompts),23582001b66457177016,,52,256,False
+req_0231,short_interactive,lmsys_chatbot_arena_conversations,9a32326ab0714d6080a45f9f7057e5ff,CC-BY-4.0 (user prompts),a9266d66c198e9a37965,,53,256,False
+req_0232,short_interactive,lmsys_chatbot_arena_conversations,ae222924c7f34961b64a16ba49891eec,CC-BY-4.0 (user prompts),656e6b97ee17fcfdd831,,53,256,False
+req_0233,short_interactive,lmsys_chatbot_arena_conversations,7830c86acce94957a8ce3329eb9bda46,CC-BY-4.0 (user prompts),eb048bb3b074d9076366,,53,256,False
+req_0234,short_interactive,lmsys_chatbot_arena_conversations,bd7f0dde20d24ea3a0d1ceed2f67d183,CC-BY-4.0 (user prompts),7c074a4d8b9795502626,,53,256,False
+req_0235,short_interactive,lmsys_chatbot_arena_conversations,99864c65ad88400e91cf8b8c996822b8,CC-BY-4.0 (user prompts),ac62d3e98c1bd2c4d8c7,,54,256,False
+req_0236,short_interactive,lmsys_chatbot_arena_conversations,f7181921e24f477f8e63c20bcace74f4,CC-BY-4.0 (user prompts),59aa7d821d9d4b41e814,,54,256,False
+req_0237,short_interactive,lmsys_chatbot_arena_conversations,915a169cd98444cda1d2a2cb29996710,CC-BY-4.0 (user prompts),f65052124a51af52bebf,,54,256,False
+req_0238,short_interactive,lmsys_chatbot_arena_conversations,df66b4bb0fc54c3db0c35e1d7b66790e,CC-BY-4.0 (user prompts),fcbde92276ff638b7825,,55,256,False
+req_0239,short_interactive,lmsys_chatbot_arena_conversations,df53b35b0232403bb9714bdd36a4773a,CC-BY-4.0 (user prompts),cb19bc2f51d8552bccf7,,55,256,False
+req_0240,short_interactive,lmsys_chatbot_arena_conversations,6834d5564e7044638ff8c602dbddb86c,CC-BY-4.0 (user prompts),7a9a3ed91e5e41d95e7a,,55,256,False
+req_0241,short_interactive,lmsys_chatbot_arena_conversations,68ce141ef90d42afa24b936a2ee587b8,CC-BY-4.0 (user prompts),e1b3c379bd3252534b53,,56,256,False
+req_0242,short_interactive,lmsys_chatbot_arena_conversations,5f49ac71a85f46068e23bd08dddca5b4,CC-BY-4.0 (user prompts),7f7bedc69a8fdc937c77,,56,256,False
+req_0243,short_interactive,lmsys_chatbot_arena_conversations,8be33e68b6164e67b396733f5f42a485,CC-BY-4.0 (user prompts),9dda250e6bea6818e14b,,57,256,False
+req_0244,short_interactive,lmsys_chatbot_arena_conversations,20e711d029334a108994be7ce4efdd07,CC-BY-4.0 (user prompts),00c2fae6b71b945488c6,,57,256,False
+req_0245,short_interactive,lmsys_chatbot_arena_conversations,02d511df526745ca85cc4bdb1ce31f51,CC-BY-4.0 (user prompts),0ab8275a9005ff10e750,,57,256,False
+req_0246,short_interactive,lmsys_chatbot_arena_conversations,c83bac5b13ba41c4aaa56f8f9d96abde,CC-BY-4.0 (user prompts),d41ec3fb151b430be1a1,,57,256,False
+req_0247,short_interactive,lmsys_chatbot_arena_conversations,917114986c544992907d89443725167e,CC-BY-4.0 (user prompts),4a6ef1ac7e2f02751f08,,57,256,False
+req_0248,short_interactive,lmsys_chatbot_arena_conversations,4c9f06101f58497b88fb10d056fdadc2,CC-BY-4.0 (user prompts),719c2fb7aa2071ddafee,,58,256,False
+req_0249,short_interactive,lmsys_chatbot_arena_conversations,943328a152104dc9b674412e2c4579b7,CC-BY-4.0 (user prompts),679acb4312998019b4d5,,58,256,False
+req_0250,short_interactive,lmsys_chatbot_arena_conversations,a81cd8acfbb34b0fb8b97bc1ab712202,CC-BY-4.0 (user prompts),a8ee312f9c22350f7b89,,58,256,False
+req_0251,short_interactive,lmsys_chatbot_arena_conversations,c61afe92a1054213b0a2e5bca1aeca8b,CC-BY-4.0 (user prompts),8d38a7cb8530a733778a,,59,256,False
+req_0252,short_interactive,lmsys_chatbot_arena_conversations,3d111f75fb704d8fbcf3709cbd7c6063,CC-BY-4.0 (user prompts),4be1447294db7481587f,,59,256,False
+req_0253,short_interactive,lmsys_chatbot_arena_conversations,67bad64ffbb649849d1ffcfe319ff22a,CC-BY-4.0 (user prompts),8f364729ba94d2cccbdc,,60,256,False
+req_0254,short_interactive,lmsys_chatbot_arena_conversations,3aacb9a854444fd0beff304dd5a3bbb1,CC-BY-4.0 (user prompts),57937b34fb120e3b75f8,,60,256,False
+req_0255,short_interactive,lmsys_chatbot_arena_conversations,1d8959ea6b8a499a927af95570120ef0,CC-BY-4.0 (user prompts),85e88de6719b45b7c64b,,60,256,False
+req_0256,short_interactive,lmsys_chatbot_arena_conversations,452d1040da1341e88f574036729bd336,CC-BY-4.0 (user prompts),e7c89e82a4f4eeb5496f,,62,256,False
+req_0257,short_interactive,lmsys_chatbot_arena_conversations,de5fe240ff4942a4a47e7a3e91f5d749,CC-BY-4.0 (user prompts),fda3c660f27e1f1366a7,,62,256,False
+req_0258,short_interactive,lmsys_chatbot_arena_conversations,344f6168954c49d1a008b85f7b237b8a,CC-BY-4.0 (user prompts),fb718e7389f8f236e385,,62,256,False
+req_0259,short_interactive,lmsys_chatbot_arena_conversations,5a7bc4cd44494ccbabd5e2fd086a1278,CC-BY-4.0 (user prompts),501095948ccacba3290c,,63,256,False
+req_0260,short_interactive,lmsys_chatbot_arena_conversations,6c669eb903a54f41881004306b78b4d5,CC-BY-4.0 (user prompts),ccfbe082199815adbc20,,63,256,False
+req_0261,short_interactive,lmsys_chatbot_arena_conversations,795fc017e39f4f3ebb8ffea2a57765be,CC-BY-4.0 (user prompts),e699700b657e0a6d59e8,,63,256,False
+req_0262,short_interactive,lmsys_chatbot_arena_conversations,7a343fb5d5aa474bbaedca3da793c46d,CC-BY-4.0 (user prompts),2f5880b422c9e144caac,,64,256,False
+req_0263,short_interactive,lmsys_chatbot_arena_conversations,263ccc2093164fe4af0de7d19fb05684,CC-BY-4.0 (user prompts),6d3f424948d5cfac81b6,,65,256,False
+req_0264,short_interactive,lmsys_chatbot_arena_conversations,9a10582137f5482bbfb02680e5ffc061,CC-BY-4.0 (user prompts),838987d622309a5eaae8,,66,256,False
+req_0265,short_interactive,lmsys_chatbot_arena_conversations,b5a33ea7905748ad9463ee2d3eb3223c,CC-BY-4.0 (user prompts),582d38532d41c8e6be20,,66,256,False
+req_0266,short_interactive,lmsys_chatbot_arena_conversations,cb6035c9497c41aaae6f74756911aa54,CC-BY-4.0 (user prompts),0be0389bcb18ffd6eb30,,67,256,False
+req_0267,short_interactive,lmsys_chatbot_arena_conversations,86fc727ea8754ec2809e9241dc7c6b66,CC-BY-4.0 (user prompts),51b01aef2b830d267792,,68,256,False
+req_0268,short_interactive,lmsys_chatbot_arena_conversations,27c9bd9b0b2a41129ae665040ef3bc70,CC-BY-4.0 (user prompts),3acc0a2835b80f53fa87,,68,256,False
+req_0269,short_interactive,lmsys_chatbot_arena_conversations,9246037b99e24ee38319062d10df5c3d,CC-BY-4.0 (user prompts),800d7707fa6f5a2a3bfd,,69,256,False
+req_0270,short_interactive,lmsys_chatbot_arena_conversations,8dfcdb0bfe4d44399655e45e9fbf7b98,CC-BY-4.0 (user prompts),fda85a279b6737959a27,,69,256,False
+req_0271,short_interactive,lmsys_chatbot_arena_conversations,d032d2d780f5488dbc390c251bacb5b5,CC-BY-4.0 (user prompts),2db8cafc7454ea21de83,,70,256,False
+req_0272,short_interactive,lmsys_chatbot_arena_conversations,d9b99df98b2f4a189605d2e793aa62fb,CC-BY-4.0 (user prompts),ae9f795d4fd55f754f58,,72,256,False
+req_0273,short_interactive,lmsys_chatbot_arena_conversations,11ef43123c3c490693941478b8357620,CC-BY-4.0 (user prompts),4ad9f68a6a2bea7666dd,,74,256,False
+req_0274,short_interactive,lmsys_chatbot_arena_conversations,84a5417ebb9148b69c64eefb49721b1e,CC-BY-4.0 (user prompts),37267bb86cc5ff6e8d40,,74,256,False
+req_0275,short_interactive,lmsys_chatbot_arena_conversations,ca7d5a92f1cf40e3bf981a600219be4f,CC-BY-4.0 (user prompts),bb7178607e5978552a79,,76,256,False
+req_0276,short_interactive,lmsys_chatbot_arena_conversations,fb579fe2e4d64bcf83e936362a3b7f78,CC-BY-4.0 (user prompts),7833a63cec9845e2c2fb,,77,256,False
+req_0277,short_interactive,lmsys_chatbot_arena_conversations,589b5e0a1d634619afdca030cce9e4d3,CC-BY-4.0 (user prompts),761cc63db4c62f98f9d4,,78,256,False
+req_0278,short_interactive,lmsys_chatbot_arena_conversations,3c921f2cb68f4997b69eb4d668c86006,CC-BY-4.0 (user prompts),0888f84c3b4fbd27f4de,,78,256,False
+req_0279,short_interactive,lmsys_chatbot_arena_conversations,557217f570a04539b6a0fc452e7cd91d,CC-BY-4.0 (user prompts),b2a88bb7777040653894,,79,256,False
+req_0280,short_interactive,lmsys_chatbot_arena_conversations,287d2edae05f402cb88385160838de1e,CC-BY-4.0 (user prompts),0167b46c0d8155f2dd21,,79,256,False
+req_0281,short_interactive,lmsys_chatbot_arena_conversations,7d692765cb8549669554e5695df838b1,CC-BY-4.0 (user prompts),7179452617996fd6b304,,80,256,False
+req_0282,short_interactive,lmsys_chatbot_arena_conversations,cbcd78a5f91c4fa0b4ca1a56a8aee4b1,CC-BY-4.0 (user prompts),5a32d786f1413f04fbf6,,82,256,False
+req_0283,short_interactive,lmsys_chatbot_arena_conversations,b40ce5f43b6e49c6927a75bfeedd1c60,CC-BY-4.0 (user prompts),7e1f7a710b2188f9d722,,85,256,False
+req_0284,short_interactive,lmsys_chatbot_arena_conversations,af296e85bb93418697393f32ab1cf394,CC-BY-4.0 (user prompts),d105be1861ac2606d92f,,89,256,False
+req_0285,short_interactive,lmsys_chatbot_arena_conversations,4088a12a27f94b0da38ec275b117f6c7,CC-BY-4.0 (user prompts),c02e2ccc97291c8145cf,,90,256,False
+req_0286,short_interactive,lmsys_chatbot_arena_conversations,0e4b9f7bf42b451e8e90ce97d6aeba15,CC-BY-4.0 (user prompts),456d06176ba9361a7136,,91,256,False
+req_0287,short_interactive,lmsys_chatbot_arena_conversations,df1aa44028f947419e0e2350b5f5f1f1,CC-BY-4.0 (user prompts),d0f8319bca8cbcc9f769,,93,256,False
+req_0288,short_interactive,lmsys_chatbot_arena_conversations,51784e86198546b69f387eca860f7656,CC-BY-4.0 (user prompts),2c04665647f588ba357f,,95,256,False
+req_0289,short_interactive,lmsys_chatbot_arena_conversations,febe6ab6c88b4251a37f5b2258f43f8b,CC-BY-4.0 (user prompts),fe14a6a37338e6f3975a,,96,256,False
+req_0290,short_interactive,lmsys_chatbot_arena_conversations,085fd1103c564b91a32e0c49f24ac680,CC-BY-4.0 (user prompts),51e5c960d851b0f05822,,97,256,False
+req_0291,short_interactive,lmsys_chatbot_arena_conversations,808df14faf2d4b2d9ae7c2633cf87cf9,CC-BY-4.0 (user prompts),741639153e3fbec5bfa5,,97,256,False
+req_0292,short_interactive,lmsys_chatbot_arena_conversations,c01a31be81c64ffdb274b23a44bcf983,CC-BY-4.0 (user prompts),4f51f5c569c08dde6959,,100,256,False
+req_0293,short_interactive,lmsys_chatbot_arena_conversations,04c56820a9964b37b5df03eab6f0d9bc,CC-BY-4.0 (user prompts),aa56a3a10ec0da3a8aa3,,102,256,False
+req_0294,short_interactive,lmsys_chatbot_arena_conversations,e1ae514a85b04642961d291c9ca0b1ce,CC-BY-4.0 (user prompts),9b55ea31ee07b9cd0943,,109,256,False
+req_0295,short_interactive,lmsys_chatbot_arena_conversations,aab2789d9202448b8b970dd31afc36ae,CC-BY-4.0 (user prompts),1413c97afd16b52dd15a,,111,256,False
+req_0296,short_interactive,lmsys_chatbot_arena_conversations,e6d45ead33114cca8ee3cfa028517eff,CC-BY-4.0 (user prompts),7c746328e1fa2aee9a85,,120,256,False
+req_0297,short_interactive,lmsys_chatbot_arena_conversations,ee44668077714d5283f6a172f48f1d95,CC-BY-4.0 (user prompts),2de9d927a45de2800997,,120,256,False
+req_0298,short_interactive,lmsys_chatbot_arena_conversations,7d0bf25d9017494c8b695477900d88d2,CC-BY-4.0 (user prompts),efcd2b2a0f1700db4837,,121,256,False
+req_0299,short_interactive,lmsys_chatbot_arena_conversations,e78fa89fece34f718864bc6875947300,CC-BY-4.0 (user prompts),44cbb92605809e7701b4,,123,256,False
+req_0300,short_interactive,lmsys_chatbot_arena_conversations,0b2d0ec342a0422c855cafadfea74d7a,CC-BY-4.0 (user prompts),79b61e5dbdaed9a9231e,,127,256,False
+req_0301,knowledge_qa,google_nq_open,train_80134,CC-BY-SA-3.0,0511e234a8e456f1e03b,0511e234a8e456f1e03b,37,128,False
+req_0302,knowledge_qa,google_nq_open,train_49640,CC-BY-SA-3.0,077013e6dba20e025ef1,077013e6dba20e025ef1,37,128,False
+req_0303,knowledge_qa,google_nq_open,train_34275,CC-BY-SA-3.0,0ff8986af9dee5beeca2,0ff8986af9dee5beeca2,37,128,False
+req_0304,knowledge_qa,google_nq_open,train_42708,CC-BY-SA-3.0,1411399860de43387692,1411399860de43387692,37,128,False
+req_0305,knowledge_qa,google_nq_open,train_84440,CC-BY-SA-3.0,19a599cbba791ebd3824,19a599cbba791ebd3824,37,128,False
+req_0306,knowledge_qa,google_nq_open,train_14537,CC-BY-SA-3.0,357b91fbe89c72acfc68,357b91fbe89c72acfc68,37,128,False
+req_0307,knowledge_qa,google_nq_open,train_26316,CC-BY-SA-3.0,3ff733197d090df2cf8e,3ff733197d090df2cf8e,37,128,False
+req_0308,knowledge_qa,google_nq_open,train_61547,CC-BY-SA-3.0,4372df12eb988fef06a7,4372df12eb988fef06a7,37,128,False
+req_0309,knowledge_qa,google_nq_open,train_66512,CC-BY-SA-3.0,485c0f0eecd0c5e16760,485c0f0eecd0c5e16760,37,128,False
+req_0310,knowledge_qa,google_nq_open,train_31457,CC-BY-SA-3.0,53cf1e2322985a8dc3ac,53cf1e2322985a8dc3ac,37,128,False
+req_0311,knowledge_qa,google_nq_open,train_86077,CC-BY-SA-3.0,56b3f549d84ae34bb5a7,56b3f549d84ae34bb5a7,37,128,False
+req_0312,knowledge_qa,google_nq_open,train_42361,CC-BY-SA-3.0,60076873594295492327,60076873594295492327,37,128,False
+req_0313,knowledge_qa,google_nq_open,train_8166,CC-BY-SA-3.0,61ec02b9b4d1fb07c34e,61ec02b9b4d1fb07c34e,37,128,False
+req_0314,knowledge_qa,google_nq_open,train_35715,CC-BY-SA-3.0,6d81892ef53849fef8a1,6d81892ef53849fef8a1,37,128,False
+req_0315,knowledge_qa,google_nq_open,train_80762,CC-BY-SA-3.0,7261c2afaf52966dd725,7261c2afaf52966dd725,37,128,False
+req_0316,knowledge_qa,google_nq_open,train_66865,CC-BY-SA-3.0,755d2ae7941a18384cca,755d2ae7941a18384cca,37,128,False
+req_0317,knowledge_qa,google_nq_open,train_78102,CC-BY-SA-3.0,78c86a37ea8f8f8901a3,78c86a37ea8f8f8901a3,37,128,False
+req_0318,knowledge_qa,google_nq_open,train_80457,CC-BY-SA-3.0,7bef18d9c0061fee3be9,7bef18d9c0061fee3be9,37,128,False
+req_0319,knowledge_qa,google_nq_open,train_16148,CC-BY-SA-3.0,7f87e7530138d9696852,7f87e7530138d9696852,37,128,False
+req_0320,knowledge_qa,google_nq_open,train_10255,CC-BY-SA-3.0,87343198b242aae26d37,87343198b242aae26d37,37,128,False
+req_0321,knowledge_qa,google_nq_open,train_45166,CC-BY-SA-3.0,94b9aec50cd9bdb330a3,94b9aec50cd9bdb330a3,37,128,False
+req_0322,knowledge_qa,google_nq_open,train_70107,CC-BY-SA-3.0,9718e5ccaab455da843f,9718e5ccaab455da843f,37,128,False
+req_0323,knowledge_qa,google_nq_open,train_26433,CC-BY-SA-3.0,9d9dfda27ee7d2b588d0,9d9dfda27ee7d2b588d0,37,128,False
+req_0324,knowledge_qa,google_nq_open,train_34608,CC-BY-SA-3.0,a4b6821a9afad89f4e23,a4b6821a9afad89f4e23,37,128,False
+req_0325,knowledge_qa,google_nq_open,train_81450,CC-BY-SA-3.0,a79361dbed262b189aad,a79361dbed262b189aad,37,128,False
+req_0326,knowledge_qa,google_nq_open,train_81706,CC-BY-SA-3.0,a98a29db2aa6ff7267db,a98a29db2aa6ff7267db,37,128,False
+req_0327,knowledge_qa,google_nq_open,train_20176,CC-BY-SA-3.0,ab1628f97acba5b2e707,ab1628f97acba5b2e707,37,128,False
+req_0328,knowledge_qa,google_nq_open,train_29171,CC-BY-SA-3.0,b0f9f7a1bdc0f22952fb,b0f9f7a1bdc0f22952fb,37,128,False
+req_0329,knowledge_qa,google_nq_open,train_81951,CC-BY-SA-3.0,b8d6172f6cf4e8b3fb10,b8d6172f6cf4e8b3fb10,37,128,False
+req_0330,knowledge_qa,google_nq_open,train_60181,CC-BY-SA-3.0,c0e45254a4a6569acacc,c0e45254a4a6569acacc,37,128,False
+req_0331,knowledge_qa,google_nq_open,train_38750,CC-BY-SA-3.0,c736e769e6fdf5e2b49e,c736e769e6fdf5e2b49e,37,128,False
+req_0332,knowledge_qa,google_nq_open,train_75487,CC-BY-SA-3.0,ccfdd1008b124379a636,ccfdd1008b124379a636,37,128,False
+req_0333,knowledge_qa,google_nq_open,train_16152,CC-BY-SA-3.0,d3d8fa270f91015bee36,d3d8fa270f91015bee36,37,128,False
+req_0334,knowledge_qa,google_nq_open,train_73309,CC-BY-SA-3.0,e5a35ca34209154cffe3,e5a35ca34209154cffe3,37,128,False
+req_0335,knowledge_qa,google_nq_open,train_44267,CC-BY-SA-3.0,e9f2082c139f2240f6c9,e9f2082c139f2240f6c9,37,128,False
+req_0336,knowledge_qa,google_nq_open,train_10048,CC-BY-SA-3.0,f3bb82a55539f74012f7,f3bb82a55539f74012f7,37,128,False
+req_0337,knowledge_qa,google_nq_open,train_2820,CC-BY-SA-3.0,f3c77f1667a1aaf30525,f3c77f1667a1aaf30525,37,128,False
+req_0338,knowledge_qa,google_nq_open,train_539,CC-BY-SA-3.0,fdf4a951f8c7d4949561,fdf4a951f8c7d4949561,37,128,False
+req_0339,knowledge_qa,google_nq_open,train_72957,CC-BY-SA-3.0,034068b6b53dc2f1db30,034068b6b53dc2f1db30,38,128,False
+req_0340,knowledge_qa,google_nq_open,train_83925,CC-BY-SA-3.0,098ef10cb0fadea236d1,098ef10cb0fadea236d1,38,128,False
+req_0341,knowledge_qa,google_nq_open,train_37862,CC-BY-SA-3.0,17f801e019d613ae3726,17f801e019d613ae3726,38,128,False
+req_0342,knowledge_qa,google_nq_open,train_62952,CC-BY-SA-3.0,23024a438b3ae6eb3d81,23024a438b3ae6eb3d81,38,128,False
+req_0343,knowledge_qa,google_nq_open,train_3020,CC-BY-SA-3.0,2665609830f0812235b6,2665609830f0812235b6,38,128,False
+req_0344,knowledge_qa,google_nq_open,train_59414,CC-BY-SA-3.0,29f8210ded86542abaf1,29f8210ded86542abaf1,38,128,False
+req_0345,knowledge_qa,google_nq_open,train_23297,CC-BY-SA-3.0,39bc289cc1abf885eb9a,39bc289cc1abf885eb9a,38,128,False
+req_0346,knowledge_qa,google_nq_open,train_23756,CC-BY-SA-3.0,3ed07a2a235ef2a3a34b,3ed07a2a235ef2a3a34b,38,128,False
+req_0347,knowledge_qa,google_nq_open,train_70520,CC-BY-SA-3.0,4dc661c552b9d0ae2204,4dc661c552b9d0ae2204,38,128,False
+req_0348,knowledge_qa,google_nq_open,train_5254,CC-BY-SA-3.0,4f28dd8edc80d8b41cb9,4f28dd8edc80d8b41cb9,38,128,False
+req_0349,knowledge_qa,google_nq_open,train_18620,CC-BY-SA-3.0,5472323ce8eaf22695ea,5472323ce8eaf22695ea,38,128,False
+req_0350,knowledge_qa,google_nq_open,train_6635,CC-BY-SA-3.0,54fa17957614e55b8a9d,54fa17957614e55b8a9d,38,128,False
+req_0351,knowledge_qa,google_nq_open,train_37961,CC-BY-SA-3.0,5b178b47c6ff7a1c293f,5b178b47c6ff7a1c293f,38,128,False
+req_0352,knowledge_qa,google_nq_open,train_38363,CC-BY-SA-3.0,633e691167b8ab791a6b,633e691167b8ab791a6b,38,128,False
+req_0353,knowledge_qa,google_nq_open,train_59861,CC-BY-SA-3.0,677d20c9f2969fee16c5,677d20c9f2969fee16c5,38,128,False
+req_0354,knowledge_qa,google_nq_open,train_70361,CC-BY-SA-3.0,6fea22bae0ad807485c9,6fea22bae0ad807485c9,38,128,False
+req_0355,knowledge_qa,google_nq_open,train_17290,CC-BY-SA-3.0,7455b1ce5d5554a49dec,7455b1ce5d5554a49dec,38,128,False
+req_0356,knowledge_qa,google_nq_open,train_78932,CC-BY-SA-3.0,74e7d57f428865ee9f4b,74e7d57f428865ee9f4b,38,128,False
+req_0357,knowledge_qa,google_nq_open,train_29323,CC-BY-SA-3.0,76595d57ffccd4dff751,76595d57ffccd4dff751,38,128,False
+req_0358,knowledge_qa,google_nq_open,train_75117,CC-BY-SA-3.0,7964efb02f4bd4c8113b,7964efb02f4bd4c8113b,38,128,False
+req_0359,knowledge_qa,google_nq_open,train_55568,CC-BY-SA-3.0,7c236181e24c09191705,7c236181e24c09191705,38,128,False
+req_0360,knowledge_qa,google_nq_open,train_32147,CC-BY-SA-3.0,7fa8acc2811fb6191b90,7fa8acc2811fb6191b90,38,128,False
+req_0361,knowledge_qa,google_nq_open,train_80203,CC-BY-SA-3.0,8352c589828151fc14d4,8352c589828151fc14d4,38,128,False
+req_0362,knowledge_qa,google_nq_open,train_60758,CC-BY-SA-3.0,868c5cf883e3a95f9ed2,868c5cf883e3a95f9ed2,38,128,False
+req_0363,knowledge_qa,google_nq_open,train_52156,CC-BY-SA-3.0,8964d6f753d4b7b8e97e,8964d6f753d4b7b8e97e,38,128,False
+req_0364,knowledge_qa,google_nq_open,train_23224,CC-BY-SA-3.0,8d201911b2ab895a0e87,8d201911b2ab895a0e87,38,128,False
+req_0365,knowledge_qa,google_nq_open,train_74443,CC-BY-SA-3.0,967159eb7ea3f5e73a20,967159eb7ea3f5e73a20,38,128,False
+req_0366,knowledge_qa,google_nq_open,train_66673,CC-BY-SA-3.0,9e6dcf4f0a1d84a79706,9e6dcf4f0a1d84a79706,38,128,False
+req_0367,knowledge_qa,google_nq_open,train_33389,CC-BY-SA-3.0,9f9b1c2ced4501a52c21,9f9b1c2ced4501a52c21,38,128,False
+req_0368,knowledge_qa,google_nq_open,train_3139,CC-BY-SA-3.0,a66351b5821a593a242b,a66351b5821a593a242b,38,128,False
+req_0369,knowledge_qa,google_nq_open,train_27426,CC-BY-SA-3.0,abc5e1f3fe7c220820fb,abc5e1f3fe7c220820fb,38,128,False
+req_0370,knowledge_qa,google_nq_open,train_1015,CC-BY-SA-3.0,ae3eaa846707269af57d,ae3eaa846707269af57d,38,128,False
+req_0371,knowledge_qa,google_nq_open,train_21538,CC-BY-SA-3.0,b612ed559f7341677d4e,b612ed559f7341677d4e,38,128,False
+req_0372,knowledge_qa,google_nq_open,train_14727,CC-BY-SA-3.0,ba4f3c02a3fd2fe0ae64,ba4f3c02a3fd2fe0ae64,38,128,False
+req_0373,knowledge_qa,google_nq_open,train_21,CC-BY-SA-3.0,c06f71b3ab31de31ea5d,c06f71b3ab31de31ea5d,38,128,False
+req_0374,knowledge_qa,google_nq_open,train_79315,CC-BY-SA-3.0,c6d21bc1a9f8ec146f1d,c6d21bc1a9f8ec146f1d,38,128,False
+req_0375,knowledge_qa,google_nq_open,train_23077,CC-BY-SA-3.0,d0e97afba40417d0eebf,d0e97afba40417d0eebf,38,128,False
+req_0376,knowledge_qa,google_nq_open,train_21916,CC-BY-SA-3.0,d14072b491743c2a4f0d,d14072b491743c2a4f0d,38,128,False
+req_0377,knowledge_qa,google_nq_open,train_44777,CC-BY-SA-3.0,d9c7c1c2a5037346ab63,d9c7c1c2a5037346ab63,38,128,False
+req_0378,knowledge_qa,google_nq_open,train_24336,CC-BY-SA-3.0,df84cb888916a0b9052e,df84cb888916a0b9052e,38,128,False
+req_0379,knowledge_qa,google_nq_open,train_47073,CC-BY-SA-3.0,e1547a606e91b0d56182,e1547a606e91b0d56182,38,128,False
+req_0380,knowledge_qa,google_nq_open,train_18679,CC-BY-SA-3.0,e90b817f209527209a92,e90b817f209527209a92,38,128,False
+req_0381,knowledge_qa,google_nq_open,train_43511,CC-BY-SA-3.0,f29e19e271074bad2a60,f29e19e271074bad2a60,38,128,False
+req_0382,knowledge_qa,google_nq_open,train_22700,CC-BY-SA-3.0,f98319c37bf4f0f0a928,f98319c37bf4f0f0a928,38,128,False
+req_0383,knowledge_qa,google_nq_open,train_21908,CC-BY-SA-3.0,fb33d2d460ad47a65d4d,fb33d2d460ad47a65d4d,38,128,False
+req_0384,knowledge_qa,google_nq_open,train_22184,CC-BY-SA-3.0,fc0663560d392fa04669,fc0663560d392fa04669,38,128,False
+req_0385,knowledge_qa,google_nq_open,train_37214,CC-BY-SA-3.0,fe987df3d83afb03a5f9,fe987df3d83afb03a5f9,38,128,False
+req_0386,knowledge_qa,google_nq_open,train_45295,CC-BY-SA-3.0,08c0ef7ce542b8b49cad,08c0ef7ce542b8b49cad,39,128,False
+req_0387,knowledge_qa,google_nq_open,train_22277,CC-BY-SA-3.0,144e946759a6799a2589,144e946759a6799a2589,39,128,False
+req_0388,knowledge_qa,google_nq_open,train_50220,CC-BY-SA-3.0,18235882b604a2631a40,18235882b604a2631a40,39,128,False
+req_0389,knowledge_qa,google_nq_open,train_43390,CC-BY-SA-3.0,1cd7ef7d6d18430dee96,1cd7ef7d6d18430dee96,39,128,False
+req_0390,knowledge_qa,google_nq_open,train_40717,CC-BY-SA-3.0,23407f58667f9bcc3a8b,23407f58667f9bcc3a8b,39,128,False
+req_0391,knowledge_qa,google_nq_open,train_72070,CC-BY-SA-3.0,281802b6cd165a55f787,281802b6cd165a55f787,39,128,False
+req_0392,knowledge_qa,google_nq_open,train_33086,CC-BY-SA-3.0,40eba9ae4a9528107571,40eba9ae4a9528107571,39,128,False
+req_0393,knowledge_qa,google_nq_open,train_59299,CC-BY-SA-3.0,4bce80e390144af82990,4bce80e390144af82990,39,128,False
+req_0394,knowledge_qa,google_nq_open,train_51239,CC-BY-SA-3.0,4fff3ca6b121a00aef2c,4fff3ca6b121a00aef2c,39,128,False
+req_0395,knowledge_qa,google_nq_open,train_63571,CC-BY-SA-3.0,545baac4fa4c45b4aae0,545baac4fa4c45b4aae0,39,128,False
+req_0396,knowledge_qa,google_nq_open,train_67340,CC-BY-SA-3.0,5659522d2b729ebebf9d,5659522d2b729ebebf9d,39,128,False
+req_0397,knowledge_qa,google_nq_open,train_42967,CC-BY-SA-3.0,5a5bb326caf21a759588,5a5bb326caf21a759588,39,128,False
+req_0398,knowledge_qa,google_nq_open,train_73727,CC-BY-SA-3.0,5afc2cb858e83bf8e9a7,5afc2cb858e83bf8e9a7,39,128,False
+req_0399,knowledge_qa,google_nq_open,train_50094,CC-BY-SA-3.0,5c22d49593f681cc0f19,5c22d49593f681cc0f19,39,128,False
+req_0400,knowledge_qa,google_nq_open,train_60615,CC-BY-SA-3.0,6a3b3c7619214dde5729,6a3b3c7619214dde5729,39,128,False
+req_0401,knowledge_qa,google_nq_open,train_71395,CC-BY-SA-3.0,6f19e6594c1e385fad0c,6f19e6594c1e385fad0c,39,128,False
+req_0402,knowledge_qa,google_nq_open,train_23946,CC-BY-SA-3.0,79052df2a5d2f1d73e04,79052df2a5d2f1d73e04,39,128,False
+req_0403,knowledge_qa,google_nq_open,train_13533,CC-BY-SA-3.0,81a23864752aa4d87388,81a23864752aa4d87388,39,128,False
+req_0404,knowledge_qa,google_nq_open,train_26135,CC-BY-SA-3.0,83524a00950416b625d5,83524a00950416b625d5,39,128,False
+req_0405,knowledge_qa,google_nq_open,train_61861,CC-BY-SA-3.0,87d672e8f8b62e105752,87d672e8f8b62e105752,39,128,False
+req_0406,knowledge_qa,google_nq_open,train_71214,CC-BY-SA-3.0,8df4458941cb4efbf9f1,8df4458941cb4efbf9f1,39,128,False
+req_0407,knowledge_qa,google_nq_open,train_81791,CC-BY-SA-3.0,8f80a9901a951de1b797,8f80a9901a951de1b797,39,128,False
+req_0408,knowledge_qa,google_nq_open,train_77121,CC-BY-SA-3.0,95bbd8045b8c97fb98d0,95bbd8045b8c97fb98d0,39,128,False
+req_0409,knowledge_qa,google_nq_open,train_77003,CC-BY-SA-3.0,9899871ac3a454d4c3a4,9899871ac3a454d4c3a4,39,128,False
+req_0410,knowledge_qa,google_nq_open,train_53697,CC-BY-SA-3.0,9e533eca361f0b9a7e4f,9e533eca361f0b9a7e4f,39,128,False
+req_0411,knowledge_qa,google_nq_open,train_40102,CC-BY-SA-3.0,a8cd2744db3beb09ae04,a8cd2744db3beb09ae04,39,128,False
+req_0412,knowledge_qa,google_nq_open,train_31793,CC-BY-SA-3.0,a98b789348f1862e8a84,a98b789348f1862e8a84,39,128,False
+req_0413,knowledge_qa,google_nq_open,train_13564,CC-BY-SA-3.0,ab7da88f147245058ee5,ab7da88f147245058ee5,39,128,False
+req_0414,knowledge_qa,google_nq_open,train_61390,CC-BY-SA-3.0,b35c414f260b1aed873b,b35c414f260b1aed873b,39,128,False
+req_0415,knowledge_qa,google_nq_open,train_80221,CC-BY-SA-3.0,c07c048c4468806c9bd8,c07c048c4468806c9bd8,39,128,False
+req_0416,knowledge_qa,google_nq_open,train_86366,CC-BY-SA-3.0,ca5460f3cb3794d85994,ca5460f3cb3794d85994,39,128,False
+req_0417,knowledge_qa,google_nq_open,train_22734,CC-BY-SA-3.0,caa869ae3ff5bfd63fb6,caa869ae3ff5bfd63fb6,39,128,False
+req_0418,knowledge_qa,google_nq_open,train_3665,CC-BY-SA-3.0,d3870613777b8a99fc57,d3870613777b8a99fc57,39,128,False
+req_0419,knowledge_qa,google_nq_open,train_40867,CC-BY-SA-3.0,d736469c9111a01caaba,d736469c9111a01caaba,39,128,False
+req_0420,knowledge_qa,google_nq_open,train_86284,CC-BY-SA-3.0,dcd0a1d7841457b250c8,dcd0a1d7841457b250c8,39,128,False
+req_0421,knowledge_qa,google_nq_open,train_41170,CC-BY-SA-3.0,e05506ee8d29a596b593,e05506ee8d29a596b593,39,128,False
+req_0422,knowledge_qa,google_nq_open,train_37506,CC-BY-SA-3.0,e971e8d47e02518c5bd3,e971e8d47e02518c5bd3,39,128,False
+req_0423,knowledge_qa,google_nq_open,train_19210,CC-BY-SA-3.0,eef2773a9db1019ef1d9,eef2773a9db1019ef1d9,39,128,False
+req_0424,knowledge_qa,google_nq_open,train_38541,CC-BY-SA-3.0,f39e22c681a8eafff63c,f39e22c681a8eafff63c,39,128,False
+req_0425,knowledge_qa,google_nq_open,train_36664,CC-BY-SA-3.0,f5ee87f00ad94581698b,f5ee87f00ad94581698b,39,128,False
+req_0426,knowledge_qa,google_nq_open,train_32559,CC-BY-SA-3.0,f8ecf314d787a449f989,f8ecf314d787a449f989,39,128,False
+req_0427,knowledge_qa,google_nq_open,train_71752,CC-BY-SA-3.0,f97f984aa44eed889d87,f97f984aa44eed889d87,39,128,False
+req_0428,knowledge_qa,google_nq_open,train_63462,CC-BY-SA-3.0,f9f1600571a589c10bb6,f9f1600571a589c10bb6,39,128,False
+req_0429,knowledge_qa,google_nq_open,train_11839,CC-BY-SA-3.0,fc27ed5951e64082c9f5,fc27ed5951e64082c9f5,39,128,False
+req_0430,knowledge_qa,google_nq_open,train_3646,CC-BY-SA-3.0,0729b4bb516174dffd67,0729b4bb516174dffd67,40,128,False
+req_0431,knowledge_qa,google_nq_open,train_4555,CC-BY-SA-3.0,0c50b790821dac5863d7,0c50b790821dac5863d7,40,128,False
+req_0432,knowledge_qa,google_nq_open,train_81935,CC-BY-SA-3.0,274964d9716039ea230b,274964d9716039ea230b,40,128,False
+req_0433,knowledge_qa,google_nq_open,train_46679,CC-BY-SA-3.0,013227717c2bd8e205eb,013227717c2bd8e205eb,40,128,False
+req_0434,knowledge_qa,google_nq_open,train_82738,CC-BY-SA-3.0,36445dfac2e682666f9f,36445dfac2e682666f9f,40,128,False
+req_0435,knowledge_qa,google_nq_open,train_18954,CC-BY-SA-3.0,4d01ac6d85394221dcc4,4d01ac6d85394221dcc4,40,128,False
+req_0436,knowledge_qa,google_nq_open,train_26792,CC-BY-SA-3.0,4d0933f80f41f03530d8,4d0933f80f41f03530d8,40,128,False
+req_0437,knowledge_qa,google_nq_open,train_80705,CC-BY-SA-3.0,6e2eede485ddc908dde7,6e2eede485ddc908dde7,40,128,False
+req_0438,knowledge_qa,google_nq_open,train_53457,CC-BY-SA-3.0,6ffc68297a3906971dd1,6ffc68297a3906971dd1,40,128,False
+req_0439,knowledge_qa,google_nq_open,train_26457,CC-BY-SA-3.0,8c2453dc12c8c6b8a975,8c2453dc12c8c6b8a975,40,128,False
+req_0440,knowledge_qa,google_nq_open,train_54060,CC-BY-SA-3.0,8f39947494ebb3a82114,8f39947494ebb3a82114,40,128,False
+req_0441,knowledge_qa,google_nq_open,train_73536,CC-BY-SA-3.0,93e21322181b3a218395,93e21322181b3a218395,40,128,False
+req_0442,knowledge_qa,google_nq_open,train_85753,CC-BY-SA-3.0,96daca74af92ca36ddeb,96daca74af92ca36ddeb,40,128,False
+req_0443,knowledge_qa,google_nq_open,train_45293,CC-BY-SA-3.0,b00a0d531894e91b4651,b00a0d531894e91b4651,40,128,False
+req_0444,knowledge_qa,google_nq_open,train_36056,CC-BY-SA-3.0,b3ffb35adfc7c0f64d3f,b3ffb35adfc7c0f64d3f,40,128,False
+req_0445,knowledge_qa,google_nq_open,train_40981,CC-BY-SA-3.0,c885fa67462b28b4fd05,c885fa67462b28b4fd05,40,128,False
+req_0446,knowledge_qa,google_nq_open,train_72126,CC-BY-SA-3.0,cb0f1f1aa8ac7ccd2533,cb0f1f1aa8ac7ccd2533,40,128,False
+req_0447,knowledge_qa,google_nq_open,train_7206,CC-BY-SA-3.0,d474a30fc47f1c80d9cd,d474a30fc47f1c80d9cd,40,128,False
+req_0448,knowledge_qa,google_nq_open,train_13494,CC-BY-SA-3.0,e4035538023c1f43fb27,e4035538023c1f43fb27,40,128,False
+req_0449,knowledge_qa,google_nq_open,train_38558,CC-BY-SA-3.0,ed01ba60cfd5055c0486,ed01ba60cfd5055c0486,40,128,False
+req_0450,knowledge_qa,google_nq_open,train_46178,CC-BY-SA-3.0,f3cd4d58af6235744170,f3cd4d58af6235744170,40,128,False
+req_0451,knowledge_qa,google_nq_open,train_33609,CC-BY-SA-3.0,0ca3d1a9f35755c63f03,0ca3d1a9f35755c63f03,41,128,False
+req_0452,knowledge_qa,google_nq_open,train_45563,CC-BY-SA-3.0,197315a6e75c54f3d9bc,197315a6e75c54f3d9bc,41,128,False
+req_0453,knowledge_qa,google_nq_open,train_751,CC-BY-SA-3.0,210e07674e9a7d550828,210e07674e9a7d550828,41,128,False
+req_0454,knowledge_qa,google_nq_open,train_6936,CC-BY-SA-3.0,2b53f3921ff410258107,2b53f3921ff410258107,41,128,False
+req_0455,knowledge_qa,google_nq_open,train_60553,CC-BY-SA-3.0,3b36fd07e55595aff333,3b36fd07e55595aff333,41,128,False
+req_0456,knowledge_qa,google_nq_open,train_42133,CC-BY-SA-3.0,524e7467726762359e84,524e7467726762359e84,41,128,False
+req_0457,knowledge_qa,google_nq_open,train_49256,CC-BY-SA-3.0,5c084900739d3bf359a7,5c084900739d3bf359a7,41,128,False
+req_0458,knowledge_qa,google_nq_open,train_29664,CC-BY-SA-3.0,5d346cc9ed6e5a421f4e,5d346cc9ed6e5a421f4e,41,128,False
+req_0459,knowledge_qa,google_nq_open,train_74213,CC-BY-SA-3.0,6890e07f8f46c400fb28,6890e07f8f46c400fb28,41,128,False
+req_0460,knowledge_qa,google_nq_open,train_84931,CC-BY-SA-3.0,691aca3717739d297dbd,691aca3717739d297dbd,41,128,False
+req_0461,knowledge_qa,google_nq_open,train_64402,CC-BY-SA-3.0,72c6224b1791966a76b1,72c6224b1791966a76b1,41,128,False
+req_0462,knowledge_qa,google_nq_open,train_64723,CC-BY-SA-3.0,8d124e862f0f080c6dfd,8d124e862f0f080c6dfd,41,128,False
+req_0463,knowledge_qa,google_nq_open,train_78441,CC-BY-SA-3.0,9fa3fb957b027691e7be,9fa3fb957b027691e7be,41,128,False
+req_0464,knowledge_qa,google_nq_open,train_50613,CC-BY-SA-3.0,bb8ae88c0554cbe8731e,bb8ae88c0554cbe8731e,41,128,False
+req_0465,knowledge_qa,google_nq_open,train_75092,CC-BY-SA-3.0,c31c946b29e1556920b7,c31c946b29e1556920b7,41,128,False
+req_0466,knowledge_qa,google_nq_open,train_70317,CC-BY-SA-3.0,cb183dc2847693337d45,cb183dc2847693337d45,41,128,False
+req_0467,knowledge_qa,google_nq_open,train_23852,CC-BY-SA-3.0,dad70c6063a51fafb068,dad70c6063a51fafb068,41,128,False
+req_0468,knowledge_qa,google_nq_open,train_18781,CC-BY-SA-3.0,ec83ded3cd46b3c734be,ec83ded3cd46b3c734be,41,128,False
+req_0469,knowledge_qa,google_nq_open,train_8796,CC-BY-SA-3.0,ff0e30c4d7ceffa6e0a6,ff0e30c4d7ceffa6e0a6,41,128,False
+req_0470,knowledge_qa,google_nq_open,train_33880,CC-BY-SA-3.0,185980b559129dacf207,185980b559129dacf207,42,128,False
+req_0471,knowledge_qa,google_nq_open,train_20092,CC-BY-SA-3.0,2391b98613a707c180b6,2391b98613a707c180b6,42,128,False
+req_0472,knowledge_qa,google_nq_open,train_61796,CC-BY-SA-3.0,4301dee3d4b7c7f0efa9,4301dee3d4b7c7f0efa9,42,128,False
+req_0473,knowledge_qa,google_nq_open,train_23452,CC-BY-SA-3.0,546fccdd5b4b0cce6001,546fccdd5b4b0cce6001,42,128,False
+req_0474,knowledge_qa,google_nq_open,train_80111,CC-BY-SA-3.0,5b5943b81f0b02b42e9a,5b5943b81f0b02b42e9a,42,128,False
+req_0475,knowledge_qa,google_nq_open,train_21309,CC-BY-SA-3.0,74ab13beed6c0ae8e1bb,74ab13beed6c0ae8e1bb,42,128,False
+req_0476,knowledge_qa,google_nq_open,train_26271,CC-BY-SA-3.0,7d1fc034adf3bfdd2970,7d1fc034adf3bfdd2970,42,128,False
+req_0477,knowledge_qa,google_nq_open,train_76678,CC-BY-SA-3.0,7d37a93d25e42fe83770,7d37a93d25e42fe83770,42,128,False
+req_0478,knowledge_qa,google_nq_open,train_37606,CC-BY-SA-3.0,aea40991e3dda1bd22b0,aea40991e3dda1bd22b0,42,128,False
+req_0479,knowledge_qa,google_nq_open,train_85871,CC-BY-SA-3.0,c1f308ff700e0fefa437,c1f308ff700e0fefa437,42,128,False
+req_0480,knowledge_qa,google_nq_open,train_17277,CC-BY-SA-3.0,cabe313a10e7a0b95674,cabe313a10e7a0b95674,42,128,False
+req_0481,knowledge_qa,google_nq_open,train_11138,CC-BY-SA-3.0,d59ecd446af4b8115ffb,d59ecd446af4b8115ffb,42,128,False
+req_0482,knowledge_qa,google_nq_open,train_61717,CC-BY-SA-3.0,d6b0213cd20152d25897,d6b0213cd20152d25897,42,128,False
+req_0483,knowledge_qa,google_nq_open,train_22204,CC-BY-SA-3.0,e452b945297a7a4f16aa,e452b945297a7a4f16aa,42,128,False
+req_0484,knowledge_qa,google_nq_open,train_39637,CC-BY-SA-3.0,01f616ff30fcb59c0295,01f616ff30fcb59c0295,43,128,False
+req_0485,knowledge_qa,google_nq_open,train_37396,CC-BY-SA-3.0,3abf4b38d690dc59a4d7,3abf4b38d690dc59a4d7,43,128,False
+req_0486,knowledge_qa,google_nq_open,train_35310,CC-BY-SA-3.0,4e9aeb461201c29592e3,4e9aeb461201c29592e3,43,128,False
+req_0487,knowledge_qa,google_nq_open,train_27233,CC-BY-SA-3.0,d478563eaf7eb071b990,d478563eaf7eb071b990,43,128,False
+req_0488,knowledge_qa,google_nq_open,train_43688,CC-BY-SA-3.0,f062547156504f7f0da7,f062547156504f7f0da7,43,128,False
+req_0489,knowledge_qa,google_nq_open,train_84643,CC-BY-SA-3.0,467efcf65a0ca6802f05,467efcf65a0ca6802f05,44,128,False
+req_0490,knowledge_qa,google_nq_open,train_25042,CC-BY-SA-3.0,4dc1d47c3fd96af2f5fe,4dc1d47c3fd96af2f5fe,44,128,False
+req_0491,knowledge_qa,google_nq_open,train_13300,CC-BY-SA-3.0,a59a80aa3810582dd0c1,a59a80aa3810582dd0c1,44,128,False
+req_0492,knowledge_qa,google_nq_open,train_41979,CC-BY-SA-3.0,dbdb6b1d2aa5415e9997,dbdb6b1d2aa5415e9997,44,128,False
+req_0493,knowledge_qa,google_nq_open,train_74602,CC-BY-SA-3.0,1c41ddbc188f5e1bb9c7,1c41ddbc188f5e1bb9c7,45,128,False
+req_0494,knowledge_qa,google_nq_open,train_2498,CC-BY-SA-3.0,a4db9654322cbf78dd32,a4db9654322cbf78dd32,45,128,False
+req_0495,knowledge_qa,google_nq_open,train_45289,CC-BY-SA-3.0,27f80e0e3be53c1641d0,27f80e0e3be53c1641d0,47,128,False
+req_0496,knowledge_qa,google_nq_open,train_43400,CC-BY-SA-3.0,7493c1990cf94656763b,7493c1990cf94656763b,47,128,False
+req_0497,knowledge_qa,google_nq_open,train_11810,CC-BY-SA-3.0,b6e2abf7fcebb9186be3,b6e2abf7fcebb9186be3,47,128,False
+req_0498,knowledge_qa,google_nq_open,train_68824,CC-BY-SA-3.0,4b67abb6b0a76383492f,4b67abb6b0a76383492f,49,128,False
+req_0499,knowledge_qa,google_nq_open,train_43763,CC-BY-SA-3.0,cc556b90d65719cbc968,cc556b90d65719cbc968,49,128,False
+req_0500,knowledge_qa,google_nq_open,train_31869,CC-BY-SA-3.0,e7fea8f0086a89902791,e7fea8f0086a89902791,52,128,False
+req_0501,coding_request,lmsys_chatbot_arena_conversations,68df1633fbd04452823e96265b72f9ee,CC-BY-4.0 (user prompts),c7249da5e20832a7162d,,33,512,False
+req_0502,coding_request,lmsys_chatbot_arena_conversations,6e2fd8b60f694479a90d6a65145d0841,CC-BY-4.0 (user prompts),072345aa97d09167f17e,,34,512,False
+req_0503,coding_request,lmsys_chatbot_arena_conversations,04bdcf6c3fa645c9a88f68ee491b7f4e,CC-BY-4.0 (user prompts),2532b94db3cb4e358474,,35,512,False
+req_0504,coding_request,lmsys_chatbot_arena_conversations,8177d459bd3441b5880ec491545bac2a,CC-BY-4.0 (user prompts),ddb380bdb762fa838ba0,,36,512,False
+req_0505,coding_request,lmsys_chatbot_arena_conversations,18b5a61cb89b44aebb64f7a12a63afbf,CC-BY-4.0 (user prompts),3ffb743b0bb82dcfcbf2,,36,512,False
+req_0506,coding_request,lmsys_chatbot_arena_conversations,cbd40eae340a4ddd931ae53e7b87d230,CC-BY-4.0 (user prompts),eb9c346d9af0ecb75f33,,36,512,False
+req_0507,coding_request,lmsys_chatbot_arena_conversations,26b2181d7dc14fd5af76b79da385b577,CC-BY-4.0 (user prompts),0524050edc71708b22a6,,36,512,False
+req_0508,coding_request,lmsys_chatbot_arena_conversations,bb06fa4620214d7c9832cd71994af3ce,CC-BY-4.0 (user prompts),79e1a1c4ab97765fe1ba,,37,512,False
+req_0509,coding_request,lmsys_chatbot_arena_conversations,5bbcf15ca41b48bb8dd3cb02cbab31b7,CC-BY-4.0 (user prompts),4c53c87b92e60e1b85ab,,37,512,False
+req_0510,coding_request,lmsys_chatbot_arena_conversations,b63f838a72ed4951aeb54014fd6d1371,CC-BY-4.0 (user prompts),36c2174333fe079863bd,,37,512,False
+req_0511,coding_request,lmsys_chatbot_arena_conversations,abb57559437b4dfab69fa40dad3703d6,CC-BY-4.0 (user prompts),7e69eea512971d4422ae,,37,512,False
+req_0512,coding_request,lmsys_chatbot_arena_conversations,6a36fe37af8f48299e9459c5a64ac9da,CC-BY-4.0 (user prompts),ffa27ec0761231836473,,37,512,False
+req_0513,coding_request,lmsys_chatbot_arena_conversations,ea312a0fda864fc3ac85ad05fb3f5dc8,CC-BY-4.0 (user prompts),0f30a8824c1b25401721,,37,512,False
+req_0514,coding_request,lmsys_chatbot_arena_conversations,ac05a7fed63f4e52945c05fcd2dcfc50,CC-BY-4.0 (user prompts),25d6a803b4ca1ea4762f,,38,512,False
+req_0515,coding_request,lmsys_chatbot_arena_conversations,e81e23be374948c7b4e7ab535bc3f8ea,CC-BY-4.0 (user prompts),9f8ff0c452533ea0f7db,,38,512,False
+req_0516,coding_request,lmsys_chatbot_arena_conversations,63ec197e76154703bb18419d9d4dde61,CC-BY-4.0 (user prompts),6765883316e9fb63574f,,38,512,False
+req_0517,coding_request,lmsys_chatbot_arena_conversations,7df53c11ff854dc2b77535cbe7262bd3,CC-BY-4.0 (user prompts),e10f7bd4ee5f8779d517,,38,512,False
+req_0518,coding_request,lmsys_chatbot_arena_conversations,711556dda55547b096724fc8801df8ba,CC-BY-4.0 (user prompts),e9ed2618f38d434665f1,,38,512,False
+req_0519,coding_request,lmsys_chatbot_arena_conversations,11733b14ce50484898ff3f2a834b6d52,CC-BY-4.0 (user prompts),46c84d1da51952a54560,,39,512,False
+req_0520,coding_request,lmsys_chatbot_arena_conversations,5e3c8bc29fd843aeb959f89fc97943b9,CC-BY-4.0 (user prompts),242c51f543264912bbf1,,39,512,False
+req_0521,coding_request,lmsys_chatbot_arena_conversations,b791896e1f124234a7ad5f1aa22299e9,CC-BY-4.0 (user prompts),8b6723752b6a9dae6c6c,,39,512,False
+req_0522,coding_request,lmsys_chatbot_arena_conversations,128cd05b0c424cc58a252c680ee95e87,CC-BY-4.0 (user prompts),4c23d5b55935377ae2af,,39,512,False
+req_0523,coding_request,lmsys_chatbot_arena_conversations,0588fa9306564d21ae30b41625d718a8,CC-BY-4.0 (user prompts),b4a7fb04592e448ca043,,40,512,False
+req_0524,coding_request,lmsys_chatbot_arena_conversations,7e525afa42d14455854ff09032f8a8e2,CC-BY-4.0 (user prompts),8860f39a45bbfffc3d52,,40,512,False
+req_0525,coding_request,lmsys_chatbot_arena_conversations,3908e8f55a1a4266907ce4dfeb892d1a,CC-BY-4.0 (user prompts),4d52039816df19213281,,40,512,False
+req_0526,coding_request,lmsys_chatbot_arena_conversations,c1528f302c2d4061b0766415f82ca238,CC-BY-4.0 (user prompts),332e1f76f18e603d7167,,40,512,False
+req_0527,coding_request,lmsys_chatbot_arena_conversations,278c9c7652734362aa7a921f68302954,CC-BY-4.0 (user prompts),33fe4854dacb85a6c654,,40,512,False
+req_0528,coding_request,lmsys_chatbot_arena_conversations,f6046fc6dcb842ddaa8474a91c114b71,CC-BY-4.0 (user prompts),d42476d923ae8ec4bfc5,,40,512,False
+req_0529,coding_request,lmsys_chatbot_arena_conversations,78c49125c4a5458d9809f5f7ea2e0793,CC-BY-4.0 (user prompts),ebd6159b8ab883ef91a0,,41,512,False
+req_0530,coding_request,lmsys_chatbot_arena_conversations,19bbc3dfd6364ea58ce70126364d91f5,CC-BY-4.0 (user prompts),cedb5435560dadb9ae2a,,41,512,False
+req_0531,coding_request,lmsys_chatbot_arena_conversations,b4b1c3f799f6459b8cfb15fa27e399e7,CC-BY-4.0 (user prompts),68014796e73b606a9470,,41,512,False
+req_0532,coding_request,lmsys_chatbot_arena_conversations,a523952c63e4493a83499faffea65b92,CC-BY-4.0 (user prompts),801f0245f872c7137f8a,,41,512,False
+req_0533,coding_request,lmsys_chatbot_arena_conversations,e00e592f05824507bcf465ba084077f4,CC-BY-4.0 (user prompts),0bda430c0f9856f30fd1,,41,512,False
+req_0534,coding_request,lmsys_chatbot_arena_conversations,cc2ef0b002c140cf8cc444644dd4bf20,CC-BY-4.0 (user prompts),cc233656ddadb4712e78,,42,512,False
+req_0535,coding_request,lmsys_chatbot_arena_conversations,aa55489b65da4e6090a52211a8846c87,CC-BY-4.0 (user prompts),333f70cde30696b1fc74,,42,512,False
+req_0536,coding_request,lmsys_chatbot_arena_conversations,ed343415ae174adfa973b4227093a05d,CC-BY-4.0 (user prompts),10a5f32f1ce7594d2a5b,,42,512,False
+req_0537,coding_request,lmsys_chatbot_arena_conversations,47724bd6095c4816b786f8d35c59d6ac,CC-BY-4.0 (user prompts),9e2d08b9159f2ceac5a4,,42,512,False
+req_0538,coding_request,lmsys_chatbot_arena_conversations,2921241ec3b14d88bc9b8e1cb5d0d2c6,CC-BY-4.0 (user prompts),5574af87fae0996ceebb,,42,512,False
+req_0539,coding_request,lmsys_chatbot_arena_conversations,4697e525ac0248fa89b06a0832890061,CC-BY-4.0 (user prompts),d171f368c6fd3b0e5324,,42,512,False
+req_0540,coding_request,lmsys_chatbot_arena_conversations,01510b8e2d6244dfb04cb0e1eda8fd01,CC-BY-4.0 (user prompts),d1359fc2e14f175fae83,,42,512,False
+req_0541,coding_request,lmsys_chatbot_arena_conversations,6ba85420e01741a7a9f38e30c135b627,CC-BY-4.0 (user prompts),2fdb95004d59482fff89,,42,512,False
+req_0542,coding_request,lmsys_chatbot_arena_conversations,d516fd047df94ac29c1f71aa3015c06d,CC-BY-4.0 (user prompts),9f7f4b9f51db54586a70,,43,512,False
+req_0543,coding_request,lmsys_chatbot_arena_conversations,4193efe80aed4f0890e2d771e47193ef,CC-BY-4.0 (user prompts),41769ddbb86fdab9df4e,,43,512,False
+req_0544,coding_request,lmsys_chatbot_arena_conversations,c921d669456440498747298a3b3a9a8f,CC-BY-4.0 (user prompts),22f90c3c6c6fe0b3b6a5,,43,512,False
+req_0545,coding_request,lmsys_chatbot_arena_conversations,33ebb7d4e2004b0db4ad3bb8e0534809,CC-BY-4.0 (user prompts),ae2fa960ba36c7331035,,43,512,False
+req_0546,coding_request,lmsys_chatbot_arena_conversations,6706d555620c44569dcf30a74f9960a1,CC-BY-4.0 (user prompts),598d7a136535462fcbc4,,43,512,False
+req_0547,coding_request,lmsys_chatbot_arena_conversations,72de2a7ae90f42a6aa38a2c8aba67c0a,CC-BY-4.0 (user prompts),cadcef14e5f666c70d6e,,43,512,False
+req_0548,coding_request,lmsys_chatbot_arena_conversations,cc058e0bdbc44ecb8e528ffaf7466297,CC-BY-4.0 (user prompts),aa865a70b6dd4db973cc,,43,512,False
+req_0549,coding_request,lmsys_chatbot_arena_conversations,d0267ccb44474ce193de21c93c1e2152,CC-BY-4.0 (user prompts),c322cf665003a96cee24,,43,512,False
+req_0550,coding_request,lmsys_chatbot_arena_conversations,6127d3e372a64e74a95c60322d2cd2ab,CC-BY-4.0 (user prompts),c94531328dd54c4daf2e,,44,512,False
+req_0551,coding_request,lmsys_chatbot_arena_conversations,50d97953f11a4308bc88e004f8457473,CC-BY-4.0 (user prompts),ed3d45820150b66ee9cd,,44,512,False
+req_0552,coding_request,lmsys_chatbot_arena_conversations,f6be5aaf3e7f47ae858c67b80784adec,CC-BY-4.0 (user prompts),b292a9b48881c852fe84,,44,512,False
+req_0553,coding_request,lmsys_chatbot_arena_conversations,fbcec1843a084bfeb04d7e5e3c502cd6,CC-BY-4.0 (user prompts),20490837e46d8c1db230,,44,512,False
+req_0554,coding_request,lmsys_chatbot_arena_conversations,8af3c20cdbcc48debb08db3ca2a2d724,CC-BY-4.0 (user prompts),28993127629c88b626df,,44,512,False
+req_0555,coding_request,lmsys_chatbot_arena_conversations,743086a41d2a43808c7bb96b5f01e65e,CC-BY-4.0 (user prompts),5f161ee5dfcf0f4187fd,,44,512,False
+req_0556,coding_request,lmsys_chatbot_arena_conversations,1a6779a000134beeaa0fbb813b69ad58,CC-BY-4.0 (user prompts),20c410bf5556d8b02ca4,,44,512,False
+req_0557,coding_request,lmsys_chatbot_arena_conversations,fbb56105311f412d8ef30d2a41bd3a37,CC-BY-4.0 (user prompts),0c5bea4ae03a7a66848f,,44,512,False
+req_0558,coding_request,lmsys_chatbot_arena_conversations,6b8c829ce4654d8d98f4883d627e6719,CC-BY-4.0 (user prompts),0a2aaed5d9279123b6ff,,44,512,False
+req_0559,coding_request,lmsys_chatbot_arena_conversations,6943eb7587b345cd9c6f6265def2132a,CC-BY-4.0 (user prompts),2de42e059cffdcdc3712,,44,512,False
+req_0560,coding_request,lmsys_chatbot_arena_conversations,3c3b0060595142f7ac6f9355136f5b55,CC-BY-4.0 (user prompts),7b02f6f6cf8669ac8651,,45,512,False
+req_0561,coding_request,lmsys_chatbot_arena_conversations,0bb65335f0c04b5a99ec76795e72a5df,CC-BY-4.0 (user prompts),5848aca922f40a0cb641,,45,512,False
+req_0562,coding_request,lmsys_chatbot_arena_conversations,41b48f7a5d9347afbe8dd5fb8139815e,CC-BY-4.0 (user prompts),f9e39ea320d9ac009e7c,,45,512,False
+req_0563,coding_request,lmsys_chatbot_arena_conversations,b90dc9eecdca47678051287d33551497,CC-BY-4.0 (user prompts),5a248065af7cae7f83dc,,45,512,False
+req_0564,coding_request,lmsys_chatbot_arena_conversations,5f658ef694454f6cb259db4655b4b519,CC-BY-4.0 (user prompts),2ae5c7bf622580066bac,,45,512,False
+req_0565,coding_request,lmsys_chatbot_arena_conversations,3d5233112d9a453babb74a22f8af5360,CC-BY-4.0 (user prompts),5bb3da13ac02259fee82,,46,512,False
+req_0566,coding_request,lmsys_chatbot_arena_conversations,9506b733ba3144699bf707404c7a74d4,CC-BY-4.0 (user prompts),d0dea7db160d27fcd569,,46,512,False
+req_0567,coding_request,lmsys_chatbot_arena_conversations,db8b3ef1d8cb46f4aea76f6795bbd683,CC-BY-4.0 (user prompts),99851a3b026b234ca1ef,,46,512,False
+req_0568,coding_request,lmsys_chatbot_arena_conversations,d9231d3bbf9840109cc3ba73754fd0d4,CC-BY-4.0 (user prompts),87147abb1035f09e8864,,46,512,False
+req_0569,coding_request,lmsys_chatbot_arena_conversations,9022b5522cab4d18ba6a3242d5da8561,CC-BY-4.0 (user prompts),fa787bfa2b47832e767d,,46,512,False
+req_0570,coding_request,lmsys_chatbot_arena_conversations,485b39066dcc41599e77f4349bfcd3f2,CC-BY-4.0 (user prompts),770475741c9cf49ca9df,,47,512,False
+req_0571,coding_request,lmsys_chatbot_arena_conversations,e7b1fd84a15743b6a8048b06db4ad789,CC-BY-4.0 (user prompts),12666bd644eca9445bc7,,47,512,False
+req_0572,coding_request,lmsys_chatbot_arena_conversations,80369cc0542045c18d6457724a57c7ec,CC-BY-4.0 (user prompts),d2359bfa8db683810096,,47,512,False
+req_0573,coding_request,lmsys_chatbot_arena_conversations,f4cc68925469420aa487f5cfd14a9112,CC-BY-4.0 (user prompts),11cc5a6a6496d26d81e3,,48,512,False
+req_0574,coding_request,lmsys_chatbot_arena_conversations,ac1e529b3be74f849c460690467dd7a4,CC-BY-4.0 (user prompts),3216a31ac38fc20e8a2c,,48,512,False
+req_0575,coding_request,lmsys_chatbot_arena_conversations,e0f2594e119b454ab004837ab11c5a6c,CC-BY-4.0 (user prompts),16bf01945280324fbc0e,,48,512,False
+req_0576,coding_request,lmsys_chatbot_arena_conversations,0f3f9256fc3f4a62b2ec7aad2fe6dee2,CC-BY-4.0 (user prompts),ec83333b9c1369119eb0,,49,512,False
+req_0577,coding_request,lmsys_chatbot_arena_conversations,c7584ba6e0af480085e17634d2869ec4,CC-BY-4.0 (user prompts),267f27eee3fef6e58ac7,,49,512,False
+req_0578,coding_request,lmsys_chatbot_arena_conversations,ff134b97b3a6427ea7ed22a8fa4cc1e5,CC-BY-4.0 (user prompts),b9f5f3aefecdfbf710a5,,50,512,False
+req_0579,coding_request,lmsys_chatbot_arena_conversations,77c11142ce7144d0b3a863c1f1d58f0c,CC-BY-4.0 (user prompts),71e048f4fe47836ecc59,,50,512,False
+req_0580,coding_request,lmsys_chatbot_arena_conversations,8c8a8c9793d9453392c3a6c19203558c,CC-BY-4.0 (user prompts),257a5617fdad1e2d672f,,50,512,False
+req_0581,coding_request,lmsys_chatbot_arena_conversations,1872e3feca434e289100fb995e082098,CC-BY-4.0 (user prompts),7168ac2dea968858bb71,,51,512,False
+req_0582,coding_request,lmsys_chatbot_arena_conversations,ef4c724cf7624af8889a91843ede2aec,CC-BY-4.0 (user prompts),29b2d02f1ad9498d44e9,,51,512,False
+req_0583,coding_request,lmsys_chatbot_arena_conversations,ba8056f6fd5c455ca1447edf888b029f,CC-BY-4.0 (user prompts),53d3c7401712d18749ab,,51,512,False
+req_0584,coding_request,lmsys_chatbot_arena_conversations,b0b377c9bf9442dba4d5f171d2722a4a,CC-BY-4.0 (user prompts),d4562c4bb4d64246ce2c,,51,512,False
+req_0585,coding_request,lmsys_chatbot_arena_conversations,c567c01b891e48c381bbab6320ec6e3f,CC-BY-4.0 (user prompts),ccff840c16ab53a91a5b,,51,512,False
+req_0586,coding_request,lmsys_chatbot_arena_conversations,16c7b70e837540d8a26eae7ac5352402,CC-BY-4.0 (user prompts),b2271c51dc94d77f0963,,52,512,False
+req_0587,coding_request,lmsys_chatbot_arena_conversations,60cbc409e1874009afbde9b835647353,CC-BY-4.0 (user prompts),af7214be0e90f622fe2e,,52,512,False
+req_0588,coding_request,lmsys_chatbot_arena_conversations,ee35ec2d79f24e4eb4987789125acf16,CC-BY-4.0 (user prompts),bcdebeb22e7e70c9b310,,52,512,False
+req_0589,coding_request,lmsys_chatbot_arena_conversations,c1578c31ced0400f8a63d8d51248ea57,CC-BY-4.0 (user prompts),c77157b55299a00f4a71,,53,512,False
+req_0590,coding_request,lmsys_chatbot_arena_conversations,6f48c2947eb142e0b29d97d36081e29c,CC-BY-4.0 (user prompts),7caffbd39fd94cb3ab24,,53,512,False
+req_0591,coding_request,lmsys_chatbot_arena_conversations,e747fcfc35214042853a467d2b8ff9e5,CC-BY-4.0 (user prompts),43817445453480f707ea,,53,512,False
+req_0592,coding_request,lmsys_chatbot_arena_conversations,0af320e71a3044eea7afe1139cb455bf,CC-BY-4.0 (user prompts),1006ac82cf80eb17431f,,53,512,False
+req_0593,coding_request,lmsys_chatbot_arena_conversations,d62eb58fb983486db35bba594ed815f7,CC-BY-4.0 (user prompts),d9c86d74c8632817afbe,,54,512,False
+req_0594,coding_request,lmsys_chatbot_arena_conversations,246497d8bbc8401282f484a0d194db59,CC-BY-4.0 (user prompts),5597cca65e72c4870a57,,54,512,False
+req_0595,coding_request,lmsys_chatbot_arena_conversations,af7e34b3186b41449cc66a55c14141b4,CC-BY-4.0 (user prompts),322cf4100561243f216d,,55,512,False
+req_0596,coding_request,lmsys_chatbot_arena_conversations,d322eaa09aa54651b0255dfbcd559f7a,CC-BY-4.0 (user prompts),ddd48ee6ba77e49fa90e,,55,512,False
+req_0597,coding_request,lmsys_chatbot_arena_conversations,cd555de9eed4472f91282b894f4ef6e1,CC-BY-4.0 (user prompts),fd43477431b020b819e7,,56,512,False
+req_0598,coding_request,lmsys_chatbot_arena_conversations,940caafad8b54c3298e0f1b0beb81966,CC-BY-4.0 (user prompts),dbcac085b1c419b4a613,,58,512,False
+req_0599,coding_request,lmsys_chatbot_arena_conversations,379c531389204a9b913ab1f68958aae3,CC-BY-4.0 (user prompts),a59a6498603dde0c0e66,,58,512,False
+req_0600,coding_request,lmsys_chatbot_arena_conversations,533461afd5d64fefadf407fed219b455,CC-BY-4.0 (user prompts),f0324403d6fbd7648391,,59,512,False
+req_0601,coding_request,lmsys_chatbot_arena_conversations,9483f5656afc474b92fe9bc0ed0762d6,CC-BY-4.0 (user prompts),9af0151f94c332723b4f,,60,512,False
+req_0602,coding_request,lmsys_chatbot_arena_conversations,6ad7141865b043578497c4b96e6763c0,CC-BY-4.0 (user prompts),331154d1fd280ac95a7e,,62,512,False
+req_0603,coding_request,lmsys_chatbot_arena_conversations,eba04debb9f84a529edb5e3e7ce64186,CC-BY-4.0 (user prompts),97d11768873666482d6b,,62,512,False
+req_0604,coding_request,lmsys_chatbot_arena_conversations,808807936cdd46e99c7dcf927b87842e,CC-BY-4.0 (user prompts),6f7476a4c9c59b81adcd,,63,512,False
+req_0605,coding_request,lmsys_chatbot_arena_conversations,82a70341e5ab436db46ae4dfcf6d23d4,CC-BY-4.0 (user prompts),9c70da0cc5dfc535e822,,63,512,False
+req_0606,coding_request,lmsys_chatbot_arena_conversations,a0cf89b02952493ab649c72be96bd441,CC-BY-4.0 (user prompts),cbd927228af5d51631b3,,64,512,False
+req_0607,coding_request,lmsys_chatbot_arena_conversations,765ac50761a74cffbaa52cb656f49e99,CC-BY-4.0 (user prompts),3f7e895e9134dae7734f,,65,512,False
+req_0608,coding_request,lmsys_chatbot_arena_conversations,6b131bb7c50747c1819b9d3eb08f5aad,CC-BY-4.0 (user prompts),f497f02029ab640c5f7c,,65,512,False
+req_0609,coding_request,lmsys_chatbot_arena_conversations,bf61fac18cd74dceb43bc52a47b37d21,CC-BY-4.0 (user prompts),638a3abab95a4d26101b,,67,512,False
+req_0610,coding_request,lmsys_chatbot_arena_conversations,0a8da390165446b58a7a4c4a576c6ef9,CC-BY-4.0 (user prompts),131a2c09e235103413f1,,67,512,False
+req_0611,coding_request,lmsys_chatbot_arena_conversations,081ef9fe9e5d4b57be9561c49bfba1b3,CC-BY-4.0 (user prompts),e1fd82cf80a89f9b798b,,67,512,False
+req_0612,coding_request,lmsys_chatbot_arena_conversations,22c38659903641bf9cd4babc800ba5e1,CC-BY-4.0 (user prompts),3a458cdcfa66eb9dc55a,,68,512,False
+req_0613,coding_request,lmsys_chatbot_arena_conversations,7633f7cc818a406daa90ecbd11e4df65,CC-BY-4.0 (user prompts),fd5fc786b126520533c8,,69,512,False
+req_0614,coding_request,lmsys_chatbot_arena_conversations,e7ea4f924b1c4c9f88e04a9d7df110bd,CC-BY-4.0 (user prompts),971a0b36b63eb38a41ec,,69,512,False
+req_0615,coding_request,lmsys_chatbot_arena_conversations,310dea0b31bb40a9af5f6f86af494f26,CC-BY-4.0 (user prompts),c79f8e20a92316df018e,,70,512,False
+req_0616,coding_request,lmsys_chatbot_arena_conversations,d466e0297d684315a0f281978f6bdb6a,CC-BY-4.0 (user prompts),02899798fcc92f799ef0,,70,512,False
+req_0617,coding_request,lmsys_chatbot_arena_conversations,7fcfbabe86814229ab48e404f61315db,CC-BY-4.0 (user prompts),8bb70cf12c1143a6eb4b,,70,512,False
+req_0618,coding_request,lmsys_chatbot_arena_conversations,8dc47853f9314ccba1b9e4b65995c3ea,CC-BY-4.0 (user prompts),457610937cfbad8252a0,,71,512,False
+req_0619,coding_request,lmsys_chatbot_arena_conversations,7d17c88418f54c23bee51cb96b6a77d4,CC-BY-4.0 (user prompts),998988b9088fc57ad7ae,,72,512,False
+req_0620,coding_request,lmsys_chatbot_arena_conversations,311626bab02646b4a8ef38b80c7a890a,CC-BY-4.0 (user prompts),b915e460aad446c2e778,,74,512,False
+req_0621,coding_request,lmsys_chatbot_arena_conversations,c31b3ec852574903b9fe1b67cb32fb88,CC-BY-4.0 (user prompts),eb2a93c6e9d443fc23b5,,75,512,False
+req_0622,coding_request,lmsys_chatbot_arena_conversations,ff1381969d2445e09d752d226d1b5ada,CC-BY-4.0 (user prompts),11c94215ed9a48a83024,,76,512,False
+req_0623,coding_request,lmsys_chatbot_arena_conversations,ba0244fbbfea4155ac74b151580cceaf,CC-BY-4.0 (user prompts),6d5508c798067946401b,,77,512,False
+req_0624,coding_request,lmsys_chatbot_arena_conversations,f1bd9a1bf6de49ceb4946814b858c307,CC-BY-4.0 (user prompts),aac75fe200b27724ece7,,80,512,False
+req_0625,coding_request,lmsys_chatbot_arena_conversations,4a2248e714f541a8988b613f254f9afe,CC-BY-4.0 (user prompts),47f3f0fd19d8ca907d48,,83,512,False
+req_0626,coding_request,lmsys_chatbot_arena_conversations,78f32a5511c74ef9bffed5246bb314bd,CC-BY-4.0 (user prompts),12d69ca8262cadf7f930,,83,512,False
+req_0627,coding_request,lmsys_chatbot_arena_conversations,4b8f877c85e044039117c42687e77407,CC-BY-4.0 (user prompts),7425e77d628c18f14e70,,84,512,False
+req_0628,coding_request,lmsys_chatbot_arena_conversations,e9902d9e6d3c4321a208644fc2b0ae61,CC-BY-4.0 (user prompts),e5bc7f249cf015630de7,,92,512,False
+req_0629,coding_request,lmsys_chatbot_arena_conversations,cecdafec4130447392748f709bc5a49c,CC-BY-4.0 (user prompts),3d9c7cb101da73d9a12b,,98,512,False
+req_0630,coding_request,lmsys_chatbot_arena_conversations,47a2b4e7c4f64645ad0dac7ef72785dd,CC-BY-4.0 (user prompts),7598ac557809b68a4218,,105,512,False
+req_0631,coding_request,lmsys_chatbot_arena_conversations,670d66039a0049568ad1cc60308f4e9d,CC-BY-4.0 (user prompts),442521495dc1a1f59e64,,109,512,False
+req_0632,coding_request,lmsys_chatbot_arena_conversations,d32439e8fce443f3a02bc5487c66588a,CC-BY-4.0 (user prompts),b95bcd7fa6bc96ed1c62,,114,512,False
+req_0633,coding_request,lmsys_chatbot_arena_conversations,724fb16eba6a42918f8012a96abaa9c4,CC-BY-4.0 (user prompts),634d283a2a8e0bd3b182,,116,512,False
+req_0634,coding_request,lmsys_chatbot_arena_conversations,ff7dbdac3d3e4e1d9f16087bc2ed4cb5,CC-BY-4.0 (user prompts),6906ba54f59b022bfe20,,126,512,False
+req_0635,coding_request,lmsys_chatbot_arena_conversations,3ef709a4c538466c9fa704705609e62d,CC-BY-4.0 (user prompts),7016c3463b57eada0b3e,,128,512,False
+req_0636,coding_request,lmsys_chatbot_arena_conversations,d442e098047e4ee1923e9f319727a739,CC-BY-4.0 (user prompts),aa9608e0ca67c9ebd5f6,,131,512,False
+req_0637,coding_request,lmsys_chatbot_arena_conversations,97a1cb9ba9524de885c289b23dc47f4b,CC-BY-4.0 (user prompts),a330d874ba61fd47565e,,145,512,False
+req_0638,coding_request,lmsys_chatbot_arena_conversations,c842dd9847aa423cbc2ae69f15e20adb,CC-BY-4.0 (user prompts),ceb03d61c3f5f3654e6e,,168,512,False
+req_0639,coding_request,lmsys_chatbot_arena_conversations,c8c37d92a61f4a67ba9b582cb3b5294d,CC-BY-4.0 (user prompts),2c714d7543cf5f792c1a,,172,512,False
+req_0640,coding_request,lmsys_chatbot_arena_conversations,44faca5aedb742e48fc7cf26d3795d89,CC-BY-4.0 (user prompts),751bbf7893cbb302075f,,190,512,False
+req_0641,coding_request,lmsys_chatbot_arena_conversations,4ea5a91562bd4da88e11a8db6f75c095,CC-BY-4.0 (user prompts),05b43c5734ae36eef21b,,217,512,False
+req_0642,coding_request,lmsys_chatbot_arena_conversations,434f1e4d14a349099e6c304f25d556f2,CC-BY-4.0 (user prompts),11b5e6a26973560494c4,,236,512,False
+req_0643,coding_request,lmsys_chatbot_arena_conversations,df236d840d2f426bab70e96815fd8f28,CC-BY-4.0 (user prompts),b28cbae7085f2df5a859,,283,512,False
+req_0644,coding_request,lmsys_chatbot_arena_conversations,d93e36df73e84aa2ade15d4a038c098f,CC-BY-4.0 (user prompts),db91b9c7316dacd8b9ef,,351,512,False
+req_0645,coding_request,lmsys_chatbot_arena_conversations,a898bb1c6b694b36b8b084e20039fc38,CC-BY-4.0 (user prompts),62d55552d88e1d045e52,,359,512,False
+req_0646,coding_request,lmsys_chatbot_arena_conversations,8d7b8bb58aeb461891bd649248a52edd,CC-BY-4.0 (user prompts),812587867837e3a9347b,,392,512,False
+req_0647,coding_request,lmsys_chatbot_arena_conversations,e8199b7ba5ca4882a2cec5880b7e2f3c,CC-BY-4.0 (user prompts),db6e8e09dcd39f7948c8,,474,512,False
+req_0648,coding_request,lmsys_chatbot_arena_conversations,3b2d36c8d60546829d4657c47deb1fee,CC-BY-4.0 (user prompts),42e82cf5d39954ee6302,,566,512,False
+req_0649,coding_request,lmsys_chatbot_arena_conversations,197a621cb48d4f809576aa64d6d71502,CC-BY-4.0 (user prompts),65fdb021cf81b8f8bd74,,596,512,False
+req_0650,coding_request,lmsys_chatbot_arena_conversations,51c1e32e54c94a0daf70794b26aefe3c,CC-BY-4.0 (user prompts),178e5c6159b55fbf7da3,,735,512,False
+req_0651,document_qa,google_natural_questions,-7448440371568865738,CC-BY-SA-3.0,337477a55a9d6910a7bf,f3e26eb293da45882d2f,1024,256,True
+req_0652,document_qa,google_natural_questions,-5770826999118647943,CC-BY-SA-3.0,942d45b390ed3b8ddda0,f56fe464fec02507978a,1024,256,True
+req_0653,document_qa,google_natural_questions,-8921734945940617415,CC-BY-SA-3.0,21a3d034d3ca5639e61a,c0839b8a552825817a24,1031,256,True
+req_0654,document_qa,google_natural_questions,-6049682069391356174,CC-BY-SA-3.0,2f4ec353ee251b89cdd1,eae8e90bf842186d5990,1034,256,True
+req_0655,document_qa,google_natural_questions,-1954767387063083290,CC-BY-SA-3.0,31e1ec4b7e1664fcf4b0,42cd425259c7f341faf7,1046,256,True
+req_0656,document_qa,google_natural_questions,5241528485286843004,CC-BY-SA-3.0,bac3c7ca8b54754a6f5b,8d772b36eee73a052d48,1047,256,True
+req_0657,document_qa,google_natural_questions,1899050694327530340,CC-BY-SA-3.0,576fcef02cbc22436a3e,6ddd5b2b207282c50f48,1058,256,True
+req_0658,document_qa,google_natural_questions,5076659963288501126,CC-BY-SA-3.0,51b4cd3093b720bb994a,144c480579abf42a6c65,1068,256,True
+req_0659,document_qa,google_natural_questions,287554758685116001,CC-BY-SA-3.0,08d1bfb00f6bd0dbabf0,69fec0a4b346fc03e9de,1070,256,True
+req_0660,document_qa,google_natural_questions,-5287252178837736449,CC-BY-SA-3.0,30b8e3e4bd585371e27c,5ad50881267147c0ee30,1076,256,True
+req_0661,document_qa,google_natural_questions,2210285477766713425,CC-BY-SA-3.0,6cf702c95686ec32f7e0,1fbabc1c6325e5d0a776,1089,256,True
+req_0662,document_qa,google_natural_questions,-8273060606895243952,CC-BY-SA-3.0,5ca97e1cb39cec3d3d47,72ace5ee6064fa1de568,1092,256,True
+req_0663,document_qa,google_natural_questions,-5756028754418160697,CC-BY-SA-3.0,43f91f40e11a369a7942,410d40d0dfb021b9efd9,1093,256,True
+req_0664,document_qa,google_natural_questions,6283281426904985359,CC-BY-SA-3.0,fa1197140c21915576a7,f4a49edeade16f49011e,1101,256,True
+req_0665,document_qa,google_natural_questions,-6705069324433126715,CC-BY-SA-3.0,68efdde3799aa11c4403,ac11e74b0706e37a5ea7,1114,256,True
+req_0666,document_qa,google_natural_questions,-6728478563370734545,CC-BY-SA-3.0,0ac4916e03677c88427d,e787ee464c7ad4f0d7a9,1115,256,True
+req_0667,document_qa,google_natural_questions,-2091043336262607581,CC-BY-SA-3.0,54d829d6b858b08985ac,1fd4b384ae7cb6b7d804,1125,256,True
+req_0668,document_qa,google_natural_questions,5272397581784877923,CC-BY-SA-3.0,965c8c5388c277185dff,6f751b4639118cd1a0c7,1127,256,True
+req_0669,document_qa,google_natural_questions,5462059140048955519,CC-BY-SA-3.0,1ae462428cbaf90cf9f8,57b98b57f2584d9fefb7,1133,256,True
+req_0670,document_qa,google_natural_questions,3540600415751443287,CC-BY-SA-3.0,d64e10115663ee38d143,6a6a577ba2010bcf6a81,1140,256,True
+req_0671,document_qa,google_natural_questions,-6583096872752014392,CC-BY-SA-3.0,19d94cb2daf973442cf0,a651815681dae862b033,1146,256,True
+req_0672,document_qa,google_natural_questions,4478449282118737014,CC-BY-SA-3.0,5fce0dea375f302fc3a9,55d66cd18098703356ad,1152,256,True
+req_0673,document_qa,google_natural_questions,-3046490081338066484,CC-BY-SA-3.0,f411dd89cd65b0b75746,883c573febd6d82639cd,1162,256,True
+req_0674,document_qa,google_natural_questions,4163553088793287874,CC-BY-SA-3.0,272e520b911a6947cf39,5325651c4853a70af6cf,1164,256,True
+req_0675,document_qa,google_natural_questions,-1650280805460807732,CC-BY-SA-3.0,c255ed9670bc5bb9a530,7e630789049916965046,1167,256,True
+req_0676,document_qa,google_natural_questions,8040894501121472003,CC-BY-SA-3.0,1b5bc1746eea6cace57c,fae766c1cb576398904d,1172,256,True
+req_0677,document_qa,google_natural_questions,7182136464421994875,CC-BY-SA-3.0,5a2f74e74be6f75cf469,c190180a27423066f144,1189,256,True
+req_0678,document_qa,google_natural_questions,-2810137468556044688,CC-BY-SA-3.0,bfa3730f12bbf9e92e21,69b38a556d37b404fba6,1200,256,True
+req_0679,document_qa,google_natural_questions,-3528713404747677854,CC-BY-SA-3.0,eaa10e2161276d5fe71e,197446c4e650a4572be5,1201,256,True
+req_0680,document_qa,google_natural_questions,2245354727797241924,CC-BY-SA-3.0,5aeda2cc6e92d4af98ec,4ccea90867c88ec0622a,1205,256,True
+req_0681,document_qa,google_natural_questions,-2697110608015033531,CC-BY-SA-3.0,747897368117e3c9c6a7,654e4335eb46276f6883,1217,256,True
+req_0682,document_qa,google_natural_questions,-3173736754902107509,CC-BY-SA-3.0,65432dabb3218f58e7c8,fa9c1ba502b11e61d9f8,1238,256,True
+req_0683,document_qa,google_natural_questions,6531156058879644411,CC-BY-SA-3.0,032b5433672d45ad9f22,cea41a0cdb56bedf58cc,1239,256,True
+req_0684,document_qa,google_natural_questions,7515962613647559432,CC-BY-SA-3.0,fca6191b6509b59e68b8,adad63ef8984f663177e,1247,256,True
+req_0685,document_qa,google_natural_questions,-6777722653537053219,CC-BY-SA-3.0,296db390f3d6cd855de7,029590326c1a5cb58cb5,1253,256,True
+req_0686,document_qa,google_natural_questions,-2677016734211519798,CC-BY-SA-3.0,a636eef57bed24419a2e,8ce6eafb95f9ffb85687,1257,256,True
+req_0687,document_qa,google_natural_questions,-4387372930338048097,CC-BY-SA-3.0,3be4c02f9fb327d30591,fbd697a9364817ec3382,1261,256,True
+req_0688,document_qa,google_natural_questions,3417590050367548573,CC-BY-SA-3.0,6533eeec5d4c407602c0,91e710b11b43b6a61c06,1264,256,True
+req_0689,document_qa,google_natural_questions,320098280497496113,CC-BY-SA-3.0,58c21bd3794c2135d6f7,cb83332e71bea4b639ef,1265,256,True
+req_0690,document_qa,google_natural_questions,1073141464582953922,CC-BY-SA-3.0,6eeb8568ee22b66289eb,538e845ed49d4b52cbe7,1280,256,True
+req_0691,document_qa,google_natural_questions,6525946514628833858,CC-BY-SA-3.0,f9ccecd4495093cef9e1,90669622f1987a66f2b3,1282,256,True
+req_0692,document_qa,google_natural_questions,-8306071407237909271,CC-BY-SA-3.0,fa4330b91d208cbe83f3,1b747467cde2508623f0,1284,256,True
+req_0693,document_qa,google_natural_questions,-8590969191212648596,CC-BY-SA-3.0,f1e5cbd0cf3b1ac41da7,5b7c68e2052233467261,1294,256,True
+req_0694,document_qa,google_natural_questions,-3703222607022183417,CC-BY-SA-3.0,dcbdac86161840f2719d,f4754b0d815b60ccf110,1296,256,True
+req_0695,document_qa,google_natural_questions,6890046523362202131,CC-BY-SA-3.0,1fcc75f18e8c4669411d,a8458d7a36d3b4700086,1302,256,True
+req_0696,document_qa,google_natural_questions,-7108297090340010635,CC-BY-SA-3.0,fc43752efd7e107b9f87,4269987b184270e3c9c5,1305,256,True
+req_0697,document_qa,google_natural_questions,-7719864220311874429,CC-BY-SA-3.0,71fee4c0f1a026b1eef9,74054aa01b4f4db8b052,1326,256,True
+req_0698,document_qa,google_natural_questions,-9140917125487422394,CC-BY-SA-3.0,4eddba017f25bc2b514e,0856fdf5cbedc101e54b,1331,256,True
+req_0699,document_qa,google_natural_questions,8631445277994805127,CC-BY-SA-3.0,cd45d628fedf67d5e727,c510bf61754897d4f9f9,1335,256,True
+req_0700,document_qa,google_natural_questions,4529097594257005072,CC-BY-SA-3.0,2cf75178fe41f4570b6a,b5f7b6643a20fe3605aa,1338,256,True
+req_0701,document_qa,google_natural_questions,4555791497533727881,CC-BY-SA-3.0,ff4d7166d5180c4822b4,84bc93c34114c93df87e,1344,256,True
+req_0702,document_qa,google_natural_questions,1727037891559414197,CC-BY-SA-3.0,36bd762b9b2788b2c6fd,6ca6512d064b49a309c6,1350,256,True
+req_0703,document_qa,google_natural_questions,-2896250684179656168,CC-BY-SA-3.0,f1a6409238b2881d8b8b,992a852da4453c582315,1352,256,True
+req_0704,document_qa,google_natural_questions,8406235307258037763,CC-BY-SA-3.0,560458cf36ff96cd6590,21b55bdb06a309c8d32c,1357,256,True
+req_0705,document_qa,google_natural_questions,-7782747036704758362,CC-BY-SA-3.0,28dfca2df3da5ba68ee4,257af382ab15721d1222,1360,256,True
+req_0706,document_qa,google_natural_questions,-3084705447114481339,CC-BY-SA-3.0,6b86050e9220c853925c,22da68deb9319c5619b3,1379,256,True
+req_0707,document_qa,google_natural_questions,3120588652623757932,CC-BY-SA-3.0,ea0d675102ded2ad7aac,a2e615b7e304d18cf2de,1380,256,True
+req_0708,document_qa,google_natural_questions,1198503736763105249,CC-BY-SA-3.0,437b020ec244718ec86c,1ece615e4152bf7bc540,1404,256,True
+req_0709,document_qa,google_natural_questions,6877924879982910560,CC-BY-SA-3.0,54b929b5c4eed0b3c663,a4acf0b2282020ca25af,1416,256,True
+req_0710,document_qa,google_natural_questions,6270082661211391095,CC-BY-SA-3.0,bd201b2d1a7bf117b9c3,5282fbd17f2496b941f5,1420,256,True
+req_0711,document_qa,google_natural_questions,823425968970779659,CC-BY-SA-3.0,5db8058fab00edd9e653,475885abb1f66ced94f5,1426,256,True
+req_0712,document_qa,google_natural_questions,-6688648318220484465,CC-BY-SA-3.0,dc0e39a405dcdf96984b,25b46882be8a14f2c370,1430,256,True
+req_0713,document_qa,google_natural_questions,-1626238017367424235,CC-BY-SA-3.0,8e239f19226520f61a32,24b53663fa220e430861,1451,256,True
+req_0714,document_qa,google_natural_questions,-5570522763944371931,CC-BY-SA-3.0,e31e607bf0c685c849b7,5860a1334ded9ad1ebc8,1458,256,True
+req_0715,document_qa,google_natural_questions,-5265776522162170300,CC-BY-SA-3.0,fbcb8bb123dcd88ccff4,51576716fc09b22fba78,1462,256,True
+req_0716,document_qa,google_natural_questions,-6552661048272445959,CC-BY-SA-3.0,eb333c8861393cf390d9,f451bbe21a3927fd3ab1,1469,256,True
+req_0717,document_qa,google_natural_questions,-3622536938786427449,CC-BY-SA-3.0,b4e5e40683bbb43c0830,478b29c37bde53128021,1475,256,True
+req_0718,document_qa,google_natural_questions,-5899008817988413611,CC-BY-SA-3.0,f249be08705e9ed4fdcf,0387f2db259c5e2b9b19,1477,256,True
+req_0719,document_qa,google_natural_questions,-8945123092565394423,CC-BY-SA-3.0,f942406bcfa460724b9e,a210aeea126aeb0362d6,1489,256,True
+req_0720,document_qa,google_natural_questions,4178100003617536856,CC-BY-SA-3.0,e473dc26ce39fdfa1e7f,da56bf43526e417b8a35,1492,256,True
+req_0721,document_qa,google_natural_questions,868198448352805446,CC-BY-SA-3.0,3a4973f814a8e761b551,2dc09e94b7b7bbeee047,1497,256,True
+req_0722,document_qa,google_natural_questions,2281963302851049604,CC-BY-SA-3.0,3220043bb04aa50534d4,18c6e11ddd306e470d9f,1501,256,True
+req_0723,document_qa,google_natural_questions,435686373857443167,CC-BY-SA-3.0,bab5b8d681d8ef3dbdf7,e26a069b8ccec94aff24,1504,256,True
+req_0724,document_qa,google_natural_questions,4892514719379184927,CC-BY-SA-3.0,971ebf3ec125642ad664,539ac9de0e3e1e8f659d,1518,256,True
+req_0725,document_qa,google_natural_questions,135735917133780830,CC-BY-SA-3.0,11110ba1868e3627816c,d9abb42e8df6c3077cf4,1521,256,True
+req_0726,document_qa,google_natural_questions,2071617087677948457,CC-BY-SA-3.0,bc8e2458de1a273954aa,16df34bb9dd9e996e18d,1528,256,True
+req_0727,document_qa,google_natural_questions,-3883955149882247999,CC-BY-SA-3.0,e44dd8e67c56183d0282,10c7b3c9411e0737963a,1547,256,True
+req_0728,document_qa,google_natural_questions,-3045129997128269851,CC-BY-SA-3.0,15c5f19470013bba2001,fbb2d75f4fc14dbe5ebf,1555,256,True
+req_0729,document_qa,google_natural_questions,2905561919931889571,CC-BY-SA-3.0,b37d64e958e91936b0da,7cb7a8d5e5e593d0df95,1564,256,True
+req_0730,document_qa,google_natural_questions,-7066362621177478228,CC-BY-SA-3.0,3379aa89aa3763171e06,454609d8b25c0d11405c,1568,256,True
+req_0731,document_qa,google_natural_questions,3823044144969036841,CC-BY-SA-3.0,fb256495b45430995506,cd3ce2eb5a174235f096,1569,256,True
+req_0732,document_qa,google_natural_questions,-228332312612268584,CC-BY-SA-3.0,955ede937e2ef3f8117a,3e1340c434695b687926,1576,256,True
+req_0733,document_qa,google_natural_questions,1369889989966822437,CC-BY-SA-3.0,5a1e907a369ebb1e9974,1c4d49ed5eda4fa041da,1578,256,True
+req_0734,document_qa,google_natural_questions,-1646091586690966710,CC-BY-SA-3.0,e87efff7a92676aeb3e0,45eecb41a120a73cadc0,1580,256,True
+req_0735,document_qa,google_natural_questions,4249845320653474018,CC-BY-SA-3.0,186d502fa3c845e59149,b23c9f757a75aadc27b0,1589,256,True
+req_0736,document_qa,google_natural_questions,-999707391393014046,CC-BY-SA-3.0,4fe3c28666dd4bc10066,ff546a1227b663c1b83f,1601,256,True
+req_0737,document_qa,google_natural_questions,-1360621097038489342,CC-BY-SA-3.0,e8eae4d243de3abe2bfd,d64e5612ae2170645723,1610,256,True
+req_0738,document_qa,google_natural_questions,-4025393864190354286,CC-BY-SA-3.0,5a124273031d3df4f874,7a9de80d17c65ca11cfc,1624,256,True
+req_0739,document_qa,google_natural_questions,-8576265144122780273,CC-BY-SA-3.0,ba3bf9cf41e47684d3bf,194b6d2f0e5d3e005731,1635,256,True
+req_0740,document_qa,google_natural_questions,-8191809804364065521,CC-BY-SA-3.0,ba8475131063a6d019be,c249ef530f62acab7c74,1635,256,True
+req_0741,document_qa,google_natural_questions,4828100932924630434,CC-BY-SA-3.0,6d6856c443590257e803,535a1ded0cccc2949290,1640,256,True
+req_0742,document_qa,google_natural_questions,399332969287475533,CC-BY-SA-3.0,4403c77e7999985dac8c,01653b08099625afe97b,1646,256,True
+req_0743,document_qa,google_natural_questions,6193082622006287573,CC-BY-SA-3.0,cebab7d0184ef9a78608,dbd782406afbe064193d,1661,256,True
+req_0744,document_qa,google_natural_questions,-2829711578303204108,CC-BY-SA-3.0,62e73110056a89a73d0f,6083ca6ef34267927cfc,1680,256,True
+req_0745,document_qa,google_natural_questions,7272502110391515198,CC-BY-SA-3.0,0461defb09eb0e6101b3,c853de71b4fdf681b9d8,1683,256,True
+req_0746,document_qa,google_natural_questions,1467316679659424215,CC-BY-SA-3.0,5af5430019370b437fd1,82262df38e0a9205f3cf,1697,256,True
+req_0747,document_qa,google_natural_questions,6664728896530807681,CC-BY-SA-3.0,528f83f034c0a4b9e5f3,a3f5c8a3338d43cb73a2,1703,256,True
+req_0748,document_qa,google_natural_questions,5602146483903082350,CC-BY-SA-3.0,55d08baa9c1431a96ee9,00c5aa404f9c689b15c6,1707,256,True
+req_0749,document_qa,google_natural_questions,-2156015684380057416,CC-BY-SA-3.0,a87b4c09ade89538f76a,f3ee52cc590f0bd13ac5,1717,256,True
+req_0750,document_qa,google_natural_questions,-2333242006980505823,CC-BY-SA-3.0,40b93a091914190d5a17,bf020bc3de73b6bd3c2a,1734,256,True
+req_0751,document_qa,google_natural_questions,797640875194749030,CC-BY-SA-3.0,93176f851b11fbc6ed7b,48b3865a11d827255208,1739,256,True
+req_0752,document_qa,google_natural_questions,-3364037372797693267,CC-BY-SA-3.0,fd65f648efe08eacc0ae,d4d79c3b66402d39139a,1769,256,True
+req_0753,document_qa,google_natural_questions,7066717093743163834,CC-BY-SA-3.0,623350345a50265abda8,cb6320d1848186cdf6e5,1769,256,True
+req_0754,document_qa,google_natural_questions,6524444358421567030,CC-BY-SA-3.0,126f89237316b4c30429,11df08d5a7462032da88,1778,256,True
+req_0755,document_qa,google_natural_questions,-5620305706534832502,CC-BY-SA-3.0,6179fa2089b2c47f555b,82df32039e92ebc114cb,1791,256,True
+req_0756,document_qa,google_natural_questions,-8928234938752642652,CC-BY-SA-3.0,c375fc126f27726d6476,50b93cae95b1d0628ca4,1791,256,True
+req_0757,document_qa,google_natural_questions,-6390673718101257195,CC-BY-SA-3.0,4b25502c9a009b2f3077,ed1c74e762520d5ef9ba,1795,256,True
+req_0758,document_qa,google_natural_questions,-378809934646704315,CC-BY-SA-3.0,dc1b74064c7e5fa42b9e,287eb2337aabeb16ee32,1796,256,True
+req_0759,document_qa,google_natural_questions,4678397458029904353,CC-BY-SA-3.0,a52f5e2e5497c3e7a0e8,b5e940428c6d9506d4ac,1800,256,True
+req_0760,document_qa,google_natural_questions,-2260843137741671681,CC-BY-SA-3.0,09164158acc3098b725f,c5a11e862b3fa2057254,1807,256,True
+req_0761,document_qa,google_natural_questions,1118367952978008362,CC-BY-SA-3.0,0d40ad09f7477b669024,8642b513f62029483d89,1814,256,True
+req_0762,document_qa,google_natural_questions,-2295805928107720992,CC-BY-SA-3.0,36765bdb5714305650c5,506baef28598594fb59f,1818,256,True
+req_0763,document_qa,google_natural_questions,2424546520083101719,CC-BY-SA-3.0,819ad44ee7c873018d9b,5690240353e47ce05c05,1823,256,True
+req_0764,document_qa,google_natural_questions,-1319107592748448779,CC-BY-SA-3.0,44dc2b0756b3bf8b32df,f605c00cfa94e365389d,1827,256,True
+req_0765,document_qa,google_natural_questions,-9029528238942569459,CC-BY-SA-3.0,261e6b018b567b0f032d,03913ae7ef994577fd66,1831,256,True
+req_0766,document_qa,google_natural_questions,1244683738014461215,CC-BY-SA-3.0,23036491f68054a797c0,d48abcffc07f339dc367,1833,256,True
+req_0767,document_qa,google_natural_questions,7698249105840814319,CC-BY-SA-3.0,68f3f0e18b1546b04f46,ba04634b53a66b9f9685,1841,256,True
+req_0768,document_qa,google_natural_questions,-7992595911900581241,CC-BY-SA-3.0,8e28102be7b38c4d1e7f,2d936dbe380c5bb86e71,1844,256,True
+req_0769,document_qa,google_natural_questions,268868245589421401,CC-BY-SA-3.0,c5107a9883f5171d3513,210984a30383c0c367fc,1858,256,True
+req_0770,document_qa,google_natural_questions,-7475748212683884887,CC-BY-SA-3.0,b0a2ea08abda2b6abfed,051344f17c2231aa1b86,1860,256,True
+req_0771,document_qa,google_natural_questions,929007509023002051,CC-BY-SA-3.0,da428f30c47828c81127,7ed9a5def8017f7a56b8,1862,256,True
+req_0772,document_qa,google_natural_questions,-5106914440627620071,CC-BY-SA-3.0,1ba2464fac58647a2274,f1a201c65219f2817fc4,1865,256,True
+req_0773,document_qa,google_natural_questions,214175127433351241,CC-BY-SA-3.0,3f84483b78ac3bc83769,95cfe9cdf5476ebb927e,1871,256,True
+req_0774,document_qa,google_natural_questions,-489671651767600785,CC-BY-SA-3.0,b0f4ac1d4edb3a000a61,d6a25ff9fd65c6c75de2,1871,256,True
+req_0775,document_qa,google_natural_questions,6010198873808441889,CC-BY-SA-3.0,97447258e822f989345b,e80bd3115e636085bd19,1874,256,True
+req_0776,document_qa,google_natural_questions,7550350971371464601,CC-BY-SA-3.0,8d1ed4d541a8437955c8,f047c8bcec94920f67ec,1885,256,True
+req_0777,document_qa,google_natural_questions,-6754327047321810102,CC-BY-SA-3.0,9ac68692d361154edb16,05a488b7fe44e147fc64,1893,256,True
+req_0778,document_qa,google_natural_questions,8899792452510926643,CC-BY-SA-3.0,5898f1f5dfde402357a9,0ba5f364ce2ddcbd33e7,1898,256,True
+req_0779,document_qa,google_natural_questions,-9140259477680418382,CC-BY-SA-3.0,9d9400e10d4b6e9bcfc0,c107d6c2d36ab6086592,1903,256,True
+req_0780,document_qa,google_natural_questions,4100776939426840961,CC-BY-SA-3.0,a42d330ff5f28f725a7e,f3d7d9b06dd06eaf532d,1908,256,True
+req_0781,document_qa,google_natural_questions,-988164280241954391,CC-BY-SA-3.0,2f06c1560697fc15c458,3b512237d2b20313db02,1917,256,True
+req_0782,document_qa,google_natural_questions,4049440362279448331,CC-BY-SA-3.0,fc71071cc727b32b1517,cb436118d32d9f70ff6d,1922,256,True
+req_0783,document_qa,google_natural_questions,-4499807783579886339,CC-BY-SA-3.0,3087cf4bd3fc1954b55b,2338bbf3cd8ad3b6fe54,1924,256,True
+req_0784,document_qa,google_natural_questions,-5295648668014359095,CC-BY-SA-3.0,60a19eee23d122269155,96ab438962384df8b83e,1931,256,True
+req_0785,document_qa,google_natural_questions,3160618850394685343,CC-BY-SA-3.0,b2ee7fb3d420fd7d9ad7,e2b84f58e1ae72969021,1951,256,True
+req_0786,document_qa,google_natural_questions,-6258481075220777345,CC-BY-SA-3.0,53be0a11676ddaae7b1a,835bea5311647674f2d6,1952,256,True
+req_0787,document_qa,google_natural_questions,3419994394660087586,CC-BY-SA-3.0,45cc0c5121220dad1cc7,c05c3c67e0adc8c227eb,1968,256,True
+req_0788,document_qa,google_natural_questions,-2868975535670196034,CC-BY-SA-3.0,28fe3d248b496a5aa35f,a384e3bead58d35fc354,1971,256,True
+req_0789,document_qa,google_natural_questions,8611408673963297545,CC-BY-SA-3.0,90bb5f9898d870fbfc14,5ca72a75472744d6c7c0,1976,256,True
+req_0790,document_qa,google_natural_questions,2703234235213245587,CC-BY-SA-3.0,760f64df956331007b4b,7cbdb5877cde8f97a14f,1977,256,True
+req_0791,document_qa,google_natural_questions,7358591554551644315,CC-BY-SA-3.0,315cfbd961c297bf22e5,56103caa41c8489c7c74,1987,256,True
+req_0792,document_qa,google_natural_questions,-1745441980951914127,CC-BY-SA-3.0,3146c10ac00782849cdc,6b6f01c753b03a9c073f,1988,256,True
+req_0793,document_qa,google_natural_questions,-2770575894352800978,CC-BY-SA-3.0,7f3eb0934524d76d35f8,c6e953007c48566ac03c,1995,256,True
+req_0794,document_qa,google_natural_questions,-547161111984444477,CC-BY-SA-3.0,9273e8855c4b933ca300,fa65c661cdca444e3f1c,1997,256,True
+req_0795,document_qa,google_natural_questions,8189602913146064244,CC-BY-SA-3.0,ab9f458270366eb3aec5,a7f20eeb1e99477519dd,2001,256,True
+req_0796,document_qa,google_natural_questions,5048897239472571667,CC-BY-SA-3.0,8ad0557d73b7548c41f6,7499d76b574ba1a75af7,2017,256,True
+req_0797,document_qa,google_natural_questions,-2338760348974671309,CC-BY-SA-3.0,39b6d4a4b2d17cfac8ee,5695ddda30bf71e55345,2030,256,True
+req_0798,document_qa,google_natural_questions,7763580589919257510,CC-BY-SA-3.0,8adea5b86cc7e5e0a2a9,e63008db19d9f96d0d48,2039,256,True
+req_0799,document_qa,google_natural_questions,-7834153577297404903,CC-BY-SA-3.0,0d2a6067230672b09d02,47011a19bc0477aff80b,2041,256,True
+req_0800,document_qa,google_natural_questions,-8688570761647667415,CC-BY-SA-3.0,af13655d2ba8bf49dc67,a63d0b3225b0d7b770e9,2046,256,True
+req_0801,long_context_qa,google_natural_questions,-8049831817025128670,CC-BY-SA-3.0,0d7a9d29e72b09bfc032,3189b62d51e734b677aa,3077,256,True
+req_0802,long_context_qa,google_natural_questions,-2421987605666075595,CC-BY-SA-3.0,5d1dab2e21d4bcef08a3,bd174bdcf7aa37b0539d,3081,256,True
+req_0803,long_context_qa,google_natural_questions,6477190125145041163,CC-BY-SA-3.0,716ba532d368338047a3,ab5704093fe99a9186a4,3089,256,True
+req_0804,long_context_qa,google_natural_questions,-3847899736947268533,CC-BY-SA-3.0,3270e19760665ca7d8a8,c03ac08184fa529b17d9,3113,256,True
+req_0805,long_context_qa,google_natural_questions,1071620472660054198,CC-BY-SA-3.0,033266d6b179c1e55702,ec3a5f5b4d5581f853e3,3124,256,True
+req_0806,long_context_qa,google_natural_questions,-741966221578708035,CC-BY-SA-3.0,79a689a2dddd35699829,a18eee080713b75e7cc5,3127,256,True
+req_0807,long_context_qa,google_natural_questions,-6087677439748364392,CC-BY-SA-3.0,a1a47aff92c7a2b27f35,67671757ec50ecf8bc31,3165,256,True
+req_0808,long_context_qa,google_natural_questions,-1998832248405318049,CC-BY-SA-3.0,a9db5529d3632768294d,7ecebc1ad683f5d01146,3168,256,True
+req_0809,long_context_qa,google_natural_questions,6029564937507579890,CC-BY-SA-3.0,44bbf01537c9364d9eab,e2ade15e3351157ccbfa,3187,256,True
+req_0810,long_context_qa,google_natural_questions,7906734770030155664,CC-BY-SA-3.0,f381c600e7675fab1cff,772c045c95bdff48e0b4,3190,256,True
+req_0811,long_context_qa,google_natural_questions,-1942360659032011420,CC-BY-SA-3.0,cbc88e6fecba29635c94,51c3a0ae2c6d1c292952,3196,256,True
+req_0812,long_context_qa,google_natural_questions,-590080393451223775,CC-BY-SA-3.0,7f97c217cb6de27aecfa,3f7a434bb98bb975bc13,3205,256,True
+req_0813,long_context_qa,google_natural_questions,-4387580204477740988,CC-BY-SA-3.0,4ceff6f5eaddda9e7fb1,c43e48d7b12ad29af202,3202,256,True
+req_0814,long_context_qa,google_natural_questions,4529027960784039740,CC-BY-SA-3.0,1a0d20fb4c2d85a86dbf,d360c843ffc354ce8fcf,3210,256,True
+req_0815,long_context_qa,google_natural_questions,-4382447398714691903,CC-BY-SA-3.0,d6236e35000f7f5df023,8dff774494e95c4a1d1a,3221,256,True
+req_0816,long_context_qa,google_natural_questions,-7605659977803539227,CC-BY-SA-3.0,a4af4c18610a431146d7,d6be910e7d6e58877cdc,3252,256,True
+req_0817,long_context_qa,google_natural_questions,7805524920726630219,CC-BY-SA-3.0,6b3af665fe2809f3f044,cbe89bf7350d35bcd554,3260,256,True
+req_0818,long_context_qa,google_natural_questions,-6899011865054566727,CC-BY-SA-3.0,8b9ebe1022c6fd3cdb65,449241b50ee8958d9b77,3266,256,True
+req_0819,long_context_qa,google_natural_questions,7442275120864844110,CC-BY-SA-3.0,d6baf098001e7903dea9,6f49a12542667f4ff463,3278,256,True
+req_0820,long_context_qa,google_natural_questions,-1671736676155083195,CC-BY-SA-3.0,5f84563d6b7ee4bd81ee,20558778d264ccb5b57a,3294,256,True
+req_0821,long_context_qa,google_natural_questions,9087602323999821634,CC-BY-SA-3.0,7fbba2487287d5e22642,b3b88ca7550e4d2ee005,3302,256,True
+req_0822,long_context_qa,google_natural_questions,-3743208426084628455,CC-BY-SA-3.0,87aa9771ae7537f4ec02,952a41d6cc5b0beb37ca,3304,256,True
+req_0823,long_context_qa,google_natural_questions,961343595730012949,CC-BY-SA-3.0,5fc2066d17d735317d43,cbf7ec4fd5516fab3b53,3307,256,True
+req_0824,long_context_qa,google_natural_questions,-3030186724844645117,CC-BY-SA-3.0,7ce4aba84ad5fec874b8,b7d2d5c02b33d66c0d59,3312,256,True
+req_0825,long_context_qa,google_natural_questions,-426700818087572322,CC-BY-SA-3.0,cc1523fb69f3e340f836,c0722665a54ceb42dda6,3320,256,True
+req_0826,long_context_qa,google_natural_questions,-7665180870060340793,CC-BY-SA-3.0,f4cc8e70ec1d25f9ece9,319428c7ee6d2663165d,3345,256,True
+req_0827,long_context_qa,google_natural_questions,8056432270965006336,CC-BY-SA-3.0,acd2d19d774679991bff,dc8f73746059452a78fb,3355,256,True
+req_0828,long_context_qa,google_natural_questions,-5481001096463885504,CC-BY-SA-3.0,ed5a9efc918a889862a1,07adcf8d6e074a865499,3356,256,True
+req_0829,long_context_qa,google_natural_questions,1582627223443486099,CC-BY-SA-3.0,349b8746fe178361fa03,f50d5d54a0cc00c5071b,3361,256,True
+req_0830,long_context_qa,google_natural_questions,6908823113194923259,CC-BY-SA-3.0,e17a7fd21341221ce8a5,aaff899499b575b3a584,3364,256,True
+req_0831,long_context_qa,google_natural_questions,9098770450203559393,CC-BY-SA-3.0,688742ecd85d64280c25,94cdc62320d37fdb45d6,3374,256,True
+req_0832,long_context_qa,google_natural_questions,4152548250260254589,CC-BY-SA-3.0,fd42643131f1c71e3ef4,efd2c805fa32e26401f5,3384,256,True
+req_0833,long_context_qa,google_natural_questions,8529896756211130658,CC-BY-SA-3.0,6f552b9bdfcb46743c82,4597d06cf30303501088,3385,256,True
+req_0834,long_context_qa,google_natural_questions,837134008413339166,CC-BY-SA-3.0,132caad0990518132225,1fad3233203ba22609e5,3396,256,True
+req_0835,long_context_qa,google_natural_questions,-8324408179455416582,CC-BY-SA-3.0,b13f9be6f4f550d4c975,ce8dcd42253e61e6de4e,3403,256,True
+req_0836,long_context_qa,google_natural_questions,3912566612984965646,CC-BY-SA-3.0,fd031ac2e9f29f940b2c,a488e6f52420d07f63d3,3406,256,True
+req_0837,long_context_qa,google_natural_questions,9016554236268655961,CC-BY-SA-3.0,17ad4f7e461ef9aa4cb0,a16da5c14ade6d84a506,3412,256,True
+req_0838,long_context_qa,google_natural_questions,1883138924454626821,CC-BY-SA-3.0,7740fb13286c9a282beb,40269a34567be17cec85,3415,256,True
+req_0839,long_context_qa,google_natural_questions,-2998316001630153059,CC-BY-SA-3.0,ab78eeece7b463acdce5,c0908dd3a5900af983c8,3427,256,True
+req_0840,long_context_qa,google_natural_questions,-729416731097681662,CC-BY-SA-3.0,f3636070ed736b3fa780,2425f95d7830e4e23828,3431,256,True
+req_0841,long_context_qa,google_natural_questions,-209133005015481762,CC-BY-SA-3.0,15f2987d9aec8481d0b1,77b64c7600f5133dfe95,3470,256,True
+req_0842,long_context_qa,google_natural_questions,-2771967728307114399,CC-BY-SA-3.0,1ae24ed19f689b9cb3a6,14bc4c90e200df351fea,3471,256,True
+req_0843,long_context_qa,google_natural_questions,-1872568070012272635,CC-BY-SA-3.0,7b412d83e40a141320bc,6b9e11321542955f1970,3476,256,True
+req_0844,long_context_qa,google_natural_questions,-2832193035593265748,CC-BY-SA-3.0,72be4fd69c18afdf0536,d80d8d1648f03265f803,3488,256,True
+req_0845,long_context_qa,google_natural_questions,4530694059603917608,CC-BY-SA-3.0,ebe65dd9fe1d8d6708b9,f2a1c68608e4da224e45,3498,256,True
+req_0846,long_context_qa,google_natural_questions,-1877704352358771746,CC-BY-SA-3.0,3632bcc85ebf5878c0d6,311e833c782a83d86bd3,3502,256,True
+req_0847,long_context_qa,google_natural_questions,4123787516694437310,CC-BY-SA-3.0,2bedcdabddcb7fc112e0,fec9923af387443c426e,3516,256,True
+req_0848,long_context_qa,google_natural_questions,-3510378934527293421,CC-BY-SA-3.0,2936f5e3a47337ffc904,814400c7ae0039cf71db,3517,256,True
+req_0849,long_context_qa,google_natural_questions,6989216322015661524,CC-BY-SA-3.0,3bd3f7b57b67fdf3d146,405809dae7f1da5297da,3517,256,True
+req_0850,long_context_qa,google_natural_questions,5345240895163634372,CC-BY-SA-3.0,8c4077215317336b256e,df9675c56280dec7067c,3542,256,True
+req_0851,long_context_qa,google_natural_questions,-4394009460077240602,CC-BY-SA-3.0,36d8b65eb4bb0cb9d5cf,7b4bada635c0c6bf36a2,3559,256,True
+req_0852,long_context_qa,google_natural_questions,-1448953191474584859,CC-BY-SA-3.0,c0a3783eac63ec6cbaf1,0ee3c68fa9021dba5a76,3565,256,True
+req_0853,long_context_qa,google_natural_questions,978824858539641220,CC-BY-SA-3.0,f648334301b33118afef,f6b7cb3cbe73341b9aee,3567,256,True
+req_0854,long_context_qa,google_natural_questions,303093955824602175,CC-BY-SA-3.0,96c6e24f765d476378a3,ca9210930925a6664f7c,3568,256,True
+req_0855,long_context_qa,google_natural_questions,-4375611106744827315,CC-BY-SA-3.0,7c5f528d52da476cc89c,c908a1bac38f3084ce45,3578,256,True
+req_0856,long_context_qa,google_natural_questions,3889847497197458887,CC-BY-SA-3.0,ba453b419bf05992637f,a179ed2a005aa077e507,3599,256,True
+req_0857,long_context_qa,google_natural_questions,-8446662667300210431,CC-BY-SA-3.0,64ef896224bca40e01d7,11b5e9de17adbe23375e,3603,256,True
+req_0858,long_context_qa,google_natural_questions,5564448258530272554,CC-BY-SA-3.0,bf56c11d7ff8a52440ec,04f30affa659e55c74ec,3612,256,True
+req_0859,long_context_qa,google_natural_questions,4280940883065078413,CC-BY-SA-3.0,9778a9b6d4ed8bbfe66a,fe0c48ad12e82bcd1446,3613,256,True
+req_0860,long_context_qa,google_natural_questions,3367802691933789419,CC-BY-SA-3.0,ecefb56ee101c7cdf5be,e17d918bd2daf7016001,3616,256,True
+req_0861,long_context_qa,google_natural_questions,5335588845652684566,CC-BY-SA-3.0,a2fbc0f7ef0a88d81a3d,77f62e8721220f035e36,3625,256,True
+req_0862,long_context_qa,google_natural_questions,3434704538411377167,CC-BY-SA-3.0,4db63df47ac8cad9ed82,434ee3ffa31478880886,3631,256,True
+req_0863,long_context_qa,google_natural_questions,-8497708847280567835,CC-BY-SA-3.0,e5f631e38265f9ed82a0,317e0430e918254c18f0,3642,256,True
+req_0864,long_context_qa,google_natural_questions,-8159447453259370301,CC-BY-SA-3.0,db44670a004350f8fe00,ee0063088b75330cd848,3653,256,True
+req_0865,long_context_qa,google_natural_questions,-8187435553257842064,CC-BY-SA-3.0,15dcc99f6bf4a65f974c,1468d08ff830ebb8aaee,3660,256,True
+req_0866,long_context_qa,google_natural_questions,-4413418996190022532,CC-BY-SA-3.0,552febc7c79e9970a017,5d9910b20ada04db6e9a,3662,256,True
+req_0867,long_context_qa,google_natural_questions,-6379480204353723736,CC-BY-SA-3.0,ecb4497c4e2244a95156,7a5d4ee4321bdce7e8bc,3683,256,True
+req_0868,long_context_qa,google_natural_questions,8557339245492459354,CC-BY-SA-3.0,ef811bae6fc5fd1919dc,9a418f0ac4067ae9cd6e,3684,256,True
+req_0869,long_context_qa,google_natural_questions,5472592347104393168,CC-BY-SA-3.0,0b9a19f7ee6bce772bca,b1c67b62a8c6fb337a5c,3699,256,True
+req_0870,long_context_qa,google_natural_questions,-5035586572492296722,CC-BY-SA-3.0,78d291b2d861341a5cc9,557753b96d49fb8d0182,3715,256,True
+req_0871,long_context_qa,google_natural_questions,5368179291269267014,CC-BY-SA-3.0,115bbd5d8e6fb09ff56d,ca9e07db52854b3e0d3f,3722,256,True
+req_0872,long_context_qa,google_natural_questions,-6725108631360475449,CC-BY-SA-3.0,3416ab9a4598e4da6f1e,3cafe52f1831878277ea,3737,256,True
+req_0873,long_context_qa,google_natural_questions,9578896597338531,CC-BY-SA-3.0,ca428fc4aeee5738679d,929bf628b9fc5346e5fb,3750,256,True
+req_0874,long_context_qa,google_natural_questions,-2665942128453786204,CC-BY-SA-3.0,e70f157bb9f84a30a647,e94b68ee3d96b256ed09,3765,256,True
+req_0875,long_context_qa,google_natural_questions,-2944181898742578894,CC-BY-SA-3.0,8956c6030532046ff40d,81c5478b53d41d3a8eae,3771,256,True
+req_0876,long_context_qa,google_natural_questions,5546814041163118952,CC-BY-SA-3.0,876ae8447a82cf53ed6c,a220434b90a718ff79fe,3788,256,True
+req_0877,long_context_qa,google_natural_questions,-3025698733990467077,CC-BY-SA-3.0,968789aa322ae0c7ea24,9f549377a70e72d4fb2e,3790,256,True
+req_0878,long_context_qa,google_natural_questions,2850622041560641194,CC-BY-SA-3.0,b67d1d7e6633f9d275f6,d3bfaaa22379e862d856,3802,256,True
+req_0879,long_context_qa,google_natural_questions,-6088533615959606913,CC-BY-SA-3.0,0a7248e0db9feb2a0b6f,4d067f253a2b34e981e8,3811,256,True
+req_0880,long_context_qa,google_natural_questions,-2606887769469792048,CC-BY-SA-3.0,0974e6f4de80f10094d4,22cc8dca54cc5a18b97b,3821,256,True
+req_0881,long_context_qa,google_natural_questions,8427167761731856244,CC-BY-SA-3.0,2ad51d37aad6c3bf5ca3,095903ccd5f96dfa9109,3856,256,True
+req_0882,long_context_qa,google_natural_questions,4989567372017085684,CC-BY-SA-3.0,acc6af205ed13a2b5ed4,b5eee9206975fabade05,3858,256,True
+req_0883,long_context_qa,google_natural_questions,-4922665245257546177,CC-BY-SA-3.0,a3360ae4675a0b8d20c4,9f39b4820f38b35e4f11,3862,256,True
+req_0884,long_context_qa,google_natural_questions,2764368854611991446,CC-BY-SA-3.0,05eeeb4b313db2bb0d61,7a785bc45dc93be147bc,3883,256,True
+req_0885,long_context_qa,google_natural_questions,-1858780041068412425,CC-BY-SA-3.0,c6ac8cc60b7d8fb2ef71,ef2c283e4591f544f57c,3893,256,True
+req_0886,long_context_qa,google_natural_questions,-8343840626105539150,CC-BY-SA-3.0,e38f142978889c177d09,1c9be23f0da9170858f6,3905,256,True
+req_0887,long_context_qa,google_natural_questions,5992140151017872468,CC-BY-SA-3.0,703b6c3883d17792b425,59ade8915d7bf9c27bd8,3909,256,True
+req_0888,long_context_qa,google_natural_questions,-4868687369923395625,CC-BY-SA-3.0,335d42bb95b3d4dba389,d606bfac2dec228623d6,3925,256,True
+req_0889,long_context_qa,google_natural_questions,5607867777216904978,CC-BY-SA-3.0,2c00bb73fc4db609d10a,f2b426f7b8982584bad5,3948,256,True
+req_0890,long_context_qa,google_natural_questions,866359585422002664,CC-BY-SA-3.0,9688f6c935959474e667,1f73ea5d18c76f9dcd9a,3943,256,True
+req_0891,long_context_qa,google_natural_questions,-4129013237580776584,CC-BY-SA-3.0,f23d3aa808a95701c884,d6d67cd27f8ac8c640f3,3950,256,True
+req_0892,long_context_qa,google_natural_questions,-5575025493284440364,CC-BY-SA-3.0,94b66983b214f6661b38,068769e4a4fcbdb9f44b,3953,256,True
+req_0893,long_context_qa,google_natural_questions,-8480270645723172960,CC-BY-SA-3.0,d057ad7f1d61f4f65ef9,94cc0124eccc4716083a,3979,256,True
+req_0894,long_context_qa,google_natural_questions,-4544384569259594911,CC-BY-SA-3.0,d0b65e7db144699b06a3,d94554c1cf0d32a49b64,3991,256,True
+req_0895,long_context_qa,google_natural_questions,4174705613909387479,CC-BY-SA-3.0,4880647689de421a9b90,cf324ccd275250eaf632,3992,256,True
+req_0896,long_context_qa,google_natural_questions,5191207153839372750,CC-BY-SA-3.0,5eda33edf233ae589747,28ccb331ad26e98b5620,4013,256,True
+req_0897,long_context_qa,google_natural_questions,-6741316023868268102,CC-BY-SA-3.0,4c922a8f85875aa7e094,4442b614709ebb945e8a,4023,256,True
+req_0898,long_context_qa,google_natural_questions,-7471278279831659485,CC-BY-SA-3.0,f55a4440b3652054622b,f12c4aa07461de270072,4040,256,True
+req_0899,long_context_qa,google_natural_questions,2568311642260058834,CC-BY-SA-3.0,78d4deabc9cfd9fbd358,bcfdc931cbf6ae9b9758,4075,256,True
+req_0900,long_context_qa,google_natural_questions,-7156000808226879294,CC-BY-SA-3.0,21fda8159ff06fece333,ab126c28454cbd459ae1,4085,256,True
+req_0901,long_output,lmsys_chatbot_arena_conversations,6401502adbf44d9fbc81baad3e83cc9b,CC-BY-4.0 (user prompts),2c0c7b83012f671acab2,,40,1024,False
+req_0902,long_output,lmsys_chatbot_arena_conversations,a326bfb3dc424a1f90a8a63c34bbb70d,CC-BY-4.0 (user prompts),4adc9e8b1baca52325d9,,80,1024,False
+req_0903,long_output,lmsys_chatbot_arena_conversations,fb8fa67f744d478ca8c7d050d02cde65,CC-BY-4.0 (user prompts),903a7f5ce750f49f0389,,37,1024,False
+req_0904,long_output,lmsys_chatbot_arena_conversations,3eccebb4cf7d43269b8172b912f295dc,CC-BY-4.0 (user prompts),5423c3f73c9a05534957,,50,1024,False
+req_0905,long_output,lmsys_chatbot_arena_conversations,a75ba98774dd4322a691a45babb98fdf,CC-BY-4.0 (user prompts),660886bebcbf1425dfdc,,44,1024,False
+req_0906,long_output,lmsys_chatbot_arena_conversations,bdd76dc166284ef2abfb2e2e3f03b38e,CC-BY-4.0 (user prompts),1d2ee1b43e8f9dbc7d83,,49,1024,False
+req_0907,long_output,lmsys_chatbot_arena_conversations,8f590dbd88c245558b3af09c19d7f19c,CC-BY-4.0 (user prompts),99a66e4330e6a1f65180,,43,1024,False
+req_0908,long_output,lmsys_chatbot_arena_conversations,4365b582a5794bcabb9a082503051de3,CC-BY-4.0 (user prompts),64ed257dcce1fe63defd,,53,1024,False
+req_0909,long_output,lmsys_chatbot_arena_conversations,f4703dc30077472dbee96ef57d6e778c,CC-BY-4.0 (user prompts),4c70c340725d9dff0c5a,,86,1024,False
+req_0910,long_output,lmsys_chatbot_arena_conversations,13eba0f2ef7b4ad789f49e9efff708ce,CC-BY-4.0 (user prompts),754d9ffb99379742974f,,191,1024,False
+req_0911,long_output,lmsys_chatbot_arena_conversations,14c82a1762f84954a98daf35a08a85b1,CC-BY-4.0 (user prompts),3c6d9b8c062efeb16b0e,,49,1024,False
+req_0912,long_output,lmsys_chatbot_arena_conversations,83c14e0c1f294b66916e1a387941af36,CC-BY-4.0 (user prompts),683f5d413348e28c498e,,43,1024,False
+req_0913,long_output,lmsys_chatbot_arena_conversations,98412d056a114a75b10a252131f48a60,CC-BY-4.0 (user prompts),9f630d852ae5b8ccc8ac,,510,1024,False
+req_0914,long_output,lmsys_chatbot_arena_conversations,471f89a1d0fb485a81194b80596a9b3c,CC-BY-4.0 (user prompts),b7cfcc4c6048eafd1c0d,,38,1024,False
+req_0915,long_output,lmsys_chatbot_arena_conversations,06e3c6ac922f4c83add6ea064780e629,CC-BY-4.0 (user prompts),58f566aa8ed17afe1c4b,,54,1024,False
+req_0916,long_output,lmsys_chatbot_arena_conversations,ec72377d49174a30811a20c1070508d9,CC-BY-4.0 (user prompts),e3767432b02d43dd84a5,,37,1024,False
+req_0917,long_output,lmsys_chatbot_arena_conversations,b5648a2c16ea4ba08c09c1efb1361334,CC-BY-4.0 (user prompts),2309030a1c6caba077ab,,63,1024,False
+req_0918,long_output,lmsys_chatbot_arena_conversations,626fcb4e18854f10a9f66079b8a3366c,CC-BY-4.0 (user prompts),8e1ed1fedd2434527cbf,,59,1024,False
+req_0919,long_output,lmsys_chatbot_arena_conversations,aceddb04986840b3a05b0411c369be5d,CC-BY-4.0 (user prompts),912db5191a5715f4ca88,,60,1024,False
+req_0920,long_output,lmsys_chatbot_arena_conversations,d7cd9d836323476a9d48b16cb373ff97,CC-BY-4.0 (user prompts),4f6bb85274028658c202,,40,1024,False
+req_0921,long_output,lmsys_chatbot_arena_conversations,6a2a5cae832845ee86d8f8e5c02ad8f3,CC-BY-4.0 (user prompts),7f33adaa87bfc309a745,,117,1024,False
+req_0922,long_output,lmsys_chatbot_arena_conversations,852e0326f6f94ecf979f9ee913889060,CC-BY-4.0 (user prompts),1f7184411446d07b81c2,,83,1024,False
+req_0923,long_output,lmsys_chatbot_arena_conversations,f9a60b1b186949fdb9642d15f4ff9f6a,CC-BY-4.0 (user prompts),7a33c8fc3d5e1fe56580,,54,1024,False
+req_0924,long_output,lmsys_chatbot_arena_conversations,269bf81e147d4dd2a2a5eba7ab65f4d9,CC-BY-4.0 (user prompts),23e0cae48ab0e789ab36,,37,1024,False
+req_0925,long_output,lmsys_chatbot_arena_conversations,b7d5aa72680440a780b46985d2d809bc,CC-BY-4.0 (user prompts),cd2810add98d30413a44,,200,1024,False
+req_0926,long_output,lmsys_chatbot_arena_conversations,52254974e10d4008aceec5ea7edc4414,CC-BY-4.0 (user prompts),b8fa622e957d27050dfe,,91,1024,False
+req_0927,long_output,lmsys_chatbot_arena_conversations,34955dd62464485daef72be8449518cb,CC-BY-4.0 (user prompts),99fe020290f266546d70,,41,1024,False
+req_0928,long_output,lmsys_chatbot_arena_conversations,e704b0085b3e408b95bd00cfceb864e9,CC-BY-4.0 (user prompts),f9461e0dbeabc3d9ed25,,42,1024,False
+req_0929,long_output,lmsys_chatbot_arena_conversations,93d164621ffe4d19a5483f6d54b42f5b,CC-BY-4.0 (user prompts),73d40bcf5bd2e27e6148,,62,1024,False
+req_0930,long_output,lmsys_chatbot_arena_conversations,975c3a0aa0f34ecca112f77b2c63264b,CC-BY-4.0 (user prompts),94bdcf6bea2db8177162,,45,1024,False
+req_0931,long_output,lmsys_chatbot_arena_conversations,8096c39b99d346429f84687a4b488021,CC-BY-4.0 (user prompts),9f63a38f983275192cec,,152,1024,False
+req_0932,long_output,lmsys_chatbot_arena_conversations,52205e118d924719b652278c4c8d51f7,CC-BY-4.0 (user prompts),f2a2fe4198aac72b7086,,61,1024,False
+req_0933,long_output,lmsys_chatbot_arena_conversations,c218264512424ae1afee82f6713bf57a,CC-BY-4.0 (user prompts),8d96ab61c2e09a268d87,,41,1024,False
+req_0934,long_output,lmsys_chatbot_arena_conversations,8261d4f3551048348ca2303ea3ceff26,CC-BY-4.0 (user prompts),dca3f8e0997367fde571,,60,1024,False
+req_0935,long_output,lmsys_chatbot_arena_conversations,581c3bb0af384f499fa12554cccc0d4b,CC-BY-4.0 (user prompts),7f10a1b6a90a0045838a,,76,1024,False
+req_0936,long_output,lmsys_chatbot_arena_conversations,998b1cde800f4bc498e707bdc99d8923,CC-BY-4.0 (user prompts),cbd79c1e6d5f68b96b54,,37,1024,False
+req_0937,long_output,lmsys_chatbot_arena_conversations,3253c39a467245faa05671fa66cc4d51,CC-BY-4.0 (user prompts),2df841a5a9ec9fe585c4,,47,1024,False
+req_0938,long_output,lmsys_chatbot_arena_conversations,11716ef9ffab403ba3de2e5f75bd9500,CC-BY-4.0 (user prompts),c1b20b44b0e65151c062,,155,1024,False
+req_0939,long_output,lmsys_chatbot_arena_conversations,7114d8877b864ffc9373a686fcc2a1c8,CC-BY-4.0 (user prompts),16ea0fc9aaf841ba477f,,41,1024,False
+req_0940,long_output,lmsys_chatbot_arena_conversations,0baa3b572e9a44ad8169eef3caf96132,CC-BY-4.0 (user prompts),45a679334a6d1f060b95,,43,1024,False
+req_0941,long_output,lmsys_chatbot_arena_conversations,1e395b27f5c2465daf9d9ed611dddaf9,CC-BY-4.0 (user prompts),758cb77fad862935ac35,,215,1024,False
+req_0942,long_output,lmsys_chatbot_arena_conversations,3cf40b84a0554ceeb1501764b5824762,CC-BY-4.0 (user prompts),1af22cda204c76bd9298,,37,1024,False
+req_0943,long_output,lmsys_chatbot_arena_conversations,227816bde4044365af74c2432ded158f,CC-BY-4.0 (user prompts),936466dcae8403b760e2,,40,1024,False
+req_0944,long_output,lmsys_chatbot_arena_conversations,0f400d6e9c9d48fb98caa5ef449454fc,CC-BY-4.0 (user prompts),b4490a52c66226e76771,,49,1024,False
+req_0945,long_output,lmsys_chatbot_arena_conversations,1d8c92d67be74a669ed52a1692ede69f,CC-BY-4.0 (user prompts),bd15920b2aada5d59cff,,37,1024,False
+req_0946,long_output,lmsys_chatbot_arena_conversations,c2c68529424f49798a7d1ce4bf8efaf1,CC-BY-4.0 (user prompts),c58701a8f5f2fddd8872,,41,1024,False
+req_0947,long_output,lmsys_chatbot_arena_conversations,7ea517fd63d84302961c1b8bd641043b,CC-BY-4.0 (user prompts),6f1437e4d9d668161d9a,,60,1024,False
+req_0948,long_output,lmsys_chatbot_arena_conversations,d52f1b02d86f4ac98dd315bd344f2779,CC-BY-4.0 (user prompts),69a52cde1a0d0972876b,,348,1024,False
+req_0949,long_output,lmsys_chatbot_arena_conversations,3ad427cae486428fb680d121ba3a7669,CC-BY-4.0 (user prompts),8d69caf3792bb8588e60,,41,1024,False
+req_0950,long_output,lmsys_chatbot_arena_conversations,0742ff44888c4d7e96b5471cf4bb8c5b,CC-BY-4.0 (user prompts),828b337d171181ecd2d9,,143,1024,False
+req_0951,long_output,lmsys_chatbot_arena_conversations,47f64d594abb47238054b375fd7686ef,CC-BY-4.0 (user prompts),2b9afbcb973c7fc7d11e,,40,1024,False
+req_0952,long_output,lmsys_chatbot_arena_conversations,d433ac2723fa4dd084b27c2969ab5157,CC-BY-4.0 (user prompts),dd904f06e803ea8f31b0,,480,1024,False
+req_0953,long_output,lmsys_chatbot_arena_conversations,86063a921be548989c55b85497ab009a,CC-BY-4.0 (user prompts),c9bb1c4e27aa89a47f6a,,54,1024,False
+req_0954,long_output,lmsys_chatbot_arena_conversations,5a813b6d8dc942f8a4a9ef8f7c7021a3,CC-BY-4.0 (user prompts),aae6adf07fb73e19ebcb,,58,1024,False
+req_0955,long_output,lmsys_chatbot_arena_conversations,4e6bd0bf5eb743a8a486f80e7b82f090,CC-BY-4.0 (user prompts),22fc091070e8da008983,,79,1024,False
+req_0956,long_output,lmsys_chatbot_arena_conversations,33cb100f99e94902b7b7e06fb04f792b,CC-BY-4.0 (user prompts),ec79b72187cd1f9a3d34,,204,1024,False
+req_0957,long_output,lmsys_chatbot_arena_conversations,3bdece639d944d04babac23fa84c0ab3,CC-BY-4.0 (user prompts),ef33f1b6cd9e2150cad8,,49,1024,False
+req_0958,long_output,lmsys_chatbot_arena_conversations,c242106a88534db8a565a6e6a8824ec4,CC-BY-4.0 (user prompts),0785807ff4c4ebd89cdb,,48,1024,False
+req_0959,long_output,lmsys_chatbot_arena_conversations,a4d866a912a4441382e19a3cc5302185,CC-BY-4.0 (user prompts),27119cd0b237175a33b2,,68,1024,False
+req_0960,long_output,lmsys_chatbot_arena_conversations,0add0832170a48d79133d518218e3c3b,CC-BY-4.0 (user prompts),4b84eea5c94be7d97089,,362,1024,False
+req_0961,long_output,lmsys_chatbot_arena_conversations,3f15f693fb834a0fa647db9895163a82,CC-BY-4.0 (user prompts),ff087ab986ee50ae7d53,,44,1024,False
+req_0962,long_output,lmsys_chatbot_arena_conversations,7f6369c8eab543e48a6958a80d54d824,CC-BY-4.0 (user prompts),bbea9a98d912c4609e55,,38,1024,False
+req_0963,long_output,lmsys_chatbot_arena_conversations,e21c3961dd0a4ef48c6066d1cd498074,CC-BY-4.0 (user prompts),31019cfe1546a1f914b2,,136,1024,False
+req_0964,long_output,lmsys_chatbot_arena_conversations,6e8e254fad2d41ca886611a2c942aa72,CC-BY-4.0 (user prompts),98ea9989f64f7407f335,,59,1024,False
+req_0965,long_output,lmsys_chatbot_arena_conversations,163471e4eecd4dcd9703f21ff0207432,CC-BY-4.0 (user prompts),3248f3c86bb57d3958d1,,57,1024,False
+req_0966,long_output,lmsys_chatbot_arena_conversations,6fa53592d6d644f38331cc63324b54ed,CC-BY-4.0 (user prompts),b50aaa3b8554619e0fd3,,288,1024,False
+req_0967,long_output,lmsys_chatbot_arena_conversations,4d8580eaa85947028a42836f35d2f1b1,CC-BY-4.0 (user prompts),167f5b843e71ee2d516d,,40,1024,False
+req_0968,long_output,lmsys_chatbot_arena_conversations,78e71833b4e04b66943d61d001be2f83,CC-BY-4.0 (user prompts),e79bbe21973a6683490a,,139,1024,False
+req_0969,long_output,lmsys_chatbot_arena_conversations,24fb7f9060174bc4826257276cd3da99,CC-BY-4.0 (user prompts),1c73d64904be5c45f575,,49,1024,False
+req_0970,long_output,lmsys_chatbot_arena_conversations,a58992232c494c83a7228c965f7f10f9,CC-BY-4.0 (user prompts),184c63961062fe32d1cb,,67,1024,False
+req_0971,long_output,lmsys_chatbot_arena_conversations,51602c952b8a4fc5bf834f2901f4facb,CC-BY-4.0 (user prompts),37fc575d5f3497aee6af,,36,1024,False
+req_0972,long_output,lmsys_chatbot_arena_conversations,04e8b1925d7d47acaf81d77bd5acc465,CC-BY-4.0 (user prompts),d8f527ade729ee8aacb0,,189,1024,False
+req_0973,long_output,lmsys_chatbot_arena_conversations,eba70f6fe4414849a38d8a30f149abdb,CC-BY-4.0 (user prompts),fb25a507668f353d1571,,42,1024,False
+req_0974,long_output,lmsys_chatbot_arena_conversations,b88bceff24464c31a030d70b0f8cca6b,CC-BY-4.0 (user prompts),09f881da640b3d316218,,50,1024,False
+req_0975,long_output,lmsys_chatbot_arena_conversations,6e8328b41bd64876bac181ae03ab280c,CC-BY-4.0 (user prompts),c6f2c60a1753a4cec3aa,,108,1024,False
+req_0976,long_output,lmsys_chatbot_arena_conversations,e0a69c47340744b4a50249588794c9c2,CC-BY-4.0 (user prompts),5484abc7b68cc8160f8e,,60,1024,False
+req_0977,long_output,lmsys_chatbot_arena_conversations,5af97d15a3054ad1b666291fd02a6999,CC-BY-4.0 (user prompts),e3e708b86068cb208687,,199,1024,False
+req_0978,long_output,lmsys_chatbot_arena_conversations,58e7914464b54be8b81ed4f862aa5122,CC-BY-4.0 (user prompts),6cfc5e43945b19d0caff,,51,1024,False
+req_0979,long_output,lmsys_chatbot_arena_conversations,4ba6d982a906480db3d6b0393f8445fa,CC-BY-4.0 (user prompts),58b9ec60bd911b3d5c4f,,52,1024,False
+req_0980,long_output,lmsys_chatbot_arena_conversations,ef5eb7ba860c47eeb9910b7210818c3c,CC-BY-4.0 (user prompts),b06123ce46548672b2bd,,58,1024,False
+req_0981,long_output,lmsys_chatbot_arena_conversations,fd695ee6cf234744ab3c732c05fef0fe,CC-BY-4.0 (user prompts),f13877726ae08e38c055,,37,1024,False
+req_0982,long_output,lmsys_chatbot_arena_conversations,c426a93f9f1e4d11af113ddd2cbfaae8,CC-BY-4.0 (user prompts),2757e59e0b1c7fe20d8f,,348,1024,False
+req_0983,long_output,lmsys_chatbot_arena_conversations,ff8e0917b57c4ace9d7af0c70a97e972,CC-BY-4.0 (user prompts),ba237e2eb0d1e09215cc,,37,1024,False
+req_0984,long_output,lmsys_chatbot_arena_conversations,96b96191c7aa4b4a86e6c4baae5aee72,CC-BY-4.0 (user prompts),10ecda27c1f66519c5bf,,63,1024,False
+req_0985,long_output,lmsys_chatbot_arena_conversations,8b21b3bc440244beb8bd52718f0d830b,CC-BY-4.0 (user prompts),7f1eeaf164955a1a8966,,35,1024,False
+req_0986,long_output,lmsys_chatbot_arena_conversations,8609fc6140184041b3b74329ff749dd3,CC-BY-4.0 (user prompts),d5fe3c0fa6fdf5f97220,,64,1024,False
+req_0987,long_output,lmsys_chatbot_arena_conversations,b6cc734eda3f4f6f8e79a2249fadc7eb,CC-BY-4.0 (user prompts),c95f545ffcf4b1f79192,,79,1024,False
+req_0988,long_output,lmsys_chatbot_arena_conversations,314a938849d84cedb645903c869f834a,CC-BY-4.0 (user prompts),5c0ffe478969c2dd46a3,,131,1024,False
+req_0989,long_output,lmsys_chatbot_arena_conversations,72122a63413848c9a3e7ff4dcae1f156,CC-BY-4.0 (user prompts),bc40c677241b55a4b615,,129,1024,False
+req_0990,long_output,lmsys_chatbot_arena_conversations,937e13eef0a34fcab0db860ecc184beb,CC-BY-4.0 (user prompts),f080afde13d5d25106ef,,50,1024,False
+req_0991,long_output,lmsys_chatbot_arena_conversations,3be669f44f5944ec951c9ce1b1b38ef6,CC-BY-4.0 (user prompts),bd6fcb2dffb808b98433,,98,1024,False
+req_0992,long_output,lmsys_chatbot_arena_conversations,adf4629b515e436bb0fd9bdb5f589475,CC-BY-4.0 (user prompts),e30d3ad0c5a5240e93d7,,36,1024,False
+req_0993,long_output,lmsys_chatbot_arena_conversations,18370f9274bb435c980ee8f79da194dd,CC-BY-4.0 (user prompts),ffff2a284ddc4db75711,,320,1024,False
+req_0994,long_output,lmsys_chatbot_arena_conversations,8d2ebe56941148d6811481488cf465e0,CC-BY-4.0 (user prompts),4d8722fc1656ca8747e3,,346,1024,False
+req_0995,long_output,lmsys_chatbot_arena_conversations,faeec70b6aee41e49c66ca52f1a03980,CC-BY-4.0 (user prompts),bb06805591ca5bbd9237,,50,1024,False
+req_0996,long_output,lmsys_chatbot_arena_conversations,ac5cbfcc2638432194d2a1c3b5cb551d,CC-BY-4.0 (user prompts),e573700f5b47f346ed85,,160,1024,False
+req_0997,long_output,lmsys_chatbot_arena_conversations,68bc02aade184f9280c251f4b29aa89f,CC-BY-4.0 (user prompts),68bd621c79600c899d24,,61,1024,False
+req_0998,long_output,lmsys_chatbot_arena_conversations,94472e7ed8e34af687e917e2f2d67d95,CC-BY-4.0 (user prompts),0a11292494336c821a9a,,50,1024,False
+req_0999,long_output,lmsys_chatbot_arena_conversations,30920c78327b40c5a0683efc06ed818d,CC-BY-4.0 (user prompts),1584f86c5a2a981b4059,,42,1024,False
+req_1000,long_output,lmsys_chatbot_arena_conversations,bb781a4784b44eb19955ac3ba13a169a,CC-BY-4.0 (user prompts),c0cb27079e69b5543246,,136,1024,False

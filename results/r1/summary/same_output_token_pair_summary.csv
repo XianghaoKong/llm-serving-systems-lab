@@ -1,0 +1,2 @@
+same_output_hash_requests,paired_decode_token_events,median_gpu_tpot_speedup,p05_gpu_tpot_speedup,p95_gpu_tpot_speedup,median_stream_itl_speedup
+91,2234,1.2137411950816537,1.1357021855286282,1.2983709486373638,1.2120367224121034

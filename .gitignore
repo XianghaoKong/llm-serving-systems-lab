@@ -1,0 +1,51 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+.venv-vllm/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Local env / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Private / full workload data
+workloads/candidates/
+workloads/classified/
+workloads/classified_v2/
+workloads/classified_v3/
+workloads/profiled_v4/
+workloads/source_audit/
+workloads/token_bands/
+
+workloads/final/realistic_requests.json
+workloads/final/realistic_requests_pre_freeze.json
+
+# Raw benchmark data
+results/**/raw/
+
+# Large traces / logs
+*.log
+*.gz
+
+# Temporary
+tmp/
+temp/
+
+# Workload construction / audit artifacts
+workloads/final/r0e_*
+
+# Workload construction / audit artifacts
+workloads/final/r0e_*

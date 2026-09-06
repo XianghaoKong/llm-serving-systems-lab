@@ -1,0 +1,9 @@
+torch
+transformers
+datasets
+numpy
+pandas
+matplotlib
+fastapi
+uvicorn
+httpx

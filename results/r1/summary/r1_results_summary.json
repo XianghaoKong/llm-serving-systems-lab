@@ -1,0 +1,122 @@
+{
+  "stage": "R1-A",
+  "status": "PASS",
+  "integrity": {
+    "request_level": {
+      "request_rows_per_backend": 1000,
+      "execution_order_identical": true,
+      "frozen_runtime_input_token_mismatches": 0,
+      "metadata_checks": {
+        "eager_status_complete": true,
+        "flash_status_complete": true,
+        "same_model": true,
+        "same_dtype": true,
+        "same_protocol_version": true,
+        "same_corpus_sha256": true,
+        "same_execution_seed": true,
+        "same_sampling_policy": true,
+        "eager_completed_1000": true,
+        "flash_completed_1000": true,
+        "eager_backend_verification_pass": true,
+        "flash_backend_verification_pass": true,
+        "flash_forced_backend": true
+      },
+      "flash_already_completed_on_resume": 21
+    },
+    "eager_token_trace": {
+      "rows": 183661,
+      "unique_requests": 1000,
+      "first_token_rows": 1000,
+      "decode_token_rows": 182661,
+      "duplicate_request_token_keys": 0,
+      "trace_length_mismatches": 0
+    },
+    "flash_token_trace": {
+      "rows": 194022,
+      "unique_requests": 1000,
+      "first_token_rows": 1000,
+      "decode_token_rows": 193022,
+      "duplicate_request_token_keys": 0,
+      "trace_length_mismatches": 0
+    }
+  },
+  "protocol": {
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "dtype": "torch.bfloat16",
+    "protocol_version": 2,
+    "concurrency": 1,
+    "batch_size": 1,
+    "sampling": {
+      "policy": "qwen_native_locked",
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "repetition_penalty": 1.1,
+      "per_request_seed_base": 42026000,
+      "seed_is_request_id_derived": true
+    },
+    "corpus_sha256": "7593429c095064a7f375e12d40db43ebf174d0f3a57f49bc51db030a0619d014",
+    "execution_seed": 2026,
+    "eager_backend_verification": {
+      "backend": "eager",
+      "model_attn_implementation": "eager",
+      "verification_request_id": "req_0151",
+      "verification_input_tokens": 42,
+      "forced_flash_context": false,
+      "status": "pass"
+    },
+    "flash_backend_verification": {
+      "backend": "flash",
+      "model_attn_implementation": "sdpa",
+      "verification_request_id": "req_0151",
+      "verification_input_tokens": 42,
+      "forced_flash_context": true,
+      "status": "pass"
+    }
+  },
+  "request_level": {
+    "same_output_hash_requests": 91,
+    "same_output_hash_rate": 0.091,
+    "same_output_length_requests": 255,
+    "same_output_length_rate": 0.255,
+    "same_finish_reason_requests": 877,
+    "eager_total_output_tokens": 183661,
+    "flash_total_output_tokens": 194022,
+    "flash_output_token_change_pct": 5.641371875357316,
+    "eager_service_time_minutes": 57.07431396130007,
+    "flash_service_time_minutes": 49.244625480583366,
+    "service_time_reduction_pct": 13.718410152114524,
+    "median_request_ttft_speedup": 1.2302004002458542,
+    "median_tpot_speedup": 1.21301060589206,
+    "median_decode_throughput_speedup": 1.21301060589206,
+    "eager_decode_throughput_p50": 55.62100407588038,
+    "flash_decode_throughput_p50": 67.36742207600304
+  },
+  "long_context": {
+    "requests": 100,
+    "eager_request_ttft_p50_ms": 574.891568500334,
+    "flash_request_ttft_p50_ms": 254.00585800002773,
+    "paired_request_ttft_speedup_p50": 2.253192292795166,
+    "eager_peak_allocated_p50_gib": 4.476121664047241,
+    "flash_peak_allocated_p50_gib": 3.9961774349212646,
+    "median_peak_allocated_reduction_pct": 10.7223231437373
+  },
+  "token_level": {
+    "eager_decode_events": 182661,
+    "flash_decode_events": 193022,
+    "decode_events_total": 375683,
+    "eager_gpu_tpot_p50_ms": 17.898496627807617,
+    "flash_gpu_tpot_p50_ms": 14.767871856689451,
+    "eager_gpu_tpot_p99_ms": 19.96778869628906,
+    "flash_gpu_tpot_p99_ms": 16.358238906860354,
+    "same_output_hash_token_pairs": 2234,
+    "same_output_hash_median_gpu_tpot_speedup": 1.2137411950816537,
+    "same_output_hash_median_stream_itl_speedup": 1.2120367224121034
+  },
+  "interpretation_notes": {
+    "e2e": "Observed E2E latency includes stochastic generation-trajectory differences and must not be interpreted as pure kernel speedup.",
+    "reserved_memory": "CUDA reserved memory is caching-allocator reservation, not active tensor allocation.",
+    "boundary_512": "The earlier controlled 512-token boundary effect is not treated as reproduced unless the R1 508-516 summary shows a consistent 512->513 jump across the production-like workload."
+  }
+}
