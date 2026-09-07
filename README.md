@@ -1,532 +1,300 @@
 # LLM Inference & Serving Systems Lab
 
-A systems-oriented investigation of LLM inference performance, from GPU attention kernels to production-like serving behavior.
+A measurement-driven investigation of LLM inference performance—from attention kernels and streaming APIs to queueing, continuous batching, KV-cache pressure, serving-engine trade-offs, and production-oriented observability.
 
-This project studies how inference performance changes across multiple layers of the stack:
+The central result is:
 
-- attention kernel implementation
-- long-context prefill
-- autoregressive decoding
-- KV-cache growth
-- realistic heterogeneous workloads
-- HTTP/SSE streaming
-- bursty request arrivals
-- queueing
-- continuous batching with vLLM
-- concurrency control
-- SLO-qualified goodput
+> **LLM serving performance is a stack-level property. The configuration with the highest raw throughput is not necessarily the configuration with the best user-visible latency or SLO-qualified capacity.**
 
-The main goal is to answer a practical systems question:
+## Highlights
 
-> **Does a faster model kernel necessarily produce a more responsive LLM serving system?**
+- Measured a **2.25× long-context TTFT improvement** from Flash Attention on an RTX 4070.
+- Identified a vLLM **tail-latency knee between 3.75 and 4.0 configured requests/s**.
+- Showed request goodput falling by approximately **10.7%** even while raw throughput continued increasing.
+- Reduced the KV pool from **66.54 GiB to 7.00 GiB**, driving peak occupancy from **10.5% to 99.8%** without preemption.
+- Compared vLLM and SGLang across concurrency **1, 8, 32, 64, and 128**, using five repeated runs per point.
+- Built a **Prometheus + DCGM Exporter + Grafana** observability stack.
+- Completed a **100,000-request, 35-minute C64 soak** with zero failures, zero preemptions, and no persistent memory growth.
 
-The experiments show that it does not. Flash Attention substantially improves prefill, decode efficiency, and GPU memory use, but under increasing traffic the dominant bottleneck shifts toward queueing, batching, active concurrency, and scheduler behavior.
+## System under test
 
----
+| Layer | Configuration |
+|---|---|
+| Model | Qwen/Qwen2.5-1.5B-Instruct |
+| Serving GPU | 1× NVIDIA A100 80GB PCIe |
+| Kernel baseline GPU | 1× NVIDIA RTX 4070 12GB |
+| Serving precision | BF16 |
+| Serving engines | vLLM 0.28.0 and SGLang 0.5.19 |
+| Request shape for S6/S7 | 512 input / 128 output tokens |
+| Maximum serving context | 32,768 tokens |
+| Monitoring | Prometheus, DCGM Exporter, Grafana |
+| Telemetry interval | 1 second |
 
-## Key Results
+Exact software and driver records are stored in [`docs/`](docs/).
 
-### Kernel-level optimization
+## Investigation structure
 
-On Qwen2.5-1.5B-Instruct running on a single RTX 4070:
+```mermaid
+flowchart TD
+    A["Kernel efficiency"] --> B["HTTP and SSE serving"]
+    B --> C["Poisson arrivals and queueing"]
+    C --> D["Continuous batching and admission"]
+    D --> E["KV-cache pressure"]
+    E --> F["vLLM vs SGLang"]
+    F --> G["Observability and sustained-load validation"]
+```
 
-- Flash Attention improved 3K–4K-token request TTFT by approximately **2.25×**
-- Median decode throughput increased from approximately **55.6 tok/s to 67.4 tok/s**
-- Long-context peak GPU allocation decreased
-- In a controlled 512-token decode workload, Flash reduced E2E latency from approximately **9.01 s to 7.62 s**
+The experiments progressively move upward through the serving stack. This makes it possible to distinguish GPU execution cost from scheduler delay, queueing, cache capacity, and engine-specific behavior.
 
-### Queueing behavior
+## Key findings
 
-Under bursty Poisson arrivals with a single FCFS worker:
+### 1. Kernel improvements do not eliminate serving latency
 
-- request TTFT increased from sub-second latency to tens of seconds
-- GPU token latency remained approximately **15–16 ms**
-- user-visible latency became dominated by **queueing rather than slower token execution**
+On the RTX 4070 baseline, Flash Attention improved 3K–4K-token TTFT by approximately **2.25×** and increased median decode throughput from **55.6 to 67.4 tok/s**.
 
-### Continuous batching
+However, under bursty FCFS traffic, request TTFT later increased to tens of seconds while GPU token latency remained around **15–16 ms**. At that point, queueing—not token execution—had become the dominant source of user-visible latency.
 
-Using vLLM continuous batching:
+### 2. SLO capacity was reached before maximum raw throughput
 
-- aggregate output throughput scaled beyond **500 tok/s**
-- median streaming cadence remained relatively stable over a wide load range
-- a sharp **tail-latency knee** appeared between configured arrival rates of approximately **3.75 and 4.0 req/s**
+A request passed the serving SLO when:
 
-From λ=3.75 to λ=4.0:
+- TTFT ≤ 300 ms
+- mean SSE content-event ITL ≤ 15 ms
 
-- output throughput: **547.1 → 564.4 tok/s**
-- P95 TTFT: **232.7 → 559.3 ms**
-- P99 TTFT: **~251 → ~1622 ms**
-- P95 streaming ITL: **11.83 → 17.96 ms**
+| Configured arrival rate | SLO pass rate | Raw request throughput | Request goodput |
+|---:|---:|---:|---:|
+| 3.50 req/s | 98.33% | 2.795 req/s | 2.748 req/s |
+| 3.75 req/s | 98.33% | 2.913 req/s | **2.864 req/s** |
+| 4.00 req/s | 86.67% | 2.953 req/s | 2.559 req/s |
 
-Raw throughput was still increasing, so this is a **latency knee rather than a demonstrated hard throughput ceiling**.
+From 3.75 to 4.0 configured requests/s:
 
-### Concurrency control
+- raw request throughput increased slightly;
+- P95 TTFT increased from **232.7 to 559.3 ms**;
+- P99 TTFT increased from approximately **251 to 1,622 ms**;
+- request goodput decreased by approximately **10.7%**;
+- output goodput decreased from approximately **546.4 to 477.5 tok/s**.
 
-At λ=4.0, natural-generation experiments compared different `max_num_seqs` limits:
+This is a latency and SLO knee, not evidence of a universal hard throughput limit.
 
-| Configuration | Max Running | Max Waiting | P95 TTFT | P99 TTFT | P95 ITL |
+### 3. KV occupancy alone does not explain scheduler pressure
+
+S5 constrained the vLLM KV-cache pool while holding the workload constant.
+
+| KV pool | Peak KV occupancy | Max running | Max waiting | P95 TTFT | Output throughput |
+|---:|---:|---:|---:|---:|---:|
+| 66.54 GiB | 10.50% | 8 | 7 | 10.392 s | 86.82 tok/s |
+| 14.00 GiB | 49.92% | 8 | 7 | 10.442 s | 86.53 tok/s |
+| 7.78 GiB | 89.85% | 8 | 7 | 10.447 s | 86.50 tok/s |
+| 7.00 GiB | 99.84% | 8 | 7 | 10.446 s | 86.50 tok/s |
+| 6.75 GiB | 90.62% | 7 | 7 | 10.579 s | 85.75 tok/s |
+
+No preemptions occurred.
+
+At 7.00 GiB, occupancy reached **99.84%** without meaningful throughput collapse. At 6.75 GiB, the scheduler admitted only seven running requests, so measured occupancy fell even though memory capacity was tighter.
+
+The result illustrates an important diagnostic boundary:
+
+> KV utilization is the occupancy of the admitted working set—not a complete measurement of unmet demand.
+
+![KV-cache pressure](results/s5/figures/s5b_output_throughput.png)
+
+### 4. Serving-engine rankings depend on concurrency and metric
+
+S6 compared vLLM and SGLang using the same model, precision, request shape, concurrency points, and five repeated runs per configuration.
+
+| Concurrency | vLLM output tok/s | SGLang output tok/s | Throughput leader |
+|---:|---:|---:|---|
+| 1 | 226.50 | 257.49 | SGLang +13.7% |
+| 8 | 1,756.46 | 1,815.73 | SGLang +3.4% |
+| 32 | 4,832.48 | 4,852.46 | Approximately equal |
+| 64 | 6,692.62 | 6,921.83 | SGLang +3.4% |
+| 128 | 7,809.37 | 7,267.41 | vLLM +7.5% |
+
+At C64, SGLang produced:
+
+- **3.4% higher** output throughput;
+- **9.7% lower** P95 end-to-end latency;
+- **83.4% lower** P95 ITL.
+
+At the same concurrency, vLLM produced lower median, P95, and P99 TTFT. At C128, vLLM overtook SGLang in both throughput and end-to-end latency.
+
+Therefore, the comparison does not support a universal “faster engine.” Engine selection depends on concurrency, TTFT, streaming cadence, throughput, and tail-latency priorities.
+
+![Engine throughput comparison](results/s6/analysis/s6a/20260907T101719Z/throughput_vs_concurrency.png)
+
+### 5. High queue pressure can coexist with low KV occupancy
+
+The S7 load transition increased concurrency through:
+
+| Stage | Concurrency | Output throughput | Mean waiting | Mean KV occupancy | Preemptions |
 |---|---:|---:|---:|---:|---:|
-| Default | 14 | 0 | 559.3 ms | 1622.2 ms | 17.96 ms |
-| `max_num_seqs=12` | 12 | 1 | 234.9 ms | 253.9 ms | 12.27 ms |
-| `max_num_seqs=10` | 10 | 3 | 442.4 ms | 563.4 ms | 12.26 ms |
-| `max_num_seqs=8` | 8 | 6 | 791.5 ms | 1007.9 ms | 11.61 ms |
+| C8 | 8 | 1,763.6 tok/s | 0.0 | 0.18% | 0 |
+| C32 | 32 | 4,828.6 tok/s | 2.2 | 0.63% | 0 |
+| C64-A | 64 | 6,730.6 tok/s | 7.6 | 1.19% | 0 |
+| C128 | 128 | 7,789.4 tok/s | 22.8 | 2.27% | 0 |
+| C64-B | 64 | 6,669.1 tok/s | 8.5 | 1.15% | 0 |
 
-The results show a trade-off:
+At C128, the queue grew to a mean of **22.8 waiting requests** while KV occupancy remained only **2.27%** and preemptions remained zero.
 
-- excessive active concurrency can increase execution interference
-- overly restrictive concurrency shifts delay into scheduler waiting
-- `max_num_seqs=12` provided the best tested natural-run TTFT trade-off
+This indicates scheduler or compute saturation rather than KV exhaustion.
 
-However, this is **not treated as a universal optimum**.
+![Load-transition GPU utilization](results/s7/analysis/load_transition_v2/20260907T115359Z/gpu_util_over_time.png)
 
-A later length-matched controlled replay forced identical output-token work for default and `max_num_seqs=12`. Both configurations reached only 11 concurrent running requests, so the 12-sequence limit was never activated. Their performance was consequently nearly identical.
+![Load-transition scheduler waiting](results/s7/analysis/load_transition_v2/20260907T115359Z/waiting_over_time.png)
 
-This indicates that concurrency control is useful specifically when it actually prevents over-admission.
+### 6. Sustained C64 load remained stable
 
-### SLO-qualified goodput
+The formal soak executed five consecutive 20,000-request segments:
 
-A request was considered SLO-compliant when both conditions were satisfied:
+| Property | Result |
+|---|---:|
+| Total successful requests | 100,000 / 100,000 |
+| Wall-clock duration | 2,102 s |
+| Active serving duration | 1,935.4 s |
+| Preemptions | 0 |
+| Minimum vLLM scrape availability | 1 |
+| Minimum DCGM scrape availability | 1 |
+| Idle framebuffer-memory delta | 0 MiB |
 
-- TTFT ≤ **300 ms**
-- mean SSE content-event ITL ≤ **15 ms**
+Performance drift from segment 1 to segment 5:
 
-Request goodput was defined as:
+| Metric | Drift |
+|---|---:|
+| Output throughput | +0.156% |
+| P95 TTFT | −1.099% |
+| P99 TTFT | +1.735% |
+| P95 TPOT | −0.334% |
+| P95 ITL | +0.832% |
+| P99 ITL | −0.291% |
+
+Across the five active segments:
+
+- GPU utilization remained approximately **99.1–99.3%**;
+- mean waiting depth remained between **7.43 and 7.77**;
+- mean KV occupancy remained between **1.168% and 1.197%**;
+- mean power remained between **294.8 and 296.8 W**;
+- maximum GPU temperature remained between **72 and 73°C**.
+
+Framebuffer memory returned to the same **74,382 MiB** idle baseline after the soak, while idle KV occupancy returned to zero. No cumulative performance, queue, KV, or device-memory growth was observed.
+
+![Soak client drift](results/s7/analysis/soak/20260907T125350Z/figures/soak_client_metric_drift.png)
+
+![Soak scheduler state](results/s7/analysis/soak/20260907T125350Z/figures/soak_scheduler_state.png)
+
+## Observability stack
+
+S7 correlates three evidence layers:
+
+1. Client-side latency and throughput.
+2. vLLM scheduler, KV-cache, and preemption metrics.
+3. DCGM GPU utilization, power, temperature, and framebuffer memory.
+
+```mermaid
+flowchart LR
+    A["Benchmark client"] --> B["vLLM server"]
+    B --> C["Prometheus"]
+    D["DCGM Exporter"] --> C
+    C --> E["Grafana"]
+```
+
+The repository includes:
+
+- Prometheus scrape configuration;
+- a curated DCGM metric set;
+- Grafana datasource and dashboard provisioning;
+- a 15-panel dashboard JSON;
+- exported 1 Hz telemetry;
+- static figures suitable for offline review.
+
+The dashboard covers GPU telemetry, scheduler state, KV occupancy, preemptions, scrape availability, latency quantiles, and token throughput.
+
+See [`docs/s7_observability.md`](docs/s7_observability.md) for the complete S7 experiment and diagnosis narrative.
+
+## Experimental progression
+
+| Stage | Question |
+|---|---|
+| R0 | How can a reproducible heterogeneous workload be constructed? |
+| R1 | How much do attention backends change TTFT, decode speed, and memory? |
+| S1 | What measurement semantics appear after adding HTTP/SSE streaming? |
+| S2 | When does queueing dominate client-visible latency? |
+| S3 | How do continuous batching and active-concurrency limits affect tails? |
+| S4 | Where does SLO-qualified goodput peak? |
+| S5 | What changes as the KV-cache pool approaches capacity? |
+| S6 | How do vLLM and SGLang trade places across concurrency and metrics? |
+| S7 | Can client, scheduler, and GPU telemetry explain load transitions and stability? |
+
+## Repository structure
 
 ```text
-SLO-passing successful requests / measured makespan
-
-The highest measured request goodput occurred at configured λ=3.75:
-
-Configured λ	SLO Pass Rate	Raw Req/s	Request Goodput
-3.50	98.33%	2.795	2.748
-3.75	98.33%	2.913	2.864
-4.00	86.67%	2.953	2.559
-
-Moving from λ=3.75 to λ=4.0:
-
-raw request throughput increased slightly
-request goodput decreased by approximately 10.7%
-output goodput decreased from approximately 546.4 tok/s to 477.5 tok/s
-
-This demonstrates that:
-
-Maximum raw throughput is not necessarily the optimal production operating point.
-
-Experiment Progression
-
-The project follows a bottom-up performance investigation:
-
-GPU kernel behavior
-        ↓
-long-context prefill
-        ↓
-autoregressive decode
-        ↓
-realistic workload
-        ↓
-HTTP/SSE serving
-        ↓
-Poisson arrivals and queueing
-        ↓
-continuous batching
-        ↓
-concurrency control
-        ↓
-SLO-qualified goodput
-Experimental Environment
-Base inference experiments
-Model: Qwen/Qwen2.5-1.5B-Instruct
-GPU: NVIDIA GeForce RTX 4070, 12 GB VRAM
-OS: WSL2 / Ubuntu 22.04
-Framework: PyTorch + Hugging Face Transformers
-GPU count: 1
-vLLM serving experiments
-vLLM: 0.28.0
-PyTorch: 2.13
-CUDA runtime: 13.2
-Precision: BF16
-Attention backend: FlashAttention 2
-torch.compile: enabled
-CUDA graphs: enabled
-Prefix caching: enabled
-Chunked prefill: enabled
-GPU memory utilization target: 0.85
-
-The vLLM experiments use a different software stack from the custom PyTorch serving baseline. Therefore, differences between the two are treated as serving-stack comparisons rather than pure scheduler-only speedups.
-
-R0 — Realistic Workload Construction
-
-A frozen heterogeneous workload of 1,000 requests was constructed from public datasets.
-
-Category	Requests
-Short Interactive	300
-Knowledge QA	200
-Coding Request	150
-Document QA	150
-Long-context QA	100
-Long Output	100
-Total	1000
-
-Input ranges include:
-
-short interactive / knowledge requests
-document QA around 1K–2K input tokens
-long-context QA around 3K–4K input tokens
-long-output generation workloads
-
-The public repository contains only the metadata-oriented workload manifest. Full prompt content is intentionally kept out of the public repository.
-
-Frozen workload checksum:
-
-7593429c095064a7f375e12d40db43ebf174d0f3a57f49bc51db030a0619d014
-
-Public manifest:
-
-workloads/final/public_workload_manifest.csv
-R1 — Sequential Eager vs Flash Baseline
-
-R1 evaluates the complete 1,000-request workload using a persistent single-request inference path.
-
-The benchmark compares:
-
-Eager attention
-PyTorch SDPA Flash attention
-TTFT
-
-Representative request-level results:
-
-Metric	Eager	Flash
-P50 request TTFT	21.55 ms	17.72 ms
-P95 request TTFT	574.3 ms	253.7 ms
-P99 request TTFT	693.8 ms	287.5 ms
-
-For 3073–4096-token inputs:
-
-~574.9 ms → ~254.0 ms
-≈ 2.25× speedup
-Decode
-Metric	Eager	Flash
-Median TPOT	17.98 ms	14.84 ms
-Median decode throughput	55.62 tok/s	67.37 tok/s
-
-Flash improved median decode throughput by approximately 21%.
-
-Memory
-
-Maximum peak allocated GPU memory:
-
-4.963 GiB → 4.163 GiB
-
-Long-context peak allocation was also lower under Flash.
-
-Service time
-
-Total measured service time across the full workload:
-
-~57.07 min → ~49.24 min
-
-The Flash run generated slightly more tokens because stochastic generation trajectories differed across backends.
-
-Therefore:
-
-E2E latency is treated as a production-observed metric rather than a pure kernel-causal measurement.
-
-Primary backend-performance metrics are TTFT, TPOT, streaming ITL, decode throughput, and GPU memory.
-
-Figures
-
-S1 — HTTP / SSE Streaming Serving
-
-The inference path was exposed through:
-
-FastAPI
-persistent GPU model
-HTTP/1.1
-SSE streaming
-
-The S1 implementation preserved the R1 Flash generation trajectory for all 1,000 requests.
-
-Observed localhost client/server TTFT overhead was approximately 1 ms at the median.
-
-An important measurement issue was also identified:
-
-An SSE content event is not necessarily equivalent to a visible token.
-
-Some streaming events contain empty text payloads, so later experiments separately track:
-
-first content-event TTFT
-first visible-text TTFT
-
-SSE content-event ITL is therefore treated as an application-level streaming metric, not GPU TPOT.
-
-S2 — Poisson Arrivals and Queueing
-
-S2 introduces bursty traffic while keeping:
-
-one persistent worker
-FCFS execution
-no batching
-
-Requests are generated from an exponential inter-arrival process.
-
-The same master random arrival trace is reused across load points and scaled by configured λ. Both configured and realized arrival rates are reported.
-
-Result
-
-As arrival rate increases:
-
-queueing delay grows dramatically
-TTFT grows with queueing delay
-GPU token latency remains approximately stable
-
-The central observation is:
-
-A faster GPU kernel does not guarantee low user-visible latency once queueing dominates the serving path.
-
-S3 — vLLM Continuous Batching
-
-S3 replaces the single-request serving architecture with vLLM continuous batching.
-
-S3-A — Sequential validation
-
-A 60-request balanced pilot was first used to validate the vLLM stack.
-
-Representative results:
-
-P50 TTFT: ~17.6 ms
-P95 TTFT: ~231 ms
-
-Long-context request TTFT remained primarily dominated by prefill, while steady SSE content-event ITL stayed around 8 ms.
-
-S3-C — Capacity Sweep
-
-Formal natural-generation capacity runs were executed with a fresh vLLM process for each load point.
-
-This avoids cross-load-point prefix-cache contamination while keeping prefix caching enabled within each experiment.
-
-The main finding is a tail-latency knee between configured λ=3.75 and λ=4.0.
-
-The system was still increasing aggregate throughput while tail latency degraded sharply.
-
-This indicates that latency capacity can be reached before hard throughput saturation.
-
-S3-E — Concurrency Control
-
-The λ=4.0 stress point was used to study max_num_seqs.
-
-The natural-generation experiment suggests a concurrency trade-off:
-
-too much active concurrency
-        ↓
-execution interference
-        ↓
-tail latency increases
-
-too little active concurrency
-        ↓
-scheduler waiting
-        ↓
-TTFT increases
-
-The tested max_num_seqs=12 configuration provided the strongest TTFT result in this natural workload.
-
-S3-D — Length-Matched Replay
-
-To test whether the apparent max_num_seqs=12 improvement was caused directly by the concurrency cap, a controlled replay was performed.
-
-Each request was forced to generate exactly the same number of output tokens as its corresponding S1 Flash request.
-
-Both configurations produced:
-
-120 / 120 successful requests
-120 / 120 output-length matches
-22,225 expected output tokens
-22,225 observed output tokens
-
-Results:
-
-Metric	Default	maxseq12
-Max running	11	11
-Max waiting	0	0
-P95 TTFT	231.98 ms	234.00 ms
-P95 ITL	11.79 ms	11.87 ms
-Output throughput	573.01 tok/s	572.58 tok/s
-
-The default scheduler never exceeded 11 active requests, so the 12-sequence cap was never activated.
-
-Therefore:
-
-The natural-run improvement from max_num_seqs=12 is conditional on the workload producing enough active concurrency for the cap to matter.
-
-S4 — SLO and Goodput
-
-S4 converts the latency results into a production-oriented capacity metric.
-
-A request passes the SLO when:
-
-TTFT <= 300 ms
-AND
-mean SSE content-event ITL <= 15 ms
-
-Request goodput:
-
-SLO-passing requests / measured makespan
-
-Output goodput:
-
-output tokens from SLO-passing requests / measured makespan
-
-At configured λ=3.75:
-
-SLO pass rate      98.33%
-raw throughput     2.913 req/s
-request goodput    2.864 req/s
-output goodput     546.4 tok/s
-
-At configured λ=4.0:
-
-SLO pass rate      86.67%
-raw throughput     2.953 req/s
-request goodput    2.559 req/s
-output goodput     477.5 tok/s
-
-Raw throughput increased slightly, but SLO-qualified goodput decreased.
-
-This establishes the project's central serving result:
-
-The throughput-maximizing operating point lies beyond the SLO-optimal operating point.
-
-Bottleneck Evolution
-
-The experiments show a clear change in the dominant performance bottleneck as the system becomes more realistic.
-
-Stage	Dominant concern
-E1	Long-context prefill
-E2	Attention kernel efficiency
-E3	Decode latency and KV-cache growth
-R1	Realistic kernel-level inference
-S1	API / streaming measurement
-S2	Queueing
-S3	Continuous batching and active concurrency
-S3-E	Concurrency-control trade-off
-S4	SLO-qualified capacity
-
-This progression is one of the main conclusions of the project:
-
-The bottleneck moves upward through the serving stack as lower-level computation becomes more efficient.
-
-Repository Structure
 .
 ├── README.md
-├── requirements.txt
+├── docs/
+│   ├── s6_environment.txt
+│   └── s7_observability.md
+├── monitoring/
+│   ├── dcgm/
+│   ├── grafana/
+│   │   ├── dashboards/
+│   │   └── provisioning/
+│   └── prometheus/
+├── results/
+│   ├── r1/
+│   ├── s2/
+│   ├── s3/
+│   ├── s4/
+│   ├── s5/
+│   ├── s6/
+│   └── s7/
 ├── src/
-│   ├── r0a_source_acquisition.py
-│   ├── r0b_build_candidate_pools.py
-│   ├── r0c_classify_requests.py
-│   ├── r0d_construct_token_bands.py
-│   ├── r0e_finalize_workload.py
-│   ├── r1_sequential_benchmark.py
-│   ├── r1_analyze_results.py
-│   ├── s1_streaming_server.py
-│   ├── s1_streaming_client.py
-│   ├── s2_poisson_client.py
-│   ├── s2_analyze_results.py
-│   ├── s3_vllm_sequential_client_v2.py
-│   ├── s3_vllm_poisson_client.py
-│   ├── s3_vllm_length_matched_client.py
-│   ├── s3_analyze_results.py
-│   └── s4_analyze_goodput.py
-│
-├── workloads/
-│   └── final/
-│       ├── public_workload_manifest.csv
-│       └── SHA256SUMS.txt
-│
-└── results/
-    ├── r1/
-    │   ├── figures/
-    │   └── summary/
-    ├── s2/
-    │   ├── figures/
-    │   ├── schedules/
-    │   └── summary/
-    ├── s3/
-    │   ├── figures/
-    │   └── summary/
-    └── s4/
-        ├── figures/
-        └── summary/
+└── workloads/
+    └── final/
+```
 
-Raw benchmark traces and full workload prompts are intentionally excluded from the public repository.
+Raw traces, server logs, full prompts, and temporary benchmark outputs are intentionally excluded from version control. Public summaries, analysis-ready telemetry, figures, scripts, and workload metadata are retained.
 
-Reproducing the Analysis
+## Reproducing the analysis
 
-After collecting experiment results:
+Earlier analysis stages:
 
+```bash
 python src/r1_analyze_results.py
 python src/s2_analyze_results.py
 python src/s3_analyze_results.py
 python src/s4_analyze_goodput.py
+python src/s5b_analyze_results.py
+python src/s6a_analyze_results.py
+```
 
-Generated public summaries and figures are written under:
+S7 load transition and soak analysis:
 
-results/<stage>/summary/
-results/<stage>/figures/
-Measurement Notes
+```bash
+/root/.venv-s6-sglang/bin/python \
+  src/s7_analyze_load_transition_v2.py
 
-Several interpretation boundaries are intentionally preserved.
+/root/.venv-s6-sglang/bin/python \
+  src/s7_analyze_soak.py
 
-Natural generation
+/root/.venv-s6-sglang/bin/python \
+  src/s7_export_soak_telemetry.py
+```
 
-Even with fixed seeds, generation trajectories may differ across execution stacks or concurrent scheduling regimes due to numerical differences.
+Formal GPU runs are launched through the corresponding `run_*.sh` scripts in [`src/`](src/). These commands require the appropriate model, serving engine, GPU environment, and raw experiment inputs.
 
-Therefore, output-throughput differences between natural-generation configurations should not automatically be interpreted as pure scheduler-causal speedups.
+## Measurement boundaries
 
-SSE ITL
+- Natural generation can diverge across execution stacks because of numerical and scheduling differences.
+- SSE content-event ITL is an application-level streaming metric and is not identical to GPU TPOT.
+- CUDA or DCGM framebuffer usage includes model weights, allocator reservations, graphs, and cache pools; it is not equivalent to active KV occupancy.
+- A concurrency cap only changes behavior when the uncapped scheduler would exceed that limit.
+- Capacity and latency knees are specific to the tested model, GPU, software stack, workload distribution, and finite request trace.
+- The absence of degradation in this soak is evidence for this experiment window, not proof of unlimited long-run stability.
 
-The streaming ITL reported in S1–S4 is based on SSE content-event timing.
+## Main takeaway
 
-It is an application-level serving metric and should not be confused with GPU TPOT.
+The bottleneck moved upward through the stack as lower-level execution became more efficient:
 
-CUDA reserved memory
+> **kernel cost → API semantics → queueing → batching → admission control → KV capacity → engine policy → operational stability**
 
-CUDA reserved memory represents caching-allocator reservation, not active tensor allocation.
-
-Sequence-length boundary
-
-A reproducible latency effect was observed near a 512-token cached-sequence boundary in an earlier controlled FP16 decode configuration.
-
-The effect was not consistently reproduced in the later BF16 production-like serving path and is therefore treated as configuration-dependent rather than universal.
-
-Capacity
-
-The observed λ≈3.75–4.0 latency knee belongs to this specific:
-
-model
-GPU
-software stack
-workload distribution
-finite Poisson trace
-
-It should not be interpreted as a universal vLLM capacity limit.
-
-Main Takeaway
-
-This project started with a GPU-kernel optimization question and ended with a serving-systems conclusion:
-
-LLM performance is a stack-level property.
-
-Flash Attention can significantly reduce compute and memory cost, but production responsiveness also depends on:
-
-arrival patterns
-service-time variance
-queueing
-batching
-request lifetimes
-concurrency admission
-scheduler behavior
-latency SLOs
-
-The highest-throughput configuration is therefore not necessarily the best production configuration.
-
-For this workload and hardware, SLO-qualified goodput peaked before maximum observed raw throughput.
+For this workload, raw throughput continued increasing after tail latency and SLO-qualified goodput had already degraded. Production-oriented LLM serving therefore requires joint reasoning about throughput, latency distributions, queue depth, admission behavior, memory occupancy, and GPU telemetry—not optimization of a single metric.
