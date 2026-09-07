@@ -1,0 +1,13 @@
+S6 Serving Engine Comparison
+
+GPU: NVIDIA A100 80GB PCIe
+Driver: 580.159.04
+Model: Qwen/Qwen2.5-1.5B-Instruct
+dtype: BF16
+max context: 32768
+
+vLLM: 0.28.0
+PyTorch: 2.13.0+cu130
+
+SGLang: 0.5.19
+PyTorch: 2.13.0+cu130
