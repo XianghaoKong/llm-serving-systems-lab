@@ -1,0 +1,32 @@
+S7 FORMAL SOAK SUMMARY
+======================
+
+Run ID: 20260907T125350Z
+Concurrency: 64
+Segments: 5
+Requests/segment: 20,000
+Total successful requests: 100,000
+Soak wall-clock: 2102 s
+Total client serving duration: 1935.40 s
+
+output_throughput_tps drift segment1->5: +0.156%
+p95_ttft_ms drift segment1->5: -1.099%
+p99_ttft_ms drift segment1->5: +1.735%
+p95_tpot_ms drift segment1->5: -0.334%
+p99_tpot_ms drift segment1->5: -0.205%
+p95_itl_ms drift segment1->5: +0.832%
+p99_itl_ms drift segment1->5: -0.291%
+
+Telemetry by segment:
+segment_1: active=385s GPU=99.06% wait=7.77 KV=1.180% power=294.8W temp_max=73.0C preemptions=0.0 engine_up_min=1.0 dcgm_up_min=1.0
+segment_2: active=385s GPU=99.22% wait=7.55 KV=1.179% power=296.6W temp_max=73.0C preemptions=0.0 engine_up_min=1.0 dcgm_up_min=1.0
+segment_3: active=385s GPU=99.18% wait=7.75 KV=1.187% power=295.6W temp_max=73.0C preemptions=0.0 engine_up_min=1.0 dcgm_up_min=1.0
+segment_4: active=384s GPU=99.34% wait=7.43 KV=1.197% power=296.0W temp_max=73.0C preemptions=0.0 engine_up_min=1.0 dcgm_up_min=1.0
+segment_5: active=384s GPU=99.22% wait=7.68 KV=1.168% power=296.8W temp_max=72.0C preemptions=0.0 engine_up_min=1.0 dcgm_up_min=1.0
+
+Idle HBM/KV comparison:
+FB used before median: 74382.000
+FB used after median: 74382.000
+FB used delta: +0.000
+KV before median: 0.0000%
+KV after median: 0.0000%

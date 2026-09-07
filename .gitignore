@@ -34,6 +34,7 @@ workloads/final/realistic_requests.json
 workloads/final/realistic_requests_pre_freeze.json
 
 # Raw benchmark data
+vllm_*.jsonl
 results/**/raw/
 
 # Large traces / logs

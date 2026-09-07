@@ -1,0 +1,12 @@
+apiVersion: 1
+
+providers:
+  - name: llm-serving-systems-lab
+    orgId: 1
+    folder: LLM Serving Systems Lab
+    type: file
+    disableDeletion: false
+    allowUiUpdates: true
+    updateIntervalSeconds: 10
+    options:
+      path: /workspace/llm-serving-systems-lab/monitoring/grafana/dashboards
