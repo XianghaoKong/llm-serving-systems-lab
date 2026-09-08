@@ -301,49 +301,82 @@ def plot_by_length(
     if not inject:
         return
 
+    config_order = [
+        "off_32768", "on_32768", "on_16384", "on_8192",
+        "on_4096", "on_2048", "on_1024", "on_512",
+    ]
+    order_index = {label: index for index, label in enumerate(config_order)}
+    display_labels = ["off\n32K", "32K", "16K", "8K", "4K", "2K", "1K", "512"]
+
     plt.figure(figsize=(9, 5.5))
     for length in lengths:
         selected = [
             row for row in inject
             if int(row["interferer_input_tokens"]) == length
         ]
-        selected.sort(key=lambda row: str(row["config_label"]))
-        plt.plot(
-            range(len(selected)),
-            [row["p99_stall_ratio_median"] for row in selected],
-            marker="o",
+        selected.sort(key=lambda row: order_index[str(row["config_label"])])
+        medians = [row["p99_stall_ratio_median"] for row in selected]
+        lows = [row["p99_stall_ratio_ci_low"] for row in selected]
+        highs = [row["p99_stall_ratio_ci_high"] for row in selected]
+        plt.errorbar(
+            range(len(selected)), medians,
+            yerr=[
+                [median - low for median, low in zip(medians, lows, strict=True)],
+                [high - median for median, high in zip(medians, highs, strict=True)],
+            ],
+            marker="o", capsize=3, linewidth=2,
             label=f"{length // 1024}K prompt",
         )
-        labels = [str(row["config_label"]) for row in selected]
     plt.axhline(1.0, color="black", linewidth=1, alpha=0.5)
-    plt.xticks(range(len(labels)), labels, rotation=35, ha="right")
+    plt.axvspan(5.65, 6.35, color="#2ca02c", alpha=0.08)
+    plt.yscale("log", base=2)
+    plt.yticks([1, 2, 4, 8, 16, 32, 64], ["1", "2", "4", "8", "16", "32", "64"])
+    plt.xticks(range(len(display_labels)), display_labels)
     plt.ylabel("Background P99 content-event gap ratio")
-    plt.xlabel("Server configuration")
-    plt.title("S8 Prefill Interference on Background Decode")
-    plt.grid(True, alpha=0.25)
+    plt.xlabel("Chunked-prefill token budget (off = unchunked baseline)")
+    plt.title("Smaller Prefill Chunks Bound Decode Stalls")
+    plt.grid(True, which="both", axis="y", alpha=0.25)
     plt.legend()
     plt.tight_layout()
     plt.savefig(output_dir / "stall_ratio_by_config.png", dpi=180)
     plt.close()
 
-    plt.figure(figsize=(7.5, 5.5))
-    for row in inject:
-        x = row.get("long_ttft_p50_ms_median")
-        y = row.get("p99_stall_ratio_median")
-        if x is None or y is None:
-            continue
-        plt.scatter(x, y, s=55)
-        plt.annotate(
-            f"{row['config_label']} / {int(row['interferer_input_tokens']) // 1024}K",
-            (x, y), xytext=(4, 4), textcoords="offset points", fontsize=7,
-        )
-    plt.xlabel("Long-request median TTFT (ms)")
-    plt.ylabel("Background P99 content-event gap ratio")
-    plt.title("S8 TTFT–Decode-Stall Trade-off")
-    plt.grid(True, alpha=0.25)
-    plt.tight_layout()
-    plt.savefig(output_dir / "ttft_stall_pareto.png", dpi=180)
-    plt.close()
+    fig, axes = plt.subplots(1, len(lengths), figsize=(14, 4.8), sharey=True)
+    short_labels = ["off", "32K", "16K", "8K", "4K", "2K", "1K", "512"]
+    colors = plt.get_cmap("tab10")
+    for axis, length in zip(axes, lengths, strict=True):
+        selected = [
+            row for row in inject
+            if int(row["interferer_input_tokens"]) == length
+        ]
+        selected.sort(key=lambda row: order_index[str(row["config_label"])])
+        xs = [row["long_ttft_p50_ms_median"] for row in selected]
+        ys = [row["p99_stall_ratio_median"] for row in selected]
+        axis.plot(xs, ys, color="0.72", linewidth=1.5, zorder=1)
+        for index, (row, x, y) in enumerate(zip(selected, xs, ys, strict=True)):
+            color = "#d62728" if row["config_label"] == "on_1024" else colors(index)
+            size = 72 if row["config_label"] == "on_1024" else 48
+            axis.scatter(x, y, s=size, color=color, zorder=2)
+            budget = row["max_num_batched_tokens"]
+            if row["config_label"] == "off_32768" or (
+                budget is not None and budget < length
+            ):
+                axis.annotate(
+                    short_labels[index], (x, y), xytext=(4, 4),
+                    textcoords="offset points", fontsize=8,
+                    fontweight="bold" if row["config_label"] == "on_1024" else "normal",
+                )
+        axis.set_title(f"{length // 1024}K-token prompt")
+        axis.set_xlabel("Long-request median TTFT (ms)")
+        axis.grid(True, which="both", alpha=0.25)
+    axes[0].set_ylabel("Background P99 gap ratio")
+    axes[0].set_yscale("log", base=2)
+    axes[0].set_yticks([1, 2, 4, 8, 16, 32, 64])
+    axes[0].set_yticklabels(["1", "2", "4", "8", "16", "32", "64"])
+    fig.suptitle("Chunk Size Trades Long-Request TTFT for Decode Fairness", y=1.02)
+    fig.tight_layout()
+    fig.savefig(output_dir / "ttft_stall_pareto.png", dpi=180, bbox_inches="tight")
+    plt.close(fig)
 
 
 def main() -> None:

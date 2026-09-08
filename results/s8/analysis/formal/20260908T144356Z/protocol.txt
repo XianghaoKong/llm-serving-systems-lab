@@ -1,0 +1,15 @@
+S8 prefill/decode interference formal
+run_id=20260908T144356Z
+model=Qwen/Qwen2.5-1.5B-Instruct
+background_concurrency=64
+background_shape=256/8192
+interferer_output_tokens=16
+interferer_count=1
+repeats=5
+warmup_seconds=15
+recovery_seconds=15
+max_model_len=32768
+max_num_seqs=128
+long_prefill_token_threshold=0
+prefix_caching=false
+scheduling_policy=fcfs

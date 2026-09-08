@@ -2,10 +2,16 @@
 
 ## Status
 
-This document is the pre-pilot protocol. Formal parameters must be frozen after
-the calibration and pilot gates below. Pilot observations may select the
-background concurrency and interferer count, but formal results must not be used
-to revise the protocol.
+The calibration, pilot, and preregistered formal experiment completed on one
+NVIDIA A100 80GB PCIe on 2026-09-08 UTC. Formal parameters were frozen after
+the pilot and were not revised using formal outcomes. See
+[s8_pilot_results.md](s8_pilot_results.md) for the selection evidence and
+[s8_results.md](s8_results.md) for the formal results.
+
+One compatibility deviation was required before calibration: vLLM 0.28.0 no
+longer exposes the preregistered `--max-num-partial-prefills` option. The runner
+therefore omitted that unsupported flag and retained every other registered
+scheduler setting. The same command surface was used for every configuration.
 
 ## Objective
 
@@ -46,7 +52,7 @@ stall.
 | GPU memory utilization | 0.90 |
 | Maximum sequences | 128 |
 | Scheduling policy | FCFS |
-| Concurrent partial prefills | 1 |
+| Concurrent partial prefills | vLLM 0.28.0 default; no public flag |
 | Long-prefill threshold | 0 |
 | Prefix caching | Disabled |
 | Speculative decoding | Disabled |
@@ -122,6 +128,14 @@ The pilot must also confirm:
 If SSE event count differs from output token count, the primary metric remains
 named `content-event gap`; it must not be renamed token-level ITL.
 
+### Frozen formal settings
+
+The A100 PCIe calibration and pilot completed on 2026-09-08 UTC. The formal
+experiment is frozen at background concurrency 64 and one interferer. All
+eight registered scheduler configurations, all three input lengths, and five
+rotated blocks remain unchanged. The evidence and exact raw run identifiers
+are recorded in [s8_pilot_results.md](s8_pilot_results.md).
+
 ## Formal causal experiment
 
 Each formal block rotates configuration and prompt-length order. Every server
@@ -144,8 +158,8 @@ event, is the statistical unit.
 ```bash
 S8_PHASE=formal \
 S8_PROTOCOL_FROZEN=1 \
-S8_BACKGROUND_CONCURRENCY=<calibrated value> \
-S8_INTERFERER_COUNT=<frozen value> \
+S8_BACKGROUND_CONCURRENCY=64 \
+S8_INTERFERER_COUNT=1 \
 bash src/run_s8_interference.sh
 ```
 
