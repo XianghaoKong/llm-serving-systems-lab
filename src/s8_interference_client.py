@@ -27,7 +27,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
 import httpx
-from transformers import AutoTokenizer
 
 DEFAULT_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
 DEFAULT_BASE_URL = "http://127.0.0.1:8002"
@@ -403,6 +402,8 @@ def write_outputs(
 
 
 async def execute(args: argparse.Namespace) -> Path:
+    from transformers import AutoTokenizer
+
     run_stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
     out_dir = Path(args.output_dir) if args.output_dir else (
         Path("results/s8/raw/interference") / run_stamp
