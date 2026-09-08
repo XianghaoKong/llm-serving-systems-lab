@@ -15,6 +15,7 @@ The central result is:
 - Compared vLLM and SGLang across concurrency **1, 8, 32, 64, and 128**, using five repeated runs per point.
 - Built a **Prometheus + DCGM Exporter + Grafana** observability stack.
 - Completed a **100,000-request, 35-minute C64 soak** with zero failures, zero preemptions, and no persistent memory growth.
+- Reduced a 24K-prefill-induced decode P99 stall from **51.89× to 4.23×** by tuning vLLM's chunked-prefill budget, with five repeated blocks and bootstrap confidence intervals.
 
 ## System under test
 
@@ -26,6 +27,8 @@ The central result is:
 | Serving precision | BF16 |
 | Serving engines | vLLM 0.28.0 and SGLang 0.5.19 |
 | Request shape for S6/S7 | 512 input / 128 output tokens |
+| S8 background population | C64, 256 input / 8,192 output tokens |
+| S8 injected prompts | 8K, 16K, or 24K input / 16 output tokens |
 | Maximum serving context | 32,768 tokens |
 | Monitoring | Prometheus, DCGM Exporter, Grafana |
 | Telemetry interval | 1 second |
@@ -42,6 +45,7 @@ flowchart TD
     D --> E["KV-cache pressure"]
     E --> F["vLLM vs SGLang"]
     F --> G["Observability and sustained-load validation"]
+    G --> H["Prefill/decode interference and scheduler fairness"]
 ```
 
 The experiments progressively move upward through the serving stack. This makes it possible to distinguish GPU execution cost from scheduler delay, queueing, cache capacity, and engine-specific behavior.
@@ -211,6 +215,36 @@ The dashboard covers GPU telemetry, scheduler state, KV occupancy, preemptions, 
 
 See [`docs/s7_observability.md`](docs/s7_observability.md) for the complete S7 experiment and diagnosis narrative.
 
+### 7. Prefill chunk size controls decode fairness
+
+S8 injected one deterministic long prompt into 64 active decode requests and
+measured the resulting background P99 content-event gap against the same run's
+pre-injection baseline. Each of eight scheduler configurations was repeated in
+five rotated blocks at 8K, 16K, and 24K input lengths.
+
+For a 24K-token prompt:
+
+| Chunked-prefill budget | P99 stall ratio | Median max gap | Long-request TTFT |
+|---:|---:|---:|---:|
+| off, 32K | 51.89× | 701.2 ms | 752.2 ms |
+| on, 8K | 21.09× | 316.8 ms | 841.0 ms |
+| on, 2K | 8.96× | 105.9 ms | 1,067.4 ms |
+| **on, 1K** | **4.23×** | **70.2 ms** | **1,415.6 ms** |
+| on, 512 | 3.78× | 59.0 ms | 2,158.8 ms |
+
+The feature toggle alone did not improve isolation: the 32K enabled budget was
+statistically similar to the unchunked baseline. Stalls fell only when the
+budget forced the long prefill to yield. A 1K budget was the observed Pareto
+knee; halving it to 512 tokens bought only 10–13% lower stall ratios across
+prompt lengths while increasing TTFT by approximately 49–53%.
+
+![S8 decode stall across chunk budgets](results/s8/analysis/formal/20260908T144356Z/stall_ratio_by_config.png)
+
+![S8 TTFT and decode-stall trade-off](results/s8/analysis/formal/20260908T144356Z/ttft_stall_pareto.png)
+
+See [`docs/s8_results.md`](docs/s8_results.md) for confidence intervals,
+controls, validity checks, and the full artifact index.
+
 ## Experimental progression
 
 | Stage | Question |
@@ -224,6 +258,7 @@ See [`docs/s7_observability.md`](docs/s7_observability.md) for the complete S7 e
 | S5 | What changes as the KV-cache pool approaches capacity? |
 | S6 | How do vLLM and SGLang trade places across concurrency and metrics? |
 | S7 | Can client, scheduler, and GPU telemetry explain load transitions and stability? |
+| S8 | How does chunked-prefill scheduling trade long-request TTFT for decode fairness? |
 
 ## Repository structure
 
@@ -232,7 +267,9 @@ See [`docs/s7_observability.md`](docs/s7_observability.md) for the complete S7 e
 ├── README.md
 ├── docs/
 │   ├── s6_environment.txt
-│   └── s7_observability.md
+│   ├── s7_observability.md
+│   ├── s8_experiment_protocol.md
+│   └── s8_results.md
 ├── monitoring/
 │   ├── dcgm/
 │   ├── grafana/
@@ -246,7 +283,8 @@ See [`docs/s7_observability.md`](docs/s7_observability.md) for the complete S7 e
 │   ├── s4/
 │   ├── s5/
 │   ├── s6/
-│   └── s7/
+│   ├── s7/
+│   └── s8/
 ├── src/
 └── workloads/
     └── final/
@@ -280,6 +318,14 @@ S7 load transition and soak analysis:
   src/s7_export_soak_telemetry.py
 ```
 
+S8 prefill/decode interference analysis:
+
+```bash
+/root/.venv-s6-sglang/bin/python \
+  src/s8_analyze_interference.py \
+  --input-root results/s8/raw/interference_formal/<run-id>
+```
+
 Formal GPU runs are launched through the corresponding `run_*.sh` scripts in [`src/`](src/). These commands require the appropriate model, serving engine, GPU environment, and raw experiment inputs.
 
 ## Measurement boundaries
@@ -296,5 +342,10 @@ Formal GPU runs are launched through the corresponding `run_*.sh` scripts in [`s
 The bottleneck moved upward through the stack as lower-level execution became more efficient:
 
 > **kernel cost → API semantics → queueing → batching → admission control → KV capacity → engine policy → operational stability**
+
+S8 extends that chain to scheduler fairness: a long prefill can interrupt decode
+cadence even with zero waiting, zero preemptions, and low KV occupancy. The
+prefill chunk budget determines how often decode work gets another scheduling
+opportunity.
 
 For this workload, raw throughput continued increasing after tail latency and SLO-qualified goodput had already degraded. Production-oriented LLM serving therefore requires joint reasoning about throughput, latency distributions, queue depth, admission behavior, memory occupancy, and GPU telemetry—not optimization of a single metric.
