@@ -1,5 +1,8 @@
 # LLM Inference & Serving Systems Lab
 
+[![CI](https://github.com/XianghaoKong/llm-serving-systems-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/XianghaoKong/llm-serving-systems-lab/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A measurement-driven investigation of LLM inference performance—from attention kernels and streaming APIs to queueing, continuous batching, KV-cache pressure, serving-engine trade-offs, and production-oriented observability.
 
 The central result is:
@@ -349,3 +352,7 @@ prefill chunk budget determines how often decode work gets another scheduling
 opportunity.
 
 For this workload, raw throughput continued increasing after tail latency and SLO-qualified goodput had already degraded. Production-oriented LLM serving therefore requires joint reasoning about throughput, latency distributions, queue depth, admission behavior, memory occupancy, and GPU telemetry—not optimization of a single metric.
+
+## License
+
+This project is available under the [MIT License](LICENSE).
