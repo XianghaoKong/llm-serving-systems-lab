@@ -245,12 +245,12 @@ class S8ProfileAggregationTest(unittest.TestCase):
         rows = [
             {
                 "background_concurrency": 16,
-                "gpu_utilization_median_pct": 91,
+                "gpu_active_utilization_median_pct": 91,
                 "impact_max_waiting": 0,
             },
             {
                 "background_concurrency": 32,
-                "gpu_utilization_median_pct": 97,
+                "gpu_active_utilization_median_pct": 97,
                 "impact_max_waiting": 0,
             },
         ]

@@ -11,9 +11,12 @@ a second full chunk-budget sweep.
 Qwen2.5-7B-Instruct uses the same A100, BF16 dtype, FCFS policy, disabled
 prefix cache, 256/8192 background shape, and 24K/16 injected request shape as
 S8. Background concurrency is selected before the formal run from C16 and C32.
-The rule chooses the smallest candidate with median GPU utilization at or above
-90% and scheduler waiting at or below one; if neither reaches 90%, it chooses
-the highest queue-safe candidate.
+The rule chooses the smallest candidate whose median utilization across
+nonzero GPU samples is at or above 90% and whose scheduler waiting is at or
+below one. The report also retains the fraction of busy samples so request
+preparation time is visible instead of being folded into the activity metric.
+If neither candidate reaches 90%, the rule chooses the highest queue-safe
+candidate.
 
 ```bash
 S8D_PHASE=calibration bash src/run_s8_model_validation.sh

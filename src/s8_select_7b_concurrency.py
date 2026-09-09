@@ -32,7 +32,7 @@ def choose(rows: List[Dict[str, Any]], utilization_target: float) -> Dict[str, A
     queue_safe = [row for row in rows if float(row["impact_max_waiting"] or 0) <= 1]
     saturated = [
         row for row in queue_safe
-        if float(row["gpu_utilization_median_pct"]) >= utilization_target
+        if float(row["gpu_active_utilization_median_pct"]) >= utilization_target
     ]
     if saturated:
         return min(saturated, key=lambda row: int(row["background_concurrency"]))
@@ -42,7 +42,7 @@ def choose(rows: List[Dict[str, Any]], utilization_target: float) -> Dict[str, A
         rows,
         key=lambda row: (
             float(row["impact_max_waiting"] or 0),
-            -float(row["gpu_utilization_median_pct"]),
+            -float(row["gpu_active_utilization_median_pct"]),
         ),
     )
 
@@ -59,11 +59,16 @@ def main() -> None:
         samples = read_gpu_utilization(trial_path.parent.with_suffix(".gpu.csv"))
         if not samples:
             raise RuntimeError(f"no GPU telemetry for {trial_path}")
+        active_samples = [value for value in samples if value > 0]
+        if not active_samples:
+            raise RuntimeError(f"no active GPU telemetry for {trial_path}")
         rows.append(
             {
                 "background_concurrency": summary["background_concurrency"],
                 "gpu_samples": len(samples),
-                "gpu_utilization_median_pct": statistics.median(samples),
+                "gpu_active_samples": len(active_samples),
+                "gpu_busy_sample_fraction": len(active_samples) / len(samples),
+                "gpu_active_utilization_median_pct": statistics.median(active_samples),
                 "gpu_utilization_min_pct": min(samples),
                 "impact_max_waiting": summary["impact_max_waiting"],
                 "baseline_gap_p99_ms": summary["baseline_gap_p99_ms"],
@@ -85,8 +90,9 @@ def main() -> None:
         "schema_version": 1,
         "utilization_target_pct": args.utilization_target,
         "selection_rule": (
-            "smallest concurrency with median GPU utilization at or above the "
-            "target and scheduler waiting <= 1; otherwise highest queue-safe candidate"
+            "smallest concurrency with median utilization across nonzero GPU "
+            "samples at or above the target and scheduler waiting <= 1; "
+            "otherwise highest queue-safe candidate"
         ),
         "selected_background_concurrency": selected["background_concurrency"],
         "candidates": rows,
