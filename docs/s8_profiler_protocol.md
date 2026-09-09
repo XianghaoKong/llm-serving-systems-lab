@@ -39,6 +39,8 @@ does not treat results from the upstream project as local measurements.
 Five rotated blocks produce 20 diagnostic trials. A fresh vLLM process is used
 for each trial. The model, dtype, prompt construction, FCFS policy, disabled
 prefix cache, and request validation match the completed S8 experiment.
+Medians and bootstrap 95% intervals are computed over the five runs, with a
+run treated as the statistical unit.
 
 ## Capture and alignment
 

@@ -11,6 +11,7 @@ import httpx
 
 from src.s8_analyze_interference import aggregate, summarize_trial
 from src.s8_interference_client import call_profile_endpoint, streaming_request
+from src.s8_analyze_profile import aggregate as aggregate_profile
 from src.s8_nsys_extract import extract_kernel_rows, merge_busy_intervals
 
 
@@ -196,6 +197,38 @@ class S8NsightExtractionTest(unittest.TestCase):
         self.assertEqual(len(intervals), 2)
         self.assertAlmostEqual(intervals[0]["duration_ms"], 1.5)
         self.assertEqual(intervals[0]["kernel_count"], 2)
+
+
+class S8ProfileAggregationTest(unittest.TestCase):
+    def test_profile_aggregate_reports_reproducible_bootstrap_intervals(self):
+        rows = [
+            {
+                "case": "inject_on_1024",
+                "trial_kind": "inject",
+                "config_label": "on_1024",
+                "impact_max_busy_interval_ms": value,
+                "max_kernel_duration_ms": value / 10,
+                "gpu_active_fraction": 0.99,
+                "background_p99_stall_ratio": value / 100,
+                "background_impact_max_gap_ms": value / 2,
+                "long_request_ttft_p50_ms": value * 2,
+                "impact_max_waiting": 0,
+                "impact_max_kv_usage": 0.08,
+                "preemptions_delta": 0,
+            }
+            for value in [100.0, 200.0, 300.0, 400.0, 500.0]
+        ]
+        first = aggregate_profile(rows, seed=2026)[0]
+        second = aggregate_profile(rows, seed=2026)[0]
+        self.assertEqual(first, second)
+        self.assertEqual(first["n_runs"], 5)
+        self.assertEqual(first["impact_max_busy_interval_ms_median"], 300.0)
+        self.assertLessEqual(
+            first["impact_max_busy_interval_ms_ci_low"], 300.0
+        )
+        self.assertGreaterEqual(
+            first["impact_max_busy_interval_ms_ci_high"], 300.0
+        )
 
 
 if __name__ == "__main__":

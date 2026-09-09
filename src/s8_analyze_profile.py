@@ -7,6 +7,8 @@ import argparse
 import csv
 import gzip
 import json
+import math
+import random
 import statistics
 from collections import defaultdict
 from pathlib import Path
@@ -25,6 +27,38 @@ def finite(values: Iterable[Optional[float]]) -> List[float]:
 def median(values: Iterable[Optional[float]]) -> Optional[float]:
     rows = finite(values)
     return statistics.median(rows) if rows else None
+
+
+def percentile(values: Sequence[float], q: float) -> Optional[float]:
+    rows = sorted(float(value) for value in values if math.isfinite(float(value)))
+    if not rows:
+        return None
+    if len(rows) == 1:
+        return rows[0]
+    position = (len(rows) - 1) * q
+    lower = math.floor(position)
+    upper = math.ceil(position)
+    if lower == upper:
+        return rows[lower]
+    return rows[lower] * (upper - position) + rows[upper] * (position - lower)
+
+
+def bootstrap_median_ci(
+    values: Sequence[float],
+    seed: int,
+    samples: int = 5000,
+) -> tuple[Optional[float], Optional[float]]:
+    rows = finite(values)
+    if not rows:
+        return None, None
+    if len(rows) == 1:
+        return rows[0], rows[0]
+    rng = random.Random(seed)
+    medians = [
+        statistics.median(rng.choices(rows, k=len(rows)))
+        for _ in range(samples)
+    ]
+    return percentile(medians, 0.025), percentile(medians, 0.975)
 
 
 def read_busy_intervals(path: Path) -> List[Dict[str, float]]:
@@ -106,7 +140,10 @@ def summarize_profile_trial(trial_json: Path) -> Dict[str, Any]:
     }
 
 
-def aggregate(rows: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any]]:
+def aggregate(
+    rows: Sequence[Mapping[str, Any]],
+    seed: int,
+) -> List[Dict[str, Any]]:
     grouped: Dict[str, List[Mapping[str, Any]]] = defaultdict(list)
     for row in rows:
         grouped[str(row["case"])].append(row)
@@ -122,17 +159,22 @@ def aggregate(rows: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any]]:
         "preemptions_delta",
     ]
     output: List[Dict[str, Any]] = []
-    for case, case_rows in sorted(grouped.items()):
+    for case_index, (case, case_rows) in enumerate(sorted(grouped.items())):
         row: Dict[str, Any] = {
             "case": case,
             "n_runs": len(case_rows),
             "trial_kind": case_rows[0]["trial_kind"],
             "config_label": case_rows[0]["config_label"],
         }
-        for metric in metrics:
-            row[f"{metric}_median"] = median(
-                item.get(metric) for item in case_rows
+        for metric_index, metric in enumerate(metrics):
+            values = finite(item.get(metric) for item in case_rows)
+            row[f"{metric}_median"] = median(values)
+            low, high = bootstrap_median_ci(
+                values,
+                seed=seed + case_index * 100 + metric_index,
             )
+            row[f"{metric}_ci_low"] = low
+            row[f"{metric}_ci_high"] = high
         output.append(row)
     return output
 
@@ -188,12 +230,13 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-root", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--bootstrap-seed", type=int, default=2026)
     args = parser.parse_args()
     trial_files = sorted(args.input_root.glob("block_*/*/trial/trial.json"))
     if not trial_files:
         raise RuntimeError(f"no profile trials found below {args.input_root}")
     rows = [summarize_profile_trial(path) for path in trial_files]
-    aggregates = aggregate(rows)
+    aggregates = aggregate(rows, seed=args.bootstrap_seed)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     write_csv(args.output_dir / "profile_trial_summary.csv", rows)
     write_csv(args.output_dir / "profile_aggregate_summary.csv", aggregates)
@@ -203,6 +246,8 @@ def main() -> None:
         "trial_count": len(rows),
         "expected_trial_count": 20,
         "complete": len(rows) == 20 and all(row["n_runs"] == 5 for row in aggregates),
+        "run_is_statistical_unit": True,
+        "bootstrap_samples": 5000,
         "cases": [row["case"] for row in aggregates],
         "alignment_note": (
             "GPU intervals use the first captured GPU event as zero; injection "
