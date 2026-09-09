@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "trial_count": 15,
+  "expected_trial_count": 15,
+  "runs_per_configuration": {
+    "off_32768": 5,
+    "on_4096": 5,
+    "on_1024": 5
+  },
+  "background_concurrencies": [
+    16
+  ],
+  "request_errors": 0,
+  "preemptions_total": 0.0,
+  "summary": {
+    "off_32768": {
+      "p99_stall_ratio_median": 112.71684059061121,
+      "p99_stall_ratio_ci_low": 105.56783268566694,
+      "p99_stall_ratio_ci_high": 122.44608383356385,
+      "long_ttft_p50_ms_median": 2257.3222880018875,
+      "impact_gap_max_ms_median": 2212.420681025833
+    },
+    "on_4096": {
+      "p99_stall_ratio_median": 24.9406921900959,
+      "p99_stall_ratio_ci_low": 20.101980821414166,
+      "p99_stall_ratio_ci_high": 26.95184302470281,
+      "long_ttft_p50_ms_median": 2401.319751981646,
+      "impact_gap_max_ms_median": 487.4045050237328,
+      "stall_reduction_vs_off_pct": 77.87314472317338
+    },
+    "on_1024": {
+      "p99_stall_ratio_median": 7.529681359614474,
+      "p99_stall_ratio_ci_low": 6.255389930529942,
+      "p99_stall_ratio_ci_high": 8.053310717012048,
+      "long_ttft_p50_ms_median": 2735.469045001082,
+      "impact_gap_max_ms_median": 366.7772370390594,
+      "stall_reduction_vs_off_pct": 93.31982575082782
+    }
+  }
+}

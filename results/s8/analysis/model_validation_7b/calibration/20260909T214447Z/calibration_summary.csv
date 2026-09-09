@@ -1,0 +1,3 @@
+background_concurrency,gpu_samples,gpu_active_samples,gpu_busy_sample_fraction,gpu_active_utilization_median_pct,gpu_utilization_min_pct,impact_max_waiting,baseline_gap_p99_ms,impact_gap_p99_ms,preemptions_delta
+16,53,20,0.37735849056603776,100.0,0.0,0.0,19.043020269600675,18.89375593746081,0.0
+32,51,21,0.4117647058823529,100.0,0.0,0.0,17.55541159538552,19.971093862550333,0.0

@@ -1,0 +1,13 @@
+S8-B Nsight Systems mechanism validation
+run_id=20260909T202623Z
+model=Qwen/Qwen2.5-1.5B-Instruct
+background_concurrency=64
+background_shape=256/8192
+interferer_shape=24576/16
+repeats=5
+cases=control_off_32768 inject_off_32768 inject_on_4096 inject_on_1024
+warmup_seconds=15
+profile_recovery_seconds=2
+busy_interval_gap_us=50
+prefix_caching=false
+scheduling_policy=fcfs

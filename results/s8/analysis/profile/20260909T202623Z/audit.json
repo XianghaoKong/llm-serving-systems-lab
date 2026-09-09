@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "trial_count": 20,
+  "expected_trial_count": 20,
+  "complete": true,
+  "run_is_statistical_unit": true,
+  "bootstrap_samples": 5000,
+  "cases": [
+    "control_off_32768",
+    "inject_off_32768",
+    "inject_on_1024",
+    "inject_on_4096"
+  ],
+  "alignment_note": "GPU intervals use the first captured GPU event as zero; injection offset uses the client-clock return from /start_profile and is therefore approximate at sub-request latency scale."
+}

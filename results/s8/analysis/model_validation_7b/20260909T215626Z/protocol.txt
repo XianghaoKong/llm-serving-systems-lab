@@ -1,0 +1,9 @@
+S8-D 7B model-extension formal
+run_id=20260909T215626Z
+model=Qwen/Qwen2.5-7B-Instruct
+background_shape=256/8192
+injection_shape=24576/16
+warmup_seconds=15
+recovery_seconds=15
+prefix_caching=false
+scheduling_policy=fcfs

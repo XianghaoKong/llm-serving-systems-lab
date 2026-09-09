@@ -16,12 +16,14 @@ The central result is:
 - Built a **Prometheus + DCGM Exporter + Grafana** observability stack.
 - Completed a **100,000-request, 35-minute C64 soak** with zero failures, zero preemptions, and no persistent memory growth.
 - Reduced a 24K-prefill-induced decode P99 stall from **51.89× to 4.23×** by tuning vLLM's chunked-prefill budget, with five repeated blocks and bootstrap confidence intervals.
+- Reproduced the scheduler direction on **Qwen2.5-7B**: 4K and 1K chunk budgets reduced the decode stall ratio by **77.9% and 93.3%**, respectively.
 
 ## System under test
 
 | Layer | Configuration |
 |---|---|
 | Model | Qwen/Qwen2.5-1.5B-Instruct |
+| S8-D extension model | Qwen/Qwen2.5-7B-Instruct |
 | Serving GPU | 1× NVIDIA A100 80GB PCIe |
 | Kernel baseline GPU | 1× NVIDIA RTX 4070 12GB |
 | Serving precision | BF16 |
@@ -252,6 +254,21 @@ controls, validity checks, and the full artifact index. The diagnostic follow-up
 in [`docs/s8_profiler_protocol.md`](docs/s8_profiler_protocol.md) uses dynamic
 Nsight Systems capture to test the proposed GPU execution mechanism.
 
+S8-B completed 20 Nsight trials. Smaller chunk budgets reduced the longest
+observed kernel from 12.696 ms unchunked to 4.189 ms at 4K and 1.864 ms at 1K,
+while the matched decode stall fell in the same order. The 50-microsecond
+busy-interval union did not vary monotonically because near-continuous short
+kernels merged across the longer 1K capture window; this negative result and
+the mechanism boundary are documented in
+[`docs/s8_profiler_results.md`](docs/s8_profiler_results.md).
+
+S8-D then ran 15 formal Qwen2.5-7B trials at calibrated C16. Relative to
+unchunked execution, 4K and 1K budgets reduced the P99 stall ratio by 77.9%
+and 93.3%, at TTFT costs of 6.4% and 21.2%. See
+[`docs/s8_model_extension_results.md`](docs/s8_model_extension_results.md).
+
+![S8-D Qwen2.5-7B validation](results/s8/analysis/model_validation_7b/20260909T215626Z/model_extension_7b.png)
+
 ## Experimental progression
 
 | Stage | Question |
@@ -276,7 +293,9 @@ Nsight Systems capture to test the proposed GPU execution mechanism.
 │   ├── s6_environment.txt
 │   ├── s7_observability.md
 │   ├── s8_experiment_protocol.md
+│   ├── s8_model_extension_results.md
 │   ├── s8_profiler_protocol.md
+│   ├── s8_profiler_results.md
 │   └── s8_results.md
 ├── monitoring/
 │   ├── dcgm/
@@ -338,6 +357,14 @@ S8-B Nsight Systems mechanism validation:
 
 ```bash
 S8_PROFILE_REPEATS=5 bash src/run_s8_profile.sh
+```
+
+S8-D Qwen2.5-7B directional validation:
+
+```bash
+S8D_PHASE=calibration bash src/run_s8_model_validation.sh
+S8D_PHASE=formal S8D_BACKGROUND_CONCURRENCY=16 \
+  bash src/run_s8_model_validation.sh
 ```
 
 Formal GPU runs are launched through the corresponding `run_*.sh` scripts in [`src/`](src/). These commands require the appropriate model, serving engine, GPU environment, and raw experiment inputs.
