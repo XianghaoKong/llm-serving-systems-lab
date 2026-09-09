@@ -1,6 +1,7 @@
 import csv
 import gzip
 import json
+import sqlite3
 import tempfile
 import time
 import unittest
@@ -9,7 +10,8 @@ from pathlib import Path
 import httpx
 
 from src.s8_analyze_interference import aggregate, summarize_trial
-from src.s8_interference_client import streaming_request
+from src.s8_interference_client import call_profile_endpoint, streaming_request
+from src.s8_nsys_extract import extract_kernel_rows, merge_busy_intervals
 
 
 class S8InterferenceAnalysisTest(unittest.TestCase):
@@ -142,6 +144,58 @@ class S8StreamingParserTest(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(trace["actual_output_tokens"], 2)
         self.assertEqual(trace["content_event_minus_output_tokens"], 0)
         self.assertEqual(len(events), 2)
+
+    async def test_profile_endpoint_retains_alignment_metadata(self):
+        async def handler(request):
+            self.assertEqual(request.method, "POST")
+            self.assertEqual(request.url.path, "/start_profile")
+            return httpx.Response(200, json={"status": "started"})
+
+        trial_t0 = time.perf_counter()
+        async with httpx.AsyncClient(
+            transport=httpx.MockTransport(handler)
+        ) as client:
+            result = await call_profile_endpoint(
+                client,
+                "http://test",
+                "/start_profile",
+                trial_t0,
+            )
+        self.assertEqual(result["status_code"], 200)
+        self.assertGreaterEqual(result["return_t_s"], result["request_t_s"])
+        self.assertGreaterEqual(result["latency_ms"], 0.0)
+
+
+class S8NsightExtractionTest(unittest.TestCase):
+    def test_nsight_schema_discovery_and_busy_interval_union(self):
+        with sqlite3.connect(":memory:") as connection:
+            connection.execute(
+                "CREATE TABLE StringIds (id INTEGER PRIMARY KEY, value TEXT)"
+            )
+            connection.execute(
+                "CREATE TABLE CUPTI_ACTIVITY_KIND_KERNEL "
+                "(start INTEGER, end INTEGER, demangledName INTEGER, streamId INTEGER)"
+            )
+            connection.executemany(
+                "INSERT INTO StringIds(id, value) VALUES (?, ?)",
+                [(1, "prefill_gemm"), (2, "decode_attention")],
+            )
+            connection.executemany(
+                "INSERT INTO CUPTI_ACTIVITY_KIND_KERNEL VALUES (?, ?, ?, ?)",
+                [
+                    (1_000_000, 2_000_000, 1, 7),
+                    (2_025_000, 2_500_000, 2, 8),
+                    (2_700_000, 3_000_000, 2, 8),
+                ],
+            )
+            rows = extract_kernel_rows(connection)
+        self.assertEqual([row["name"] for row in rows], [
+            "prefill_gemm", "decode_attention", "decode_attention"
+        ])
+        intervals = merge_busy_intervals(rows, gap_threshold_ns=50_000)
+        self.assertEqual(len(intervals), 2)
+        self.assertAlmostEqual(intervals[0]["duration_ms"], 1.5)
+        self.assertEqual(intervals[0]["kernel_count"], 2)
 
 
 if __name__ == "__main__":

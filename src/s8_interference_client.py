@@ -27,7 +27,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
 import httpx
-from transformers import AutoTokenizer
 
 DEFAULT_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
 DEFAULT_BASE_URL = "http://127.0.0.1:8002"
@@ -108,6 +107,26 @@ async def wait_idle(
             return last
         await asyncio.sleep(0.2)
     raise RuntimeError(f"server did not become idle; last metrics={last}")
+
+
+async def call_profile_endpoint(
+    client: httpx.AsyncClient,
+    base_url: str,
+    path: str,
+    trial_t0: float,
+) -> Dict[str, Any]:
+    """Toggle the server profiler and retain client-clock alignment metadata."""
+    request_t_s = time.perf_counter() - trial_t0
+    response = await client.post(f"{base_url}{path}")
+    response.raise_for_status()
+    return_t_s = time.perf_counter() - trial_t0
+    return {
+        "path": path,
+        "request_t_s": request_t_s,
+        "return_t_s": return_t_s,
+        "latency_ms": (return_t_s - request_t_s) * 1000.0,
+        "status_code": response.status_code,
+    }
 
 
 def build_synthetic_body(seed: int, paragraphs: int = 2200) -> str:
@@ -403,6 +422,8 @@ def write_outputs(
 
 
 async def execute(args: argparse.Namespace) -> Path:
+    from transformers import AutoTokenizer
+
     run_stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
     out_dir = Path(args.output_dir) if args.output_dir else (
         Path("results/s8/raw/interference") / run_stamp
@@ -456,6 +477,14 @@ async def execute(args: argparse.Namespace) -> Path:
         "injection_t_s": None,
         "impact_end_t_s": None,
         "trial_end_t_s": None,
+        "profile_enabled": args.profile,
+        "profile_start": None,
+        "profile_stop": None,
+        "profile_alignment": (
+            "Client monotonic timestamps are aligned approximately to the first "
+            "captured GPU event using profile_start.return_t_s as time zero."
+            if args.profile else None
+        ),
         "error": None,
     }
 
@@ -494,8 +523,17 @@ async def execute(args: argparse.Namespace) -> Path:
             for worker_index in range(args.background_concurrency)
         ]
 
+        profile_started = False
         try:
             await asyncio.sleep(args.warmup_seconds)
+            if args.profile:
+                metadata["profile_start"] = await call_profile_endpoint(
+                    client,
+                    args.base_url,
+                    args.profile_start_path,
+                    trial_t0,
+                )
+                profile_started = True
             injection_t_s = time.perf_counter() - trial_t0
             metadata["injection_t_s"] = injection_t_s
 
@@ -562,6 +600,20 @@ async def execute(args: argparse.Namespace) -> Path:
             for task in background_tasks:
                 task.cancel()
             await asyncio.gather(*background_tasks, return_exceptions=True)
+            if profile_started:
+                try:
+                    metadata["profile_stop"] = await call_profile_endpoint(
+                        client,
+                        args.base_url,
+                        args.profile_stop_path,
+                        trial_t0,
+                    )
+                except Exception as exc:
+                    metadata["status"] = "failed"
+                    metadata["error"] = (
+                        f"profile stop failed: {exc!r}; prior error="
+                        f"{metadata.get('error')!r}"
+                    )
             metric_stop.set()
             await metrics_task
             write_outputs(out_dir, metadata, traces, content_events, metric_samples)
@@ -597,6 +649,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--interferer-timeout", type=float, default=180.0)
     parser.add_argument("--max-model-len", type=int, default=32768)
     parser.add_argument("--output-dir", default=None)
+    parser.add_argument(
+        "--profile",
+        action="store_true",
+        help="Call vLLM /start_profile and /stop_profile around the impact window.",
+    )
+    parser.add_argument("--profile-start-path", default="/start_profile")
+    parser.add_argument("--profile-stop-path", default="/stop_profile")
     args = parser.parse_args()
 
     positive_ints = {
@@ -619,6 +678,9 @@ def parse_args() -> argparse.Namespace:
             parser.error(f"--{name.replace('_', '-')} must be positive")
     if args.recovery_seconds < 0:
         parser.error("--recovery-seconds must be non-negative")
+    for name in ["profile_start_path", "profile_stop_path"]:
+        if not getattr(args, name).startswith("/"):
+            parser.error(f"--{name.replace('_', '-')} must start with '/'")
     if (
         args.background_input_tokens + args.background_output_tokens
         > args.max_model_len

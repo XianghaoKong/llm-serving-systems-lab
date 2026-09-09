@@ -243,7 +243,9 @@ prompt lengths while increasing TTFT by approximately 49–53%.
 ![S8 TTFT and decode-stall trade-off](results/s8/analysis/formal/20260908T144356Z/ttft_stall_pareto.png)
 
 See [`docs/s8_results.md`](docs/s8_results.md) for confidence intervals,
-controls, validity checks, and the full artifact index.
+controls, validity checks, and the full artifact index. The diagnostic follow-up
+in [`docs/s8_profiler_protocol.md`](docs/s8_profiler_protocol.md) uses dynamic
+Nsight Systems capture to test the proposed GPU execution mechanism.
 
 ## Experimental progression
 
@@ -269,6 +271,7 @@ controls, validity checks, and the full artifact index.
 │   ├── s6_environment.txt
 │   ├── s7_observability.md
 │   ├── s8_experiment_protocol.md
+│   ├── s8_profiler_protocol.md
 │   └── s8_results.md
 ├── monitoring/
 │   ├── dcgm/
@@ -324,6 +327,12 @@ S8 prefill/decode interference analysis:
 /root/.venv-s6-sglang/bin/python \
   src/s8_analyze_interference.py \
   --input-root results/s8/raw/interference_formal/<run-id>
+```
+
+S8-B Nsight Systems mechanism validation:
+
+```bash
+S8_PROFILE_REPEATS=5 bash src/run_s8_profile.sh
 ```
 
 Formal GPU runs are launched through the corresponding `run_*.sh` scripts in [`src/`](src/). These commands require the appropriate model, serving engine, GPU environment, and raw experiment inputs.
