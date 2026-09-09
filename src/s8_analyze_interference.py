@@ -342,6 +342,8 @@ def plot_by_length(
     plt.close()
 
     fig, axes = plt.subplots(1, len(lengths), figsize=(14, 4.8), sharey=True)
+    if len(lengths) == 1:
+        axes = [axes]
     short_labels = ["off", "32K", "16K", "8K", "4K", "2K", "1K", "512"]
     colors = plt.get_cmap("tab10")
     for axis, length in zip(axes, lengths, strict=True):
