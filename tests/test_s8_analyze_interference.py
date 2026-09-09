@@ -12,6 +12,8 @@ import httpx
 from src.s8_analyze_interference import aggregate, summarize_trial
 from src.s8_interference_client import call_profile_endpoint, streaming_request
 from src.s8_analyze_profile import aggregate as aggregate_profile
+from src.s8_analyze_pareto import pareto_flags
+from src.s8_select_7b_concurrency import choose as choose_7b_concurrency
 from src.s8_nsys_extract import extract_kernel_rows, merge_busy_intervals
 
 
@@ -228,6 +230,35 @@ class S8ProfileAggregationTest(unittest.TestCase):
         )
         self.assertGreaterEqual(
             first["impact_max_busy_interval_ms_ci_high"], 300.0
+        )
+
+    def test_pareto_frontier_excludes_only_dominated_points(self):
+        rows = [
+            {"long_ttft_p50_ms_median": 100, "impact_gap_p99_ms_median": 500},
+            {"long_ttft_p50_ms_median": 200, "impact_gap_p99_ms_median": 300},
+            {"long_ttft_p50_ms_median": 300, "impact_gap_p99_ms_median": 350},
+            {"long_ttft_p50_ms_median": 400, "impact_gap_p99_ms_median": 100},
+        ]
+        self.assertEqual(pareto_flags(rows), [True, True, False, True])
+
+    def test_7b_calibration_selects_smallest_saturated_queue_safe_candidate(self):
+        rows = [
+            {
+                "background_concurrency": 16,
+                "gpu_utilization_median_pct": 91,
+                "impact_max_waiting": 0,
+            },
+            {
+                "background_concurrency": 32,
+                "gpu_utilization_median_pct": 97,
+                "impact_max_waiting": 0,
+            },
+        ]
+        self.assertEqual(
+            choose_7b_concurrency(rows, utilization_target=90)[
+                "background_concurrency"
+            ],
+            16,
         )
 
 

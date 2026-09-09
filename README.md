@@ -238,6 +238,11 @@ budget forced the long prefill to yield. A 1K budget was the observed Pareto
 knee; halving it to 512 tokens bought only 10–13% lower stall ratios across
 prompt lengths while increasing TTFT by approximately 49–53%.
 
+The explicit S8-C dual-SLO analysis uses a 100 ms background P99-gap target
+and a 1.5 s long-request TTFT target. The feasible set contains 2K, 1K, and
+512-token budgets at 8K and 16K prompt lengths; at 24K, only the 1K budget
+satisfies both objectives. See [`docs/s8_pareto_results.md`](docs/s8_pareto_results.md).
+
 ![S8 decode stall across chunk budgets](results/s8/analysis/formal/20260908T144356Z/stall_ratio_by_config.png)
 
 ![S8 TTFT and decode-stall trade-off](results/s8/analysis/formal/20260908T144356Z/ttft_stall_pareto.png)

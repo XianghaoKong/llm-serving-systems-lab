@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "input": "results\\s8\\analysis\\formal\\20260908T144356Z\\trial_summary.csv",
+  "injection_trial_count": 120,
+  "aggregate_count": 24,
+  "input_lengths": [
+    8192,
+    16384,
+    24576
+  ],
+  "ttft_slo_ms": 1500.0,
+  "background_p99_gap_slo_ms": 100.0,
+  "run_is_statistical_unit": true,
+  "bootstrap_samples": 5000
+}
