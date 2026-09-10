@@ -1,0 +1,5375 @@
+{
+  "formal_timing": false,
+  "occupancy_note": "Kineto estimates when available; no Nsight Compute hardware counters collected",
+  "cases": [
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward",
+      "kernel_launches": 10,
+      "summed_kernel_us": 27.905,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 4.352,
+          "args": {
+            "External id": 6,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 20,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.392,
+          "args": {
+            "External id": 10,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 34,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.144,
+          "args": {
+            "External id": 12,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 45,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+          "duration_us": 3.809,
+          "args": {
+            "External id": 15,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 59,
+            "registers per thread": 26,
+            "shared memory": 2064,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.148148,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul>)",
+          "duration_us": 1.6,
+          "args": {
+            "External id": 16,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 69,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 1.76,
+          "args": {
+            "External id": 17,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 79,
+            "registers per thread": 22,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 3.072,
+          "args": {
+            "External id": 18,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 89,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.488,
+          "args": {
+            "External id": 22,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 102,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.176,
+          "args": {
+            "External id": 23,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 113,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 27,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 126,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward_backward",
+      "kernel_launches": 27,
+      "summed_kernel_us": 70.017,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 4.256,
+          "args": {
+            "External id": 518,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1354,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.392,
+          "args": {
+            "External id": 522,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1368,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 524,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1379,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+          "duration_us": 3.904,
+          "args": {
+            "External id": 527,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1393,
+            "registers per thread": 26,
+            "shared memory": 2064,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.148148,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul>)",
+          "duration_us": 1.569,
+          "args": {
+            "External id": 528,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1403,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 1.76,
+          "args": {
+            "External id": 529,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1413,
+            "registers per thread": 22,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 2.944,
+          "args": {
+            "External id": 530,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1423,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.488,
+          "args": {
+            "External id": 534,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1436,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.176,
+          "args": {
+            "External id": 535,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1447,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 539,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1460,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.392,
+          "args": {
+            "External id": 1030,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1477,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.144,
+          "args": {
+            "External id": 1033,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1492,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 1034,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1502,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "duration_us": 5.536,
+          "args": {
+            "External id": 1035,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1515,
+            "registers per thread": 48,
+            "shared memory": 16,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.048,
+          "args": {
+            "External id": 1042,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1532,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 1046,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1551,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 2.688,
+          "args": {
+            "External id": 1047,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1561,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "duration_us": 4.128,
+          "args": {
+            "External id": 1048,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1575,
+            "registers per thread": 26,
+            "shared memory": 2064,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.148148,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#2}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#2}, std::array<char*, 2ul>)",
+          "duration_us": 1.6,
+          "args": {
+            "External id": 1051,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1589,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+          "duration_us": 1.632,
+          "args": {
+            "External id": 1055,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1599,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 1.568,
+          "args": {
+            "External id": 1056,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1609,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 2.592,
+          "args": {
+            "External id": 1064,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1627,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+          "duration_us": 2.176,
+          "args": {
+            "External id": 1072,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1653,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.144,
+          "args": {
+            "External id": 1073,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1663,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 1079,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1680,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.176,
+          "args": {
+            "External id": 1085,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1698,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul>)",
+          "duration_us": 2.208,
+          "args": {
+            "External id": 1086,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 1706,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 3.584,
+      "kernels": [
+        {
+          "name": "triton_red_fused__to_copy_mean_mul_pow_rsqrt_0",
+          "duration_us": 3.584,
+          "args": {
+            "External id": 1554,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 2441,
+            "registers per thread": 32,
+            "shared memory": 64,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.148148,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 8.415000000000001,
+      "kernels": [
+        {
+          "name": "triton_red_fused__to_copy_mean_mul_pow_rsqrt_0",
+          "duration_us": 3.552,
+          "args": {
+            "External id": 2066,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 2646,
+            "registers per thread": 32,
+            "shared memory": 64,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.148148,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "triton_red_fused__to_copy_add_div_mul_pow_sum_0",
+          "duration_us": 4.863,
+          "args": {
+            "External id": 2563,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 2668,
+            "registers per thread": 32,
+            "shared memory": 64,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.148148,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 2.112,
+      "kernels": [
+        {
+          "name": "_rms_norm_forward_kernel",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 3075,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 2822,
+            "registers per thread": 37,
+            "shared memory": 32,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.074074,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward_backward",
+      "kernel_launches": 5,
+      "summed_kernel_us": 15.936,
+      "kernels": [
+        {
+          "name": "_rms_norm_forward_kernel",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 3587,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3194,
+            "registers per thread": 37,
+            "shared memory": 32,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.074074,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+          "duration_us": 2.048,
+          "args": {
+            "External id": 4105,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3216,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "_rms_norm_backward_kernel",
+          "duration_us": 3.296,
+          "args": {
+            "External id": 4098,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3231,
+            "registers per thread": 64,
+            "shared memory": 8192,
+            "blocks per SM": 1.0,
+            "warps per SM": 8.0,
+            "grid": [
+              108,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 13
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "duration_us": 6.432,
+          "args": {
+            "External id": 4107,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3242,
+            "registers per thread": 48,
+            "shared memory": 2064,
+            "blocks per SM": 0.259259,
+            "warps per SM": 1.037037,
+            "grid": [
+              28,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              4,
+              1
+            ],
+            "est. achieved occupancy %": 2
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.048,
+          "args": {
+            "External id": 4112,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3255,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 2.048,
+      "kernels": [
+        {
+          "name": "_rms_fwd",
+          "duration_us": 2.048,
+          "args": {
+            "External id": 4611,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3395,
+            "registers per thread": 62,
+            "shared memory": 16,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward_backward",
+      "kernel_launches": 4,
+      "summed_kernel_us": 9.249,
+      "kernels": [
+        {
+          "name": "_rms_fwd",
+          "duration_us": 2.144,
+          "args": {
+            "External id": 5123,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3686,
+            "registers per thread": 62,
+            "shared memory": 16,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+          "duration_us": 2.113,
+          "args": {
+            "External id": 5641,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3707,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "_rms_dx",
+          "duration_us": 2.432,
+          "args": {
+            "External id": 5634,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3720,
+            "registers per thread": 80,
+            "shared memory": 16,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "_rms_dw",
+          "duration_us": 2.56,
+          "args": {
+            "External id": 5634,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3727,
+            "registers per thread": 28,
+            "shared memory": 1024,
+            "blocks per SM": 0.518519,
+            "warps per SM": 2.074074,
+            "grid": [
+              56,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 3
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 2.176,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 2.176,
+          "args": {
+            "External id": 6147,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 3852,
+            "registers per thread": 51,
+            "shared memory": 512,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 1,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward_backward",
+      "kernel_launches": 3,
+      "summed_kernel_us": 9.153,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 2.241,
+          "args": {
+            "External id": 6659,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4089,
+            "registers per thread": 51,
+            "shared memory": 512,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "dx_kernel_kernel",
+          "duration_us": 3.328,
+          "args": {
+            "External id": 7170,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4104,
+            "registers per thread": 72,
+            "shared memory": 512,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "main_kernel",
+          "duration_us": 3.584,
+          "args": {
+            "External id": 7170,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4116,
+            "registers per thread": 40,
+            "shared memory": 512,
+            "blocks per SM": 0.518519,
+            "warps per SM": 2.074074,
+            "grid": [
+              56,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 3
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward",
+      "kernel_launches": 10,
+      "summed_kernel_us": 76.033,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 14.624,
+          "args": {
+            "External id": 7686,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4618,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 9.633,
+          "args": {
+            "External id": 7690,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4632,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 5.888,
+          "args": {
+            "External id": 7692,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4643,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+          "duration_us": 12.576,
+          "args": {
+            "External id": 7695,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4657,
+            "registers per thread": 26,
+            "shared memory": 16,
+            "blocks per SM": 0.296296,
+            "warps per SM": 4.740741,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              16,
+              1
+            ],
+            "est. achieved occupancy %": 7
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul>)",
+          "duration_us": 1.728,
+          "args": {
+            "External id": 7696,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4667,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 1.792,
+          "args": {
+            "External id": 7697,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4677,
+            "registers per thread": 22,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 11.2,
+          "args": {
+            "External id": 7698,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4687,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 4.576,
+          "args": {
+            "External id": 7702,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4700,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 9.152,
+          "args": {
+            "External id": 7703,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4711,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 4.864,
+          "args": {
+            "External id": 7707,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 4724,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward_backward",
+      "kernel_launches": 27,
+      "summed_kernel_us": 210.46,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 14.592,
+          "args": {
+            "External id": 8198,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 5954,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 9.407,
+          "args": {
+            "External id": 8202,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 5968,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 6.081,
+          "args": {
+            "External id": 8204,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 5979,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+          "duration_us": 12.895,
+          "args": {
+            "External id": 8207,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 5993,
+            "registers per thread": 26,
+            "shared memory": 16,
+            "blocks per SM": 0.296296,
+            "warps per SM": 4.740741,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              16,
+              1
+            ],
+            "est. achieved occupancy %": 7
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul>)",
+          "duration_us": 1.727,
+          "args": {
+            "External id": 8208,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6003,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 1.856,
+          "args": {
+            "External id": 8209,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6013,
+            "registers per thread": 22,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 11.168,
+          "args": {
+            "External id": 8210,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6023,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 4.544,
+          "args": {
+            "External id": 8214,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6036,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 9.12,
+          "args": {
+            "External id": 8215,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6047,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 4.864,
+          "args": {
+            "External id": 8219,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6060,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 13.728,
+          "args": {
+            "External id": 8710,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6077,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 7.968,
+          "args": {
+            "External id": 8713,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6092,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 10.368,
+          "args": {
+            "External id": 8714,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6102,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "duration_us": 15.968,
+          "args": {
+            "External id": 8715,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6115,
+            "registers per thread": 48,
+            "shared memory": 2064,
+            "blocks per SM": 0.259259,
+            "warps per SM": 1.037037,
+            "grid": [
+              28,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              4,
+              1
+            ],
+            "est. achieved occupancy %": 2
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 8722,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6132,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 10.495,
+          "args": {
+            "External id": 8726,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6151,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 10.688,
+          "args": {
+            "External id": 8727,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6161,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "duration_us": 16.064,
+          "args": {
+            "External id": 8728,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6175,
+            "registers per thread": 26,
+            "shared memory": 16,
+            "blocks per SM": 0.296296,
+            "warps per SM": 4.740741,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              16,
+              1
+            ],
+            "est. achieved occupancy %": 7
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#2}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#2}, std::array<char*, 2ul>)",
+          "duration_us": 1.76,
+          "args": {
+            "External id": 8731,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6189,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+          "duration_us": 1.856,
+          "args": {
+            "External id": 8735,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6199,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 1.696,
+          "args": {
+            "External id": 8736,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6209,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.037037,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 8.128,
+          "args": {
+            "External id": 8744,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6227,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+          "duration_us": 6.175,
+          "args": {
+            "External id": 8752,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6253,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 8.832,
+          "args": {
+            "External id": 8753,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6263,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 4.32,
+          "args": {
+            "External id": 8759,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6280,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 9.6,
+          "args": {
+            "External id": 8765,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6298,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul>)",
+          "duration_us": 4.48,
+          "args": {
+            "External id": 8766,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6306,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 12.64,
+      "kernels": [
+        {
+          "name": "triton_red_fused__to_copy_mean_mul_pow_rsqrt_0",
+          "duration_us": 12.64,
+          "args": {
+            "External id": 9234,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6543,
+            "registers per thread": 32,
+            "shared memory": 4096,
+            "blocks per SM": 4.740741,
+            "warps per SM": 75.851852,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward_backward",
+      "kernel_launches": 4,
+      "summed_kernel_us": 53.248000000000005,
+      "kernels": [
+        {
+          "name": "triton_red_fused__to_copy_mean_mul_pow_rsqrt_0",
+          "duration_us": 12.448,
+          "args": {
+            "External id": 9746,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6788,
+            "registers per thread": 32,
+            "shared memory": 4096,
+            "blocks per SM": 4.740741,
+            "warps per SM": 75.851852,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "triton_red_fused__to_copy_mul_sum_0",
+          "duration_us": 21.088,
+          "args": {
+            "External id": 10243,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6804,
+            "registers per thread": 64,
+            "shared memory": 1040,
+            "blocks per SM": 2.074074,
+            "warps per SM": 8.296296,
+            "grid": [
+              224,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 13
+          }
+        },
+        {
+          "name": "triton_per_fused__to_copy_mul_sum_1",
+          "duration_us": 2.016,
+          "args": {
+            "External id": 10244,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6812,
+            "registers per thread": 18,
+            "shared memory": 0,
+            "blocks per SM": 0.259259,
+            "warps per SM": 1.037037,
+            "grid": [
+              28,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 2
+          }
+        },
+        {
+          "name": "triton_red_fused__to_copy_add_div_mul_pow_sum_2",
+          "duration_us": 17.696,
+          "args": {
+            "External id": 10245,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6823,
+            "registers per thread": 32,
+            "shared memory": 4096,
+            "blocks per SM": 4.740741,
+            "warps per SM": 75.851852,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 4.959,
+      "kernels": [
+        {
+          "name": "_rms_norm_forward_kernel",
+          "duration_us": 4.959,
+          "args": {
+            "External id": 10755,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 6960,
+            "registers per thread": 37,
+            "shared memory": 32,
+            "blocks per SM": 4.740741,
+            "warps per SM": 37.925926,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 59
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward_backward",
+      "kernel_launches": 5,
+      "summed_kernel_us": 26.881,
+      "kernels": [
+        {
+          "name": "_rms_norm_forward_kernel",
+          "duration_us": 5.121,
+          "args": {
+            "External id": 11267,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7327,
+            "registers per thread": 37,
+            "shared memory": 32,
+            "blocks per SM": 4.740741,
+            "warps per SM": 37.925926,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 59
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+          "duration_us": 3.36,
+          "args": {
+            "External id": 11785,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7349,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "_rms_norm_backward_kernel",
+          "duration_us": 9.344,
+          "args": {
+            "External id": 11778,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7364,
+            "registers per thread": 101,
+            "shared memory": 8192,
+            "blocks per SM": 1.0,
+            "warps per SM": 8.0,
+            "grid": [
+              108,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 13
+          }
+        },
+        {
+          "name": "void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "duration_us": 6.976,
+          "args": {
+            "External id": 11787,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7375,
+            "registers per thread": 48,
+            "shared memory": 2064,
+            "blocks per SM": 0.259259,
+            "warps per SM": 1.037037,
+            "grid": [
+              28,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              4,
+              1
+            ],
+            "est. achieved occupancy %": 2
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 11792,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7388,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 4.832,
+      "kernels": [
+        {
+          "name": "_rms_fwd",
+          "duration_us": 4.832,
+          "args": {
+            "External id": 12291,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7519,
+            "registers per thread": 62,
+            "shared memory": 16,
+            "blocks per SM": 4.740741,
+            "warps per SM": 18.962963,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 30
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward_backward",
+      "kernel_launches": 4,
+      "summed_kernel_us": 21.28,
+      "kernels": [
+        {
+          "name": "_rms_fwd",
+          "duration_us": 4.992,
+          "args": {
+            "External id": 12803,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7800,
+            "registers per thread": 62,
+            "shared memory": 16,
+            "blocks per SM": 4.740741,
+            "warps per SM": 18.962963,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 30
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+          "duration_us": 1.92,
+          "args": {
+            "External id": 13321,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7821,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "_rms_dx",
+          "duration_us": 6.464,
+          "args": {
+            "External id": 13314,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7834,
+            "registers per thread": 80,
+            "shared memory": 16,
+            "blocks per SM": 4.740741,
+            "warps per SM": 18.962963,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 30
+          }
+        },
+        {
+          "name": "_rms_dw",
+          "duration_us": 7.904,
+          "args": {
+            "External id": 13314,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7841,
+            "registers per thread": 54,
+            "shared memory": 1024,
+            "blocks per SM": 0.518519,
+            "warps per SM": 2.074074,
+            "grid": [
+              56,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 3
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 5.248,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 5.248,
+          "args": {
+            "External id": 13827,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 7966,
+            "registers per thread": 52,
+            "shared memory": 512,
+            "blocks per SM": 4.740741,
+            "warps per SM": 18.962963,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 30
+          }
+        }
+      ]
+    },
+    {
+      "op": "rms",
+      "rows": 512,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward_backward",
+      "kernel_launches": 3,
+      "summed_kernel_us": 20.8,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 5.056,
+          "args": {
+            "External id": 14339,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8203,
+            "registers per thread": 52,
+            "shared memory": 512,
+            "blocks per SM": 4.740741,
+            "warps per SM": 18.962963,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 30
+          }
+        },
+        {
+          "name": "dx_kernel_kernel",
+          "duration_us": 7.712,
+          "args": {
+            "External id": 14850,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8218,
+            "registers per thread": 72,
+            "shared memory": 512,
+            "blocks per SM": 4.740741,
+            "warps per SM": 18.962963,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 30
+          }
+        },
+        {
+          "name": "main_kernel",
+          "duration_us": 8.032,
+          "args": {
+            "External id": 14850,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8230,
+            "registers per thread": 56,
+            "shared memory": 512,
+            "blocks per SM": 0.518519,
+            "warps per SM": 2.074074,
+            "grid": [
+              56,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 3
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward",
+      "kernel_launches": 5,
+      "summed_kernel_us": 13.793,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.552,
+          "args": {
+            "External id": 15366,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8536,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.624,
+          "args": {
+            "External id": 15367,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8547,
+            "registers per thread": 31,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.425,
+          "args": {
+            "External id": 15371,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8560,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 15372,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8571,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 15376,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 8584,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward_backward",
+      "kernel_launches": 11,
+      "summed_kernel_us": 28.48,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.648,
+          "args": {
+            "External id": 15878,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9138,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.624,
+          "args": {
+            "External id": 15879,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9149,
+            "registers per thread": 31,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.424,
+          "args": {
+            "External id": 15883,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9162,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 15884,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9173,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 15888,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9186,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 3.424,
+          "args": {
+            "External id": 16390,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9203,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 0.064815,
+            "warps per SM": 0.259259,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 16393,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9218,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 16394,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9228,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 16400,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9245,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_backward_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::(anonymous namespace)::silu_backward_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",
+          "duration_us": 2.816,
+          "args": {
+            "External id": 16404,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9264,
+            "registers per thread": 40,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 16410,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 9281,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 0.037037,
+            "warps per SM": 0.148148,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 2.112,
+      "kernels": [
+        {
+          "name": "triton_poi_fused__to_copy_mul_silu_0",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 16904,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 19784,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 4.128,
+      "kernels": [
+        {
+          "name": "triton_poi_fused__to_copy_mul_silu_0",
+          "duration_us": 2.08,
+          "args": {
+            "External id": 17416,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 30678,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        },
+        {
+          "name": "triton_poi_fused__to_copy_add_fill_mul_silu_sub_0",
+          "duration_us": 2.048,
+          "args": {
+            "External id": 17923,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 30699,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.259259,
+            "warps per SM": 1.037037,
+            "grid": [
+              28,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 2
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 2.24,
+      "kernels": [
+        {
+          "name": "_swiglu_forward_kernel",
+          "duration_us": 2.24,
+          "args": {
+            "External id": 18441,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 30909,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.074074,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 5.056,
+      "kernels": [
+        {
+          "name": "_swiglu_forward_kernel",
+          "duration_us": 2.24,
+          "args": {
+            "External id": 18953,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31197,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.074074,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        },
+        {
+          "name": "_swiglu_backward_kernel",
+          "duration_us": 2.816,
+          "args": {
+            "External id": 19458,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31208,
+            "registers per thread": 36,
+            "shared memory": 0,
+            "blocks per SM": 0.009259,
+            "warps per SM": 0.074074,
+            "grid": [
+              1,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 2.112,
+      "kernels": [
+        {
+          "name": "_swiglu",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 19971,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31336,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 4.128,
+      "kernels": [
+        {
+          "name": "_swiglu",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 20483,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31552,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        },
+        {
+          "name": "_swiglu",
+          "duration_us": 2.016,
+          "args": {
+            "External id": 20994,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31578,
+            "registers per thread": 18,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 2.112,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 2.112,
+          "args": {
+            "External id": 21507,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31675,
+            "registers per thread": 19,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 1,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 4.192,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 2.144,
+          "args": {
+            "External id": 22019,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31859,
+            "registers per thread": 19,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        },
+        {
+          "name": "backward_kernel",
+          "duration_us": 2.048,
+          "args": {
+            "External id": 22530,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 31881,
+            "registers per thread": 21,
+            "shared memory": 0,
+            "blocks per SM": 0.12963,
+            "warps per SM": 0.518519,
+            "grid": [
+              14,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 1
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward",
+      "kernel_launches": 5,
+      "summed_kernel_us": 48.8,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 15.232,
+          "args": {
+            "External id": 23046,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32187,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 6.656,
+          "args": {
+            "External id": 23047,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32198,
+            "registers per thread": 31,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 15.072,
+          "args": {
+            "External id": 23051,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32211,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 7.52,
+          "args": {
+            "External id": 23052,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32222,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 4.32,
+          "args": {
+            "External id": 23056,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32235,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "eager",
+      "phase": "forward_backward",
+      "kernel_launches": 11,
+      "summed_kernel_us": 102.305,
+      "kernels": [
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 14.784,
+          "args": {
+            "External id": 23558,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32789,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 6.88,
+          "args": {
+            "External id": 23559,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32800,
+            "registers per thread": 31,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 14.464,
+          "args": {
+            "External id": 23563,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32813,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 7.68,
+          "args": {
+            "External id": 23564,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32824,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 4.352,
+          "args": {
+            "External id": 23568,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32837,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 13.632,
+          "args": {
+            "External id": 24070,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32854,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 132.740738,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 7.712,
+          "args": {
+            "External id": 24073,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32869,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+          "duration_us": 11.201,
+          "args": {
+            "External id": 24074,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32879,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 5.792,
+          "args": {
+            "External id": 24080,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32896,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_backward_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::(anonymous namespace)::silu_backward_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",
+          "duration_us": 11.264,
+          "args": {
+            "External id": 24084,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32915,
+            "registers per thread": 40,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 75
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 4.544,
+          "args": {
+            "External id": 24090,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 32932,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 16.592592,
+            "warps per SM": 66.370369,
+            "grid": [
+              1792,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 6.848,
+      "kernels": [
+        {
+          "name": "triton_poi_fused__to_copy_mul_silu_0",
+          "duration_us": 6.848,
+          "args": {
+            "External id": 24584,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 43426,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 265.481476,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "compile",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 16.256999999999998,
+      "kernels": [
+        {
+          "name": "triton_poi_fused__to_copy_mul_silu_0",
+          "duration_us": 6.913,
+          "args": {
+            "External id": 25096,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 54320,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 265.481476,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "triton_poi_fused__to_copy_add_fill_mul_silu_sub_0",
+          "duration_us": 9.344,
+          "args": {
+            "External id": 25603,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 54341,
+            "registers per thread": 17,
+            "shared memory": 0,
+            "blocks per SM": 33.185184,
+            "warps per SM": 265.481476,
+            "grid": [
+              3584,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 5.856,
+      "kernels": [
+        {
+          "name": "_swiglu_forward_kernel",
+          "duration_us": 5.856,
+          "args": {
+            "External id": 26121,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 54542,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 4.740741,
+            "warps per SM": 37.925926,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 59
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "liger",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 12.928,
+      "kernels": [
+        {
+          "name": "_swiglu_forward_kernel",
+          "duration_us": 5.824,
+          "args": {
+            "External id": 26633,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 54821,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 4.740741,
+            "warps per SM": 37.925926,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 59
+          }
+        },
+        {
+          "name": "_swiglu_backward_kernel",
+          "duration_us": 7.104,
+          "args": {
+            "External id": 27138,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 54832,
+            "registers per thread": 36,
+            "shared memory": 0,
+            "blocks per SM": 4.740741,
+            "warps per SM": 37.925926,
+            "grid": [
+              512,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 59
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 7.584,
+      "kernels": [
+        {
+          "name": "_swiglu",
+          "duration_us": 7.584,
+          "args": {
+            "External id": 27651,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 54959,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 16.096,
+      "kernels": [
+        {
+          "name": "_swiglu",
+          "duration_us": 7.584,
+          "args": {
+            "External id": 28163,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 55175,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "_swiglu",
+          "duration_us": 8.512,
+          "args": {
+            "External id": 28674,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 55201,
+            "registers per thread": 18,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 7.616,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 7.616,
+          "args": {
+            "External id": 29187,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 55298,
+            "registers per thread": 19,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "swiglu",
+      "rows": 512,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward_backward",
+      "kernel_launches": 2,
+      "summed_kernel_us": 16.448,
+      "kernels": [
+        {
+          "name": "forward_kernel",
+          "duration_us": 7.808,
+          "args": {
+            "External id": 29699,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 55482,
+            "registers per thread": 19,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "backward_kernel",
+          "duration_us": 8.64,
+          "args": {
+            "External id": 30210,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 55504,
+            "registers per thread": 21,
+            "shared memory": 0,
+            "blocks per SM": 66.370369,
+            "warps per SM": 265.481476,
+            "grid": [
+              7168,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        }
+      ]
+    },
+    {
+      "op": "w4a16",
+      "rows": 32,
+      "width": 3584,
+      "backend": "unfused",
+      "phase": "forward",
+      "kernel_launches": 10,
+      "summed_kernel_us": 345.186,
+      "kernels": [
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<unsigned char, unsigned char, unsigned char, at::native::BitwiseAndFunctor<unsigned char> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<unsigned char, unsigned char, unsigned char, at::native::BitwiseAndFunctor<unsigned char> >, std::array<char*, 2ul>)",
+          "duration_us": 9.313,
+          "args": {
+            "External id": 30725,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57685,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 58.074074,
+            "warps per SM": 232.296295,
+            "grid": [
+              6272,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<unsigned char, unsigned char, unsigned char, at::native::rshift_kernel_cuda(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#1}::operator()() const::{lambda(unsigned char, unsigned char)#1}>, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<unsigned char, unsigned char, unsigned char, at::native::rshift_kernel_cuda(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#1}::operator()() const::{lambda(unsigned char, unsigned char)#1}>, std::array<char*, 2ul>)",
+          "duration_us": 7.264,
+          "args": {
+            "External id": 30726,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57698,
+            "registers per thread": 32,
+            "shared memory": 0,
+            "blocks per SM": 58.074074,
+            "warps per SM": 232.296295,
+            "grid": [
+              6272,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::(anonymous namespace)::CatArrayBatchedCopy_contig<at::native::(anonymous namespace)::OpaqueType<1u>, unsigned int, 3, 128, 1>(at::native::(anonymous namespace)::OpaqueType<1u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<1u>, unsigned int, 128, 1>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",
+          "duration_us": 42.496,
+          "args": {
+            "External id": 30733,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57709,
+            "registers per thread": 21,
+            "shared memory": 0,
+            "blocks per SM": 4.0,
+            "warps per SM": 64.0,
+            "grid": [
+              216,
+              2,
+              1
+            ],
+            "block": [
+              512,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 61.408,
+          "args": {
+            "External id": 30739,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57722,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 232.296295,
+            "warps per SM": 929.185181,
+            "grid": [
+              25088,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 5.408,
+          "args": {
+            "External id": 30745,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57736,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 1.814815,
+            "warps per SM": 7.259259,
+            "grid": [
+              196,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 11
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+          "duration_us": 72.864,
+          "args": {
+            "External id": 30748,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57747,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 464.59259,
+            "warps per SM": 1858.370361,
+            "grid": [
+              50176,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "duration_us": 5.984,
+          "args": {
+            "External id": 30752,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57760,
+            "registers per thread": 30,
+            "shared memory": 0,
+            "blocks per SM": 1.814815,
+            "warps per SM": 7.259259,
+            "grid": [
+              196,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 11
+          }
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "duration_us": 70.817,
+          "args": {
+            "External id": 30755,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57771,
+            "registers per thread": 16,
+            "shared memory": 0,
+            "blocks per SM": 464.59259,
+            "warps per SM": 1858.370361,
+            "grid": [
+              50176,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "duration_us": 47.616,
+          "args": {
+            "External id": 30761,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57784,
+            "registers per thread": 28,
+            "shared memory": 0,
+            "blocks per SM": 116.148148,
+            "warps per SM": 464.59259,
+            "grid": [
+              12544,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 100
+          }
+        },
+        {
+          "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn",
+          "duration_us": 22.016,
+          "args": {
+            "External id": 30766,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57799,
+            "registers per thread": 146,
+            "shared memory": 98304,
+            "blocks per SM": 0.518519,
+            "warps per SM": 2.074074,
+            "grid": [
+              56,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "w4a16",
+      "rows": 32,
+      "width": 3584,
+      "backend": "cublas_dense",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 17.472,
+      "kernels": [
+        {
+          "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn",
+          "duration_us": 17.472,
+          "args": {
+            "External id": 31239,
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57889,
+            "registers per thread": 146,
+            "shared memory": 98304,
+            "blocks per SM": 0.518519,
+            "warps per SM": 2.074074,
+            "grid": [
+              56,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0
+          }
+        }
+      ]
+    },
+    {
+      "op": "w4a16",
+      "rows": 32,
+      "width": 3584,
+      "backend": "triton",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 124.883,
+      "kernels": [
+        {
+          "name": "_w4",
+          "duration_us": 124.883,
+          "args": {
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 57996,
+            "registers per thread": 168,
+            "shared memory": 6144,
+            "blocks per SM": 1.037037,
+            "warps per SM": 4.148148,
+            "grid": [
+              2,
+              56,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 6
+          }
+        }
+      ]
+    },
+    {
+      "op": "w4a16",
+      "rows": 32,
+      "width": 3584,
+      "backend": "tilelang",
+      "phase": "forward",
+      "kernel_launches": 1,
+      "summed_kernel_us": 74.719,
+      "kernels": [
+        {
+          "name": "main_kernel",
+          "duration_us": 74.719,
+          "args": {
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 58084,
+            "registers per thread": 64,
+            "shared memory": 6144,
+            "blocks per SM": 1.037037,
+            "warps per SM": 4.148148,
+            "grid": [
+              2,
+              56,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 6
+          }
+        }
+      ]
+    }
+  ]
+}

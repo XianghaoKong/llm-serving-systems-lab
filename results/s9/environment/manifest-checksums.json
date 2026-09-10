@@ -1,0 +1,5 @@
+{
+  "deployed_byte_sha256": "407a5cb32c21496fcb7c4d9cfcdbe751b76b3d7133b4b70aab724beead9d17fc",
+  "lf_sha256": "fdc38595f1a1d03aa3bdf26061f004c3df5584914ec5929979997ba07ca3a7b9",
+  "note": "LF canonical hash permits Git checkout line-ending conversion; deployed-byte hash matches model environment."
+}

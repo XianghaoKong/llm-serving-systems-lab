@@ -1,0 +1,21 @@
+{
+  "args": {
+    "output": "s9-results/formal-w4-fp32acc",
+    "ops": "w4a16",
+    "backends": "unfused,cublas_dense,triton,tilelang",
+    "rows": "1,32,128,512",
+    "widths": "1536,3584",
+    "dtypes": "float16,bfloat16",
+    "repeats": 5,
+    "samples": 30
+  },
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "method": "CUDA graph, 10 calls/replay; event samples; compile excluded",
+  "matmul_reduced_precision_reduction": false,
+  "liger_swiglu_note": "Includes two input clones because upstream backward is destructive; non-mutating API comparison.",
+  "triton": "3.4.0",
+  "tilelang": "0.1.14",
+  "liger-kernel": "0.8.2"
+}

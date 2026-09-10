@@ -145,12 +145,17 @@ Use the pinned CUDA environment and run from the repository root:
 
 ```bash
 python -m pip install -r requirements-s9.txt
+hf download Qwen/Qwen2.5-1.5B-Instruct \
+  --revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 \
+  --local-dir models/Qwen2.5-1.5B-Instruct
 MODEL=/path/to/Qwen2.5-1.5B-Instruct bash src/run_s9.sh
 ```
 
 Output paths must be new: measurement files are opened exclusively so reruns
 cannot silently append or overwrite accepted data. GPU correctness/benchmarks
 are explicit manual jobs; CPU CI checks analysis logic and source syntax.
+`python src/s9_verify_results.py` checks the published record counts, block
+uniqueness, sample medians, model agreement and manifest identity without a GPU.
 
 On a host granting counter access, a representative optional NCU invocation is:
 

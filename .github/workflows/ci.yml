@@ -42,6 +42,9 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
 
+      - name: Verify published S9 artifact integrity
+        run: python src/s9_verify_results.py
+
       - name: Check shell syntax
         run: |
           for script in src/run_*.sh; do

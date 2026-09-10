@@ -1,0 +1,240 @@
+{
+  "backend": "tilelang",
+  "complete": true,
+  "cases": [
+    {
+      "rows": 0,
+      "width": 1536,
+      "dtype": "torch.float16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0,
+        "rms_dx": 0,
+        "rms_dsecond": 0.0,
+        "swiglu_output": 0,
+        "swiglu_dx": 0,
+        "swiglu_dsecond": 0
+      },
+      "passed": true
+    },
+    {
+      "rows": 1,
+      "width": 1536,
+      "dtype": "torch.float16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0.0,
+        "rms_dx": 0.00390625,
+        "rms_dsecond": 0.0,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0
+      },
+      "passed": true
+    },
+    {
+      "rows": 7,
+      "width": 1537,
+      "dtype": "torch.float16",
+      "strided": true,
+      "errors": {
+        "rms_output": 0.0,
+        "rms_dx": 0.00390625,
+        "rms_dsecond": 3.814697265625e-06,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0
+      },
+      "passed": true
+    },
+    {
+      "rows": 32,
+      "width": 3584,
+      "dtype": "torch.float16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0.00048828125,
+        "rms_dx": 0.00390625,
+        "rms_dsecond": 0.0009765625,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0009765625
+      },
+      "passed": true
+    },
+    {
+      "rows": 128,
+      "width": 5120,
+      "dtype": "torch.float16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0.001953125,
+        "rms_dx": 0.0078125,
+        "rms_dsecond": 0.00390625,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0009765625
+      },
+      "passed": true
+    },
+    {
+      "rows": 17,
+      "width": 8960,
+      "dtype": "torch.float16",
+      "strided": true,
+      "errors": {
+        "rms_output": 0.00048828125,
+        "rms_dx": 0.0078125,
+        "rms_dsecond": 0.00390625,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.00048828125
+      },
+      "passed": true
+    },
+    {
+      "op": "w4a16",
+      "m": 1,
+      "n": 128,
+      "k": 128,
+      "dtype": "torch.float16",
+      "passed": true,
+      "max_error": 0.0012688636779785156
+    },
+    {
+      "op": "w4a16",
+      "m": 17,
+      "n": 193,
+      "k": 256,
+      "dtype": "torch.float16",
+      "passed": true,
+      "max_error": 0.0039005279541015625
+    },
+    {
+      "op": "w4a16",
+      "m": 32,
+      "n": 256,
+      "k": 512,
+      "dtype": "torch.float16",
+      "passed": true,
+      "max_error": 0.00710296630859375
+    },
+    {
+      "rows": 0,
+      "width": 1536,
+      "dtype": "torch.bfloat16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0,
+        "rms_dx": 0,
+        "rms_dsecond": 0.0,
+        "swiglu_output": 0,
+        "swiglu_dx": 0,
+        "swiglu_dsecond": 0
+      },
+      "passed": true
+    },
+    {
+      "rows": 1,
+      "width": 1536,
+      "dtype": "torch.bfloat16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0.0,
+        "rms_dx": 0.03125,
+        "rms_dsecond": 0.0,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0
+      },
+      "passed": true
+    },
+    {
+      "rows": 7,
+      "width": 1537,
+      "dtype": "torch.bfloat16",
+      "strided": true,
+      "errors": {
+        "rms_output": 0.0,
+        "rms_dx": 0.03125,
+        "rms_dsecond": 0.0,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0
+      },
+      "passed": true
+    },
+    {
+      "rows": 32,
+      "width": 3584,
+      "dtype": "torch.bfloat16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0.0,
+        "rms_dx": 0.0625,
+        "rms_dsecond": 0.0,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0
+      },
+      "passed": true
+    },
+    {
+      "rows": 128,
+      "width": 5120,
+      "dtype": "torch.bfloat16",
+      "strided": false,
+      "errors": {
+        "rms_output": 0.03125,
+        "rms_dx": 0.0625,
+        "rms_dsecond": 0.0,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0001220703125
+      },
+      "passed": true
+    },
+    {
+      "rows": 17,
+      "width": 8960,
+      "dtype": "torch.bfloat16",
+      "strided": true,
+      "errors": {
+        "rms_output": 0.0,
+        "rms_dx": 0.0625,
+        "rms_dsecond": 0.00390625,
+        "swiglu_output": 0.0,
+        "swiglu_dx": 0.0,
+        "swiglu_dsecond": 0.0
+      },
+      "passed": true
+    },
+    {
+      "op": "w4a16",
+      "m": 1,
+      "n": 128,
+      "k": 128,
+      "dtype": "torch.bfloat16",
+      "passed": true,
+      "max_error": 0.014858245849609375
+    },
+    {
+      "op": "w4a16",
+      "m": 17,
+      "n": 193,
+      "k": 256,
+      "dtype": "torch.bfloat16",
+      "passed": true,
+      "max_error": 0.03034210205078125
+    },
+    {
+      "op": "w4a16",
+      "m": 32,
+      "n": 256,
+      "k": 512,
+      "dtype": "torch.bfloat16",
+      "passed": true,
+      "max_error": 0.05803680419921875
+    }
+  ]
+}

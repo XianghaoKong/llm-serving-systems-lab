@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "operator_cells": 1024,
+  "operator_records": 5120,
+  "correctness_cases": 36,
+  "operator_profiles": 44,
+  "model_requests": 1200,
+  "unique_manifest_requests": 200,
+  "model_blocks": 3,
+  "model_profiles": 2,
+  "model_checked_logit_max_abs_error": 0,
+  "model_greedy_token_agreement": 1
+}

@@ -20,6 +20,7 @@ The central result is:
 - Completed a **100,000-request, 35-minute C64 soak** with zero failures, zero preemptions, and no persistent memory growth.
 - Reduced a 24K-prefill-induced decode P99 stall from **51.89× to 4.23×** by tuning vLLM's chunked-prefill budget, with five repeated blocks and bootstrap confidence intervals.
 - Reproduced the scheduler direction on **Qwen2.5-7B**: 4K and 1K chunk budgets reduced the decode stall ratio by **77.9% and 93.3%**, respectively.
+- Implemented Triton/TileLang RMSNorm, SwiGLU and W4A16 kernels with **5,120 timing records**; measured a **2.34× RMSNorm forward improvement** over the tested dynamic `torch.compile` configuration at BF16 512 × 3584, while retaining regressions and numerical failures in the report.
 
 ## System under test
 
@@ -29,6 +30,7 @@ The central result is:
 | S8-D extension model | Qwen/Qwen2.5-7B-Instruct |
 | Serving GPU | 1× NVIDIA A100 80GB PCIe |
 | Kernel baseline GPU | 1× NVIDIA RTX 4070 12GB |
+| S9 fused-kernel GPU | 1× NVIDIA A100 80GB PCIe |
 | Serving precision | BF16 |
 | Serving engines | vLLM 0.28.0 and SGLang 0.5.19 |
 | Request shape for S6/S7 | 512 input / 128 output tokens |
@@ -51,9 +53,10 @@ flowchart TD
     E --> F["vLLM vs SGLang"]
     F --> G["Observability and sustained-load validation"]
     G --> H["Prefill/decode interference and scheduler fairness"]
+    H --> I["Fused kernels and model numerical compatibility"]
 ```
 
-The experiments progressively move upward through the serving stack. This makes it possible to distinguish GPU execution cost from scheduler delay, queueing, cache capacity, and engine-specific behavior.
+The experiments first move upward through the serving stack, distinguishing GPU execution cost from scheduler delay, queueing, cache capacity and engine-specific behavior. S9 returns to operator internals to test fusion against compiled/library baselines and model-level numerical checks.
 
 ## Key findings
 
@@ -272,6 +275,30 @@ and 93.3%, at TTFT costs of 6.4% and 21.2%. See
 
 ![S8-D Qwen2.5-7B validation](results/s8/analysis/model_validation_7b/20260909T215626Z/model_extension_7b.png)
 
+## S9: fusion must survive strong baselines and numerical checks
+
+The A100 study covers RMSNorm and SwiGLU forward/backward in FP16/BF16, plus
+packed W4A16 dequantization-GEMM. **1,024 cells × five blocks** compare eager
+PyTorch, dynamic `torch.compile`, Liger, custom Triton and custom TileLang where
+applicable. Separate Kineto traces check launch structure and resource metadata.
+
+RMSNorm forward improves over the tested compiler configuration; small SwiGLU
+inputs are often already well fused. W4 fusion cuts an example from ten kernels
+to one and reduces temporary allocation, but the fixed custom tiles lose to
+predequantized cuBLAS. A fully fused Qwen RMSNorm candidate fails the model-logit
+gate despite passing operator tolerances; a compatibility path preserves the
+native variance reduction.
+That compatible path matches the checked model outputs but is about **5.9%
+slower** in the length-matched replay, so the kernel-level win is not presented
+as an end-to-end serving improvement.
+
+![S9 operator latency](results/s9/summary/kernel_latency.png)
+
+See the [S9 results](docs/s9_results.md) and [protocol](docs/s9_kernel_protocol.md)
+for strong-baseline comparisons, rejected pilots, the 200-request length-matched
+model replay, and the distinction between Kineto estimates and unavailable
+hardware counters. These model-path measurements are not vLLM serving gains.
+
 ## Experimental progression
 
 | Stage | Question |
@@ -286,6 +313,7 @@ and 93.3%, at TTFT costs of 6.4% and 21.2%. See
 | S6 | How do vLLM and SGLang trade places across concurrency and metrics? |
 | S7 | Can client, scheduler, and GPU telemetry explain load transitions and stability? |
 | S8 | How does chunked-prefill scheduling trade long-request TTFT for decode fairness? |
+| S9 | When does operator fusion beat compiled baselines and preserve pretrained-model behavior? |
 
 ## Repository structure
 
@@ -299,7 +327,9 @@ and 93.3%, at TTFT costs of 6.4% and 21.2%. See
 │   ├── s8_model_extension_results.md
 │   ├── s8_profiler_protocol.md
 │   ├── s8_profiler_results.md
-│   └── s8_results.md
+│   ├── s8_results.md
+│   ├── s9_kernel_protocol.md
+│   └── s9_results.md
 ├── monitoring/
 │   ├── dcgm/
 │   ├── grafana/
@@ -314,7 +344,8 @@ and 93.3%, at TTFT costs of 6.4% and 21.2%. See
 │   ├── s5/
 │   ├── s6/
 │   ├── s7/
-│   └── s8/
+│   ├── s8/
+│   └── s9/
 ├── src/
 └── workloads/
     └── final/
@@ -371,6 +402,15 @@ S8D_PHASE=formal S8D_BACKGROUND_CONCURRENCY=16 \
 ```
 
 Formal GPU runs are launched through the corresponding `run_*.sh` scripts in [`src/`](src/). These commands require the appropriate model, serving engine, GPU environment, and raw experiment inputs.
+
+S9 (use the pinned CUDA environment in `requirements-s9.txt`):
+
+```bash
+MODEL=/path/to/Qwen2.5-1.5B-Instruct bash src/run_s9.sh
+```
+
+Accepted per-block S9 measurements are included under `results/s9/runs/`;
+the protocol records arithmetic, compilation, profiling and replay boundaries.
 
 ## Measurement boundaries
 

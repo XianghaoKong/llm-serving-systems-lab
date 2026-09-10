@@ -1,0 +1,8 @@
+{
+  "archive": "s9-artifacts-20260910.tgz",
+  "sha256": "cc5b7f0987daf34a85308170c9ae4e403c44b3756389dec9c50cc8c8f1b2921f",
+  "contents": "Accepted and rejected runs, full Kineto traces, deployed Python sources and diagnostic logs",
+  "backup": "Downloaded and SHA-256 verified locally before stopping compute; original retained on Pod volume",
+  "gpu_compute_stopped_at_utc": "2026-09-10 05:15:10",
+  "s10": "paused; no multi-GPU experiment started"
+}

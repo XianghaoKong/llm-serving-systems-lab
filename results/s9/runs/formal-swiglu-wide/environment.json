@@ -1,0 +1,20 @@
+{
+  "args": {
+    "output": "s9-results/formal-swiglu-wide",
+    "ops": "swiglu",
+    "backends": "eager,compile,liger,triton,tilelang",
+    "rows": "1,8,32,128,512,2048",
+    "widths": "8960,18944",
+    "dtypes": "float16,bfloat16",
+    "repeats": 5,
+    "samples": 30
+  },
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "method": "CUDA graph, 10 calls/replay; event samples; compile excluded",
+  "liger_swiglu_note": "Includes two input clones because upstream backward is destructive; non-mutating API comparison.",
+  "triton": "3.4.0",
+  "tilelang": "0.1.14",
+  "liger-kernel": "0.8.2"
+}

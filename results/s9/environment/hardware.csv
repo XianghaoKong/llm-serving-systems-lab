@@ -1,0 +1,2 @@
+timestamp, name, driver_version, memory.total [MiB], power.limit [W], clocks.max.sm [MHz], clocks.max.memory [MHz]
+2026/09/10 04:21:22.409, NVIDIA A100 80GB PCIe, 595.91.07, 81920 MiB, 300.00 W, 1410 MHz, 1512 MHz
