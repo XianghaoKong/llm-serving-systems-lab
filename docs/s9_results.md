@@ -177,7 +177,9 @@ Full timelines and rejected pilots are retained in the verified artifact archive
 See [environment records](../results/s9/environment/) and the
 [execution protocol](s9_kernel_protocol.md) for pins, tolerance, timing and
 reproduction details. CPU CI tests analysis logic; GPU acceptance is documented
-by completed run artifacts, not by the CPU CI badge. S10 is paused.
+by completed run artifacts, not by the CPU CI badge. The completed
+[S10 distributed-training study](s10_results.md) extends these numerical checks
+to state sharding and model parallelism on four A100s.
 The complete archive was verified locally before compute stopped at
 **2026-09-10 05:15:10 UTC**; its SHA-256 is recorded in
 [archive metadata](../results/s9/environment/artifact-archive.json).

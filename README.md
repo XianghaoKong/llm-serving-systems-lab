@@ -1,13 +1,13 @@
-# LLM Inference & Serving Systems Lab
+# LLM Systems Lab: Kernels, Serving & Distributed Training
 
 [![CI](https://github.com/XianghaoKong/llm-serving-systems-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/XianghaoKong/llm-serving-systems-lab/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A measurement-driven investigation of LLM inference performance—from attention kernels and streaming APIs to queueing, continuous batching, KV-cache pressure, serving-engine trade-offs, and production-oriented observability.
+A measurement-driven investigation of LLM systems performance across GPU kernels, inference and serving, and distributed training. The experiments cover attention and fused operators, streaming APIs, queueing, continuous batching, KV-cache pressure, serving-engine trade-offs, observability, and distributed state sharding and communication.
 
 The central result is:
 
-> **LLM serving performance is a stack-level property. The configuration with the highest raw throughput is not necessarily the configuration with the best user-visible latency or SLO-qualified capacity.**
+> **LLM systems performance depends on the workload, numerical contract and execution stack. Kernel speedups must survive model-level compatibility checks; serving throughput must be evaluated alongside latency and SLO capacity; distributed training trades memory capacity against computation and communication.**
 
 ## Highlights
 
@@ -57,9 +57,10 @@ flowchart TD
     F --> G["Observability and sustained-load validation"]
     G --> H["Prefill/decode interference and scheduler fairness"]
     H --> I["Fused kernels and model numerical compatibility"]
+    I --> J["S10: Distributed training — state sharding and TP/PP communication"]
 ```
 
-The experiments first move upward through the serving stack, distinguishing GPU execution cost from scheduler delay, queueing, cache capacity and engine-specific behavior. S9 returns to operator internals to test fusion against compiled/library baselines and model-level numerical checks.
+The experiments first move upward through the serving stack, distinguishing GPU execution cost from scheduler delay, queueing, cache capacity and engine-specific behavior. S9 returns to operator internals to test fusion against compiled/library baselines and model-level numerical checks. S10 extends the investigation to distributed training, comparing ZeRO state sharding and Megatron TP/PP layouts after numerical validation.
 
 ## Key findings
 
@@ -472,14 +473,26 @@ pilots remain separate from accepted formal timing runs.
 
 The bottleneck moved upward through the stack as lower-level execution became more efficient:
 
-> **kernel cost → API semantics → queueing → batching → admission control → KV capacity → engine policy → operational stability**
+> **kernel cost → API semantics → queueing → batching → admission control → KV capacity → engine policy → operational stability → scheduler fairness → fused kernels → numerical compatibility → distributed state/communication**
 
 S8 extends that chain to scheduler fairness: a long prefill can interrupt decode
 cadence even with zero waiting, zero preemptions, and low KV occupancy. The
 prefill chunk budget determines how often decode work gets another scheduling
 opportunity.
 
-For this workload, raw throughput continued increasing after tail latency and SLO-qualified goodput had already degraded. Production-oriented LLM serving therefore requires joint reasoning about throughput, latency distributions, queue depth, admission behavior, memory occupancy, and GPU telemetry—not optimization of a single metric.
+S9 shows why fused kernels need both strong performance baselines and numerical
+compatibility checks: an operator-level improvement may disappear in the model
+path, and a locally accurate kernel can still change model outputs. S10 carries
+that validation discipline into distributed training. ZeRO and TP/PP layouts
+trade peak memory for throughput and communication activity; a finite loss alone
+does not establish a correct optimizer update.
+
+Across these studies, a useful optimization must satisfy the numerical contract
+and improve the metric that matters for its workload. Serving requires joint
+reasoning about latency, goodput, queueing and cache capacity; kernel and
+distributed-training work adds model compatibility, state memory and communication
+cost. The reports retain regressions and failed configurations to make those
+trade-offs explicit.
 
 ## License
 
