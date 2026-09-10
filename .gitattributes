@@ -1,1 +1,2 @@
 src/run_s9.sh text eol=lf
+src/run_s10_setup.sh text eol=lf

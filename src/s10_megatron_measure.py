@@ -43,6 +43,13 @@ def write_result():
 def measured_step(*args, **kwargs):
     global profiler
     index = len(records)
+    if index == 0:
+        config = training.get_args()
+        metadata["training_config"] = {name:getattr(config,name,None) for name in (
+            "num_layers","hidden_size","ffn_hidden_size","num_attention_heads",
+            "num_query_groups","padded_vocab_size","seq_length","global_batch_size",
+            "micro_batch_size","data_parallel_size","tensor_model_parallel_size",
+            "pipeline_model_parallel_size","bf16","transformer_impl")}
     if index == warmup:
         torch.cuda.synchronize()
         torch.cuda.reset_peak_memory_stats()
@@ -87,3 +94,5 @@ except BaseException as error:
     raise
 finally:
     write_result()
+    if dist.is_initialized():
+        dist.destroy_process_group()

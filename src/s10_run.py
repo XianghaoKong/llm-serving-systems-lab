@@ -1,6 +1,7 @@
 """Run an explicit S10 case list sequentially, retaining failures and commands."""
 import argparse
 import datetime
+import hashlib
 import json
 import os
 import signal
@@ -73,7 +74,9 @@ def main():
         output = Path(case["output"])
         output.mkdir(parents=True, exist_ok=False)
         cmd, env = command(case)
-        info = {"case": case, "command": cmd, "started_utc": datetime.datetime.now(datetime.timezone.utc).isoformat()}
+        info = {"case": case, "command": cmd, "started_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                "source_sha256":{p.name:hashlib.sha256(p.read_bytes()).hexdigest()
+                                 for p in Path(__file__).parent.glob("s10*.py")}}
         (output/"launch.json").write_text(json.dumps(info, indent=2))
         print("START", str(output), flush=True)
         start = time.monotonic()

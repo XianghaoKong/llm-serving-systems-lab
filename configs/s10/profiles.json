@@ -1,0 +1,76 @@
+[
+  {
+    "block": 0,
+    "steps": 2,
+    "warmup": 20,
+    "timeout": 1200,
+    "sequence": 512,
+    "output": "/workspace/s10/profile-v3-zero-w4-s1-b0",
+    "global_tokens": 8192,
+    "stage": 1,
+    "model": "qwen7b",
+    "backend": "zero",
+    "world": 4,
+    "profile": true
+  },
+  {
+    "block": 0,
+    "steps": 2,
+    "warmup": 20,
+    "timeout": 1200,
+    "sequence": 512,
+    "output": "/workspace/s10/profile-v3-zero-w4-s3-b0",
+    "global_tokens": 8192,
+    "stage": 3,
+    "model": "qwen7b",
+    "backend": "zero",
+    "world": 4,
+    "profile": true
+  },
+  {
+    "tp": 2,
+    "steps": 2,
+    "warmup": 20,
+    "timeout": 1200,
+    "sequence": 512,
+    "output": "/workspace/s10/profile-v3-megatron-w4-tp2-pp2-b0",
+    "pp": 2,
+    "global_tokens": 8192,
+    "block": 0,
+    "model": "qwen7b",
+    "backend": "megatron",
+    "world": 4,
+    "profile": true
+  },
+  {
+    "tp": 4,
+    "steps": 2,
+    "warmup": 20,
+    "timeout": 1200,
+    "sequence": 512,
+    "output": "/workspace/s10/profile-v3-megatron-w4-tp4-pp1-b0",
+    "pp": 1,
+    "global_tokens": 8192,
+    "block": 0,
+    "model": "qwen7b",
+    "backend": "megatron",
+    "world": 4,
+    "profile": true
+  },
+  {
+    "tp": 1,
+    "steps": 2,
+    "warmup": 20,
+    "timeout": 1200,
+    "sequence": 512,
+    "output": "/workspace/s10/profile-v3-megatron-w4-tp1-pp4-b0",
+    "pp": 4,
+    "global_tokens": 8192,
+    "block": 0,
+    "model": "qwen7b",
+    "backend": "megatron",
+    "world": 4,
+    "profile": true
+  }
+]
+

@@ -1,0 +1,86 @@
+[
+  {
+    "timeout": 240,
+    "stage": 0,
+    "sequence": 512,
+    "steps": 2,
+    "world": 1,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "output": "/workspace/s10/capacity-v3-zero-w1-s0",
+    "backend": "zero"
+  },
+  {
+    "timeout": 240,
+    "stage": 1,
+    "sequence": 512,
+    "steps": 2,
+    "world": 2,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "output": "/workspace/s10/capacity-v3-zero-w2-s1",
+    "backend": "zero"
+  },
+  {
+    "timeout": 240,
+    "stage": 2,
+    "sequence": 512,
+    "steps": 2,
+    "world": 2,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "output": "/workspace/s10/capacity-v3-zero-w2-s2",
+    "backend": "zero"
+  },
+  {
+    "timeout": 240,
+    "stage": 3,
+    "sequence": 512,
+    "steps": 2,
+    "world": 2,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "output": "/workspace/s10/capacity-v3-zero-w2-s3",
+    "backend": "zero"
+  },
+  {
+    "timeout": 240,
+    "stage": 1,
+    "sequence": 512,
+    "steps": 2,
+    "world": 4,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "output": "/workspace/s10/capacity-v3-zero-w4-s1",
+    "backend": "zero"
+  },
+  {
+    "timeout": 240,
+    "stage": 2,
+    "sequence": 512,
+    "steps": 2,
+    "world": 4,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "output": "/workspace/s10/capacity-v3-zero-w4-s2",
+    "backend": "zero"
+  },
+  {
+    "timeout": 240,
+    "stage": 3,
+    "sequence": 512,
+    "steps": 2,
+    "world": 4,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "output": "/workspace/s10/capacity-v3-zero-w4-s3",
+    "backend": "zero"
+  }
+]
