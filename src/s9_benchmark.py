@@ -127,7 +127,8 @@ def w4_case(args, stream, m,n,k,dtype,backends):
     for name in backends:
         t0=time.perf_counter(); got=methods[name]();torch.cuda.synchronize()
         first[name]=(time.perf_counter()-t0)*1000
-        torch.testing.assert_close(got.float(),ref,atol=0.06 if dtype==torch.bfloat16 else 0.01,rtol=0.025)
+        torch.testing.assert_close(got.float(),ref,atol=0.06 if dtype==torch.bfloat16 else 0.01,rtol=0.025,
+                                   msg=lambda msg:f"{name} W4A16 ({m},{n},{k}) {dtype}: {msg}")
     for block in range(args.repeats):
         for name in backends[block%len(backends):]+backends[:block%len(backends)]:
             fn=methods[name]
@@ -155,10 +156,14 @@ def main():
     args=ap.parse_args()
     torch.manual_seed(2026)
     torch.backends.cuda.matmul.allow_tf32=False
+    # Match the stated FP32-accumulation contract for cuBLAS baselines too.
+    torch.backends.cuda.matmul.allow_fp16_reduced_precision_reduction=False
+    torch.backends.cuda.matmul.allow_bf16_reduced_precision_reduction=False
     torch._dynamo.config.cache_size_limit=256
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     env={"args":vars(args),"gpu":torch.cuda.get_device_name(),"torch":torch.__version__,
          "cuda":torch.version.cuda,"method":"CUDA graph, 10 calls/replay; event samples; compile excluded",
+         "matmul_reduced_precision_reduction":False,
          "liger_swiglu_note":"Includes two input clones because upstream backward is destructive; non-mutating API comparison."}
     for name in ("triton","tilelang","liger-kernel"):
         try: env[name]=importlib.metadata.version(name)

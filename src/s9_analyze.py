@@ -78,7 +78,10 @@ def main():
         subset=[r for r in result if r["op"]==op and r["width"]==width and r["dtype"]=="torch.bfloat16" and r["phase"]=="forward"]
         for backend in sorted({r["backend"] for r in subset}):
             points=sorted((r for r in subset if r["backend"]==backend),key=lambda r:r["rows"])
-            ax.plot([r["rows"] for r in points],[r["median_p50_us"] for r in points],"o-",label=backend,color=colors.get(backend))
+            line,=ax.plot([r["rows"] for r in points],[r["median_p50_us"] for r in points],"o-",label=backend,color=colors.get(backend))
+            ax.fill_between([r["rows"] for r in points],
+                [r["median_p50_ci_low_us"] for r in points],
+                [r["median_p50_ci_high_us"] for r in points],alpha=.12,color=line.get_color())
         ax.set(xscale="log",yscale="log",xlabel="Rows",ylabel="Median block P50 (µs)",title=f"{op} · BF16 · width {width}")
         ax.grid(alpha=.2);ax.legend(fontsize=8)
     fig.suptitle("A100 80GB PCIe · CUDA graph replay · lower is better")

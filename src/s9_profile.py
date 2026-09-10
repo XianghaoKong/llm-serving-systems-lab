@@ -16,14 +16,22 @@ import s9_tilelang
 def capture(fn, path):
     for _ in range(4): fn()
     torch.cuda.synchronize()
+    sentinel=torch.ones(1,device="cuda")
     with torch.profiler.profile(activities=[torch.profiler.ProfilerActivity.CPU,
                                            torch.profiler.ProfilerActivity.CUDA]) as prof:
+        # Prime tracing inside the active session: this image can miss its first
+        # CUDA kernel. Keep that sentinel outside the measured annotation.
+        sentinel.sin_();torch.cuda.synchronize()
         with torch.profiler.record_function("s9_diagnostic_call"):
-            fn()
-        torch.cuda.synchronize()
+            result=fn()
+            torch.cuda.synchronize()
     prof.export_chrome_trace(str(path))
     trace=json.loads(path.read_text())
-    kernels=[e for e in trace["traceEvents"] if e.get("cat")=="kernel"]
+    region=next(e for e in trace["traceEvents"] if e.get("name")=="s9_diagnostic_call" and e.get("ph")=="X")
+    kernels=[e for e in trace["traceEvents"] if e.get("cat")=="kernel"
+             and region["ts"]<=e["ts"]<region["ts"]+region["dur"]]
+    if not kernels:
+        raise RuntimeError("profiler captured no target kernels; trace is incomplete")
     # Retain the original trace as well; compressed copy is convenient for backup.
     with gzip.open(str(path)+".gz","wt") as f: json.dump(trace,f)
     return dict(kernel_launches=len(kernels),summed_kernel_us=sum(e.get("dur",0) for e in kernels),
@@ -34,6 +42,8 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument("--output",required=True);args=ap.parse_args()
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     torch.manual_seed(2026);torch._dynamo.config.cache_size_limit=256
+    torch.backends.cuda.matmul.allow_fp16_reduced_precision_reduction=False
+    torch.backends.cuda.matmul.allow_bf16_reduced_precision_reduction=False
     result=[]
     for op in ("rms","swiglu"):
         for m in (1,512):

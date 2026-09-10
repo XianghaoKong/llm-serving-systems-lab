@@ -62,6 +62,7 @@ def main():
     ap.add_argument("--model",required=True);ap.add_argument("--manifest",required=True)
     ap.add_argument("--output",required=True);ap.add_argument("--count",type=int,default=200)
     ap.add_argument("--steps",type=int,default=32);ap.add_argument("--blocks",type=int,default=3)
+    ap.add_argument("--optimized-backend",choices=("triton","triton_compatible"),default="triton_compatible")
     args=ap.parse_args()
     if args.steps<2: raise ValueError("at least two steps required")
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
@@ -75,14 +76,15 @@ def main():
         manifest_sha256=hashlib.sha256(Path(args.manifest).read_bytes()).hexdigest(),
         config=model.config.to_dict(),workload="R0 manifest length-matched synthetic token IDs; not original prompts",
         model_path_only=True,tokenization_and_HTTP_excluded=True,
-        precision_contract="Qwen intermediate activation cast before affine multiply",
+        precision_contract="Qwen intermediate cast; triton_compatible preserves native FP32 reduction",
+        optimized_backend=args.optimized_backend,
         attention="Transformers SDPA",fixed_continuation_steps=args.steps,EOS_ignored=True,
         seed=2026,formal=args.count==200 and args.blocks>=3,
         order="block 1 eager then Triton per request; later blocks alternate paired order")
     (output/"environment.json").write_text(json.dumps(metadata,indent=2,default=str))
     (output/"request_manifest.json").write_text(json.dumps(selected,indent=2))
     # Warm model, attention and shape-specific RMS kernels before all measurements.
-    for backend in ("eager","triton"):
+    for backend in ("eager",args.optimized_backend):
         set_backend(model,backend)
         for length in (33,128,512,1024,2048,4085):
             p=torch.randint(100,10000,(1,length),device="cuda")
@@ -95,7 +97,7 @@ def main():
     with (output/"requests.jsonl").open("x") as stream:
         for block in range(args.blocks):
             for index,(row,prompt) in enumerate(zip(selected,prompts)):
-                order=("eager","triton") if block==0 or (block+index)%2==0 else ("triton","eager")
+                order=("eager",args.optimized_backend) if block==0 or (block+index)%2==0 else (args.optimized_backend,"eager")
                 for backend in order:
                     set_backend(model,backend)
                     reference=references.get(index)
@@ -119,22 +121,32 @@ def main():
                 if (index+1)%10==0: print("block",block+1,"requests",index+1,flush=True)
     paired=defaultdict(dict)
     for r in results: paired[(r["block"],r["request_id"])][r["backend"]]=r
-    summary={"pairs":len(paired),"model_path_only":True,"formal":metadata["formal"]}
+    summary={"pairs":len(paired),"model_path_only":True,"formal":metadata["formal"],"optimized_backend":args.optimized_backend}
     for metric in ("ttft_gpu_ms","decode_gpu_p50_ms","decode_gpu_p95_ms","model_wall_ms"):
-        ratios=[v["eager"][metric]/v["triton"][metric] for v in paired.values()]
+        ratios=[v["eager"][metric]/v[args.optimized_backend][metric] for v in paired.values()]
         # Bootstrap requests (clusters), retaining all repeated blocks for each request.
         clusters=defaultdict(list)
-        for (_,rid),v in paired.items(): clusters[rid].append(v["eager"][metric]/v["triton"][metric])
+        for (_,rid),v in paired.items(): clusters[rid].append(v["eager"][metric]/v[args.optimized_backend][metric])
         request_ratios=[statistics.median(v) for v in clusters.values()]
         summary[metric]=dict(eager_median=statistics.median(r[metric] for r in results if r["backend"]=="eager"),
-            triton_median=statistics.median(r[metric] for r in results if r["backend"]=="triton"),
+            optimized_median=statistics.median(r[metric] for r in results if r["backend"]==args.optimized_backend),
             median_paired_speedup=statistics.median(ratios),
             median_request_speedup=statistics.median(request_ratios),request_cluster_ci95=median_ci(request_ratios))
-    optimized=[r for r in results if r["backend"]=="triton"]
+    optimized=[r for r in results if r["backend"]==args.optimized_backend]
     summary.update(max_logit_nrmse=max(r["logit_nrmse"] for r in optimized),
         max_logit_abs_error=max(r["logit_max_abs_error"] for r in optimized),
         token_agreement=sum(r["greedy_token_matches"] for r in optimized)/(len(optimized)*args.steps))
     (output/"summary.json").write_text(json.dumps(summary,indent=2))
+    if metadata["formal"]:
+        from s9_profile import capture
+        profile_input=torch.randint(100,10000,(1,512),device="cuda")
+        profiles={}
+        for backend in ("eager",args.optimized_backend):
+            set_backend(model,backend)
+            profiles[backend]=capture(lambda:request(model,profile_input,4),
+                                      output/f"model-profile-{backend}.json")
+        (output/"model-profile-summary.json").write_text(json.dumps(dict(
+            formal_timing=False,input_tokens=512,continuation_steps=4,backends=profiles),indent=2))
     (output/"complete.json").write_text(json.dumps({"complete":True,"requests":len(results)}))
     print(json.dumps(summary),flush=True)
 

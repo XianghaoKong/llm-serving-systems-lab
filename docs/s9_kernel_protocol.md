@@ -35,6 +35,9 @@ RMSNorm normalizes and multiplies the weight in FP32 before one output cast.
 SwiGLU computes SiLU and multiplication in FP32 before one output cast. This
 contract deliberately makes intermediate materialization visible in eager
 PyTorch. It is not identical to every framework's low-precision arithmetic.
+The eager reference includes repeated casts and is a secondary baseline;
+comparisons against the specified compiler configuration and fused libraries
+are more informative than eager-only speedups.
 `torch.compile` uses fullgraph and dynamic shapes. Liger RMSNorm uses its Gemma
 casting mode with zero weight offset to match this contract.
 
@@ -51,6 +54,9 @@ cuBLAS baseline retains a dense weight matrix and excludes dequantization time:
 it has a different storage contract. It must not be described as a packed INT4
 serving engine. No AWQ/GPTQ/Marlin compatibility or model quantization quality
 claim is made.
+Both cuBLAS reduced-precision-reduction flags are disabled for accepted W4
+runs. A pilot with default FP16 reduction settings failed the original tolerance
+and was excluded; the tolerance was not relaxed to accept it.
 
 ## Correctness gates
 
@@ -89,14 +95,27 @@ Use separate Kineto traces for 44 representative forward/backward calls. Record
 kernel names, launch counts, summed kernel duration and available launch/resource
 metadata. Profile times are excluded from the formal table. Any occupancy field
 is a Kineto estimate; hardware-counter occupancy, HBM transactions and stall
-reasons are not collected. Inspecting the generated trace supports fusion/launch
+reasons are not collected: Nsight Compute 2025.1.1 was attempted and returned
+`ERR_NVGPUCTRPERM`. Inspecting the generated trace supports fusion/launch
 claims but cannot alone establish a specific memory or compute bottleneck.
+Two additional pretrained-model traces (512 input tokens, four continuation
+positions) check whether the RMSNorm launch reduction remains visible in Qwen.
+Prime Kineto with a sentinel kernel inside the active profiler session, then
+filter events to the synchronized target annotation. The unprimed pilot missed
+the first CUDA kernel and is excluded. Device-to-device copies are separate
+from kernel launches; Liger SwiGLU forward has two preservation copies.
 
 ## Pretrained Qwen integration
 
 Load pinned Qwen2.5-1.5B-Instruct in BF16 with Transformers SDPA. Replace only
 RMSNorm and preserve Qwen's intermediate cast **before** weight multiplication;
 use an inference-only adapter, not the microbenchmark's different arithmetic.
+The fully fused model adapter failed the 2% logit-NRMSE gate both with default
+FMA contraction and with contraction disabled. The accepted candidate retains
+ATen's FP32 variance computation and fuses the remaining pointwise operations,
+with FMA contraction disabled. This is a partial-fusion compatibility path,
+not the one-kernel microbenchmark path. Token count is a runtime parameter so
+new input lengths do not compile a new kernel inside measured prefill calls.
 
 Original frozen prompt text was unavailable in the local checkout and recovered
 S8 volume. Select 200 public-manifest records in original category proportions
@@ -117,6 +136,8 @@ Check finite logits and normalized RMS error at the first and last position
 the common prefix. Agreement is a numerical diagnostic, not an answer-quality
 score. Aggregate paired speedups; bootstrap request-level medians across blocks
 to avoid treating repeated versions of the same request as independent data.
+The baseline is unfused Hugging Face RMSNorm. vLLM/SGLang already use fused
+operators, so a gain here must not be transferred to those engines as a claim.
 
 ## Reproduce
 
@@ -130,6 +151,18 @@ MODEL=/path/to/Qwen2.5-1.5B-Instruct bash src/run_s9.sh
 Output paths must be new: measurement files are opened exclusively so reruns
 cannot silently append or overwrite accepted data. GPU correctness/benchmarks
 are explicit manual jobs; CPU CI checks analysis logic and source syntax.
+
+On a host granting counter access, a representative optional NCU invocation is:
+
+```bash
+ncu --section LaunchStats --section Occupancy --section SpeedOfLight \
+  --nvtx --nvtx-include 's9_target/' --kernel-name 'regex:_rms_fwd' \
+  --launch-count 1 --csv --log-file rms-forward.csv -o rms-forward \
+  python src/s9_ncu_case.py --op rms --rows 512 --width 3584
+```
+
+Run this separately from timing jobs. The study host denied counter access;
+the command is provided for reproducibility, not as a successful measurement.
 
 Method references: [Triton](https://triton-lang.org/main/getting-started/tutorials/05-layer-norm.html),
 [Liger](https://github.com/linkedin/Liger-Kernel),
