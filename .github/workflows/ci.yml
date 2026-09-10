@@ -45,6 +45,9 @@ jobs:
       - name: Verify published S9 artifact integrity
         run: python src/s9_verify_results.py
 
+      - name: Verify published S10 artifact integrity
+        run: python src/s10_verify_results.py
+
       - name: Check shell syntax
         run: |
           for script in src/run_*.sh; do

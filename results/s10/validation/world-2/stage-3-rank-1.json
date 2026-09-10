@@ -1,0 +1,26 @@
+{
+  "stage": 3,
+  "rank": 1,
+  "world": 2,
+  "deepspeed": "0.17.5",
+  "torch": "2.8.0+cu128",
+  "relative_update_l2_error": 0.03502396611519341,
+  "max_parameter_abs_error": 0.00019974540919065475,
+  "reference_gradient_norm": 1.6636828184127808,
+  "deepspeed_gradient_norm": 1.6636997535378684,
+  "gradient_norm_relative_error": 1.0179299142945661e-05,
+  "reference_losses": [
+    5.5430216789245605,
+    5.629558086395264,
+    5.583232402801514,
+    5.519392013549805
+  ],
+  "deepspeed_losses": [
+    5.5430216789245605,
+    5.629558086395264,
+    5.583232402801514,
+    5.519392013549805
+  ],
+  "criterion": "relative update L2 error <= 0.05; gradient norm relative error <= 0.01; finite losses",
+  "passed": true
+}

@@ -1,0 +1,21 @@
+{
+  "stage": 1,
+  "rank": 2,
+  "world": 4,
+  "deepspeed": "0.18.3",
+  "torch": "2.8.0+cu128",
+  "relative_update_l2_error": 0.03556550045755349,
+  "max_parameter_abs_error": 0.00019973423331975937,
+  "reference_gradient_norm": 1.6636828184127808,
+  "deepspeed_gradient_norm": 0.8318211436271667,
+  "reference_losses": [
+    5.547954082489014,
+    5.528213024139404
+  ],
+  "deepspeed_losses": [
+    5.547954082489014,
+    5.528213024139404
+  ],
+  "criterion": "relative update L2 error <= 0.05; finite losses and parameters",
+  "passed": true
+}

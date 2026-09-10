@@ -1,0 +1,23 @@
+{
+  "stage": 1,
+  "rank": 1,
+  "world": 2,
+  "relative_update_l2_error": 0.03429316512040717,
+  "max_parameter_abs_error": 0.00019969791173934937,
+  "reference_gradient_norm": 1.6636828184127808,
+  "deepspeed_gradient_norm": 1.663705825805664,
+  "reference_losses": [
+    5.5430216789245605,
+    5.629558086395264,
+    5.583232402801514,
+    5.519392013549805
+  ],
+  "deepspeed_losses": [
+    5.5430216789245605,
+    5.629558086395264,
+    5.583232402801514,
+    5.519392013549805
+  ],
+  "criterion": "relative update L2 error <= 0.05; finite losses and parameters",
+  "passed": true
+}

@@ -21,6 +21,7 @@ The central result is:
 - Reduced a 24K-prefill-induced decode P99 stall from **51.89× to 4.23×** by tuning vLLM's chunked-prefill budget, with five repeated blocks and bootstrap confidence intervals.
 - Reproduced the scheduler direction on **Qwen2.5-7B**: 4K and 1K chunk budgets reduced the decode stall ratio by **77.9% and 93.3%**, respectively.
 - Implemented Triton/TileLang RMSNorm, SwiGLU and W4A16 kernels with **5,120 timing records**; measured a **2.34× RMSNorm forward improvement** over the tested dynamic `torch.compile` configuration at BF16 512 × 3584, while retaining regressions and numerical failures in the report.
+- Measured **2,100 distributed-training updates** on four A100s: ZeRO-3 reduced peak allocated memory by **29.9%** versus ZeRO-1 at a **40.4% throughput cost**, after a reference-update gate rejected a numerically faulty baseline.
 
 ## System under test
 
@@ -31,6 +32,8 @@ The central result is:
 | Serving GPU | 1× NVIDIA A100 80GB PCIe |
 | Kernel baseline GPU | 1× NVIDIA RTX 4070 12GB |
 | S9 fused-kernel GPU | 1× NVIDIA A100 80GB PCIe |
+| S10 training GPU | One host with 4× NVIDIA A100 SXM 80GB; NVLink between every GPU pair |
+| S10 training workload | Random 7B-class Qwen-shaped models; BF16, synthetic tokens, AdamW |
 | Serving precision | BF16 |
 | Serving engines | vLLM 0.28.0 and SGLang 0.5.19 |
 | Request shape for S6/S7 | 512 input / 128 output tokens |
@@ -299,6 +302,33 @@ for strong-baseline comparisons, rejected pilots, the 200-request length-matched
 model replay, and the distinction between Kineto estimates and unavailable
 hardware counters. These model-path measurements are not vLLM serving gains.
 
+## S10: distributed training needs numerical gates
+
+The training extension compares DeepSpeed ZeRO state sharding and Megatron-Core
+TP/PP layouts on one four-A100 host. Global input tokens per update remain fixed
+as data-parallel degree changes. Capacity failures, independent repeated runs,
+and separate communication profiles are retained.
+
+A tiny-model AdamW reference check rejected a DeepSpeed 0.17.6 ZeRO-2 baseline
+despite finite losses. The accepted runtime pins **DeepSpeed 0.17.5** after
+checking both parameter updates and gradient norms on two and four ranks.
+Megatron-Core uses its pinned 0.14.0 local backend; cross-framework throughput
+differences are not attributed solely to parallelism.
+
+Across three independent runs per layout, four-rank ZeRO-3 reduces peak allocated
+memory from **56.76 to 39.77 GiB** relative to ZeRO-1, at a **40.4% throughput
+cost**. Two-to-four-rank ZeRO-3 scaling is **1.89×** at fixed global tokens.
+Within Megatron's local backend, PP4 reaches **1.49×** TP4 throughput with about
+**5.58 GiB** more peak memory. Per-run ranges and separate NCCL profiles preserve
+the measurement limits.
+
+![S10 training throughput and memory](results/s10/analysis/distributed_training.png)
+
+See the [S10 results](docs/s10_results.md), [protocol](docs/s10_distributed_protocol.md) and
+[numerical regression case study](docs/s10_numerical_regression.md).
+These are synthetic training-system measurements, not convergence or serving
+benchmarks.
+
 ## Experimental progression
 
 | Stage | Question |
@@ -314,6 +344,7 @@ hardware counters. These model-path measurements are not vLLM serving gains.
 | S7 | Can client, scheduler, and GPU telemetry explain load transitions and stability? |
 | S8 | How does chunked-prefill scheduling trade long-request TTFT for decode fairness? |
 | S9 | When does operator fusion beat compiled baselines and preserve pretrained-model behavior? |
+| S10 | How do state sharding and TP/PP trade capacity, throughput and communication after numerical checks? |
 
 ## Repository structure
 
@@ -329,7 +360,10 @@ hardware counters. These model-path measurements are not vLLM serving gains.
 │   ├── s8_profiler_results.md
 │   ├── s8_results.md
 │   ├── s9_kernel_protocol.md
-│   └── s9_results.md
+│   ├── s9_results.md
+│   ├── s10_distributed_protocol.md
+│   ├── s10_numerical_regression.md
+│   └── s10_results.md
 ├── monitoring/
 │   ├── dcgm/
 │   ├── grafana/
@@ -345,7 +379,8 @@ hardware counters. These model-path measurements are not vLLM serving gains.
 │   ├── s6/
 │   ├── s7/
 │   ├── s8/
-│   └── s9/
+│   ├── s9/
+│   └── s10/
 ├── src/
 └── workloads/
     └── final/
@@ -411,6 +446,18 @@ MODEL=/path/to/Qwen2.5-1.5B-Instruct bash src/run_s9.sh
 
 Accepted per-block S9 measurements are included under `results/s9/runs/`;
 the protocol records arithmetic, compilation, profiling and replay boundaries.
+
+S10 analysis uses published rank records and requires no GPU:
+
+```bash
+python src/s10_analyze.py results/s10/runs --output results/s10/analysis
+python src/s10_plot.py results/s10/analysis/runs.json results/s10/analysis/distributed_training.png
+python src/s10_verify_results.py
+```
+
+GPU reproduction uses the pinned setup and explicit matrices described in the
+[S10 report](docs/s10_results.md). Capacity failures and rejected numerical
+pilots remain separate from accepted formal timing runs.
 
 ## Measurement boundaries
 

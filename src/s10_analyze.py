@@ -1,6 +1,7 @@
 """Validate all-rank formal S10 artifacts and summarize independent runs."""
 import argparse
 import csv
+from collections import defaultdict
 import json
 import math
 from pathlib import Path
@@ -71,6 +72,20 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output/"runs.json").write_text(json.dumps(rows, indent=2))
     accepted = [r for r in rows if r["accepted"]]
+    groups = defaultdict(list)
+    for row in accepted:
+        key = (row['backend'],row['world'],row.get('stage'),row.get('tp'),row.get('pp'))
+        groups[key].append(row)
+    summary=[]
+    for key, group in groups.items():
+        entry=dict(zip(('backend','world','stage','tp','pp'),key))
+        entry.update(runs=len(group),blocks=sorted(r.get('block',-1) for r in group))
+        for metric in ('tokens_per_second','median_step_seconds','p95_step_seconds',
+                       'max_rank_peak_allocated_gib','max_rank_peak_reserved_gib'):
+            values=[r[metric] for r in group]
+            entry[metric]={'median':statistics.median(values),'min':min(values),'max':max(values)}
+        summary.append(entry)
+    (args.output/'summary.json').write_text(json.dumps(summary,indent=2))
     fields = ["run","backend","model","world","stage","tp","pp","steps",
               "median_step_seconds","p95_step_seconds","tokens_per_second",
               "max_rank_peak_allocated_gib","max_rank_peak_reserved_gib"]

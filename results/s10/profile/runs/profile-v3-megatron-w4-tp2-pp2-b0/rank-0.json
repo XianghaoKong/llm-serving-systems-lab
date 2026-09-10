@@ -1,0 +1,270 @@
+{
+  "complete": true,
+  "argv": [
+    "--tensor-model-parallel-size",
+    "2",
+    "--pipeline-model-parallel-size",
+    "2",
+    "--num-layers",
+    "28",
+    "--hidden-size",
+    "3584",
+    "--ffn-hidden-size",
+    "18944",
+    "--num-attention-heads",
+    "28",
+    "--group-query-attention",
+    "--num-query-groups",
+    "4",
+    "--seq-length",
+    "512",
+    "--max-position-embeddings",
+    "4096",
+    "--micro-batch-size",
+    "1",
+    "--global-batch-size",
+    "16",
+    "--train-iters",
+    "22",
+    "--lr",
+    "0.0001",
+    "--min-lr",
+    "0.0001",
+    "--lr-decay-style",
+    "constant",
+    "--weight-decay",
+    "0.01",
+    "--adam-beta1",
+    "0.9",
+    "--adam-beta2",
+    "0.95",
+    "--adam-eps",
+    "1e-8",
+    "--clip-grad",
+    "1.0",
+    "--bf16",
+    "--seed",
+    "2026",
+    "--mock-data",
+    "--tokenizer-type",
+    "NullTokenizer",
+    "--vocab-size",
+    "152064",
+    "--transformer-impl",
+    "local",
+    "--normalization",
+    "RMSNorm",
+    "--norm-epsilon",
+    "1e-6",
+    "--swiglu",
+    "--position-embedding-type",
+    "rope",
+    "--untie-embeddings-and-output-weights",
+    "--disable-bias-linear",
+    "--attention-dropout",
+    "0",
+    "--hidden-dropout",
+    "0",
+    "--no-masked-softmax-fusion",
+    "--no-bias-swiglu-fusion",
+    "--no-bias-dropout-fusion",
+    "--no-rope-fusion",
+    "--no-persist-layer-norm",
+    "--no-gradient-accumulation-fusion",
+    "--num-workers",
+    "0",
+    "--eval-iters",
+    "0",
+    "--eval-interval",
+    "100000",
+    "--log-interval",
+    "10",
+    "--no-save-optim",
+    "--no-save-rng",
+    "--distributed-timeout-minutes",
+    "5"
+  ],
+  "warmup": 20,
+  "expected_steps": 2,
+  "profile": true,
+  "upstream_commit": "23e00ed0963c35382dfe8a5a94fb3cda4d21e133",
+  "training_config": {
+    "num_layers": 28,
+    "hidden_size": 3584,
+    "ffn_hidden_size": 18944,
+    "num_attention_heads": 28,
+    "num_query_groups": 4,
+    "padded_vocab_size": 152320,
+    "seq_length": 512,
+    "global_batch_size": 16,
+    "micro_batch_size": 1,
+    "data_parallel_size": 1,
+    "tensor_model_parallel_size": 2,
+    "pipeline_model_parallel_size": 2,
+    "bf16": true,
+    "transformer_impl": "local"
+  },
+  "peak_allocated_bytes": 42038040576,
+  "peak_reserved_bytes": 44734349312,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.8.0+cu128",
+  "rank": 0,
+  "world_size": 4,
+  "records": [
+    {
+      "step": 0,
+      "measured": false,
+      "seconds": 5.899933290667832,
+      "loss": {},
+      "gradient_norm": 41.73527145385742
+    },
+    {
+      "step": 1,
+      "measured": false,
+      "seconds": 1.3741838866844773,
+      "loss": {},
+      "gradient_norm": 40.55223846435547
+    },
+    {
+      "step": 2,
+      "measured": false,
+      "seconds": 1.3075506770983338,
+      "loss": {},
+      "gradient_norm": 33.34238052368164
+    },
+    {
+      "step": 3,
+      "measured": false,
+      "seconds": 1.3173329010605812,
+      "loss": {},
+      "gradient_norm": 41.49773025512695
+    },
+    {
+      "step": 4,
+      "measured": false,
+      "seconds": 1.3119264487177134,
+      "loss": {},
+      "gradient_norm": 31.888202667236328
+    },
+    {
+      "step": 5,
+      "measured": false,
+      "seconds": 1.3088393015787005,
+      "loss": {},
+      "gradient_norm": 18.0234432220459
+    },
+    {
+      "step": 6,
+      "measured": false,
+      "seconds": 1.3276819959282875,
+      "loss": {},
+      "gradient_norm": 20.89249038696289
+    },
+    {
+      "step": 7,
+      "measured": false,
+      "seconds": 1.3714308328926563,
+      "loss": {},
+      "gradient_norm": 18.354875564575195
+    },
+    {
+      "step": 8,
+      "measured": false,
+      "seconds": 1.366755435243249,
+      "loss": {},
+      "gradient_norm": 17.780996322631836
+    },
+    {
+      "step": 9,
+      "measured": false,
+      "seconds": 1.3285755086690187,
+      "loss": {},
+      "gradient_norm": 14.221487045288086
+    },
+    {
+      "step": 10,
+      "measured": false,
+      "seconds": 1.3282009800896049,
+      "loss": {},
+      "gradient_norm": 18.785987854003906
+    },
+    {
+      "step": 11,
+      "measured": false,
+      "seconds": 1.3291340908035636,
+      "loss": {},
+      "gradient_norm": 16.417985916137695
+    },
+    {
+      "step": 12,
+      "measured": false,
+      "seconds": 1.3278577513992786,
+      "loss": {},
+      "gradient_norm": 12.771382331848145
+    },
+    {
+      "step": 13,
+      "measured": false,
+      "seconds": 1.3320703376084566,
+      "loss": {},
+      "gradient_norm": 15.411293029785156
+    },
+    {
+      "step": 14,
+      "measured": false,
+      "seconds": 1.3098622793331742,
+      "loss": {},
+      "gradient_norm": 11.721717834472656
+    },
+    {
+      "step": 15,
+      "measured": false,
+      "seconds": 1.3170611839741468,
+      "loss": {},
+      "gradient_norm": 7.33687686920166
+    },
+    {
+      "step": 16,
+      "measured": false,
+      "seconds": 1.3083729054778814,
+      "loss": {},
+      "gradient_norm": 11.766186714172363
+    },
+    {
+      "step": 17,
+      "measured": false,
+      "seconds": 1.348684886470437,
+      "loss": {},
+      "gradient_norm": 12.533896446228027
+    },
+    {
+      "step": 18,
+      "measured": false,
+      "seconds": 1.3673764038830996,
+      "loss": {},
+      "gradient_norm": 10.945343971252441
+    },
+    {
+      "step": 19,
+      "measured": false,
+      "seconds": 1.3666582452133298,
+      "loss": {},
+      "gradient_norm": 12.258465766906738
+    },
+    {
+      "step": 20,
+      "measured": true,
+      "seconds": 1.6342854257673025,
+      "loss": {},
+      "gradient_norm": 12.11825180053711
+    },
+    {
+      "step": 21,
+      "measured": true,
+      "seconds": 1.6446007583290339,
+      "loss": {},
+      "gradient_norm": 8.612765312194824
+    }
+  ],
+  "formal": false
+}

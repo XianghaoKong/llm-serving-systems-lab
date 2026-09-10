@@ -1,2 +1,5 @@
 src/run_s9.sh text eol=lf
 src/run_s10_setup.sh text eol=lf
+# Captured tool output intentionally retains its original whitespace.
+results/s10/capacity/**/process.txt text eol=lf -whitespace
+results/s10/environment/nvidia-smi*.txt text eol=lf -whitespace

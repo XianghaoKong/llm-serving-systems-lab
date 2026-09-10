@@ -71,6 +71,19 @@
     "backend": "megatron",
     "world": 4,
     "profile": true
+  },
+  {
+    "block": 0,
+    "steps": 2,
+    "warmup": 20,
+    "timeout": 1200,
+    "sequence": 512,
+    "output": "/workspace/s10/profile-v3-zero-w4-s2-b0",
+    "global_tokens": 8192,
+    "stage": 2,
+    "model": "qwen7b",
+    "backend": "zero",
+    "world": 4,
+    "profile": true
   }
 ]
-

@@ -1,0 +1,314 @@
+{
+  "complete": true,
+  "argv": [
+    "--tensor-model-parallel-size",
+    "1",
+    "--pipeline-model-parallel-size",
+    "4",
+    "--num-layers",
+    "28",
+    "--hidden-size",
+    "3584",
+    "--ffn-hidden-size",
+    "18944",
+    "--num-attention-heads",
+    "28",
+    "--group-query-attention",
+    "--num-query-groups",
+    "4",
+    "--seq-length",
+    "512",
+    "--max-position-embeddings",
+    "4096",
+    "--micro-batch-size",
+    "1",
+    "--global-batch-size",
+    "16",
+    "--train-iters",
+    "22",
+    "--lr",
+    "0.0001",
+    "--min-lr",
+    "0.0001",
+    "--lr-decay-style",
+    "constant",
+    "--weight-decay",
+    "0.01",
+    "--adam-beta1",
+    "0.9",
+    "--adam-beta2",
+    "0.95",
+    "--adam-eps",
+    "1e-8",
+    "--clip-grad",
+    "1.0",
+    "--bf16",
+    "--seed",
+    "2026",
+    "--mock-data",
+    "--tokenizer-type",
+    "NullTokenizer",
+    "--vocab-size",
+    "152064",
+    "--transformer-impl",
+    "local",
+    "--normalization",
+    "RMSNorm",
+    "--norm-epsilon",
+    "1e-6",
+    "--swiglu",
+    "--position-embedding-type",
+    "rope",
+    "--untie-embeddings-and-output-weights",
+    "--disable-bias-linear",
+    "--attention-dropout",
+    "0",
+    "--hidden-dropout",
+    "0",
+    "--no-masked-softmax-fusion",
+    "--no-bias-swiglu-fusion",
+    "--no-bias-dropout-fusion",
+    "--no-rope-fusion",
+    "--no-persist-layer-norm",
+    "--no-gradient-accumulation-fusion",
+    "--num-workers",
+    "0",
+    "--eval-iters",
+    "0",
+    "--eval-interval",
+    "100000",
+    "--log-interval",
+    "10",
+    "--no-save-optim",
+    "--no-save-rng",
+    "--distributed-timeout-minutes",
+    "5"
+  ],
+  "warmup": 20,
+  "expected_steps": 2,
+  "profile": true,
+  "upstream_commit": "23e00ed0963c35382dfe8a5a94fb3cda4d21e133",
+  "training_config": {
+    "num_layers": 28,
+    "hidden_size": 3584,
+    "ffn_hidden_size": 18944,
+    "num_attention_heads": 28,
+    "num_query_groups": 4,
+    "padded_vocab_size": 152192,
+    "seq_length": 512,
+    "global_batch_size": 16,
+    "micro_batch_size": 1,
+    "data_parallel_size": 1,
+    "tensor_model_parallel_size": 1,
+    "pipeline_model_parallel_size": 4,
+    "bf16": true,
+    "transformer_impl": "local"
+  },
+  "peak_allocated_bytes": 47995529216,
+  "peak_reserved_bytes": 50618957824,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.8.0+cu128",
+  "rank": 3,
+  "world_size": 4,
+  "records": [
+    {
+      "step": 0,
+      "measured": false,
+      "seconds": 6.7298412239179015,
+      "loss": {
+        "lm loss": 12.625873565673828
+      },
+      "gradient_norm": 41.75626754760742
+    },
+    {
+      "step": 1,
+      "measured": false,
+      "seconds": 1.2502562776207924,
+      "loss": {
+        "lm loss": 8.723479270935059
+      },
+      "gradient_norm": 40.29245376586914
+    },
+    {
+      "step": 2,
+      "measured": false,
+      "seconds": 1.232513333670795,
+      "loss": {
+        "lm loss": 6.731870174407959
+      },
+      "gradient_norm": 33.3941535949707
+    },
+    {
+      "step": 3,
+      "measured": false,
+      "seconds": 1.2355179591104388,
+      "loss": {
+        "lm loss": 4.314666271209717
+      },
+      "gradient_norm": 37.431129455566406
+    },
+    {
+      "step": 4,
+      "measured": false,
+      "seconds": 1.2323399828746915,
+      "loss": {
+        "lm loss": 3.1689348220825195
+      },
+      "gradient_norm": 27.806472778320312
+    },
+    {
+      "step": 5,
+      "measured": false,
+      "seconds": 1.2362304395064712,
+      "loss": {
+        "lm loss": 1.490494728088379
+      },
+      "gradient_norm": 17.910856246948242
+    },
+    {
+      "step": 6,
+      "measured": false,
+      "seconds": 1.233687891624868,
+      "loss": {
+        "lm loss": 1.9800074100494385
+      },
+      "gradient_norm": 20.975465774536133
+    },
+    {
+      "step": 7,
+      "measured": false,
+      "seconds": 1.233931628987193,
+      "loss": {
+        "lm loss": 1.5869226455688477
+      },
+      "gradient_norm": 19.058931350708008
+    },
+    {
+      "step": 8,
+      "measured": false,
+      "seconds": 1.2326813852414489,
+      "loss": {
+        "lm loss": 1.3777474164962769
+      },
+      "gradient_norm": 17.365732192993164
+    },
+    {
+      "step": 9,
+      "measured": false,
+      "seconds": 1.2330431817099452,
+      "loss": {
+        "lm loss": 1.3748667240142822
+      },
+      "gradient_norm": 14.697094917297363
+    },
+    {
+      "step": 10,
+      "measured": false,
+      "seconds": 1.2338965814560652,
+      "loss": {
+        "lm loss": 0.7505152225494385
+      },
+      "gradient_norm": 12.26685619354248
+    },
+    {
+      "step": 11,
+      "measured": false,
+      "seconds": 1.2372740972787142,
+      "loss": {
+        "lm loss": 1.5157864093780518
+      },
+      "gradient_norm": 20.917051315307617
+    },
+    {
+      "step": 12,
+      "measured": false,
+      "seconds": 1.235258194617927,
+      "loss": {
+        "lm loss": 0.8808585405349731
+      },
+      "gradient_norm": 13.929362297058105
+    },
+    {
+      "step": 13,
+      "measured": false,
+      "seconds": 1.2372113596647978,
+      "loss": {
+        "lm loss": 1.0720545053482056
+      },
+      "gradient_norm": 19.22273826599121
+    },
+    {
+      "step": 14,
+      "measured": false,
+      "seconds": 1.233305137604475,
+      "loss": {
+        "lm loss": 0.8940209150314331
+      },
+      "gradient_norm": 35.21828079223633
+    },
+    {
+      "step": 15,
+      "measured": false,
+      "seconds": 1.2337043406441808,
+      "loss": {
+        "lm loss": 0.3984544575214386
+      },
+      "gradient_norm": 8.590229034423828
+    },
+    {
+      "step": 16,
+      "measured": false,
+      "seconds": 1.233654416166246,
+      "loss": {
+        "lm loss": 0.7359045743942261
+      },
+      "gradient_norm": 14.82909870147705
+    },
+    {
+      "step": 17,
+      "measured": false,
+      "seconds": 1.2343905558809638,
+      "loss": {
+        "lm loss": 0.5939692258834839
+      },
+      "gradient_norm": 12.493343353271484
+    },
+    {
+      "step": 18,
+      "measured": false,
+      "seconds": 1.2335877604782581,
+      "loss": {
+        "lm loss": 0.7932630777359009
+      },
+      "gradient_norm": 10.262080192565918
+    },
+    {
+      "step": 19,
+      "measured": false,
+      "seconds": 1.2341696973890066,
+      "loss": {
+        "lm loss": 0.7715696096420288
+      },
+      "gradient_norm": 12.595902442932129
+    },
+    {
+      "step": 20,
+      "measured": true,
+      "seconds": 1.2967224409803748,
+      "loss": {
+        "lm loss": 0.6864323616027832
+      },
+      "gradient_norm": 12.135924339294434
+    },
+    {
+      "step": 21,
+      "measured": true,
+      "seconds": 1.2985707577317953,
+      "loss": {
+        "lm loss": 0.48465490341186523
+      },
+      "gradient_norm": 8.985506057739258
+    }
+  ],
+  "formal": false
+}

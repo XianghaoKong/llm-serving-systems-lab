@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "archive_sha256": "3322eb94fc40a37db123c7214f8609a0d953d65a154a62fcf8cf6feaabe556f5",
+  "formal_runs": 21,
+  "optimizer_updates": 2100,
+  "rank_records": 78,
+  "numerical_records": 18,
+  "gpu_profiles": 24
+}

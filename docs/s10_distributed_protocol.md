@@ -1,6 +1,8 @@
 # S10: training-state sharding and model parallelism
 
-Status: formal experiment execution; results are not yet finalized.
+Status: core experiment complete on 2026-09-10. All 21 formal runs and six
+separate profiling runs passed; the full archive was verified locally before
+stopping compute. See the [results](s10_results.md) for data and limitations.
 S10 resumed by the user on 2026-09-10. The S9+S10 incremental budget remains
 USD 50; this session targets at most USD 30 additional spend. Stop compute and
 retain data after the session. Old Pods stay stopped.

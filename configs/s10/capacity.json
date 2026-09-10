@@ -82,5 +82,70 @@
     "global_tokens": 8192,
     "output": "/workspace/s10/capacity-v3-zero-w4-s3",
     "backend": "zero"
+  },
+  {
+    "timeout": 240,
+    "steps": 2,
+    "sequence": 512,
+    "output": "/workspace/s10/capacity-v2-megatron-w2-tp1-pp2",
+    "world": 2,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "pp": 2,
+    "tp": 1,
+    "backend": "megatron"
+  },
+  {
+    "timeout": 240,
+    "steps": 2,
+    "sequence": 512,
+    "output": "/workspace/s10/capacity-v2-megatron-w2-tp2-pp1",
+    "world": 2,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "pp": 1,
+    "tp": 2,
+    "backend": "megatron"
+  },
+  {
+    "timeout": 240,
+    "steps": 2,
+    "sequence": 512,
+    "output": "/workspace/s10/capacity-v2-megatron-w4-tp2-pp2",
+    "world": 4,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "pp": 2,
+    "tp": 2,
+    "backend": "megatron"
+  },
+  {
+    "timeout": 240,
+    "steps": 2,
+    "sequence": 512,
+    "output": "/workspace/s10/capacity-v2-megatron-w4-tp4-pp1",
+    "world": 4,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "pp": 1,
+    "tp": 4,
+    "backend": "megatron"
+  },
+  {
+    "timeout": 240,
+    "steps": 2,
+    "sequence": 512,
+    "output": "/workspace/s10/capacity-v2-megatron-w4-tp1-pp4",
+    "world": 4,
+    "warmup": 1,
+    "model": "qwen7b",
+    "global_tokens": 8192,
+    "pp": 4,
+    "tp": 1,
+    "backend": "megatron"
   }
 ]

@@ -5,12 +5,10 @@ distributed model execution. Existing R0–S8 data and workloads stay frozen.
 The incremental GPU budget is USD 50, authorized on 2026-09-10. Stop paid
 compute after each experiment session and retain artifacts on volume storage.
 
-Update (2026-09-10): finish S9 only, then stop the experiment Pod. S10 is paused;
-its local scaffold is not a completed experiment and no multi-GPU Pod is needed.
-
-Later update (2026-09-10): S9 completed and its Pod stopped. The user resumed S10.
-See `s10_distributed_protocol.md` for the active scope. One four-A100-SXM Pod is
-used at USD 6.36/hour with a four-hour stop watchdog; the old Pods stay stopped.
+Status (2026-09-10): S9 and the resumed S10 core experiment are complete. S10
+used one four-A100-SXM Pod at USD 6.36/hour, with a timestamp-based compute
+estimate of USD 12.83. The complete archive was verified before stopping the Pod;
+all four retained Pods are stopped. See [S10 results](s10_results.md).
 
 ## S9: fused kernels
 
@@ -36,6 +34,12 @@ used at USD 6.36/hour with a four-hour stop watchdog; the old Pods stay stopped.
    speedup vanishes. Preserve Qwen's intermediate normalization cast explicitly.
 
 ## S10: distributed training
+
+Core scope completed on 2026-09-10: seven layouts, three independent runs each,
+2100 measured updates, 18 accepted numerical rank records and 24 separate GPU
+profiles. The full archive passed local verification and the experiment Pod
+was stopped. See [S10 results](s10_results.md). The 14B extension and S11 were
+not run.
 
 1. DeepSpeed ZeRO 0/1/2/3, world sizes 1/2/4 where affordable. Use synthetic
    token batches, BF16, AdamW, identical model and global tokens per update.

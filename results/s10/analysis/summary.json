@@ -1,0 +1,268 @@
+[
+  {
+    "backend": "megatron",
+    "world": 4,
+    "stage": null,
+    "tp": 1,
+    "pp": 4,
+    "runs": 3,
+    "blocks": [
+      0,
+      1,
+      2
+    ],
+    "tokens_per_second": {
+      "median": 6637.654707814753,
+      "min": 6635.553297089195,
+      "max": 6637.717058576433
+    },
+    "median_step_seconds": {
+      "median": 1.2346853399649262,
+      "min": 1.234683133661747,
+      "max": 1.23469668161124
+    },
+    "p95_step_seconds": {
+      "median": 1.2372038975823672,
+      "min": 1.2370426481589676,
+      "max": 1.239539060043171
+    },
+    "max_rank_peak_allocated_gib": {
+      "median": 44.70224952697754,
+      "min": 44.70029640197754,
+      "max": 44.70322608947754
+    },
+    "max_rank_peak_reserved_gib": {
+      "median": 48.59765625,
+      "min": 48.58203125,
+      "max": 48.59765625
+    }
+  },
+  {
+    "backend": "megatron",
+    "world": 4,
+    "stage": null,
+    "tp": 2,
+    "pp": 2,
+    "runs": 3,
+    "blocks": [
+      0,
+      1,
+      2
+    ],
+    "tokens_per_second": {
+      "median": 6196.9031831611765,
+      "min": 6169.827037763559,
+      "max": 6279.007423867276
+    },
+    "median_step_seconds": {
+      "median": 1.3216750617139041,
+      "min": 1.304257942829281,
+      "max": 1.328334885649383
+    },
+    "p95_step_seconds": {
+      "median": 1.332015324383974,
+      "min": 1.310131475236267,
+      "max": 1.3337163316551597
+    },
+    "max_rank_peak_allocated_gib": {
+      "median": 39.154218673706055,
+      "min": 39.152509689331055,
+      "max": 39.155683517456055
+    },
+    "max_rank_peak_reserved_gib": {
+      "median": 41.689453125,
+      "min": 41.677734375,
+      "max": 41.689453125
+    }
+  },
+  {
+    "backend": "megatron",
+    "world": 4,
+    "stage": null,
+    "tp": 4,
+    "pp": 1,
+    "runs": 3,
+    "blocks": [
+      0,
+      1,
+      2
+    ],
+    "tokens_per_second": {
+      "median": 4463.612267927401,
+      "min": 4450.612907058259,
+      "max": 4749.663925799224
+    },
+    "median_step_seconds": {
+      "median": 1.8240603269077837,
+      "min": 1.7218391140922904,
+      "max": 1.8336678044870496
+    },
+    "p95_step_seconds": {
+      "median": 1.8797620365396142,
+      "min": 1.7457232267130167,
+      "max": 1.9025479395873846
+    },
+    "max_rank_peak_allocated_gib": {
+      "median": 39.118669509887695,
+      "min": 39.118181228637695,
+      "max": 39.118669509887695
+    },
+    "max_rank_peak_reserved_gib": {
+      "median": 40.216796875,
+      "min": 40.21484375,
+      "max": 40.21875
+    }
+  },
+  {
+    "backend": "zero",
+    "world": 2,
+    "stage": 3,
+    "tp": null,
+    "pp": null,
+    "runs": 3,
+    "blocks": [
+      0,
+      1,
+      2
+    ],
+    "tokens_per_second": {
+      "median": 2577.816007768928,
+      "min": 2510.5928643890184,
+      "max": 2598.3828582782826
+    },
+    "median_step_seconds": {
+      "median": 3.157230807468295,
+      "min": 3.11045871861279,
+      "max": 3.2396650831215084
+    },
+    "p95_step_seconds": {
+      "median": 3.298219634639099,
+      "min": 3.2977800778113306,
+      "max": 3.4115173374768344
+    },
+    "max_rank_peak_allocated_gib": {
+      "median": 68.25657892227173,
+      "min": 68.25657892227173,
+      "max": 68.25657892227173
+    },
+    "max_rank_peak_reserved_gib": {
+      "median": 75.8671875,
+      "min": 75.8671875,
+      "max": 75.8671875
+    }
+  },
+  {
+    "backend": "zero",
+    "world": 4,
+    "stage": 1,
+    "tp": null,
+    "pp": null,
+    "runs": 3,
+    "blocks": [
+      0,
+      1,
+      2
+    ],
+    "tokens_per_second": {
+      "median": 8174.621769095466,
+      "min": 8174.1964343791815,
+      "max": 8175.750268611558
+    },
+    "median_step_seconds": {
+      "median": 1.0019161235541105,
+      "min": 1.001711354125291,
+      "max": 1.0019935499876738
+    },
+    "p95_step_seconds": {
+      "median": 1.0045588097069413,
+      "min": 1.003861063765362,
+      "max": 1.0048087101895362
+    },
+    "max_rank_peak_allocated_gib": {
+      "median": 56.75701093673706,
+      "min": 56.75701093673706,
+      "max": 56.75701093673706
+    },
+    "max_rank_peak_reserved_gib": {
+      "median": 73.083984375,
+      "min": 73.083984375,
+      "max": 73.083984375
+    }
+  },
+  {
+    "backend": "zero",
+    "world": 4,
+    "stage": 2,
+    "tp": null,
+    "pp": null,
+    "runs": 3,
+    "blocks": [
+      0,
+      1,
+      2
+    ],
+    "tokens_per_second": {
+      "median": 5851.367180670401,
+      "min": 5848.950234274723,
+      "max": 5852.750269823626
+    },
+    "median_step_seconds": {
+      "median": 1.4003176307305694,
+      "min": 1.3997436738573015,
+      "max": 1.4007594515569508
+    },
+    "p95_step_seconds": {
+      "median": 1.4025822433177382,
+      "min": 1.402500008000061,
+      "max": 1.4033964333124458
+    },
+    "max_rank_peak_allocated_gib": {
+      "median": 56.75701093673706,
+      "min": 56.75701093673706,
+      "max": 56.75701093673706
+    },
+    "max_rank_peak_reserved_gib": {
+      "median": 67.99609375,
+      "min": 67.99609375,
+      "max": 67.99609375
+    }
+  },
+  {
+    "backend": "zero",
+    "world": 4,
+    "stage": 3,
+    "tp": null,
+    "pp": null,
+    "runs": 3,
+    "blocks": [
+      0,
+      1,
+      2
+    ],
+    "tokens_per_second": {
+      "median": 4875.063869809088,
+      "min": 4802.220296704811,
+      "max": 4904.566728619846
+    },
+    "median_step_seconds": {
+      "median": 1.6426401119679213,
+      "min": 1.6396737447939813,
+      "max": 1.6801770073361695
+    },
+    "p95_step_seconds": {
+      "median": 1.8754442467354235,
+      "min": 1.8202367869205773,
+      "max": 1.897369645629078
+    },
+    "max_rank_peak_allocated_gib": {
+      "median": 39.772815227508545,
+      "min": 39.772815227508545,
+      "max": 39.772815227508545
+    },
+    "max_rank_peak_reserved_gib": {
+      "median": 57.81640625,
+      "min": 57.81640625,
+      "max": 57.81640625
+    }
+  }
+]
