@@ -8,6 +8,10 @@ compute after each experiment session and retain artifacts on volume storage.
 Update (2026-09-10): finish S9 only, then stop the experiment Pod. S10 is paused;
 its local scaffold is not a completed experiment and no multi-GPU Pod is needed.
 
+Later update (2026-09-10): S9 completed and its Pod stopped. The user resumed S10.
+See `s10_distributed_protocol.md` for the active scope. One four-A100-SXM Pod is
+used at USD 6.36/hour with a four-hour stop watchdog; the old Pods stay stopped.
+
 ## S9: fused kernels
 
 1. RMSNorm and SwiGLU forward/backward: PyTorch eager and compile, Liger,
