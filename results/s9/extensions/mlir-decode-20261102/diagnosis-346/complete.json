@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "paired_requests": 200,
+  "hybrid_requests": 32,
+  "end": {
+    "time_unix": 1793559636.35795,
+    "csv": "NVIDIA GeForce RTX 4070, 610.88, 62, 122.64, 2775, 10251, 22, 4037",
+    "error": ""
+  }
+}

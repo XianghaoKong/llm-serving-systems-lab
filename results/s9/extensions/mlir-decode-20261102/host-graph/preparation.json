@@ -1,0 +1,32 @@
+[
+  {
+    "length": 33,
+    "prepare_ms": 3386.246409,
+    "kv_buffer_bytes": 3670016,
+    "allocated_before": 3096899584,
+    "allocated_after": 3118518784,
+    "peak_allocated": 3120528384,
+    "reserved_after": 3342860288,
+    "graphs": 31
+  },
+  {
+    "length": 346,
+    "prepare_ms": 3440.700751,
+    "kv_buffer_bytes": 21618688,
+    "allocated_before": 3118555136,
+    "allocated_after": 3149602304,
+    "peak_allocated": 3160586240,
+    "reserved_after": 3384803328,
+    "graphs": 31
+  },
+  {
+    "length": 4096,
+    "prepare_ms": 3482.856005,
+    "kv_buffer_bytes": 236658688,
+    "allocated_before": 3149654016,
+    "allocated_after": 3395741184,
+    "peak_allocated": 3539757568,
+    "reserved_after": 3726639104,
+    "graphs": 31
+  }
+]

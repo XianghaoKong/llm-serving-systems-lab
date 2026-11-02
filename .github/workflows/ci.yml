@@ -40,10 +40,13 @@ jobs:
         run: python -m compileall -q src tests
 
       - name: Run unit tests
-        run: python -m unittest discover -s tests -v
+        run: python -m pytest -q tests
 
       - name: Verify published S9 artifact integrity
         run: python src/s9_verify_results.py
+
+      - name: Verify published S9 extension integrity
+        run: python src/s9_verify_extension.py
 
       - name: Verify published S10 artifact integrity
         run: python src/s10_verify_results.py

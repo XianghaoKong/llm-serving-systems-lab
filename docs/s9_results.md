@@ -12,6 +12,11 @@ See the [protocol](s9_kernel_protocol.md), [full operator table](../results/s9/s
 [timing records](../results/s9/runs/), [correctness reports](../results/s9/correctness/),
 and [profiling summary](../results/s9/profile/summary.json).
 
+**2026-11-02 extension:** [MLIR numerical compatibility, parallel reduction,
+host submission and exact-length CUDA Graphs](../results/s9/extensions/mlir-decode-20261102/).
+This separate RTX 4070 study includes source, reproducible commands, raw timing
+records and correctness checks. The A100 results below remain the original study.
+
 ![Operator latency on A100](../results/s9/summary/kernel_latency.png)
 
 The chart shows medians of block P50s, with bootstrap bands, for BF16 width

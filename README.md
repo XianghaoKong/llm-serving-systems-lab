@@ -303,6 +303,14 @@ for strong-baseline comparisons, rejected pilots, the 200-request length-matched
 model replay, and the distinction between Kineto estimates and unavailable
 hardware counters. These model-path measurements are not vLLM serving gains.
 
+The [S9 MLIR and decode-graph extension](results/s9/extensions/mlir-decode-20261102/)
+traces the first numerical difference to the reduction order, preserves ATen's
+order in a fused parallel RMSNorm, and reduces host submission overhead. On a
+separate **RTX 4070** run, the 346-token warm model loop falls from **411.918 to
+263.126 ms** (median paired change **−36.19%**), with bitwise-equal checked logits.
+Graph preparation costs about 3.4 seconds per length bucket. These local model
+measurements extend S9; they are not a rerun of the A100 study.
+
 ## S10: distributed training needs numerical gates
 
 The training extension compares DeepSpeed ZeRO state sharding and Megatron-Core

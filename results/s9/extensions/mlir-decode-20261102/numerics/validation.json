@@ -1,0 +1,671 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "torch": "2.8.0+cu128",
+  "cases": [
+    {
+      "name": "captured",
+      "shape": [
+        346,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 346,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 346,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_1x1536",
+      "shape": [
+        1,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 1,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 1,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_1x1536",
+      "shape": [
+        1,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 1,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 1,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_2x1536",
+      "shape": [
+        2,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 2,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 2,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_2x1536",
+      "shape": [
+        2,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 2,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 2,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_4x1536",
+      "shape": [
+        4,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 4,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 4,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_4x1536",
+      "shape": [
+        4,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 4,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 4,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_8x1536",
+      "shape": [
+        8,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 8,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 8,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_8x1536",
+      "shape": [
+        8,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 8,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 8,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_16x1536",
+      "shape": [
+        16,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 16,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 16,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_16x1536",
+      "shape": [
+        16,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 16,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 16,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_33x1536",
+      "shape": [
+        33,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 33,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 33,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_33x1536",
+      "shape": [
+        33,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 33,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 33,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_346x1536",
+      "shape": [
+        346,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 346,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 346,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_346x1536",
+      "shape": [
+        346,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 346,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 346,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "random_4096x1536",
+      "shape": [
+        4096,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 4096,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 4096,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    {
+      "name": "dynamic_4096x1536",
+      "shape": [
+        4096,
+        1536
+      ],
+      "cpu_mean": {
+        "elements": 4096,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_mean": {
+        "elements": 4096,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "gpu_output": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "repeat": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    }
+  ],
+  "performance_claim": false,
+  "passed": true
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "backend": "old",
+    "profiled_cpu_region_ms": 20.315103999999998,
+    "kernels": 769,
+    "rmsnorm_kernels": 57,
+    "rmsnorm_kernel_sum_ms": 1.970397,
+    "gpu_kernel_union_ms": 9.7029560546875,
+    "gpu_span_ms": 19.951673828125,
+    "gpu_between_kernel_gaps_ms": 10.2487177734375,
+    "note": "Profiler perturbs host execution; diagnostic only, gaps are not pure CPU time"
+  },
+  {
+    "backend": "new",
+    "profiled_cpu_region_ms": 18.874098999999998,
+    "kernels": 769,
+    "rmsnorm_kernels": 57,
+    "rmsnorm_kernel_sum_ms": 0.07938200000000001,
+    "gpu_kernel_union_ms": 7.85048095703125,
+    "gpu_span_ms": 18.7190927734375,
+    "gpu_between_kernel_gaps_ms": 10.86861181640625,
+    "note": "Profiler perturbs host execution; diagnostic only, gaps are not pure CPU time"
+  }
+]

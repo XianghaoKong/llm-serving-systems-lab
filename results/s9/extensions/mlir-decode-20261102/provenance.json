@@ -1,0 +1,101 @@
+{
+  "base_commit": "45a5bb5eddd333a336752aec7c4380ff6eff123d",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "hardware": "NVIDIA GeForce RTX 4070 12GB, WSL2 Ubuntu 24.04",
+  "original_s9_hardware": "NVIDIA A100 80GB PCIe; original results are unchanged",
+  "publication": "2026-11-02",
+  "records": [
+    {
+      "published_path": "host-graph/complete.json",
+      "original_run": "performance-host-graph-v2",
+      "original_sha256": "29502a982eb6fea927937e347eb66609d50d763d8e96872dd0f2c640db3fa703"
+    },
+    {
+      "published_path": "host-graph/correctness.json",
+      "original_run": "performance-host-graph-v2",
+      "original_sha256": "f7fc876c56082b80e5ff367407e4b4bdb93e14460881f29a3ca37440eb07bf84"
+    },
+    {
+      "published_path": "host-graph/environment.json",
+      "original_run": "performance-host-graph-v2",
+      "original_sha256": "6677e420a129421bbd9ab8a2b10c6d3632b9286b1529db725eea744ff334f902"
+    },
+    {
+      "published_path": "host-graph/host-micro.json",
+      "original_run": "performance-host-graph-v2",
+      "original_sha256": "e22232390410f91d520834b4b2fd49035b9a25b942f577cc56aaa30acb6a9356"
+    },
+    {
+      "published_path": "host-graph/model-records.jsonl",
+      "original_run": "performance-host-graph-v2",
+      "original_sha256": "f6fcca34bdee1a87b1e1bc48fc663dd55287fd14ea18148f98a97690594f0c85"
+    },
+    {
+      "published_path": "host-graph/models.json",
+      "original_run": "performance-host-graph-v2",
+      "original_sha256": "bd5e966b7abe0bab6fc35a31ba5f41d7cfaec6e2c2703fcf5b6f86e2959ddb3c"
+    },
+    {
+      "published_path": "host-graph/preparation.json",
+      "original_run": "performance-host-graph-v2",
+      "original_sha256": "6a502d290e861dc3a0beb1e469528207f7c303e3b1014a4821ed26ad843c6cc5"
+    },
+    {
+      "published_path": "parallel-reduction/operators.json",
+      "original_run": "performance-warp-v1",
+      "original_sha256": "ff1d4def927b76b3c7dbe89a93719594deb74e065c455aad1da05fe86ff90ebe"
+    },
+    {
+      "published_path": "diagnosis-346/complete.json",
+      "original_run": "diagnose-346-v1",
+      "original_sha256": "497be161184e182d67688b46eb5607c6baf4b11224ed46799612f6fe119c0428"
+    },
+    {
+      "published_path": "diagnosis-346/paired-records.jsonl",
+      "original_run": "diagnose-346-v1",
+      "original_sha256": "9a8d4ac41e352524335a2504d3d19dfb758517a157b470410f902f3b66a20653"
+    },
+    {
+      "published_path": "diagnosis-346/paired-summary.json",
+      "original_run": "diagnose-346-v1",
+      "original_sha256": "a20a2943f994f6a0838b12bf533ac087308b7eb8d41e2d1f521e9b7a223f245c"
+    },
+    {
+      "published_path": "diagnosis-346/profiles.json",
+      "original_run": "diagnose-346-v1",
+      "original_sha256": "fb7e2e2daeaec4c5d12497ee2bb0b78f71c0515b60f139263d6568cb23758cbb"
+    },
+    {
+      "published_path": "diagnosis-346/dispatch-summary.json",
+      "original_run": "diagnose-346-v1",
+      "original_sha256": "2920b2d74b6b3b9f42ae6f1e5040ab75398257eb1234a68180378b188a3d77bf"
+    },
+    {
+      "published_path": "diagnosis-346/graph-records.json",
+      "original_run": "diagnose-346-v1",
+      "original_sha256": "71a4a16173c189875f03c0cdab6e5f6fcfc2d8faa800cd95599ce45619eeff46"
+    },
+    {
+      "published_path": "diagnosis-346/hybrid-records.jsonl",
+      "original_run": "diagnose-346-v1",
+      "original_sha256": "dccf02dcc83495ce841d83a32a9fd9be439e143d6ea0fe2393d9a5b30e95d4be"
+    },
+    {
+      "published_path": "numerics/validation.json",
+      "original_run": "warp-validation-v1",
+      "original_sha256": "c7e69f4324155580153278aeeb4f5494e8257ae61f047e4ed69bdd2759ad5e55"
+    },
+    {
+      "published_path": "numerics/diagnosis.json",
+      "original_run": "probe-4070-32steps",
+      "original_sha256": "073b2f79d4828885d6ae3ca974c3276c5620b3b9494f7f571c4a7b92bcdedbc8"
+    }
+  ],
+  "transformations": [
+    "Local path arguments replaced with placeholders in host-graph/environment.json and numerics/diagnosis.json; all measured values retained.",
+    "host-graph/profile-summary.json is grouped from the marked region of a separate Kineto trace.",
+    "Original run byte hashes above identify pre-publication evidence. manifest.json hashes published UTF-8 text after CRLF-to-LF normalization."
+  ],
+  "omitted": "Model weights, tensor fixtures, virtual environments, native binaries, full profiler timelines and local review archives. Reproduction generates these locally."
+}

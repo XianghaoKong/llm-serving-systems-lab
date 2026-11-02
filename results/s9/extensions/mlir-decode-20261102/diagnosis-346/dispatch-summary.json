@@ -1,0 +1,16 @@
+{
+  "old": {
+    "cpu_enqueue_ms": 414.24207375,
+    "gpu_drain_ms": 1.05454425,
+    "wall_ms": 415.296618,
+    "cpu_prefill_ms": 14.148354375,
+    "cpu_decode_sum_ms": 399.1305408125
+  },
+  "new": {
+    "cpu_enqueue_ms": 419.1648676875,
+    "gpu_drain_ms": 1.018631,
+    "wall_ms": 420.1834986875,
+    "cpu_prefill_ms": 14.3635671875,
+    "cpu_decode_sum_ms": 403.826521625
+  }
+}

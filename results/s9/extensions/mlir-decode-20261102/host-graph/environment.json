@@ -1,0 +1,114 @@
+{
+  "args": {
+    "libraries": "<local libraries path>",
+    "before_adapter": "<local before_adapter path>",
+    "model": "<local model path>",
+    "output": "<local output path>",
+    "lengths": [
+      33,
+      346,
+      4096
+    ],
+    "blocks": 10
+  },
+  "torch": "2.8.0+cu128",
+  "start": {
+    "time_unix": 1793600010.4417658,
+    "csv": "NVIDIA GeForce RTX 4070, 610.88, 49, 36.95, 2505, 10501, 2, 181",
+    "error": ""
+  },
+  "backends": [
+    "eager",
+    "compatible",
+    "before",
+    "fast",
+    "graph"
+  ],
+  "order_cycle_blocks": 10,
+  "shared_desktop_gpu": true,
+  "clocks_locked": false,
+  "bitcode_manifest": {
+    "1x1536": {
+      "rows": 1,
+      "width": 1536,
+      "bitcode": "mean_1536_r1_warp.bc",
+      "cpu_library": "mean_1536_r1.so",
+      "sha256": "c80daf8d9f2e338121274fb761240bd259a3fc7baadae9d67ccd1030f254f6b4",
+      "implementation": "warp32",
+      "num_warps": 1
+    },
+    "2x1536": {
+      "rows": 2,
+      "width": 1536,
+      "bitcode": "mean_1536_r2_warp.bc",
+      "cpu_library": "mean_1536_r2.so",
+      "sha256": "c80daf8d9f2e338121274fb761240bd259a3fc7baadae9d67ccd1030f254f6b4",
+      "implementation": "warp32",
+      "num_warps": 1
+    },
+    "4x1536": {
+      "rows": 4,
+      "width": 1536,
+      "bitcode": "mean_1536_r4_warp.bc",
+      "cpu_library": "mean_1536_r4.so",
+      "sha256": "e6aec69a7ff522a7e45638fe8a8b35b6e1a605b9d2651446ff98679535ed9104",
+      "implementation": "warp32",
+      "num_warps": 1
+    },
+    "8x1536": {
+      "rows": 8,
+      "width": 1536,
+      "bitcode": "mean_1536_r8_warp.bc",
+      "cpu_library": "mean_1536_r8.so",
+      "sha256": "4cd05d674cb5544212a64b64defe9b561400ffc8c16800190a38f6be7b3c53e7",
+      "implementation": "warp32",
+      "num_warps": 1
+    },
+    "16x1536": {
+      "rows": 16,
+      "width": 1536,
+      "bitcode": "mean_1536_r16_warp.bc",
+      "cpu_library": "mean_1536_r16.so",
+      "sha256": "6b07c8a2a4219b34953acd9ea8e3aae75b2f882335a7ae8879b3710d53d6e769",
+      "implementation": "warp32",
+      "num_warps": 1
+    },
+    "33x1536": {
+      "rows": 33,
+      "width": 1536,
+      "bitcode": "mean_1536_r33_warp.bc",
+      "cpu_library": "mean_1536_r33.so",
+      "sha256": "6b07c8a2a4219b34953acd9ea8e3aae75b2f882335a7ae8879b3710d53d6e769",
+      "implementation": "warp32",
+      "num_warps": 1
+    },
+    "346x1536": {
+      "rows": 346,
+      "width": 1536,
+      "bitcode": "mean_1536_r346_warp.bc",
+      "cpu_library": "mean_1536_r346.so",
+      "sha256": "6b07c8a2a4219b34953acd9ea8e3aae75b2f882335a7ae8879b3710d53d6e769",
+      "implementation": "warp32",
+      "num_warps": 1
+    },
+    "4096x1536": {
+      "rows": 4096,
+      "width": 1536,
+      "bitcode": "mean_1536_r4096_warp.bc",
+      "cpu_library": "mean_1536_r4096.so",
+      "sha256": "6b07c8a2a4219b34953acd9ea8e3aae75b2f882335a7ae8879b3710d53d6e769",
+      "implementation": "warp32",
+      "num_warps": 1
+    }
+  },
+  "before_sha256": "bd136abc8060dfb70f1de5275e26dfc559b9ab6c204c5d0f146b48c730f1d2ed",
+  "source_sha256": {
+    "s9_benchmark_host.py": "1399d43033d8fb2d49dc9bf0feff22b62b39ab70f38e6f75b96ce57105461c53",
+    "s9_mlir_adapter.py": "d20bf02523462138c7e2b25e065a2730ebf1e01ec6d728ba340b8d48548940ae",
+    "s9_decode_graph.py": "12d31ac24fcc151311b322c47e700de0106bee00b508fa04037b6e17528c5826",
+    "s9_benchmark_mlir.py": "ec0a94d233fa6115dc6611db33a0a0775728daa1e41b63efefda92066a0c387e",
+    "s9_benchmark_order.py": "9b2df1b4530ac408f524bfcbcceeada5da6a919fb26e8f1d6e7043d5c9d9f548"
+  },
+  "scope": "32 forwards; common eager prefixes; no sampling/HTTP/tokenization; graph initial KV copy and per-step token copies included",
+  "graph_setup": "Preparation/capture excluded from warm latency; reported separately; exact-position graphs reused across fresh requests"
+}

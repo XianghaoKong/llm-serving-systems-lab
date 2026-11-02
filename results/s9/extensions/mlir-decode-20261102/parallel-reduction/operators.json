@@ -1,0 +1,1642 @@
+[
+  {
+    "rows": 1,
+    "input_kind": "fixed-seed Gaussian BF16",
+    "correctness": {
+      "eager": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton_compatible": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 1536,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 9.318400174379349,
+        "gpu_p95_us": 9.692160300910473,
+        "host_p50_us": 74.04146666666666
+      },
+      "triton": {
+        "gpu_p50_us": 1.8432000651955605,
+        "gpu_p95_us": 2.385599985718725,
+        "host_p50_us": 16.649
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 5.427199974656105,
+        "gpu_p95_us": 5.821439903229473,
+        "host_p50_us": 46.54366666666667
+      },
+      "mlir": {
+        "gpu_p50_us": 1.8432000651955605,
+        "gpu_p95_us": 3.1846399605274196,
+        "host_p50_us": 32.5345
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 36.96640133857727,
+        "gpu_p95_us": 37.12511956691742,
+        "host_p50_us": 40.596599999999995
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 168,
+        "n_spills_reported_by_triton": 1090,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {
+      "eager": {
+        "kernel_launches": 8,
+        "kernels": [
+          {
+            "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+            "duration_us": 2.463,
+            "args": {
+              "External id": 6,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 20,
+              "registers per thread": 31,
+              "shared memory": 0,
+              "blocks per SM": 0.065217,
+              "warps per SM": 0.26087,
+              "grid": [
+                3,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 1
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 1.055,
+            "args": {
+              "External id": 8,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 31,
+              "registers per thread": 30,
+              "shared memory": 0,
+              "blocks per SM": 0.043478,
+              "warps per SM": 0.173913,
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+            "duration_us": 2.335,
+            "args": {
+              "External id": 11,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 45,
+              "registers per thread": 26,
+              "shared memory": 1040,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.173913,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul>)",
+            "duration_us": 0.959,
+            "args": {
+              "External id": 12,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 55,
+              "registers per thread": 32,
+              "shared memory": 0,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.086957,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 1.055,
+            "args": {
+              "External id": 13,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 65,
+              "registers per thread": 22,
+              "shared memory": 0,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.086957,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+            "duration_us": 1.472,
+            "args": {
+              "External id": 14,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 75,
+              "registers per thread": 16,
+              "shared memory": 0,
+              "blocks per SM": 0.130435,
+              "warps per SM": 0.521739,
+              "grid": [
+                6,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 1
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 1.056,
+            "args": {
+              "External id": 18,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 88,
+              "registers per thread": 30,
+              "shared memory": 0,
+              "blocks per SM": 0.043478,
+              "warps per SM": 0.173913,
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",
+            "duration_us": 1.119,
+            "args": {
+              "External id": 19,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 99,
+              "registers per thread": 37,
+              "shared memory": 0,
+              "blocks per SM": 0.043478,
+              "warps per SM": 0.173913,
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "triton": {
+        "kernel_launches": 1,
+        "kernels": [
+          {
+            "name": "_qwen_rms",
+            "duration_us": 1.119,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 189,
+              "registers per thread": 39,
+              "shared memory": 16,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.086957,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "triton_compatible": {
+        "kernel_launches": 4,
+        "kernels": [
+          {
+            "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+            "duration_us": 1.858,
+            "args": {
+              "External id": 1030,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 399,
+              "registers per thread": 31,
+              "shared memory": 0,
+              "blocks per SM": 0.065217,
+              "warps per SM": 0.26087,
+              "grid": [
+                3,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 1
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 1.026,
+            "args": {
+              "External id": 1032,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 410,
+              "registers per thread": 30,
+              "shared memory": 0,
+              "blocks per SM": 0.043478,
+              "warps per SM": 0.173913,
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+            "duration_us": 1.826,
+            "args": {
+              "External id": 1035,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 424,
+              "registers per thread": 26,
+              "shared memory": 1040,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.173913,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "_qwen_tail",
+            "duration_us": 0.993,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 441,
+              "registers per thread": 16,
+              "shared memory": 0,
+              "blocks per SM": 0.130435,
+              "warps per SM": 0.521739,
+              "grid": [
+                6,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 1
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "mlir": {
+        "kernel_launches": 1,
+        "kernels": [
+          {
+            "name": "_qwen_mlir",
+            "duration_us": 1.278,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 558,
+              "registers per thread": 78,
+              "shared memory": 0,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.021739,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "mlir_scalar": {
+        "kernel_launches": 1,
+        "kernels": [
+          {
+            "name": "_qwen_mlir",
+            "duration_us": 37.175,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 675,
+              "registers per thread": 168,
+              "shared memory": 0,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.086957,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          }
+        ],
+        "diagnostic_only": true
+      }
+    }
+  },
+  {
+    "rows": 2,
+    "input_kind": "fixed-seed Gaussian BF16",
+    "correctness": {
+      "eager": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton_compatible": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 3072,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 10.065599903464317,
+        "gpu_p95_us": 10.70272020995617,
+        "host_p50_us": 75.70843333333333
+      },
+      "triton": {
+        "gpu_p50_us": 1.8799999728798866,
+        "gpu_p95_us": 4.104960132390261,
+        "host_p50_us": 17.7608
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 5.620799958705902,
+        "gpu_p95_us": 5.731520019471645,
+        "host_p50_us": 53.39
+      },
+      "mlir": {
+        "gpu_p50_us": 1.9456000067293644,
+        "gpu_p95_us": 2.834400041028857,
+        "host_p50_us": 38.70336666666667
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 38.32959979772568,
+        "gpu_p95_us": 38.475360572338104,
+        "host_p50_us": 42.1723
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 168,
+        "n_spills_reported_by_triton": 1090,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {}
+  },
+  {
+    "rows": 4,
+    "input_kind": "fixed-seed Gaussian BF16",
+    "correctness": {
+      "eager": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton_compatible": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 6144,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 10.184000059962273,
+        "gpu_p95_us": 10.589119754731655,
+        "host_p50_us": 84.41696666666667
+      },
+      "triton": {
+        "gpu_p50_us": 1.841600053012371,
+        "gpu_p95_us": 2.650239961221814,
+        "host_p50_us": 19.897299999999998
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 5.756799876689911,
+        "gpu_p95_us": 6.078879870474337,
+        "host_p50_us": 56.83363333333333
+      },
+      "mlir": {
+        "gpu_p50_us": 1.937600038945675,
+        "gpu_p95_us": 2.83712005242705,
+        "host_p50_us": 39.646233333333335
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 32.45920091867447,
+        "gpu_p95_us": 32.60607868432999,
+        "host_p50_us": 41.40996666666667
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 168,
+        "n_spills_reported_by_triton": 952,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {}
+  },
+  {
+    "rows": 8,
+    "input_kind": "fixed-seed Gaussian BF16",
+    "correctness": {
+      "eager": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton_compatible": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 12288,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 10.64319983124733,
+        "gpu_p95_us": 11.003039851784706,
+        "host_p50_us": 74.02956666666667
+      },
+      "triton": {
+        "gpu_p50_us": 1.9120000302791595,
+        "gpu_p95_us": 2.5607999227941036,
+        "host_p50_us": 17.705333333333332
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 6.172800064086914,
+        "gpu_p95_us": 6.271200235933065,
+        "host_p50_us": 52.77623333333334
+      },
+      "mlir": {
+        "gpu_p50_us": 2.054399996995926,
+        "gpu_p95_us": 2.8198399953544135,
+        "host_p50_us": 36.55086666666667
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 55.271998047828674,
+        "gpu_p95_us": 55.544157922267914,
+        "host_p50_us": 57.99533333333333
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 40,
+        "n_spills_reported_by_triton": 1148,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {}
+  },
+  {
+    "rows": 16,
+    "input_kind": "fixed-seed Gaussian BF16",
+    "correctness": {
+      "eager": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton_compatible": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 24576,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 10.943999886512756,
+        "gpu_p95_us": 11.391359828412533,
+        "host_p50_us": 73.72229999999999
+      },
+      "triton": {
+        "gpu_p50_us": 1.881599985063076,
+        "gpu_p95_us": 2.6598399877548204,
+        "host_p50_us": 17.524033333333332
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 6.636799871921539,
+        "gpu_p95_us": 6.832480132579803,
+        "host_p50_us": 54.16826666666667
+      },
+      "mlir": {
+        "gpu_p50_us": 1.9023999571800232,
+        "gpu_p95_us": 3.1116800941526837,
+        "host_p50_us": 35.289433333333335
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 15.97440019249916,
+        "gpu_p95_us": 16.03615991771221,
+        "host_p50_us": 35.59186666666667
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 255,
+        "n_spills_reported_by_triton": 338,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {}
+  },
+  {
+    "rows": 33,
+    "input_kind": "fixed-seed Gaussian BF16",
+    "correctness": {
+      "eager": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton_compatible": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 50688,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 12.131199985742569,
+        "gpu_p95_us": 12.428959868848322,
+        "host_p50_us": 75.1468
+      },
+      "triton": {
+        "gpu_p50_us": 2.0415999926626682,
+        "gpu_p95_us": 3.048799904063342,
+        "host_p50_us": 16.974366666666665
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 7.430399954319,
+        "gpu_p95_us": 7.513119839131832,
+        "host_p50_us": 51.743966666666665
+      },
+      "mlir": {
+        "gpu_p50_us": 1.9712000153958797,
+        "gpu_p95_us": 3.239840036258096,
+        "host_p50_us": 34.64373333333333
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 18.835200369358063,
+        "gpu_p95_us": 18.913279473781586,
+        "host_p50_us": 35.73806666666667
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 255,
+        "n_spills_reported_by_triton": 338,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {}
+  },
+  {
+    "rows": 346,
+    "input_kind": "captured Qwen layer activation",
+    "correctness": {
+      "eager": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 531456,
+        "different": 10,
+        "max_abs": 0.0078125,
+        "nrmse": 3.8823329168436876e-05,
+        "finite": true,
+        "max_ulp": 2
+      },
+      "triton_compatible": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 531456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 20.88799998164177,
+        "gpu_p95_us": 23.265279829502106,
+        "host_p50_us": 71.05023333333334
+      },
+      "triton": {
+        "gpu_p50_us": 2.377600036561489,
+        "gpu_p95_us": 2.9040000122040506,
+        "host_p50_us": 18.1021
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 12.20959983766079,
+        "gpu_p95_us": 13.581440597772598,
+        "host_p50_us": 52.31013333333333
+      },
+      "mlir": {
+        "gpu_p50_us": 2.7696000412106514,
+        "gpu_p95_us": 2.8337599709630013,
+        "host_p50_us": 38.69206666666666
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 113.18079829216003,
+        "gpu_p95_us": 125.89743614196777,
+        "host_p50_us": 118.74133333333333
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 255,
+        "n_spills_reported_by_triton": 338,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {
+      "eager": {
+        "kernel_launches": 8,
+        "kernels": [
+          {
+            "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+            "duration_us": 4.029,
+            "args": {
+              "External id": 2566,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913633,
+              "registers per thread": 31,
+              "shared memory": 0,
+              "blocks per SM": 22.565218,
+              "warps per SM": 90.260872,
+              "grid": [
+                1038,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 100
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 3.295,
+            "args": {
+              "External id": 2568,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913644,
+              "registers per thread": 30,
+              "shared memory": 0,
+              "blocks per SM": 11.282609,
+              "warps per SM": 45.130436,
+              "grid": [
+                519,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 94
+            }
+          },
+          {
+            "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+            "duration_us": 3.582,
+            "args": {
+              "External id": 2571,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913658,
+              "registers per thread": 26,
+              "shared memory": 16,
+              "blocks per SM": 0.478261,
+              "warps per SM": 7.652174,
+              "grid": [
+                22,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                16,
+                1
+              ],
+              "est. achieved occupancy %": 16
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<float>, std::array<char*, 2ul>)",
+            "duration_us": 0.896,
+            "args": {
+              "External id": 2572,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913668,
+              "registers per thread": 32,
+              "shared memory": 0,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.086957,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::rsqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 0.959,
+            "args": {
+              "External id": 2573,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913678,
+              "registers per thread": 22,
+              "shared memory": 0,
+              "blocks per SM": 0.021739,
+              "warps per SM": 0.086957,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0
+            }
+          },
+          {
+            "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+            "duration_us": 3.709,
+            "args": {
+              "External id": 2574,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913688,
+              "registers per thread": 16,
+              "shared memory": 0,
+              "blocks per SM": 45.130436,
+              "warps per SM": 180.521744,
+              "grid": [
+                2076,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 100
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 2.462,
+            "args": {
+              "External id": 2578,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913701,
+              "registers per thread": 30,
+              "shared memory": 0,
+              "blocks per SM": 11.282609,
+              "warps per SM": 45.130436,
+              "grid": [
+                519,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 94
+            }
+          },
+          {
+            "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+            "duration_us": 3.646,
+            "args": {
+              "External id": 2579,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913712,
+              "registers per thread": 16,
+              "shared memory": 0,
+              "blocks per SM": 22.565218,
+              "warps per SM": 90.260872,
+              "grid": [
+                1038,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 100
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "triton": {
+        "kernel_launches": 1,
+        "kernels": [
+          {
+            "name": "_qwen_rms",
+            "duration_us": 2.591,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 913800,
+              "registers per thread": 39,
+              "shared memory": 16,
+              "blocks per SM": 7.521739,
+              "warps per SM": 30.086956,
+              "grid": [
+                346,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 63
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "triton_compatible": {
+        "kernel_launches": 4,
+        "kernels": [
+          {
+            "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+            "duration_us": 4.032,
+            "args": {
+              "External id": 3590,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 914010,
+              "registers per thread": 31,
+              "shared memory": 0,
+              "blocks per SM": 22.565218,
+              "warps per SM": 90.260872,
+              "grid": [
+                1038,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 100
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+            "duration_us": 3.295,
+            "args": {
+              "External id": 3592,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 914021,
+              "registers per thread": 30,
+              "shared memory": 0,
+              "blocks per SM": 11.282609,
+              "warps per SM": 45.130436,
+              "grid": [
+                519,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 94
+            }
+          },
+          {
+            "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+            "duration_us": 3.264,
+            "args": {
+              "External id": 3595,
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 914035,
+              "registers per thread": 26,
+              "shared memory": 16,
+              "blocks per SM": 0.478261,
+              "warps per SM": 7.652174,
+              "grid": [
+                22,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                16,
+                1
+              ],
+              "est. achieved occupancy %": 16
+            }
+          },
+          {
+            "name": "_qwen_tail",
+            "duration_us": 2.496,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 914052,
+              "registers per thread": 16,
+              "shared memory": 0,
+              "blocks per SM": 45.130436,
+              "warps per SM": 180.521744,
+              "grid": [
+                2076,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 100
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "mlir": {
+        "kernel_launches": 1,
+        "kernels": [
+          {
+            "name": "_qwen_mlir",
+            "duration_us": 2.784,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 914169,
+              "registers per thread": 78,
+              "shared memory": 0,
+              "blocks per SM": 7.521739,
+              "warps per SM": 7.521739,
+              "grid": [
+                346,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 16
+            }
+          }
+        ],
+        "diagnostic_only": true
+      },
+      "mlir_scalar": {
+        "kernel_launches": 1,
+        "kernels": [
+          {
+            "name": "_qwen_mlir",
+            "duration_us": 116.353,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 13,
+              "correlation": 914286,
+              "registers per thread": 255,
+              "shared memory": 0,
+              "blocks per SM": 7.521739,
+              "warps per SM": 30.086956,
+              "grid": [
+                346,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 17
+            }
+          }
+        ],
+        "diagnostic_only": true
+      }
+    }
+  },
+  {
+    "rows": 4096,
+    "input_kind": "fixed-seed Gaussian BF16",
+    "correctness": {
+      "eager": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "triton": {
+        "elements": 6291456,
+        "different": 4,
+        "max_abs": 0.00390625,
+        "nrmse": 1.740335547079492e-06,
+        "finite": true,
+        "max_ulp": 1
+      },
+      "triton_compatible": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      },
+      "mlir_scalar": {
+        "elements": 6291456,
+        "different": 0,
+        "max_abs": 0.0,
+        "nrmse": 0.0,
+        "finite": true,
+        "max_ulp": 0
+      }
+    },
+    "timing": {
+      "eager": {
+        "gpu_p50_us": 331.44160509109497,
+        "gpu_p95_us": 332.77247071266174,
+        "host_p50_us": 337.74336666666665
+      },
+      "triton": {
+        "gpu_p50_us": 23.43680039048195,
+        "gpu_p95_us": 24.07536029815674,
+        "host_p50_us": 25.656866666666666
+      },
+      "triton_compatible": {
+        "gpu_p50_us": 194.4383978843689,
+        "gpu_p95_us": 194.96527552604675,
+        "host_p50_us": 201.44
+      },
+      "mlir": {
+        "gpu_p50_us": 23.7744003534317,
+        "gpu_p95_us": 24.061280265450478,
+        "host_p50_us": 39.902433333333335
+      },
+      "mlir_scalar": {
+        "gpu_p50_us": 1256.1359882354736,
+        "gpu_p95_us": 1257.4118328094482,
+        "host_p50_us": 1258.5687666666668
+      }
+    },
+    "resources": {
+      "mlir": {
+        "registers_per_thread": 78,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 0,
+        "num_warps": 1,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "mlir_scalar": {
+        "registers_per_thread": 255,
+        "n_spills_reported_by_triton": 338,
+        "shared_bytes": 0,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      },
+      "triton": {
+        "registers_per_thread": 39,
+        "n_spills_reported_by_triton": 0,
+        "shared_bytes": 16,
+        "num_warps": 4,
+        "note": "Compiler/runtime metadata, not hardware counters or measured spill traffic"
+      }
+    },
+    "profiles": {}
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "model_requests": 150,
+  "correctness_positions": 480,
+  "fallbacks": 0,
+  "end": {
+    "time_unix": 1793600117.7093682,
+    "csv": "NVIDIA GeForce RTX 4070, 610.88, 66, 154.36, 2775, 10251, 47, 4667",
+    "error": ""
+  }
+}

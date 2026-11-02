@@ -1,3 +1,4 @@
 # CPU-only dependencies required by the repository's unit tests.
 httpx>=0.28,<0.29
 matplotlib>=3.8,<3.11
+pytest>=8,<10
